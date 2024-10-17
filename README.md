@@ -1,93 +1,142 @@
-# odissei
+# Triply ETL for odissei
 
+In order to be able to publish linked data to an online data catalog, TriplyEtl must first be configured.
+This is done with the following steps:
 
+## 1. Install dependencies
+TriplyETL uses 3rd party software which are called "dependencies". When you have run the generator, these dependencies were installed for you already. If not, for example if you installed your project from an existing Git repository, you should go into the folder containing your code and run `npm install`. This will download all dependencies for you to your local computer.
 
-## Getting started
+## 1. Create a TriplyDB API Token
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+**NOTE** *This step can be omitted if you already created or provided your token during setup of your project*
+​
+Your TriplyDB API Token is your access key to TriplyDB. You can create one in TriplyDB using [this instructions](https://triply.cc/docs/api-token) or you can type (and follow the onscreen instructions):
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://git.triply.cc/customers/odissei/odissei.git
-git branch -M main
-git push -uf origin main
+```sh
+npx tools create-token
 ```
 
-## Integrate with your tools
+Once you have your token, open the file `.env` and write the following line:
+`TRIPLYDB_TOKEN=<your-token-here>`
 
-- [ ] [Set up project integrations](https://git.triply.cc/customers/odissei/odissei/-/settings/integrations)
+## 2. Developing your ETL
 
-## Collaborate with your team
+Once you have a token, you can start writing your ETL based on the example file `src/main.ts`.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### 2.1 Transpile
 
-## Test and Deploy
+Your ETL is written in TypeScript, but the ETL will be executed in JavaScript.  The following command transpiles your TypeScript code into the corresponding JavaScript code:
 
-Use the built-in continuous integration in GitLab.
+```sh
+npm run build
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### 2.1.1 Continuous transpilation
 
-***
+Some developers do not want to repeatedly write the `npm run build` command.  By running the following command, transpilation is performed automatically whenever one or more TypeScript files are changed:
 
-# Editing this README
+```sh
+npm run dev
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### 2.2 Run
 
-## Suggestions for a good README
+The following command runs your ETL:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```sh
+npx etl
+```
 
-## Name
-Choose a self-explaining name for your project.
+If you create other ETL's with different filenames (eg. "`src/my-other-etl.js`"), you should run them using this command:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```sh
+npx etl lib/my-other-etl
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## 3. Acceptance/Production mode
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+​
+*Note: this section might  not be applicable if you do not use a [DTAP](https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production) strategy.*
+​
+Every ETL must be able to run in at least two modes:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+1. Acceptance mode: published to the user account of the person who runs the ETL or to an organization that is specifically created for publishing acceptance versions.
+2. Production mode: published to the official organization and dataset location.
+​
+By default, ETLs should run in acceptance mode.  They should be specifically configured to run in production mode.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### 3.1 Command-line flags
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+One approach for switching from acceptance to production mode makes use of a command-line flag.
+​
+The Etl pipeline includes the following specification for the publication location.  Notice that the organization name is not specified:
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+```ts
+destinations: {
+  out: Destination.TriplyDb.rdf(datasetName, {overwrite: true})
+},
+```
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+With the above configuration, data will be uploaded to the user account that is associated with the current API Token.  Because API Tokens can only be created for users and not for organization, this never uploads to the production organization and always performs an acceptance mode run.
+​
+If you want to run the ETL in production mode, use the `--account` flag to explicitly set the organization name.  If, for example, you have to upload your data to the `organizationName` account, you should run the following command:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```bash
+npx etl --account organizationName
+```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+This performs a production run of the same pipeline.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### 3.2 Environment variable
 
-## License
-For open source projects, say how it is licensed.
+Another approach for switching from acceptance to production mode makes use of an environment variable.
+​
+Your Etl pipeline contains the following configuration:
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+```ts
+destinations: {
+  publish:
+    Etl.environment === 'Production'
+    ? Destination.TriplyDb.rdf(organizationName, datasetName, {overwrite: true})
+    : Destination.TriplyDb.rdf(organizationName+'-'+datasetName, {overwrite: true})
+},
+```
+
+Notice that acceptance runs are published under the user account that is associated with the current API Token.
+​
+This approach only works when the combined length of the organization name and the dataset name does not exceed 39 characters.
+​
+In order to run in production mode, set the following environment variable (or add it to your local `.env` file):
+
+```sh
+ENV="Production"
+```
+
+### 3.3 Gitlab CI/CD Pipelines
+
+Your project comes with a file called `.gitlab-ci.yml`. This file can be used in Gitlab to create a scheduled pipeline.
+​
+For this to work you will at least need the following [variables](https://docs.gitlab.com/ee/ci/variables/) in your CI/CD setting (Settings → CI/CD → Variables):
+​
+| Type     | Key            | Value      | Options | Environments | Notes                                                        |
+| -------- | -------------- | ---------- | ------- | ------------ | ------------------------------------------------------------ |
+| Variable | HEAD           | false      | -       | All          | allows you to run the ETL for a limited ammount of source records |
+| Variable | TIMEOUT        | false      | -       | All          | causes the ETL to timeout, eg "1 hour", "1 day", etc.        |
+| Variable | ENV            | production | -       | All          | sets the DTAP environment to "production"                    |
+| Variable | TRIPLYDB_TOKEN | [hidden]   | Masked  | All          | an [API token](https://triply.cc/docs/triply-api/#Creating-an-API-token) to interact with the TriplyDB Instance |
+
+After you created these variables, you can create a **Schedule** (CI/CD → Schedules). In the Schedule page you can overwrite the project variables to match your usage scenario. In most cases you should override the `ENV` variable to `testing` or `acceptance` to run one of the other DTAP modes. If you want to specify the schedule name in the pipelines overview on GitLab, add the schedule variable `PIPELINE_NAME` with the value `"Schedule: <NAME_HERE>"`, this specified name will now be used instead of the latest commit message.
+
+## 4. Optional features
+
+This section documents features that are only used in some but not all projects.
+
+### 4.1 Hard-code the account
+
+It is possible to specify the TriplyDB account in which data should be published in the ETL script (`main.ts`).
+​
+Sometimes it is useful to be able to specify the TriplyDB account without changing the ETL code.  This can be done by specifying the following environment variable.  This can be done in the file that is already used to specify the API Token (`.env`).
+
+```sh
+TRIPLYDB_ACCOUNT=<account>
+```
