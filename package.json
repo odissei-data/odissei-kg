@@ -1,0 +1,34 @@
+{
+  "author": "Triply <info@triply.cc>",
+  "type": "module",
+  "dependencies": {
+    "@triplyetl/etl": "^4.3.2"
+  },
+  "description": "Triply ETL for odissei",
+  "lint-staged": {
+    "*.ts?(x)": [
+      "npm run util:lint:fix",
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "main": "lib/main.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "contributors": [
+    {
+      "name": "iva.dimitrova",
+      "email": "iva.dimitrova@triply.cc"
+    }
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "util:lint": "cross-env ESLINT_STRICT=true eslint --ext .tsx --ext .ts ./src",
+    "util:lint:fix": "cross-env ESLINT_STRICT=true eslint --fix --ext .tsx --ext .ts ./src",
+    "util:validateTs": "tsc --noEmit",
+    "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput",
+    "prepare": "husky install"
+  },
+  "version": "1.0.0",
+  "name": "odissei"
+}
