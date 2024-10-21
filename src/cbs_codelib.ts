@@ -1,5 +1,13 @@
 // Import middlewares and other required libraries.
-import { Etl, Source, Iri, environments, when, toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
+import {
+  Etl,
+  Source,
+  Iri,
+  environments,
+  when,
+  toTriplyDb,
+  fromCsv,
+} from "@triplyetl/etl/generic";
 import { addIri, iri, iris, split, str, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { bibo, a, dct, dcm } from "@triplyetl/etl/vocab"; // dct
@@ -17,8 +25,9 @@ const prefix = {
 };
 
 // const cbs_codelib = 'https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/Data/odissei-projects_CBS.csv'
+// const cbs_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/refs/heads/main/_data/cbs.csv";
 const cbs_codelib =
-  "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/refs/heads/main/_data/cbs.csv";
+  "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
 
 const destination = {
   defaultGraph: prefix.graph.concat("codelib"),
@@ -59,7 +68,7 @@ export default async function (): Promise<Etl> {
       when("title", triple("_IRI", dct.title, "title")),
       when("ShortTitle", triple("_IRI", bibo.shortTitle, "ShortTitle")),
       when(
-        (context) => context.getString("orcid") != "NA",
+        (context) => context.isNotEmpty("orcid"),
         split({
           content: "orcid",
           separator: ",",
