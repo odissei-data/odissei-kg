@@ -10,6 +10,7 @@ import {
 } from "@triplyetl/etl/generic";
 import { addIri, custom, iri, str, triple } from "@triplyetl/etl/ratt";
 import { a, dct } from "@triplyetl/etl/vocab";
+// import { logRecord } from "@triplyetl/etl/debug";
 
 // Declare prefixes.
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
@@ -35,17 +36,27 @@ const destination = {
   prefixes: prefix,
   dataset:
     Etl.environment === environments.Acceptance
-      ? "odissei-kg-staging"
+      ? "odissei-acceptance"
       : Etl.environment === environments.Testing
-        ? "odissei-kg-staging"
-        : "odissei-kg",
+        ? "odissei-acceptance"
+        : "odissei",
 };
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(destination);
 
   etl.use(
-    fromXlsx([Source.url(cbs_projects_before)], { groupColumnsByName: false }),
+    // fromXlsx([Source.url(cbs_projects_after), Source.url(cbs_projects_before)], { sheetNames: ['2024'], groupColumnsByName: true }),
+    fromXlsx(
+      [
+        Source.url(cbs_projects_before),
+        Source.TriplyDb.asset(destination.account, destination.dataset, {
+          name: "projecten_met_bestanden_einddatum_na_2023.xlsx",
+        }),
+      ],
+      { groupColumnsByName: false },
+    ),
+    // logRecord(),
     when(
       "Projectnummer",
       addIri({
