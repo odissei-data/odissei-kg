@@ -28,10 +28,10 @@ const destination = {
   prefixes: prefix,
   dataset:
     Etl.environment === environments.Acceptance
-      ? "odissei-kg-staging"
+      ? "odissei-acceptance"
       : Etl.environment === environments.Testing
-        ? "odissei-kg-staging"
-        : "odissei-kg",
+        ? "odissei-acceptance"
+        : "odissei",
 };
 
 export default async function (): Promise<Etl> {
