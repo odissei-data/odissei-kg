@@ -45,6 +45,7 @@ main:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
+    - when: never
     - !reference [.etl-template, rules]
 
 ### Stage 1: add another ETL with name "cbs_papers"
@@ -59,7 +60,7 @@ cbs_papers:
     - !reference [.etl-template, run-etl]
   rules:
     # Make sure you remove this next line if you want to use this stage:
-    # - when: never
+    - when: never
     - !reference [.etl-template, rules]
 
 
