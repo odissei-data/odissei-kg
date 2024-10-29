@@ -64,7 +64,7 @@ cbs_papers:
 
 
 ### Example stage 2: create Knowledge Graph:
-cbs_codelib
+cbs_codelib:
   stage: create-knowledge-graph
   interruptible: true
   script:
