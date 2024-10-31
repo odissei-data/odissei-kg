@@ -8,7 +8,14 @@ import {
   toTriplyDb,
   fromXlsx,
 } from "@triplyetl/etl/generic";
-import { addIri, custom, iri, str, triple } from "@triplyetl/etl/ratt";
+import {
+  addHashedIri,
+  addIri,
+  custom,
+  iri,
+  str,
+  triple,
+} from "@triplyetl/etl/ratt";
 import { a, dct } from "@triplyetl/etl/vocab";
 // import { logRecord } from "@triplyetl/etl/debug";
 
@@ -68,11 +75,17 @@ export default async function (): Promise<Etl> {
       triple("_IRI", a, iri(prefix.odissei_kg_schema, str("Project"))),
       when(
         "Bestandsnaam",
+        addHashedIri({
+          prefix: prefix.cbs_dataset,
+          content: ["Bestandsnaam"],
+          key: "_bestandsnaamHash",
+        }),
         triple(
           "_IRI",
           iri(prefix.odissei_kg_schema, str("bestandsnaam")),
-          iri(prefix.cbs_dataset, "Bestandsnaam"),
+          "_bestandsnaamHash",
         ),
+        triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
       ),
       when(
         "Instelling",
