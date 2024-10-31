@@ -10,7 +10,7 @@ import {
 } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, split, str, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
-import { bibo, a, dct, dcm } from "@triplyetl/etl/vocab"; // dct
+import { a, dct, dcm } from "@triplyetl/etl/vocab"; // dct
 
 // Declare prefixes.
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
@@ -30,7 +30,7 @@ const cbs_codelib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
 
 const destination = {
-  defaultGraph: prefix.graph.concat("codelib"),
+  defaultGraph: prefix.graph.concat("codelib/cbs"),
   account: process.env.USER ?? "odissei",
   prefixes: prefix,
   dataset:
@@ -66,7 +66,7 @@ export default async function (): Promise<Etl> {
         ),
       ),
       when("title", triple("_IRI", dct.title, "title")),
-      when("ShortTitle", triple("_IRI", bibo.shortTitle, "ShortTitle")),
+      when("ShortTitle", triple("_IRI", dct.alternative, "ShortTitle")),
       when(
         (context) => context.isNotEmpty("orcid"),
         split({
