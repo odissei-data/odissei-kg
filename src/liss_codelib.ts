@@ -1,8 +1,6 @@
 // Import middlewares and other required libraries.
+import { Etl, Source, Iri } from "@triplyetl/etl/generic";
 import {
-  Etl,
-  Source,
-  Iri,
   environments,
   when,
   toTriplyDb,
