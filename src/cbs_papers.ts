@@ -1,14 +1,12 @@
+import { Etl, Source, Iri } from "@triplyetl/etl/generic";
 import {
-  Etl,
-  Source,
-  Iri,
   environments,
   fromXlsx,
   when,
   toTriplyDb,
 } from "@triplyetl/etl/generic";
-import { addIri, iri, str, triple } from "@triplyetl/etl/ratt";
-import { bibo, a, dct } from "@triplyetl/etl/vocab"; // dct
+import { addIri, iri, pairs, str, triple } from "@triplyetl/etl/ratt";
+import { bibo, a, dct, sdo } from "@triplyetl/etl/vocab"; // dct
 
 // Declare prefixes.
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
@@ -51,10 +49,18 @@ export default async function (): Promise<Etl> {
       triple("_IRI", a, bibo.AcademicArticle),
       when(
         "Projectnumber",
-        triple(
+        addIri({
+          prefix: prefix.cbs_project,
+          content: "Projectnumber",
+          key: "_CBS_project_number",
+        }),
+        pairs(
           "_IRI",
-          iri(prefix.odissei_kg_schema, str("project")),
-          iri(prefix.cbs_project, "Projectnumber"),
+          [
+            iri(prefix.odissei_kg_schema, str("project")),
+            "_CBS_project_number",
+          ],
+          [sdo.producer, "_CBS_project_number"],
         ),
       ),
       when("Title", triple("_IRI", dct.title, "Title")),
