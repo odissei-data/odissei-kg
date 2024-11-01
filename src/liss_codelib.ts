@@ -1,11 +1,6 @@
 // Import middlewares and other required libraries.
-import { Etl, Source, Iri } from "@triplyetl/etl/generic";
-import {
-  environments,
-  when,
-  toTriplyDb,
-  fromCsv,
-} from "@triplyetl/etl/generic";
+import { Etl, Source, Iri, when } from "@triplyetl/etl/generic";
+import { environments, toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, split, str, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { a, dct, dcm } from "@triplyetl/etl/vocab"; // dct
