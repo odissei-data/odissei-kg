@@ -92,22 +92,8 @@ export default async function (): Promise<Etl> {
         ),
       ),
       when("Onderzoek", triple("_IRI", dct.title, "Onderzoek")),
-      when(
-        "Startdatum",
-        triple(
-          "_IRI",
-          iri(prefix.odissei_kg_schema, str("startDate")),
-          "Startdatum",
-        ),
-      ),
-      when(
-        "Einddatum",
-        triple(
-          "_IRI",
-          iri(prefix.odissei_kg_schema, str("endDate")),
-          "Einddatum",
-        ),
-      ),
+      when("Startdatum", triple("_IRI", sdo.startDate, "Startdatum")),
+      when("Einddatum", triple("_IRI", sdo.endDate, "Einddatum")),
     ),
     toTriplyDb(destination),
   );
