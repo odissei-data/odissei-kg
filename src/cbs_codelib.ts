@@ -1,16 +1,22 @@
 // Import middlewares and other required libraries.
+import { Etl, Source, Iri } from "@triplyetl/etl/generic";
 import {
-  Etl,
-  Source,
-  Iri,
   environments,
   when,
   toTriplyDb,
   fromCsv,
 } from "@triplyetl/etl/generic";
-import { addIri, iri, iris, split, str, triple } from "@triplyetl/etl/ratt";
+import {
+  addIri,
+  pairs,
+  iri,
+  iris,
+  split,
+  str,
+  triple,
+} from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
-import { a, dct, dcm } from "@triplyetl/etl/vocab"; // dct
+import { a, dct, dcm, sdo } from "@triplyetl/etl/vocab"; // dct
 
 // Declare prefixes.
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
@@ -56,13 +62,18 @@ export default async function (): Promise<Etl> {
         content: "code",
         key: "_IRI",
       }),
-      triple("_IRI", a, dcm.Software),
+      pairs("_IRI", [a, dcm.Software], [a, sdo.CreativeWork]),
       when(
         "CBS_project_nr",
-        triple(
+        addIri({
+          prefix: prefix.cbs_project,
+          content: "CBS_project_nr",
+          key: "_CBSproject",
+        }),
+        pairs(
           "_IRI",
-          iri(prefix.odissei_kg_schema, str("project")),
-          iri(prefix.cbs_project, "CBS_project_nr"),
+          [iri(prefix.odissei_kg_schema, str("project")), "_CBSproject"],
+          [sdo.producer, "_CBSproject"],
         ),
       ),
       when("title", triple("_IRI", dct.title, "title")),
