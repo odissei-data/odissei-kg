@@ -16,7 +16,7 @@ import {
   str,
   triple,
 } from "@triplyetl/etl/ratt";
-import { a, dct } from "@triplyetl/etl/vocab";
+import { a, dct, sdo } from "@triplyetl/etl/vocab";
 // import { logRecord } from "@triplyetl/etl/debug";
 
 // Declare prefixes.
@@ -72,7 +72,7 @@ export default async function (): Promise<Etl> {
         prefix: prefix.cbs_project,
         key: "_IRI",
       }),
-      triple("_IRI", a, iri(prefix.odissei_kg_schema, str("Project"))),
+      triple("_IRI", a, sdo.ResearchProject),
       when(
         "Bestandsnaam",
         addHashedIri({
@@ -80,11 +80,7 @@ export default async function (): Promise<Etl> {
           content: ["Bestandsnaam"],
           key: "_bestandsnaamHash",
         }),
-        triple(
-          "_IRI",
-          iri(prefix.odissei_kg_schema, str("bestandsnaam")),
-          "_bestandsnaamHash",
-        ),
+        triple("_IRI", dct.requires, "_bestandsnaamHash"),
         triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
       ),
       when(
