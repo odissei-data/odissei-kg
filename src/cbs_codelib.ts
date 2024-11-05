@@ -1,20 +1,9 @@
-// Import middlewares and other required libraries.
-import { Etl, Source, Iri } from "@triplyetl/etl/generic";
-import {
-  environments,
-  when,
-  toTriplyDb,
-  fromCsv,
-} from "@triplyetl/etl/generic";
-import {
-  addIri,
-  pairs,
-  iri,
-  iris,
-  split,
-  str,
-  triple,
-} from "@triplyetl/etl/ratt";
+// Import middlewares and other required libraries............................
+import { Etl, Source, Iri, whenNotEqual } from "@triplyetl/etl/generic";
+import { environments, when, toTriplyDb } from "@triplyetl/etl/generic";
+import { fromCsv } from "@triplyetl/etl/generic";
+import { addIri, iri, iris, pairs, triple } from "@triplyetl/etl/ratt";
+import { split, str } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { a, dct, dcm, sdo } from "@triplyetl/etl/vocab"; // dct
 
@@ -76,8 +65,23 @@ export default async function (): Promise<Etl> {
           [sdo.producer, "_CBSproject"],
         ),
       ),
+      when(
+        "programming language",
+        triple("_IRI", dct.language, "programming language"),
+      ),
       when("title", triple("_IRI", dct.title, "title")),
-      when("ShortTitle", triple("_IRI", dct.alternative, "ShortTitle")),
+      when("project_lead", triple("_IRI", dct.contributor, "project_lead")),
+      whenNotEqual(
+        "ODISSEI_grant",
+        "NA",
+        triple("_IRI", sdo.funding, "ODISSEI_grant"),
+      ),
+      whenNotEqual(
+        "publication",
+        "NA",
+        triple("_IRI", dct.isReferencedBy, iri("publication")),
+      ),
+
       when(
         (context) => context.isNotEmpty("orcid"),
         split({
