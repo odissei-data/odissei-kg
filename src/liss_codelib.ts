@@ -1,9 +1,9 @@
-// Import middlewares and other required libraries.
-import { Etl, Source, Iri, when } from "@triplyetl/etl/generic";
+// Import middlewares and other required libraries............................
+import { Etl, Source, Iri, when, whenNotEqual } from "@triplyetl/etl/generic";
 import { environments, toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
-import { addIri, iri, iris, split, str, triple } from "@triplyetl/etl/ratt";
+import { addIri, iri, iris, split, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
-import { a, dct, dcm } from "@triplyetl/etl/vocab"; // dct
+import { a, dcm, dct, sdo } from "@triplyetl/etl/vocab"; // dct
 
 // Declare prefixes.
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
@@ -54,16 +54,17 @@ export default async function (): Promise<Etl> {
         }),
         triple("_IRI", dct.creator, iris("_orcids")),
       ),
-      when(
+      whenNotEqual(
         "ODISSEI_grant",
-        triple(
-          "_IRI",
-          iri(prefix.odissei_kg_schema, str("project")),
-          iri(prefix.liss_project, "ODISSEI_grant"),
-        ),
+        "NA",
+        triple("_IRI", sdo.funding, "ODISSEI_grant"),
+      ),
+      whenNotEqual(
+        "publication",
+        "NA",
+        triple("_IRI", dct.isReferencedBy, iri("publication")),
       ),
       when("data_link", triple("_IRI", dct.requires, iri("data_link"))),
-      when("publication", triple(iri("publication"), dct.requires, "_IRI")),
       when(
         "programming language",
         triple("_IRI", dct.language, "programming language"),
