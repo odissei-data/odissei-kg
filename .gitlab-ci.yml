@@ -58,7 +58,7 @@ cbs_papers:
   script:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
-    if [ -z "$HEAD" ]; then 
+    - if [ -z "$HEAD" ]; then 
         npx etl --verbose --timeout "$TIMEOUT" ./lib/cbs_codelib.js  --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
         npx etl --verbose --timeout "$TIMEOUT" ./lib/liss_codelib.js --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
         npx etl --verbose --timeout "$TIMEOUT" ./lib/cbs_projects.js --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
