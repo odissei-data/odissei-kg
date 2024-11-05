@@ -32,23 +32,7 @@ preflight:
   rules:
     - !reference [.etl-template, rules-preflight]
 
-### Stage 1: run example ETL "main"
-main:
-  stage: run-etls
-  interruptible: true
-  # WARNING: by setting 'allow_failure' to 'true' scripts that fail
-  # will not stop the ETL from continuing with other stages/scripts.
-  allow_failure: false
-  artifacts:
-    !reference [.etl-template, artifacts]
-  script:
-    - !reference [.etl-template, install]
-    - !reference [.etl-template, run-etl]
-  rules:
-    - when: never
-    - !reference [.etl-template, rules]
-
-### Stage 1: add another ETL with name "cbs_papers"
+### Stage 1: add ETL with name "cbs_papers"
 cbs_papers:
   stage: run-etls
   interruptible: true
@@ -58,19 +42,51 @@ cbs_papers:
   script:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
-    - if [ -z "$HEAD" ]; then 
-        npx etl --verbose --timeout "$TIMEOUT" ./lib/cbs_codelib.js  --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
-        npx etl --verbose --timeout "$TIMEOUT" ./lib/liss_codelib.js --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
-        npx etl --verbose --timeout "$TIMEOUT" ./lib/cbs_projects.js --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
-      else
-        npx etl --verbose --timeout "$TIMEOUT" ./lib/cbs_codelib.js  --log-dir logs --data-dir /data/$CI_PROJECT_PATH_SLUG/$CI_JOB_NAME/$CI_COMMIT_REF_NAME;
-      fi
-
   rules:
-    # Make sure you remove this next line if you want to use this stage:
     - when: always
     - !reference [.etl-template, rules]
 
+### Stage 1: add another ETL with name "cbs_projects"
+cbs_projects:
+  stage: run-etls
+  interruptible: true
+  allow_failure: false
+  artifacts:
+    !reference [.etl-template, artifacts]
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl]
+  rules:
+    - when: always
+    - !reference [.etl-template, rules]
+
+### Stage 1: add another ETL with name "cbs_codelib"
+cbs_codelib:
+  stage: run-etls
+  interruptible: true
+  allow_failure: false
+  artifacts:
+    !reference [.etl-template, artifacts]
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl]
+  rules:
+    - when: always
+    - !reference [.etl-template, rules]
+
+### Stage 1: add another ETL with name "liss_codelib"
+liss_codelib:
+  stage: run-etls
+  interruptible: true
+  allow_failure: false
+  artifacts:
+    !reference [.etl-template, artifacts]
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl]
+  rules:
+    - when: always
+    - !reference [.etl-template, rules]
 
 ### Example stage 2: create Knowledge Graph:
 cbs_codelib:
