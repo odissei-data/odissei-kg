@@ -89,7 +89,7 @@ liss_codelib:
     - !reference [.etl-template, rules]
 
 ### Example stage 2: create Knowledge Graph:
-cbs_codelib:
+create-knowledge-graph:
   stage: create-knowledge-graph
   interruptible: true
   script:
