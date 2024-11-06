@@ -43,7 +43,6 @@ cbs_papers:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
-    - when: always
     - !reference [.etl-template, rules]
 
 ### Stage 1: add another ETL with name "cbs_projects"
@@ -57,7 +56,6 @@ cbs_projects:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
-    - when: always
     - !reference [.etl-template, rules]
 
 ### Stage 1: add another ETL with name "cbs_codelib"
@@ -71,7 +69,6 @@ cbs_codelib:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
-    - when: always
     - !reference [.etl-template, rules]
 
 ### Stage 1: add another ETL with name "liss_codelib"
@@ -85,7 +82,6 @@ liss_codelib:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
-    - when: always
     - !reference [.etl-template, rules]
 
 ### Example stage 2: create Knowledge Graph:
