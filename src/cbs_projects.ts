@@ -1,21 +1,7 @@
-import {
-  Etl,
-  Iri,
-  Source,
-  declarePrefix,
-  environments,
-  when,
-  toTriplyDb,
-  fromXlsx,
-} from "@triplyetl/etl/generic";
-import {
-  addHashedIri,
-  addIri,
-  custom,
-  iri,
-  str,
-  triple,
-} from "@triplyetl/etl/ratt";
+// Import middlewares and other required libraries............................
+import { Etl, Iri, Source, environments, when } from "@triplyetl/etl/generic";
+import { toTriplyDb, fromXlsx } from "@triplyetl/etl/generic";
+import { addHashedIri, addIri, iri, str, triple } from "@triplyetl/etl/ratt";
 import { a, dct, sdo } from "@triplyetl/etl/vocab";
 // import { logRecord } from "@triplyetl/etl/debug";
 
@@ -44,9 +30,11 @@ const destination = {
   dataset:
     Etl.environment === environments.Acceptance
       ? "odissei-acceptance"
-      : Etl.environment === environments.Testing
+      : Etl.environment === environments.Development
         ? "odissei-acceptance"
-        : "odissei",
+        : Etl.environment === environments.Testing
+          ? "odissei-acceptance"
+          : "odissei",
 };
 
 export default async function (): Promise<Etl> {
