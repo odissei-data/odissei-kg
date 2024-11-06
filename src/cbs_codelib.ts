@@ -29,11 +29,9 @@ const destination = {
   account: process.env.USER ?? "odissei",
   prefixes: prefix,
   dataset:
-    Etl.environment === environments.Acceptance
-      ? "odissei-acceptance"
-      : Etl.environment === environments.Testing
-        ? "odissei-acceptance"
-        : "odissei",
+    Etl.environment === environments.Production
+      ? "odissei"
+      : "odissei-acceptance",
 };
 
 export default async function (): Promise<Etl> {
