@@ -64,7 +64,7 @@ export default async function (): Promise<Etl> {
         "NA",
         triple("_IRI", dct.isReferencedBy, iri("publication")),
       ),
-      when("data_link", triple("_IRI", dct.requires, iri("data_link"))),
+      when("link_data", triple("_IRI", dct.requires, iri("link_data"))),
       when(
         "programming language",
         triple("_IRI", dct.language, "programming language"),
