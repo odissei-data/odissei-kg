@@ -114,7 +114,7 @@ create-search-graph:
     - !reference [.etl-template, run-etl]
 
 ### Example stage 4: synchronise servcices for Search Graph:
-synchronise-services-search-graph:
+synchronise-services:
   stage: finalize
   interruptible: true
   artifacts:
