@@ -20,6 +20,7 @@ const destination = {
   defaultGraph: prefix.graph.concat("codelib/liss"),
   account: process.env.USER ?? "odissei",
   prefixes: prefix,
+  opts: { synchronizeServices: false },
   dataset:
     Etl.environment === environments.Production
       ? "odissei"
