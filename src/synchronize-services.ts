@@ -3,12 +3,6 @@ import { Etl, environments, Iri } from "@triplyetl/etl/generic";
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
 const prefix = {
   graph: prefix_base.concat("graph/"),
-  odissei_kg_schema: prefix_base.concat("schema/"),
-  //codelib: declarePrefix(prefix_base('cbs_codelib/')),
-  cbs_project: prefix_base.concat("cbs/project/"),
-  //doi: declarePrefix('https://doi.org/'),
-  //orcid: declarePrefix('https://orcid.org/'),
-  //issn: declarePrefix('https://portal.issn.org/resource/ISSN/')
 };
 
 const destination = {
