@@ -4,7 +4,7 @@ import { toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, split, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { a, dcm, dct, sdo } from "@triplyetl/etl/vocab"; // dct
-import { destination } from "./odissei_kg_utils.js";
+import { destination } from "./utils/odissei_kg_utils.js";
 
 const liss_codelib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_LISS.csv";
