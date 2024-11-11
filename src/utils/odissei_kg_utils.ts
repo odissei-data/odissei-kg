@@ -17,6 +17,6 @@ export const destination = {
   opts: { synchronizeServices: false },
   dataset:
     Etl.environment === environments.Production
-      ? "odissei"
-      : "odissei-acceptance",
+      ? "odissei-kg"
+      : "odissei-kg-acceptance",
 };
