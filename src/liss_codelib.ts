@@ -27,7 +27,7 @@ export default async function (): Promise<Etl> {
     when(
       "code",
       addIri({
-        // Generate IRI for article, use DOI, OSF or github link in code field
+        // Generate IRI for the article, use DOI, OSF or github link in code field
         content: "code",
         key: "_IRI",
       }),
@@ -63,7 +63,7 @@ export default async function (): Promise<Etl> {
         }),
         triple("_IRI", dct.requires, iris("_link_datas")),
       ),
-      
+
       when(
         "programming language",
         triple("_IRI", dct.language, "programming language"),
