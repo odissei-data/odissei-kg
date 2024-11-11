@@ -1,31 +1,13 @@
 // Import middlewares and other required libraries............................
-import { Etl, Source, Iri, when, whenNotEqual } from "@triplyetl/etl/generic";
-import { environments, toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
+import { Etl, Source, when, whenNotEqual } from "@triplyetl/etl/generic";
+import { toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, split, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { a, dcm, dct, sdo } from "@triplyetl/etl/vocab"; // dct
-
-// Declare prefixes.
-const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
-const prefix = {
-  graph: prefix_base.concat("graph/"),
-  odissei_kg_schema: prefix_base.concat("schema/"),
-  liss_project: prefix_base.concat("liss/project/"),
-};
+import { destination } from "./odissei_kg_utils.js";
 
 const liss_codelib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_LISS.csv";
-
-const destination = {
-  defaultGraph: prefix.graph.concat("codelib/liss"),
-  account: process.env.USER ?? "odissei",
-  prefixes: prefix,
-  opts: { synchronizeServices: false },
-  dataset:
-    Etl.environment === environments.Production
-      ? "odissei"
-      : "odissei-acceptance",
-};
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(destination);
@@ -48,7 +30,7 @@ export default async function (): Promise<Etl> {
         (context) => context.isNotEmpty("orcid"),
         split({
           content: "orcid",
-          separator: ",",
+          separator: ";",
           key: "_orcids",
         }),
         triple("_IRI", dct.creator, iris("_orcids")),
