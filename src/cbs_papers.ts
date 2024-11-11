@@ -1,38 +1,23 @@
-import { Etl, Source, Iri } from "@triplyetl/etl/generic";
-import {
-  environments,
-  fromXlsx,
-  when,
-  toTriplyDb,
-} from "@triplyetl/etl/generic";
+// Import middlewares and other required libraries............................
+import { Etl, Source } from "@triplyetl/etl/generic";
+import { fromXlsx, when, toTriplyDb } from "@triplyetl/etl/generic";
 import { addIri, iri, pairs, str, triple } from "@triplyetl/etl/ratt";
 import { bibo, a, dct, sdo } from "@triplyetl/etl/vocab"; // dct
-
-// Declare prefixes.
-const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
-const prefix = {
-  graph: prefix_base.concat("graph/"),
-  odissei_kg_schema: prefix_base.concat("schema/"),
-  cbs_project: prefix_base.concat("cbs/project/"),
-  doi: Iri("https://doi.org/"),
-};
+import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 const cbs_zotero_bib =
   "https://docs.google.com/spreadsheets/d/1JDjvKf3sf60e9_8v-ef0IkyCNxA9y0jlLuCBkcbM-fs/export?gid=1386315381";
 
-const destination = {
+const my_destination = {
   defaultGraph: prefix.graph.concat("papers"),
-  account: process.env.USER ?? "odissei",
-  prefixes: prefix,
-  opts: { synchronizeServices: false },
-  dataset:
-    Etl.environment === environments.Production
-      ? "odissei"
-      : "odissei-acceptance",
+  account: destination.account,
+  prefixes: destination.prefixes,
+  opts: destination.opts,
+  dataset: destination.dataset,
 };
 
 export default async function (): Promise<Etl> {
-  const etl = new Etl(destination);
+  const etl = new Etl(my_destination);
 
   etl.use(
     fromXlsx(Source.url(cbs_zotero_bib)),
@@ -66,7 +51,7 @@ export default async function (): Promise<Etl> {
       when("ShortTitle", triple("_IRI", bibo.shortTitle, "ShortTitle")),
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
-    toTriplyDb(destination),
+    toTriplyDb(my_destination),
   );
   return etl;
 }

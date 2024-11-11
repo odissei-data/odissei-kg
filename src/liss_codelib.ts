@@ -4,13 +4,21 @@ import { toTriplyDb, fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, split, triple } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { a, dcm, dct, sdo } from "@triplyetl/etl/vocab"; // dct
-import { destination } from "./utils/odissei_kg_utils.js";
+import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 const liss_codelib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_LISS.csv";
 
+const my_destination = {
+  defaultGraph: prefix.graph.concat("codelib/liss"),
+  account: destination.account,
+  prefixes: destination.prefixes,
+  opts: destination.opts,
+  dataset: destination.dataset,
+};
+
 export default async function (): Promise<Etl> {
-  const etl = new Etl(destination);
+  const etl = new Etl(my_destination);
 
   etl.use(
     fromCsv(Source.url(liss_codelib)),
@@ -52,7 +60,7 @@ export default async function (): Promise<Etl> {
       ),
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
-    toTriplyDb(destination),
+    toTriplyDb(my_destination),
   );
   return etl;
 }

@@ -6,38 +6,22 @@ import { addIri, iri, iris, pairs, triple } from "@triplyetl/etl/ratt";
 import { split, str } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
 import { a, dct, dcm, sdo } from "@triplyetl/etl/vocab"; // dct
-
-// Declare prefixes.
-const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
-const prefix = {
-  graph: prefix_base.concat("graph/"),
-  odissei_kg_schema: prefix_base.concat("schema/"),
-  //codelib: declarePrefix(prefix_base('cbs_codelib/')),
-  cbs_project: prefix_base.concat("cbs/project/"),
-  //doi: declarePrefix('https://doi.org/'),
-  //orcid: declarePrefix('https://orcid.org/'),
-  //issn: declarePrefix('https://portal.issn.org/resource/ISSN/')
-};
+import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 // const cbs_codelib = 'https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/Data/odissei-projects_CBS.csv'
 // const cbs_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/refs/heads/main/_data/cbs.csv";
 const cbs_codelib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
 
-const destination = {
+const my_destination = {
   defaultGraph: prefix.graph.concat("codelib/cbs"),
-  account: process.env.USER ?? "odissei",
-  prefixes: prefix,
-  opts: { synchronizeServices: false },
-  dataset:
-    Etl.environment === environments.Production
-      ? "odissei"
-      : "odissei-acceptance",
+  account: destination.account,
+  prefixes: destination.prefixes,
+  opts: destination.opts,
+  dataset: destination.dataset,
 };
-
 export default async function (): Promise<Etl> {
-  const etl = new Etl(destination);
-  // const cat_quads =await getRdf("https://mcal.odissei.nl/cv/contentAnalysisType/v0.1/")
+  const etl = new Etl(my_destination);
 
   etl.use(
     fromCsv(Source.url(cbs_codelib)),
@@ -92,7 +76,7 @@ export default async function (): Promise<Etl> {
       ),
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
-    toTriplyDb(destination),
+    toTriplyDb(my_destination),
   );
   return etl;
 }

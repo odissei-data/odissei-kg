@@ -7,11 +7,15 @@ const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
 export const prefix = {
   graph: prefix_base.concat("graph/"),
   odissei_kg_schema: prefix_base.concat("schema/"),
-  liss_project: prefix_base.concat("liss/project/"),
+  cbs_project: prefix_base.concat("cbs/project/"),
+  cbs_dataset: prefix_base.concat("cbs/dataset/"),
+  cbs_organisation: prefix_base.concat("cbs/organisation/"),
+  liss_project: prefix_base.concat("liss/project/"), // not used for now
+  doi: Iri("https://doi.org/"),
 };
 
-export const destination = {
-  defaultGraph: prefix.graph.concat("codelib/liss"),
+export var destination = {
+  defaultGraph: prefix.graph.concat("default"),
   account: process.env.USER ?? "odissei",
   prefixes: prefix,
   opts: { synchronizeServices: false },
