@@ -53,7 +53,17 @@ export default async function (): Promise<Etl> {
         "NA",
         triple("_IRI", dct.isReferencedBy, iri("publication")),
       ),
-      when("link_data", triple("_IRI", dct.requires, iri("link_data"))),
+      //when("link_data", triple("_IRI", dct.requires, iri("link_data"))),
+      when(
+        (context) => context.isNotEmpty("link_data"),
+        split({
+          content: "link_data",
+          separator: ";",
+          key: "_link_datas",
+        }),
+        triple("_IRI", dct.requires, iris("_link_datas")),
+      ),
+      
       when(
         "programming language",
         triple("_IRI", dct.language, "programming language"),
