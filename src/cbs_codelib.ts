@@ -1,6 +1,6 @@
 // Import middlewares and other required libraries............................
 import { Etl, Source, Iri, whenNotEqual } from "@triplyetl/etl/generic";
-import { environments, when, toTriplyDb } from "@triplyetl/etl/generic";
+import { when, toTriplyDb } from "@triplyetl/etl/generic";
 import { fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, pairs, triple } from "@triplyetl/etl/ratt";
 import { split, str } from "@triplyetl/etl/ratt";

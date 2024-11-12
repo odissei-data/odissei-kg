@@ -1,5 +1,5 @@
 // Import middlewares and other required libraries............................
-import { Etl, Iri, Source, environments, when } from "@triplyetl/etl/generic";
+import { Etl, Source, when } from "@triplyetl/etl/generic";
 import { toTriplyDb, fromXlsx } from "@triplyetl/etl/generic";
 import { addHashedIri, addIri, iri, str, triple } from "@triplyetl/etl/ratt";
 import { a, dct, sdo } from "@triplyetl/etl/vocab";
