@@ -1,18 +1,5 @@
-import { Etl, environments, Iri } from "@triplyetl/etl/generic";
-// Declare prefixes.
-const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
-const prefix = {
-  graph: prefix_base.concat("graph/"),
-};
-
-const destination = {
-  defaultGraph: prefix.graph.concat("codelib/cbs"),
-  account: process.env.USER ?? "odissei",
-  dataset:
-    Etl.environment === environments.Production
-      ? "odissei"
-      : "odissei-acceptance",
-};
+import { Etl } from "@triplyetl/etl/generic";
+import { destination } from "./utils/odissei_kg_utils.js";
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(destination);
