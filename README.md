@@ -1,10 +1,31 @@
-# Triply ETL for odissei
+# Source code used to create the ODISSEI Knowledge Graph (KG)
 
-In order to be able to publish linked data to an online data catalog, TriplyEtl must first be configured.
-This is done with the following steps:
+This repository contains the software we used to extract, transform and load
+(ETL) data into the platform [kg.odissei.nl](https://kg.odissei.nl/).  If you
+are mainly interested in the resulting data, feel free to ignore this repository
+and go to this platform directly.
+
+If you are interested in the details on how the data on
+[kg.odissei.nl](https://kg.odissei.nl/) was created, this repository might help.
+We reuse existing datasets, typically in some tabular format, as our input.  We
+than use the Triply ETL approach to convert the tabular data into RDF and upload
+it to a triple store. Inspecting the code in the TypeScript files in the ./src
+folder might be insighful to see how each input file has been converted to RDF.
+In principle, each file converts an input file to RDF and uploads the results
+into the triplestore. If you have questions about this, feel free to contact us
+over slack or email or open an issue on github.
+
+If you want to run the code  you will need access to a Triply.cc instance. The
+remainder of this README assumes you have such access and that you would like to
+modify and run the ETL code yourself. In order to be able to publish linked data
+to an online data catalog, TriplyEtl must first be configured. This is done with
+the following steps:
 
 ## 1. Install dependencies
-TriplyETL uses 3rd party software which are called "dependencies". When you have run the generator, these dependencies were installed for you already. If not, for example if you installed your project from an existing Git repository, you should go into the folder containing your code and run `npm install`. This will download all dependencies for you to your local computer.
+TriplyETL uses 3rd party software which are called "dependencies". When you have run the generator,
+these dependencies were installed for you already. If not, for example if you installed your project
+from an existing Git repository, you should go into the folder containing your code and run `npm
+install`. This will download all dependencies for you to your local computer.
 
 ## 1. Create a TriplyDB API Token
 
