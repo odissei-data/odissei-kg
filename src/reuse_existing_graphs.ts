@@ -1,7 +1,14 @@
 import { Etl, Source, Destination } from "@triplyetl/etl/generic";
 import { destination } from "./utils/odissei_kg_utils.js";
 
-const jobs = [ {source_location: 'https://www.dublincore.org/specifications/bibo/bibo/bibo.ttl', destination_graph: 'https://www.dublincore.org/specifications/bibo/'}]
+const jobs = [ 
+  { source_location: 'https://www.dublincore.org/specifications/bibo/bibo/bibo.ttl', 
+    destination_graph: 'https://www.dublincore.org/specifications/bibo/'
+  },
+  { source_location: 'https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl',
+    destination_graph: 'https://terms.codata.org/rdmt/'
+  }
+  ]
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(destination);
