@@ -7,6 +7,9 @@ const jobs = [
   },
   { source_location: 'https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl',
     destination_graph: 'https://terms.codata.org/rdmt/'
+  },
+  { source_location: 'https://www.w3.org/TR/skos-reference/skos.rdf',
+    destination_graph: 'https://www.w3.org/TR/skos-reference/skos.rdf'
   }
   ]
 
