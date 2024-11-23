@@ -32,8 +32,8 @@ preflight:
   rules:
     - !reference [.etl-template, rules-preflight]
 
-### Stage 1: add ETL with name "cbs_papers"
-cbs_papers:
+### Stage 1: add ETL with name "cbs_papers_zotero_odissei"
+cbs_papers_zotero_odissei:
   stage: run-etls
   interruptible: true
   allow_failure: false
