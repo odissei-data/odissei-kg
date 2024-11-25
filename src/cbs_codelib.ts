@@ -1,5 +1,5 @@
 // Import middlewares and other required libraries............................
-import { Etl, Source, Iri, whenNotEqual } from "@triplyetl/etl/generic";
+import { Etl, Source, whenNotEqual } from "@triplyetl/etl/generic";
 import { when, toTriplyDb } from "@triplyetl/etl/generic";
 import { fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, pairs, triple } from "@triplyetl/etl/ratt";
@@ -12,14 +12,10 @@ import { destination, prefix } from "./utils/odissei_kg_utils.js";
 // const cbs_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/refs/heads/main/_data/cbs.csv";
 const cbs_codelib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
+  
+var my_destination: any = destination;
+my_destination.defaultGraph = prefix.graph.concat("codelib/cbs");
 
-const my_destination = {
-  defaultGraph: prefix.graph.concat("codelib/cbs"),
-  account: destination.account,
-  prefixes: destination.prefixes,
-  opts: destination.opts,
-  dataset: destination.dataset,
-};
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
 
