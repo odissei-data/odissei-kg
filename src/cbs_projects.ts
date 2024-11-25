@@ -15,20 +15,13 @@ const cbs_projects_before =
 const cbs_projects_after =
   "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_na_2023.xlsx";
 
-const my_destination = {
-  defaultGraph: prefix.graph.concat("projects"),
-  account: destination.account,
-  prefixes: destination.prefixes,
-  opts: destination.opts,
-  dataset: destination.dataset,
-};
+  var my_destination: any = destination;
+  my_destination.defaultGraph = prefix.graph.concat("codelib/cbs");
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
-
  
   etl.use(
-    // fromXlsx([Source.url(cbs_projects_after), Source.url(cbs_projects_before)], { sheetNames: ['2024'], groupColumnsByName: true }),
     fromXlsx(
       [
         Source.url(cbs_projects_before),
