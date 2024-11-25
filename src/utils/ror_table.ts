@@ -1,0 +1,52 @@
+
+import { Iri } from "@triplyetl/etl/generic";
+
+export const ror_table = {
+    'ABF Research':                                   Iri('http://abfresearch.nl/'),
+    'Academisch Medisch Centrum Amsterdam (AMC) - UvA': Iri('https://ror.org/03t4gr691'),
+    'Atlas Research B.V.':                            Iri('https://atlasresearch.nl/'),
+    'CBS sector SAL':                                 Iri('https://ror.org/0408v4c28'),
+    'CBS sector DBD':                                 Iri('https://ror.org/0408v4c28'),
+    'Centerdata Research Institute':                  Iri('https://www.centerdata.nl/'),
+    'Centraal Planbureau':                            Iri('https://ror.org/04rjxzd30'),
+    'Erasmus Universiteit Rotterdam_Rotterdam School of Management':Iri('https://ror.org/057w15z03'),
+    'Erasmus Universiteit Rotterdam_Erasmus School of Economics': Iri('https://ror.org/057w15z03'),
+    'Erasmus Universiteit Rotterdam_Erasmus School of Social and Behavioural Sciences': Iri('https://ror.org/057w15z03'),
+    'Gemeente Amsterdam, Dienst Onderzoek en Statistiek': Iri('https://ror.org/003h0ev22'),
+    'Ministerie van Sociale Zaken':                   Iri('https://ror.org/05xaz7757'),
+    'Ministerie van Sociale Zaken en Werkgelegenheid, Directie Financieel-Economische Zaken': 
+                                                      Iri('https://ror.org/05xaz7757'),
+    'Nederlands Instituut voor Onderzoek v/d Gezondheidszorg': Iri('https://ror.org/015xq7480'),
+    'Nederlands Interdisciplinair Demografisch Instituut': Iri('https://ror.org/04kf5kc54'),
+    'Panteia_EIM':                                    Iri('https://ror.org/00p5j4e25'),
+    'Panteia, Branches en data, Strategisch onderzoek, Bedrijfslevenbeleid, Arbeidsmarkt en onderwijs': Iri('https://ror.org/00p5j4e25'),
+    'Radboud Universiteit Nijmegen':                  Iri('https://ror.org/016xsfp80'),
+    'Rijksuniversiteit Groningen':                    Iri('https://ror.org/012p63287'),
+    'Rijksinstituut voor Volksgezondheid en Milieu':  Iri('https://ror.org/01cesdt21'),
+    'SEO Economisch Onderzoek':                       Iri('https://ror.org/021088259'),
+    'Sociaal en Cultureel Planbureau':                Iri('https://ror.org/04tagjk85'),
+    'Stichting voor Economisch Onderzoek Rotterdam BV': Iri('https://seor.nl'),
+    'Technische Universiteit Delft':                  Iri('https://ror.org/02e2c7k09'),
+    'Tilburg University':                             Iri('https://ror.org/04b8v1s79'),
+    'Tilburg University_ School of Economics and Management':  Iri('https://ror.org/04b8v1s79'),
+    'TNO Bouw en Ondergrond':                         Iri('https://ror.org/01bnjb948'),
+    'TNO Kwaliteit van Leven':                        Iri('https://ror.org/01bnjb948'),
+    'Universiteit Maastricht_School of Business and Economics_Researchcentrum Onderwijs en Arbeidmarkt': 
+                                                      Iri('https://ror.org/02jz4aj89'),
+    'Universitair Medisch Centrum Erasmus Rotterdam': Iri('https://ror.org/018906e22'),
+    'Universitair Medisch Centrum Leiden':            Iri('https://ror.org/05xvt9f17'),
+    'Universitair Medisch Centrum Groningen':         Iri('https://ror.org/03cv38k47'),
+    'Universitair Medisch Centrum Radboud Nijmegen':  Iri('https://ror.org/05wg1m734'),
+    'Universiteit Maastricht_School of Business and Economics': Iri('https://ror.org/02jz4aj89'),
+    'Universiteit Leiden':                            Iri('https://ror.org/027bh9e22'),
+    'Universiteit Leiden_faculteit rechten':          Iri('https://ror.org/027bh9e22'),
+    'Universiteit Utrecht':                           Iri('https://ror.org/04pp8hn57'),
+    'VeiligheidNL':                                   Iri('https://ror.org/05qwpv987'),
+    'Vrije Universiteit Amsterdam':                   Iri('https://ror.org/008xxew50'),
+    'Vrije Universiteit Amsterdam_School of Business and Economics':  Iri('https://ror.org/008xxew50'),
+    'Vrije Universiteit Amsterdam Medisch Centrum (VUMC)':
+                                                      Iri('https://ror.org/00q6h8f30'),
+    'Wageningen University & Research':               Iri('https://ror.org/04qw24q55'),
+    'Wageningen University, Wageningen Economic Research': Iri('https://ror.org/04qw24q55'),
+    'Yale University':                                Iri('https://ror.org/03v76x132')
+}
