@@ -40,7 +40,6 @@ export default async function (): Promise<Etl> {
         }),
         pairs(
           "_IRI",
-          [iri(prefix.odissei_kg_schema, str("project")), "_CBSproject"],
           [sdo.producer, "_CBSproject"],
         ),
       ),
