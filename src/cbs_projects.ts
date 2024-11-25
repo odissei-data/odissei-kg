@@ -16,7 +16,7 @@ const cbs_projects_after =
   "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_na_2023.xlsx";
 
   var my_destination: any = destination;
-  my_destination.defaultGraph = prefix.graph.concat("codelib/cbs");
+  my_destination.defaultGraph = prefix.graph.concat("projects");
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
