@@ -11,9 +11,11 @@ import { logRecord } from "@triplyetl/etl/debug";
 var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("cbs_publications");
 
+const year_pattern = new RegExp('^[0-9][0-9][0-9][0-9]$'); 
+
 const cbs_publications =
   "https://www.cbs.nl/-/media/cbs-op-maat/microdatabestanden/documents/2023/33/publicatie_overzicht_internet_augustus_2023.xlsx";
-
+  
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
 
@@ -35,7 +37,8 @@ export default async function (): Promise<Etl> {
       ),
       when('Pub_titel',  triple('URL', dct.title, 'Pub_titel')),
       when('Pub_auteur', triple('URL', dct.creator, 'Pub_auteur')),
-      when('Pub_jaar',   triple('URL', dct.date, literal('Pub_jaar', xsd.string))), // FIXME convert to xsd.date
+      when(context => context.isNotEmpty('Pub_jaar') && year_pattern.test(context.getString('Pub_jaar')),   
+        triple('URL', dct.date, literal('Pub_jaar', xsd.gYear))), // FIXME convert to xsd.date
       translateSome({
         content: 'Instelling',
         table: ror_table,
