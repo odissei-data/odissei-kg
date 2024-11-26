@@ -5,16 +5,11 @@ import { addIri, iri, pairs, str, triple } from "@triplyetl/etl/ratt";
 import { bibo, a, dct, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
+var my_destination: any = destination;
+my_destination.defaultGraph = prefix.graph.concat("papers_with_doi");
+
 const cbs_zotero_bib =
   "https://docs.google.com/spreadsheets/d/1JDjvKf3sf60e9_8v-ef0IkyCNxA9y0jlLuCBkcbM-fs/export?gid=1386315381";
-
-const my_destination = {
-  defaultGraph: prefix.graph.concat("papers"),
-  account: destination.account,
-  prefixes: destination.prefixes,
-  opts: destination.opts,
-  dataset: destination.dataset,
-};
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
