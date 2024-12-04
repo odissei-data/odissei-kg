@@ -1,3 +1,6 @@
+// ETL job to load existing RDF data sources into the right named graph
+// on the Triply platform.
+
 import { Etl, Source, Destination } from "@triplyetl/etl/generic";
 import { destination } from "./utils/odissei_kg_utils.js";
 
@@ -18,10 +21,6 @@ const jobs = [
     destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
   }
   ]
-
-//  Source.TriplyDb.asset(destination.account, destination.dataset, {
-//   name: "projecten_met_bestanden_einddatum_na_2023.xlsx",
-//  }),
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(destination);
