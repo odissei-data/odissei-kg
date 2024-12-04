@@ -17,8 +17,8 @@
   "license": "UNLICENSED",
   "contributors": [
     {
-      "name": "iva.dimitrova",
-      "email": "iva.dimitrova@triply.cc"
+      "name": "jacco.van.ossenbruggen",
+      "email": "jacco.van.ossenbruggen@vu.nl"
     }
   ],
   "scripts": {
@@ -31,5 +31,5 @@
     "prepare": "husky install"
   },
   "version": "1.0.0",
-  "name": "odissei"
+  "name": "odissei-kg"
 }
