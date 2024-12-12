@@ -25,7 +25,7 @@ const jobs = [
 export default async function (): Promise<Etl> {
   const etl = new Etl(destination);
   for (const j of jobs) { 
-    console.log(j.destination_graph),
+    console.info(j.destination_graph),
     await etl.copySource(
         j.source_location,
         Destination.triplyDb({
