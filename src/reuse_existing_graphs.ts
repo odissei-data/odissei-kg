@@ -17,9 +17,10 @@ const jobs = [
   { source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
     destination_graph: 'https://w3id.org/odissei/cv/cbs/variableThesaurus/'
   },
-  { source_location:   Source.url('https://fuseki.devstack.odissei.nl/odissei/'),
-    destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
-  }
+  // FIXME: uncomment when this resource becomes available again
+  //{ source_location:   Source.url('https://fuseki.devstack.odissei.nl/odissei/'),
+  //  destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
+  //}
   ]
 
 export default async function (): Promise<Etl> {
