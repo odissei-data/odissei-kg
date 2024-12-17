@@ -6,16 +6,10 @@ import { logRecord } from "@triplyetl/etl/debug";
 import { a, dcm, dct, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
-const liss_codelib =
-  "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_LISS.csv";
+const liss_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/_data/liss.csv";
 
-const my_destination = {
-  defaultGraph: prefix.graph.concat("codelib/liss"),
-  account: destination.account,
-  prefixes: destination.prefixes,
-  opts: destination.opts,
-  dataset: destination.dataset,
-};
+var my_destination: any = destination;
+my_destination.defaultGraph = prefix.graph.concat("codelib/liss");
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
