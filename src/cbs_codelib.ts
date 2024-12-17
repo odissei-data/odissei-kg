@@ -9,9 +9,8 @@ import { a, dct, dcm, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 // const cbs_codelib = 'https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/Data/odissei-projects_CBS.csv'
-// const cbs_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/refs/heads/main/_data/cbs.csv";
-const cbs_codelib =
-  "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
+// const cbs_codelib = "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
+const cbs_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/_data/cbs.csv";
   
 var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("codelib/cbs");
@@ -69,6 +68,17 @@ export default async function (): Promise<Etl> {
         }),
         triple("_IRI", dct.creator, iris("_orcids")),
       ),
+      when(
+        (context) => context.isNotEmpty("data produced"),
+        split({
+          content: "data produced",
+          separator: ";",
+          key: "_output_datasets",
+        }),
+        triple(iris("_output_datasets"), dct.publisher, "_IRI"),
+      ),
+      when("data used", triple("_IRI", dct.requires, "data used")),
+
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
