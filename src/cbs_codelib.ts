@@ -25,7 +25,7 @@ export default async function (): Promise<Etl> {
     when(
       "code",
       addIri({
-        // Generate IRI for article, use DOI, OSF or github link in code field
+        // Generate IRI for code, use DOI, OSF or github link in code field
         content: "code",
         key: "_IRI",
       }),
@@ -75,7 +75,9 @@ export default async function (): Promise<Etl> {
           separator: ";",
           key: "_output_datasets",
         }),
+        triple(iris("_output_datasets"), a, dcm.Dataset),
         triple(iris("_output_datasets"), dct.publisher, "_IRI"),
+        triple("_IRI", sdo.produces, iris("_output_datasets")),
       ),
       when("data used", triple("_IRI", dct.requires, "data used")),
 
