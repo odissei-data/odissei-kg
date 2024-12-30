@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# This shell script is no longer used, since it is replaced by
+# ./src/reuse_existing_graphs.ts to run it automatically in the gitlab ci/cd pipeline.
+#
 # To run this script, please clone https://github.com/odissei-data/vocabularies
 # in the same parent folder as this repo.
 VOCAB_FOLDER=../vocabularies
