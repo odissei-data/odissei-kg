@@ -1,0 +1,18 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix odissei: <https://w3id.org/odissei/ns/> .  # Replace with your actual ODISSEI namespace
+
+# Classes
+odissei:ODISSEI rdf:type rdfs:Class .
+odissei:Variable_thesaurus rdf:type rdfs:Class .
+odissei:Projects rdf:type rdfs:Class .
+odissei:Papers rdf:type rdfs:Class .
+odissei:Code_library rdf:type rdfs:Class .
+
+# Relationships
+odissei:ODISSEI rdfs:label "Provides data for portal.odissei.nl" .
+odissei:Variable_thesaurus rdfs:subClassOf odissei:ODISSEI .  # Variable_thesaurus describes attributes of ODISSEI
+odissei:Projects rdfs:domain odissei:ODISSEI .  # Projects uses datasets from ODISSEI
+odissei:Papers rdfs:domain odissei:Projects .   # Papers use data from Projects
+odissei:Papers rdfs:range odissei:ODISSEI .     # Papers store scientific papers produced by Projects
+odissei:Code_library rdfs:domain odissei:Projects . # Code_library contains source codes from Projects
