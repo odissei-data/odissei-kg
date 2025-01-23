@@ -5,9 +5,9 @@ import { Etl, Source, Destination } from "@triplyetl/etl/generic";
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 const jobs = [ 
-  // { source_location:   Source.file("./static/odissei.ttl"), 
-  //   destination_graph: 'https://w3id.org/odissei/ns/kg/schema/'
-  // },
+  { source_location:   Source.file("./static/odissei.ttl"), 
+    destination_graph: 'https://w3id.org/odissei/ns/kg/schema/'
+  },
   { source_location:   Source.url('https://www.dublincore.org/specifications/bibo/bibo/bibo.ttl'), 
     destination_graph: 'https://www.dublincore.org/specifications/bibo/'
   },
