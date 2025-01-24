@@ -1,18 +1,55 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# Existing namespaces from other schemas we reuse
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix odissei: <https://w3id.org/odissei/ns/> .  # Replace with your actual ODISSEI namespace
+@prefix schema: <http://schema.org/> .  # Dataverse uses http ...
+@prefix sdo:    <https://schema.org/> . # Triply uses https ...
+
+@prefix ore:  <http://www.openarchives.org/ore/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/Software> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+
+# Namespaces introduced by ODISSEI:
+@prefix odissei:            <https://w3id.org/odissei/ns/kg/> . 
+@prefix odissei_kg_schema:  <https://w3id.org/odissei/ns/kg/schema> . 
+@prefix cbs_project:        <https://w3id.org/odissei/ns/kg/cbs/project/> . 
+@prefix cbs_dataset:        <https://w3id.org/odissei/ns/kg/cbs/dataset/> . 
 
 # Classes
-odissei:ODISSEI rdf:type rdfs:Class .
-odissei:Variable_thesaurus rdf:type rdfs:Class .
-odissei:Projects rdf:type rdfs:Class .
-odissei:Papers rdf:type rdfs:Class .
-odissei:Code_library rdf:type rdfs:Class .
+# Here we define the main classes for the ODISSEI KG:
+# research datasets, research software/tools, academic papers, research projects
 
-# Relationships
-odissei:ODISSEI rdfs:label "Provides data for portal.odissei.nl" .
-odissei:Variable_thesaurus rdfs:subClassOf odissei:ODISSEI .  # Variable_thesaurus describes attributes of ODISSEI
-odissei:Projects rdfs:domain odissei:ODISSEI .  # Projects uses datasets from ODISSEI
-odissei:Papers rdfs:domain odissei:Projects .   # Papers use data from Projects
-odissei:Papers rdfs:range odissei:ODISSEI .     # Papers store scientific papers produced by Projects
-odissei:Code_library rdfs:domain odissei:Projects . # Code_library contains source codes from Projects
+# For datasets, we use Dataverse convention that a dataset is both
+# a schema.org Dataset and an OAI/ORE Aggregation 
+schema:Dataset  a rdfs:Class .
+ore:Aggregation a rdfs:Class .
+
+# For software & tools, we use Software as defined by the Dublin Core types, and tools
+# are also a schema.org CreativeWork:
+dcmitype:Software a rdfs:Class .
+sdo:CreativeWork  a rdfs:Class .
+
+# For academic, preer-reviewed publications, we use BIBO's AcademicArticle, 
+# when unsure, just Article
+bibo:AcademicArticle a rdfs:Class .
+
+# For research projects, we use schema.org's ResearchProject
+sdo:ResearchProject a rdfs:Class .
+
+# Key relationships connecting these classes:
+
+# Projects can be producers of Articles and/or Software
+sdo:producer a rdfs:Property .
+
+
+# odissei:ODISSEI rdf:type rdfs:Class .
+# odissei:Variable_thesaurus rdf:type rdfs:Class .
+# odissei:Projects rdf:type rdfs:Class .
+# odissei:Papers rdf:type rdfs:Class .
+# odissei:Code_library rdf:type rdfs:Class .
+
+# odissei:ODISSEI rdfs:label "Provides data for portal.odissei.nl" .
+# odissei:Variable_thesaurus rdfs:subClassOf odissei:ODISSEI .  # Variable_thesaurus describes attributes of ODISSEI
+# odissei:Projects rdfs:domain odissei:ODISSEI .  # Projects uses datasets from ODISSEI
+# odissei:Papers rdfs:domain odissei:Projects .   # Papers use data from Projects
+# odissei:Papers rdfs:range odissei:ODISSEI .     # Papers store scientific papers produced by Projects
+# odissei:Code_library rdfs:domain odissei:Projects . # Code_library contains source codes from Projects
