@@ -11,6 +11,9 @@ const jobs = [
   { source_location:   Source.url('https://www.dublincore.org/specifications/bibo/bibo/bibo.ttl'), 
     destination_graph: 'https://www.dublincore.org/specifications/bibo/'
   },
+  { source_location:   Source.url('https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'),
+    destination_graph: 'https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'
+  },
   { source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl'),
     destination_graph: 'https://terms.codata.org/rdmt/'
   },
