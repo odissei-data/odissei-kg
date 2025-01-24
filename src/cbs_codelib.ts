@@ -5,6 +5,7 @@ import { fromCsv } from "@triplyetl/etl/generic";
 import { addIri, iri, iris, pairs, triple } from "@triplyetl/etl/ratt";
 import { split, str } from "@triplyetl/etl/ratt";
 import { logRecord } from "@triplyetl/etl/debug";
+import { validate } from '@triplyetl/etl/shacl'
 import { a, dct, dcm, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
@@ -82,7 +83,7 @@ export default async function (): Promise<Etl> {
       when("data used", triple("_IRI", dct.requires, "data used")),
 
     ),
-    //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
+    validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
   );
   return etl;
