@@ -4,66 +4,26 @@ prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix sh:   <http://www.w3.org/ns/shacl#>
 prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix dcmitype: <http://purl.org/dc/dcmitype/> 
+prefix sdo:    <https://schema.org/>  # Triply uses https ...
 
 
 # Project-specific prefix
-prefix graph: <https://example.org/graph/>
-prefix shp:   <https://example.org/model/shp/>
+prefix graph: <https://w3id.org/odissei/ns/kg/shape/graph/>
+prefix shp:   <https://w3id.org/odissei/ns/kg/shape/>
 
 graph:model {
 
-  shp:Person
+  shp:Software
     a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    sh:closed false ;
     sh:property
-      shp:Person_name,
-      shp:Person_firstName,
-      shp:Person_birthday,
-      shp:Person_sameAs,
-      shp:Person_depiction,
-      shp:Person_lastName;
-    sh:targetClass foaf:Person.
+      shp:producer;
+    sh:targetClass dcmitype:Software .
 
-  shp:Person_birthday
+  shp:producer
     a sh:PropertyShape;
-    sh:datatype xsd:date;
-    sh:maxCount 1;
-    sh:minCount 1;
-    sh:path foaf:birthday.
-
-  shp:Person_sameAs
-    a sh:PropertyShape;
-    sh:maxCount 1;
-    sh:minCount 1;
-    sh:nodeKind sh:IRI ;
-    sh:path owl:sameAs .
-
-  shp:Person_depiction
-    a sh:PropertyShape;
-    sh:maxCount 1;
-    sh:minCount 1;
-    sh:nodeKind sh:IRI ;
-    sh:path foaf:depiction .
-
-  shp:Person_name
-    a sh:PropertyShape;
-    sh:datatype xsd:string;
-    sh:maxCount 1;
-    sh:minCount 1;
-    sh:path foaf:name.
-
-  shp:Person_firstName
-    a sh:PropertyShape;
-    sh:datatype xsd:string;
-    sh:minCount 1;
-    sh:path foaf:firstName .
-
-  shp:Person_lastName
-    a sh:PropertyShape;
-    sh:datatype xsd:string;
-    sh:maxCount 1;
-    sh:minCount 1;
-    sh:path foaf:lastName .
+    sh:minCount 0;
+    sh:path sdo:producer .
 
 }
