@@ -20,6 +20,9 @@ const jobs = [
   { source_location:   Source.url('https://www.w3.org/TR/skos-reference/skos.rdf'),
     destination_graph: 'https://www.w3.org/TR/skos-reference/skos.rdf'
   },
+  { source_location:   Source.url('https://tools.clariah.nl/data.ttl'),
+    destination_graph:  'https://tools.clariah.nl/data/'
+  },
   { source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
     destination_graph: 'https://w3id.org/odissei/cv/cbs/variableThesaurus/'
   },
