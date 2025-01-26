@@ -26,6 +26,8 @@ export default async function (): Promise<Etl> {
         key: "_IRI",
       }),
       triple("_IRI", a, dcm.Software),
+      triple("_IRI", a, sdo.SoftwareSourceCode),
+
       when("title", triple("_IRI", dct.title, "title")),
       when("project_lead", triple("_IRI", dct.contributor, "project_lead")),
       when(

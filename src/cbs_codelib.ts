@@ -30,7 +30,7 @@ export default async function (): Promise<Etl> {
         content: "code",
         key: "_IRI",
       }),
-      pairs("_IRI", [a, dcm.Software], [a, sdo.CreativeWork]),
+      pairs("_IRI", [a, dcm.Software], [a, sdo.SoftwareSourceCode]),
       when(
         "CBS_project_nr",
         addIri({
