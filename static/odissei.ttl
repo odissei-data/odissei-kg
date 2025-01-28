@@ -23,10 +23,10 @@
 schema:Dataset  a rdfs:Class .
 ore:Aggregation a rdfs:Class .
 
-# For software & tools, we use Software as defined by the Dublin Core types, and tools
-# are also a schema.org CreativeWork:
-dcmitype:Software a rdfs:Class .
-sdo:CreativeWork  a rdfs:Class .
+# For software & tools, we use Software as defined by the Dublin Core types, and
+# also schema.org SoftwareSourceCode:
+dcmitype:Software       a rdfs:Class .
+sdo:SoftwareSourceCode  a rdfs:Class .
 
 # For academic, preer-reviewed publications, we use BIBO's AcademicArticle, 
 # when unsure, just Article
