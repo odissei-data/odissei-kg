@@ -11,6 +11,9 @@ const liss_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-cod
 var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("codelib/liss");
 
+const codemeta = {
+  referencePublication: prefix.codemeta.concat("referencePublication")
+}
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
 
@@ -49,6 +52,7 @@ export default async function (): Promise<Etl> {
         "publication",
         "NA",
         triple("_IRI", dct.isReferencedBy, iri("publication")),
+        triple("_IRI", codemeta.referencePublication, iri("publication")),
       ),
       //when("link_data", triple("_IRI", dct.requires, iri("link_data"))),
       when(
