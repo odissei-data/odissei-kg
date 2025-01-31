@@ -68,6 +68,7 @@ export default async function (): Promise<Etl> {
           key: "_orcids",
         }),
         triple("_IRI", dct.creator, iris("_orcids")),
+        triple("_IRI", sdo.author, iris("_orcids")),
       ),
       when(
         (context) => context.isNotEmpty("data produced"),
