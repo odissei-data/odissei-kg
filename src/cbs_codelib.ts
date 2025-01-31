@@ -12,7 +12,16 @@ import { destination, prefix } from "./utils/odissei_kg_utils.js";
 // const cbs_codelib = 'https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/Data/odissei-projects_CBS.csv'
 // const cbs_codelib = "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/data-prep/data/odissei-projects_CBS.csv";
 const cbs_codelib = "https://raw.githubusercontent.com/odissei-data/ODISSEI-code-library/main/_data/cbs.csv";
-  
+
+const codemeta = {
+  referencePublication: prefix.codemeta.concat("referencePublication")
+}
+
+//https://w3id.org/software-iodata#producesData
+const sftio = {
+  producesData: prefix.sftio.concat("producesData")
+}
+
 var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("codelib/cbs");
 
@@ -46,9 +55,11 @@ export default async function (): Promise<Etl> {
       when(
         "programming language",
         triple("_IRI", dct.language, "programming language"),
+        triple("_IRI", sdo.programmingLanguage, "programming language"),
       ),
       when("title", triple("_IRI", dct.title, "title")),
-      when("project_lead", triple("_IRI", dct.contributor, "project_lead")),
+      when("title", triple("_IRI", sdo.name, "title")),
+      when("project_lead", triple("_IRI", sdo.maintainer, "project_lead")),
       whenNotEqual(
         "ODISSEI_grant",
         "NA",
@@ -58,6 +69,7 @@ export default async function (): Promise<Etl> {
         "publication",
         "NA",
         triple("_IRI", dct.isReferencedBy, iri("publication")),
+        triple("_IRI", codemeta.referencePublication, iri("publication")),
       ),
 
       when(
@@ -79,7 +91,9 @@ export default async function (): Promise<Etl> {
         }),
         triple(iris("_output_datasets"), a, dcm.Dataset),
         triple(iris("_output_datasets"), dct.publisher, "_IRI"),
+        triple(iris("_output_datasets"), sdo.publisher, "_IRI"),
         triple("_IRI", sdo.produces, iris("_output_datasets")),
+        triple("_IRI", sftio.producesData, iris("_output_datasets")),
       ),
       when("data used", triple("_IRI", dct.requires, "data used")),
 
