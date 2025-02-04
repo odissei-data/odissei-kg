@@ -109,14 +109,13 @@ reuse_existing_graphs:
     - if: $CI_PIPELINE_SOURCE == "schedule"
 
 ### Example stage 3: informationproduct Search Graph:
-create-search-graph:
+schemaFix:
   stage: informationproducts
   interruptible: true
-  artifacts:
-    !reference [.etl-template, artifacts]
+ # artifacts:
+ #   !reference [.etl-template, artifacts]
   rules:
     # Make sure you remove this next line if you want to use this stage:
-    - when: never
     - if: $TASK == "informationproducts"
     - if: $TASK == $CI_JOB_NAME
     - if: $CI_PIPELINE_SOURCE == "schedule"
