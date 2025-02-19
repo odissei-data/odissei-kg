@@ -13,11 +13,15 @@
   },
   "main": "lib/cbs_projects.js",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "CC-BY-SA",
   "contributors": [
     {
       "name": "jacco.van.ossenbruggen",
       "email": "jacco.van.ossenbruggen@vu.nl"
+    },
+    {
+      "name": "André Valdestilhas",
+      "email": "a.valdestilhas@vu.nl"
     }
   ],
   "scripts": {
