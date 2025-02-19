@@ -23,6 +23,9 @@ const jobs = [
   { source_location:   Source.url('https://tools.clariah.nl/data.ttl'),
     destination_graph:  'https://tools.clariah.nl/data/'
   },
+  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
+    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4' 
+  },
   { source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
     destination_graph: 'https://w3id.org/odissei/cv/cbs/variableThesaurus/'
   },
