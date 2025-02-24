@@ -1,0 +1,10 @@
+prefix sdo: <https://schema.org/>
+prefix schema: <http://schema.org/>
+Construct{
+  ?s a sdo:SoftwareSourceCode .
+}
+WHERE {
+  GRAPH <https://tools.clariah.nl/data/> {
+    ?s a schema:SoftwareSourceCode.
+  }
+}

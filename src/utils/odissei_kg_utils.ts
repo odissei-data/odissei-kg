@@ -10,6 +10,8 @@ export const prefix = {
   cbs_project: prefix_base.concat("cbs/project/"),
   cbs_dataset: prefix_base.concat("cbs/dataset/"),
   doi: Iri("https://doi.org/"),
+  codemeta: Iri('https://codemeta.github.io/terms/'),
+  sftio: Iri('https://w3id.org/software-iodata#'),
 };
 
 export const destination = {
