@@ -1,0 +1,14 @@
+# Please copy this example to .env and adapt where needed.
+# Do NOT commit tokens and other credentials to git.
+TRIPLYDB_TOKEN=<you should have received this when you created our TriplyDB API Token, see README.md>
+CI_JOB_TOKEN=<ask Jacco or Andre for the secret CI_JOB_TOKEN>
+
+# Replace USER by your triply.db personal login name if you do not like to 
+# upload to the odissei organisation datasets. 
+# Feel free to keep it like this if you are not sure.
+USER=odissei		
+
+
+# Feel free to break things in the Acceptance environment.
+# Replace the value of ENV by "Production" if you really know what you are doing ....
+ENV=Acceptance	
