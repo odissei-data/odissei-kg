@@ -2,7 +2,8 @@
   "author": "Triply <info@triply.cc>",
   "type": "module",
   "dependencies": {
-    "@triplyetl/etl": "^4.9.6"
+    "@triplyetl/etl": "^4.9.6",
+    "husky": "^9.1.7"
   },
   "description": "Triply ETL for odissei",
   "lint-staged": {
@@ -30,8 +31,7 @@
     "util:lint": "cross-env ESLINT_STRICT=true eslint --ext .tsx --ext .ts ./src",
     "util:lint:fix": "cross-env ESLINT_STRICT=true eslint --fix --ext .tsx --ext .ts ./src",
     "util:validateTs": "tsc --noEmit",
-    "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput",
-    "prepare": "husky install"
+    "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "version": "1.0.0",
   "name": "odissei-kg"
