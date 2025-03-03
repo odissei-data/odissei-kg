@@ -20,9 +20,7 @@ const jobs = [
   { source_location:   Source.url('https://www.w3.org/TR/skos-reference/skos.rdf'),
     destination_graph: 'https://www.w3.org/TR/skos-reference/skos.rdf'
   },
-  { // FIXME: source should be the original clariah location once they fix the json ld
-    // https://raw.githubusercontent.com/CLARIAH/tool-discovery/master/schemas/nwo-research-fields.jsonld
-    source_location:    Source.url('https://raw.githubusercontent.com/odissei-data/tool-discovery/refs/heads/master/schemas/nwo-research-fields.jsonld'),
+  { source_location:    Source.url('https://raw.githubusercontent.com/CLARIAH/tool-discovery/master/schemas/nwo-research-fields.jsonld'),
     destination_graph:  'https://w3id.org/nwo-research-fields#'
   },
   { source_location:    Source.url('https://raw.githubusercontent.com/CLARIAH/tool-discovery/refs/heads/master/schemas/research-technology-readiness-levels.jsonld'),
