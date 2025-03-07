@@ -33,6 +33,10 @@ const jobs = [
   { source_location:    Source.url('https://w3id.org/research-technology-readiness-levels#'),
     destination_graph:  'https://w3id.org/research-technology-readiness-levels#'
   },
+  // Software types by Maarten & Daniel:
+  { source_location: Source.url('https://w3id.org/software-types#'),
+    destination_graph: 'https://w3id.org/software-types#'
+  },
   // CLARIAH Tools registry
   { source_location:   Source.url('https://tools.clariah.nl/data.ttl'),
     destination_graph:  'https://tools.clariah.nl/data/'
