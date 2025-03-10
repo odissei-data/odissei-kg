@@ -24,18 +24,19 @@ const jobs = [
   { source_location:   Source.url('https://www.w3.org/TR/skos-reference/skos.rdf'),
     destination_graph: 'https://www.w3.org/TR/skos-reference/skos.rdf'
   },
+  // Software types by Maarten & Daniel:
+  { // source_location: Source.url('https://softwareunderstanding.github.io/software_types/release/1.0.0/software-types.ttl'),
+    source_location: Source.url('https://raw.githubusercontent.com/odissei-data/software_types/refs/heads/main/release/1.0.0/software-types.ttl'),
+    destination_graph: 'https://w3id.org/software-types#'
+  },
   // NWO Research fields, based on https://www.nwo.nl/en/nwo-research-fields
   // See https://github.com/CLARIAH/tool-discovery/blob/master/schemas/nwo-research-fields.jsonld for details:
-  { source_location:    Source.url('https://w3id.org/nwo-research-fields#'),
+  { source_location:    Source.url('https://raw.githubusercontent.com/CLARIAH/tool-discovery/refs/heads/master/schemas/nwo-research-fields.jsonld'),
     destination_graph:  'https://w3id.org/nwo-research-fields#'
   },
   // TRLs, see https://github.com/CLARIAH/tool-discovery/blob/master/schemas/research-technology-readiness-levels.jsonld
-  { source_location:    Source.url('https://w3id.org/research-technology-readiness-levels#'),
+  { source_location:    Source.url('https://raw.githubusercontent.com/CLARIAH/tool-discovery/refs/heads/master/schemas/research-technology-readiness-levels.jsonld'),
     destination_graph:  'https://w3id.org/research-technology-readiness-levels#'
-  },
-  // Software types by Maarten & Daniel:
-  { source_location: Source.url('https://w3id.org/software-types#'),
-    destination_graph: 'https://w3id.org/software-types#'
   },
   // CLARIAH Tools registry
   { source_location:   Source.url('https://tools.clariah.nl/data.ttl'),
