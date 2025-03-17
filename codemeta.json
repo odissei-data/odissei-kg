@@ -1,51 +1,113 @@
 {
-    "@context": "https://w3id.org/codemeta/3.0",
+    "@context": [
+        "https://w3id.org/codemeta/3.0",
+        "http://schema.org",
+        "https://w3id.org/software-types",
+        "https://w3id.org/software-iodata"
+    ],
     "type": "SoftwareSourceCode",
-    "applicationCategory": "Knowledge Graph",
+    "applicationCategory": [ 
+        { "@id": "https://w3id.org/nwo-research-fields#CommunicationScience"},
+        { "@id": "https://w3id.org/nwo-research-fields#Demography"},
+        { "@id": "https://w3id.org/nwo-research-fields#Economics"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#LifeSciences"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#Medicine"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#Psychology"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#EducationalSciences"},
+        { "@id": "https://w3id.org/nwo-research-fields#Pedagogics"},
+        { "@id": "https://w3id.org/nwo-research-fields#Law"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#GeographyPlanning"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#Sociology"},
+        { "@id": "https://vocabs.dariah.eu/tadirah/disseminating"}
+        ],
     "author": [
         {
-            "id": "_:author_1",
-            "type": "Person",
+            "@id": "https://orcid.org/0000-0002-7748-4715",
+            "@type": "Person",
             "affiliation": {
-                "type": "Organization",
+                "@type": "Organization",
+                "@id": "https://ror.org/008xxew50",
                 "name": "VU Amsterdam"
             },
             "familyName": "van Ossenbruggen",
             "givenName": "Jacco"
         }
     ],
-    "codeRepository": "https://github.com/odissei-data/odissei-kg",
-    "contributor": {
-        "id": "_:contributor_1",
-        "type": "Person",
-        "affiliation": {
-            "type": "Organization",
-            "name": "VU Amsterdam"
-        },
-        "email": "a.valdestilhas@vu.nl",
-        "familyName": "Valdestilhas",
-        "givenName": "Andre"
-    },
-    "dateCreated": "2023-07-21",
+    "codeRepository": "https://github.com/odissei-data/ODISSEI-code-library",
+    "contributor": [
+        {
+            "@id": "https://orcid.org/0000-0002-0079-2533",
+            "@type": "Person",
+            "affiliation": {  
+                "@type": "Organization",
+                "@id": "https://ror.org/008xxew50",
+                "name": "VU Amsterdam"
+            },
+            "email": "a.valdestilhas@vu.nl",
+            "familyName": "Valdestilhas",
+            "givenName": "Andre"
+        }
+    ],
+    "dateCreated": "2024-10-17",
     "description": "This repository contains the software we used to extract, transform and load (ETL) data into the platform kg.odissei.nl. If you are mainly interested in the resulting data, feel free to ignore this repository and go to this platform directly.",
-    "funder": {
-        "type": "Organization",
-        "name": "SSHOC-NL"
-    },
-    "identifier": "https://kg.odissei.nl/odissei/odissei-kg",
+    "funding": 
+    [
+        {
+            "@type": "Grant",
+            "name": "ODISSEI: Better Infrastructure, Better Science, Better Society (NWO Grant 184.035.014)",
+            "funder": {
+                "@type": "Organization",
+                "name": "NWO",
+                "@id": "https://www.nwo.nl"
+                }
+            },
+            {
+                "@type": "Grant",
+                "name": "Building a FAIR Expertise Hub for the social sciences",
+                "funder": {
+                    "@type": "Organization",
+                    "name": "PDI-SSH",
+                    "url": "https://pdi-ssh.nl/nl/2021/11/gehonoreerde-projecten-2021-call/"
+                }
+            },
+            {
+                "@type": "Grant",
+                "name": "Social Science and Humanities Open Cloud for the Netherlands (SSHOC-NL, NWO Grant 184.036.020)",
+                "funder": {
+                    "@type": "Organization",
+                    "name": "NWO",
+                    "@id": "https://www.nwo.nl"
+                    }
+            }
+        ],
+    "identifier": "https://github.com/odissei-data/odissei-kg/",
     "keywords": [
         "Odissei",
-        "Knowledge Graph"
+        "codelibrary"
     ],
-    "name": "Odissei KG",
+    "name": "Odissei Knowledge Graph",
+    "readme": "https://github.com/odissei-data/odissei-kg/blob/main/README.md",
+    "buildInstructions": "https://github.com/odissei-data/odissei-kg/blob/main/README.md",
+    "license": "http://www.apache.org/licenses/LICENSE-2.0",
     "programmingLanguage": "TypeScript",
-    "version": "1.0",
-    "codemeta:contIntegration": {
+    "softwareHelp": [
+        {
+          "@id": "https://github.com/odissei-data/odissei-kg/",
+          "@type": "Source code",
+          "name": "Odissei Knowledge Graph",
+          "url": "https://kg.odissei.nl/odissei/odissei-kg"
+        }
+    ],
+    "version": "1.0.1",
+    "contIntegration": "https://github.com/odissei-data/odissei-kg",
+    "codemeta:continuousIntegration": {
         "id": "https://github.com/odissei-data/odissei-kg"
     },
-    "continuousIntegration": "https://github.com/odissei-data/odissei-kg",
-    "developmentStatus": "active",
-    "funding": "SSHOC-NL",
+    "developmentStatus": [ "https://www.repostatus.org/#active", "https://w3id.org/research-technology-readiness-levels#Level8Complete" ],
     "issueTracker": "https://github.com/odissei-data/odissei-kg/issues",
-    "referencePublication": "https://doi.org/10.5281/zenodo.4302096"
+    "referencePublication": {
+        "@type": "ScholarlyArticle",
+        "id": "https://kg.odissei.nl/odissei/-/stories/ODISSEI-Knowledge-Graph-the-story"
+    }
 }
