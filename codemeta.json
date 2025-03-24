@@ -55,6 +55,7 @@
     [
         {
             "@type": "Grant",
+            "@id": "https://doi.org/10.5281/zenodo.6977151",
             "name": "ODISSEI: Better Infrastructure, Better Science, Better Society (NWO Grant 184.035.014)",
             "funder": {
                 "@type": "Organization",
