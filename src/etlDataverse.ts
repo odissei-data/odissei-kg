@@ -6,7 +6,6 @@ import { type MiddlewareList, when, forEach } from '@triplyetl/etl/generic'
 import { addIri, triple, literal, iri } from '@triplyetl/etl/ratt'
 
 export default function dataverse(): MiddlewareList {
-  console.log("ETL Dataverse!!!!")
   return [
     addIri({
       prefix: "https://example.org/toBeReplacedLater/",
