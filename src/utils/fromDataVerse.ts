@@ -49,7 +49,8 @@ async function fetchDataverse (dataverseId: number): Promise<[any, any]> {
         if (response.status !== 200) {
           throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
         }
-        return await response.json()
+        //return await response.json()
+        return response.json()
       }
     )
   )
