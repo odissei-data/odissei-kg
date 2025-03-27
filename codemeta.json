@@ -55,6 +55,7 @@
     [
         {
             "@type": "Grant",
+            "@id": "https://doi.org/10.5281/zenodo.6977151",
             "name": "ODISSEI: Better Infrastructure, Better Science, Better Society (NWO Grant 184.035.014)",
             "funder": {
                 "@type": "Organization",
@@ -83,19 +84,20 @@
         ],
     "identifier": "https://github.com/odissei-data/odissei-kg/",
     "keywords": [
-        "Odissei",
-        "codelibrary"
+        "ODISSEI",
+        "Knowledge Graph"
     ],
-    "name": "Odissei Knowledge Graph",
+    "name": "ODISSEI Knowledge Graph",
     "readme": "https://github.com/odissei-data/odissei-kg/blob/main/README.md",
     "buildInstructions": "https://github.com/odissei-data/odissei-kg/blob/main/README.md",
     "license": "http://www.apache.org/licenses/LICENSE-2.0",
+    "thumbnailUrl": "https://raw.githubusercontent.com/odissei-data/odissei-kg/refs/heads/acceptance/odissei.png",
     "programmingLanguage": "TypeScript",
     "softwareHelp": [
         {
           "@id": "https://github.com/odissei-data/odissei-kg/",
           "@type": "Source code",
-          "name": "Odissei Knowledge Graph",
+          "name": "ODISSEI Knowledge Graph",
           "url": "https://kg.odissei.nl/odissei/odissei-kg"
         }
     ],
