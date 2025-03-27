@@ -8,7 +8,7 @@ import { addIri, triple, literal, iri } from '@triplyetl/etl/ratt'
 export default function dataverse(): MiddlewareList {
   return [
     addIri({
-      prefix: "https://example.org/toBeReplacedLater/",
+      prefix: prefix.dataverseUrl,
       content: 'id',
       key: 'dataverseIri'
     }),
