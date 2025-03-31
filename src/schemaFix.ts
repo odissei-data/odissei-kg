@@ -9,7 +9,7 @@ my_destination.defaultGraph = prefix.graph.concat('schemaFix');
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination)
   etl.use(
-    //loadRdf(Source.TriplyDb.rdf(destination.account, destination.dataset)),
+    // Load RDF from the follwing query: https://kg.odissei.nl/odissei/-/queries/Fixing-http-replacing-by-https/4
     loadRdf(Source.TriplyDb.query(destination.account, 'Fixing-http-replacing-by-https')),
     toTriplyDb(my_destination)
     //logQuads(),
