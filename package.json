@@ -2,7 +2,7 @@
   "author": "Triply <info@triply.cc>",
   "type": "module",
   "dependencies": {
-    "@triplyetl/etl": "^4.9.6",
+    "@triplyetl/etl": "^4.10.0",
     "husky": "^9.1.7"
   },
   "description": "Triply ETL for odissei",
