@@ -32,6 +32,20 @@ preflight:
   rules:
     - !reference [.etl-template, rules-preflight]
 
+### Stage 1: add ETL with name "vu_dataverseETL"
+vu_dataverseETL:
+  stage: run-etls
+  interruptible: true
+  allow_failure: false
+  artifacts:
+    !reference [.etl-template, artifacts]
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl]
+  rules:
+    - !reference [.etl-template, rules]
+    - if: $DATAVERSE == "TRUE"
+
 ### Stage 1: add ETL with name "cbs_papers_zotero_odissei"
 cbs_papers_zotero_odissei:
   stage: run-etls
@@ -43,7 +57,7 @@ cbs_papers_zotero_odissei:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
-    - !reference [.etl-template, rules]
+    - !reference [.etl-template, rules]  
 
 cbs_publications:
   stage: run-etls
@@ -122,6 +136,8 @@ schemaFix:
   script:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
+
+
 
 ### Example stage 4: synchronise servcices for Search Graph:
 synchronize-services:
