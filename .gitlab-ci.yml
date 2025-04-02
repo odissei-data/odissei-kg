@@ -39,12 +39,12 @@ vu_dataverseETL:
   allow_failure: false
   artifacts:
     !reference [.etl-template, artifacts]
+  rules:
+    - if: $DATAVERSE == "TRUE"
+    - !reference [.etl-template, rules]
   script:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
-  rules:
-    - !reference [.etl-template, rules]
-    - if: $DATAVERSE == "TRUE"
 
 ### Stage 1: add ETL with name "cbs_papers_zotero_odissei"
 cbs_papers_zotero_odissei:
