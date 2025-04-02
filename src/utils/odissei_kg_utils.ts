@@ -13,7 +13,7 @@ export const prefix = {
   doi: Iri("https://doi.org/"),
   codemeta: Iri('https://codemeta.github.io/terms/'),
   sftio: Iri('https://w3id.org/software-iodata#'),
-  dataverseUrl: Iri('https://portal.odissei.nl/'),
+  dataverseUrl: Iri('https://portal.odissei.nl/dataverse/'),
 };
 
 export const destination = {

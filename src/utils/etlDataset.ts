@@ -1,17 +1,17 @@
 import { addIri, addLiteral, iri, literal, pairs, str, triple } from '@triplyetl/etl/ratt'
 import { type MiddlewareList, when, whenForEach, ifElse } from '@triplyetl/etl/generic'
 import { a, sdo, xsd } from '@triplyetl/vocabularies'
+import { logRecord } from '@triplyetl/etl/debug'
 import { prefix } from '../utils/odissei_kg_utils.js'
 
 export default function dataset(): MiddlewareList {
   return [
     // The key 'latestVersion' is not always present in the current data when 'type' is 'dataset'.
     // For example it is not present in record 2.
-    
+    //logRecord({key:"latestVersion.metadataBlocks.variableInformation"}),
     when('latestVersion', [
       addIri({
-        prefix: prefix.dataverseUrl,
-        content: 'latestVersion.datasetId',
+        content: 'persistentUrl',
         key: 'datasetIri'
       }),
   
