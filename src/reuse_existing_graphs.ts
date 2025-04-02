@@ -67,6 +67,7 @@ export default async function (): Promise<Etl> {
           dataset: destination.dataset,
           opts: { defaultGraph: j.destination_graph, synchronizeServices: false }
         })
-    )}
+      ).catch(e => { console.error((e as Error).message) })
+  }
   return etl;
 }
