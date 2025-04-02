@@ -51,9 +51,9 @@ const jobs = [
     destination_graph: 'https://w3id.org/odissei/cv/cbs/variableThesaurus/'
   },
   // ODISSEI Portal dump, exported from portal.odissei.nl via fuseki and triply asset ....
-  { source_location:   Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'portal-dump.ttl.gz'}),
-    destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
-  }
+  //{ source_location:   Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'portal-dump.ttl.gz'}),
+  //  destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
+  //}
   ]
 
 export default async function (): Promise<Etl> {
