@@ -9,28 +9,24 @@ export default function dataverse(): MiddlewareList {
   return [
     addIri({
       prefix: prefix.dataverseUrl,
-      content: 'id',
+      content: 'alias',
       key: 'dataverseIri'
     }),
-    addIri({
-      prefix: prefix.dataverseUrl,
-      content: 'alias',
-      key: 'DataverseNativeViewer'
-    }),
-    triple('dataverseIri', prefix.graph.concat('nativeViewer'), 'DataverseNativeViewer'),
-    triple('dataverseIri', sdo.url, 'DataverseNativeViewer'),
     triple('dataverseIri', a, sdo.DataCatalog),
     forEach('dataverseContacts', [
       triple('$parent.dataverseIri', sdo.email, literal('contactEmail', xsd.anyURI))
     ]),
     triple('dataverseIri', sdo.name, 'name'),
     triple('dataverseIri', sdo.dateCreated, literal('creationDate', xsd.dateTime)),
+    triple('dataverseIri', sdo.identifier, literal('id', xsd.integer)),
+    
     when('affiliation', [
       triple('dataverseIri', sdo.affiliation, 'affiliation')
     ]),
     when('parentDataverseId', [
       triple(iri(prefix.dataverseUrl, 'parentDataverseId'), sdo.hasPart, 'dataverseIri')
     ]),
+  
     when('description', [
       triple('dataverseIri', sdo.description, literalStringOrHtml('description'))
     ])
