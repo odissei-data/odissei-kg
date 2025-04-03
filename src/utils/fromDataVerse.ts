@@ -1,5 +1,6 @@
 import { type Middleware } from '@triplyetl/etl/generic'
-const DataverseApi = 'https://portal.odissei.nl/api'
+import { prefix } from './odissei_kg_utils.js'
+const DataverseApi = prefix.dataverseAPI
 // cons DaverseAPI = ''
 
 /**

@@ -5,6 +5,7 @@ import { type Context, declarePrefix } from '@triplyetl/etl/generic'
 
 // Declare prefixes.
 const prefix_base = Iri("https://w3id.org/odissei/ns/kg/");
+const dataverse = Iri('https://portal.staging.odissei.nl/');
 export const prefix = {
   graph: prefix_base.concat("graph/"),
   odissei_kg_schema: prefix_base.concat("schema/"),
@@ -13,7 +14,9 @@ export const prefix = {
   doi: Iri("https://doi.org/"),
   codemeta: Iri('https://codemeta.github.io/terms/'),
   sftio: Iri('https://w3id.org/software-iodata#'),
-  dataverseUrl: Iri('https://portal.odissei.nl/dataverse/'),
+  dataverseUrl: dataverse.concat('dataverse/'),
+  dataverseAPI: dataverse.concat('api')
+  //dataverseUrl: Iri('https://portal.odissei.nl/dataverse/'),
 };
 
 export const destination = {

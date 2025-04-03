@@ -19,11 +19,11 @@ export default function dataset(): MiddlewareList {
       ifElse({
         if: 'latestVersion.license.uri',
         then: [
-          addIri({
-          content: 'latestVersion.license.uri',
-          key: 'licenseURI'
-          }),
-          triple('datasetIri', sdo.license, 'licenseURI'), 
+            addIri({
+            content: 'latestVersion.license.uri',
+            key: 'licenseURI'
+            }),
+            triple('datasetIri', sdo.license, 'licenseURI'),
       ]},{
         else: [
           addIri({

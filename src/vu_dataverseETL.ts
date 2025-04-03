@@ -7,7 +7,8 @@ import etlDataverse from './etlDataverse.js'
 
 
 var my_destination: any = destination;
-my_destination.defaultGraph = prefix.graph.concat('dataverse_vu');
+//my_destination.defaultGraph = prefix.graph.concat('dataverse_vu');
+my_destination.defaultGraph = prefix.graph.concat('dataverse_vu_stagging');
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination)
