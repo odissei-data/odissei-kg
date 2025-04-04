@@ -32,8 +32,8 @@ preflight:
   rules:
     - !reference [.etl-template, rules-preflight]
 
-### Stage 1: add ETL with name "vu_dataverseETL"
-vu_dataverseETL:
+### Stage 1: add ETLs
+dataverse:
   stage: run-etls
   interruptible: true
   allow_failure: false
