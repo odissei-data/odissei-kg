@@ -1,6 +1,6 @@
 import { a, xsd, sdo } from '@triplyetl/vocabularies'
 //import { prefix } from '../helpers/generics.js'// , rdf1
-import literalStringOrHtml, { destination, prefix } from "./utils/odissei_kg_utils.js";
+import literalStringOrHtml, { destination, prefix } from "./odissei_kg_utils.js";
 //import literalStringOrHtml from './literalStringOrHtml.js'
 import { type MiddlewareList, when, forEach } from '@triplyetl/etl/generic'
 import { addIri, triple, literal, iri } from '@triplyetl/etl/ratt'

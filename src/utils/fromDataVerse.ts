@@ -71,6 +71,7 @@ async function fetchDataset (datasetId: number): Promise<any> {
   if (response.status !== 200) throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
   let json: any
   json = await response.json()
+  // console.info(json)
   /**
    * Remove annoying `data: {}` envelope
    */
