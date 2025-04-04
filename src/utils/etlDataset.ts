@@ -9,6 +9,7 @@ export default function dataset(): MiddlewareList {
     // The key 'latestVersion' is not always present in the current data when 'type' is 'dataset'.
     // For example it is not present in record 2.
     //logRecord({key:"latestVersion.metadataBlocks.variableInformation"}),
+    logRecord({key:"id"}),
     when('latestVersion', [
       addIri({
         content: 'persistentUrl',
