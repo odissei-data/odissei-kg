@@ -27,8 +27,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch --preserveWatchOutput",
-    "util:lint": "cross-env ESLINT_STRICT=true eslint ./src",
-    "util:lint:fix": "cross-env ESLINT_STRICT=true eslint --fix ./src",
+    "util:lint": "cross-env ESLINT_STRICT=true eslint --ext .tsx --ext .ts ./src",
+    "util:lint:fix": "cross-env ESLINT_STRICT=true eslint --fix --ext .tsx --ext .ts ./src",
     "util:validateTs": "tsc --noEmit",
     "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput"
   },
