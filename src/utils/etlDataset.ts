@@ -1,4 +1,4 @@
-import { addIri, addLiteral, addHashedIri, iri, literal, pairs, str, triple } from '@triplyetl/etl/ratt'
+import { addIri, addLiteral, addHashedIri, custom, iris, literal, pairs, str, triple } from '@triplyetl/etl/ratt'
 import { type MiddlewareList, when, whenForEach, ifElse, fromJson } from '@triplyetl/etl/generic'
 import { a, sdo, xsd } from '@triplyetl/vocabularies'
 import { logRecord } from '@triplyetl/etl/debug'
@@ -39,6 +39,24 @@ export default function dataset(): MiddlewareList {
       triple('datasetIri', dsv.datasetSchema, '_datasetSchemaIri'),
       // triple('_datasetSchemaIri', dsv.datasetSchema, iri('_varIri')),
       // adding a license code when present or text warning when not
+      when(
+        context => context.getAny('datasetVersion.metadataBlocks.variableInformation.fields[0].value'),
+        custom.add({
+         value: context => context.getAny('datasetVersion.metadataBlocks.variableInformation.fields[0].value'),
+         key: '_variables'
+        }),
+        custom.change({
+          key: '_variables',
+          type: 'any',
+          change: value => {
+            return (value as any).map((value:any) => {
+              console.info(value);
+              return value.getAny('odisseiVariableVocabularyURI');
+            })
+          }  
+        }),
+        triple('datasetIri', dsv.datasetSchema, iris('_variables')),
+      ),
       ifElse({
         if: 'datasetVersion.license.uri',
         then: [
