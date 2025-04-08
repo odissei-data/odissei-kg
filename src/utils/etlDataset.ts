@@ -33,7 +33,7 @@ export default function dataset(): MiddlewareList {
         content: ['datasetIri', str('schema')],
         key: '_datasetSchemaIri'
       }),
-      logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
+      //logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
       triple('datasetIri', a, dsv.Dataset),
       triple('_datasetSchemaIri', a, dsv.DatasetSchema),
       triple('datasetIri', dsv.datasetSchema, '_datasetSchemaIri'),
@@ -50,8 +50,11 @@ export default function dataset(): MiddlewareList {
           type: 'any',
           change: value => {
             return (value as any).map((value:any) => {
-              console.info(value);
-              return value.getAny('odisseiVariableVocabularyURI.value');
+              try{
+              console.info(Object.values(value.odisseiVariableVocabularyURI)[3]);
+              } catch(e){}
+              //return Object.values(value.odisseiVariableVocabularyURI)[3];
+              return "https://w3id.org/odissei/cv/cbs/variableThesaurus/c3236d2aedfb240d76e4da0513139f7ee7482dc080af2e5b789ef3bbcb0083a84";
             })
           }  
         }),
