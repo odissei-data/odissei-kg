@@ -9,6 +9,10 @@ const jobs = [
   { source_location:   Source.file("./static/odissei.ttl"), 
     destination_graph: 'https://w3id.org/odissei/ns/kg/schema/'
   },
+  // Margherita's DataSet-Variable Ontology
+  { source_location:    Source.url('https://ritamargherita.github.io/DataSet-Variable-Ontology/ontology.ttl'),
+    destination_graph:  'https://w3id.org/dsv-ontology#'
+  },
   // Bibliographic Ontology
   { source_location:   Source.url('https://www.dublincore.org/specifications/bibo/bibo/bibo.ttl'), 
     destination_graph: 'https://www.dublincore.org/specifications/bibo/'
