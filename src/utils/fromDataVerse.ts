@@ -16,13 +16,14 @@ export default function fromApi (): Middleware {
     async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
       const [dataverse, dataverseContents] = await fetchDataverse(dataverseId)
       dataverse.type = 'dataverse'
+      console.info(dataverse.title)
       if (parentDataverseId !== undefined) dataverse.parentDataverseId = parentDataverseId
       await next(dataverse, ctx.app.getNewStore())
       for (const contents of dataverseContents) {
         contents.parentDataverseId = dataverseId
         if (contents.type === 'dataset') {
           try {
-            const dataset = await fetchDataset(contents.identifier, contents.authority)
+            const dataset = await fetchDataset(contents.protocol, contents.identifier, contents.authority)
             dataset.type = 'dataset'
             dataset.dataverseId = dataverseId
             await next(dataset, ctx.app.getNewStore())
@@ -65,8 +66,8 @@ async function fetchDataverse (dataverseId: number): Promise<[any, any]> {
 
   return [dataverse, dataverseContents] as [any, any]
 }
-async function fetchDataset (datasetId: number, authority: string): Promise<any> {
-  const link = `${DataverseApi}/datasets/export?exporter=dataverse_json&persistentId=doi:${authority}/${datasetId}`
+async function fetchDataset (protocol: string, datasetId: number, authority: string): Promise<any> {
+  const link = `${DataverseApi}/datasets/export?exporter=dataverse_json&persistentId=${protocol}:${authority}/${datasetId}`
   const response = await fetch(link)
   if (response.status !== 200) throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
   let json: any
