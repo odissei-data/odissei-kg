@@ -22,7 +22,7 @@ export default function fromApi (): Middleware {
         contents.parentDataverseId = dataverseId
         if (contents.type === 'dataset') {
           try {
-            const dataset = await fetchDataset(contents.id)
+            const dataset = await fetchDataset(contents.identifier, contents.authority)
             dataset.type = 'dataset'
             dataset.dataverseId = dataverseId
             await next(dataset, ctx.app.getNewStore())
@@ -65,8 +65,8 @@ async function fetchDataverse (dataverseId: number): Promise<[any, any]> {
 
   return [dataverse, dataverseContents] as [any, any]
 }
-async function fetchDataset (datasetId: number): Promise<any> {
-  const link = `${DataverseApi}/datasets/${datasetId}`
+async function fetchDataset (datasetId: number, authority: string): Promise<any> {
+  const link = `${DataverseApi}/datasets/export?exporter=dataverse_json&persistentId=doi:${authority}/${datasetId}`
   const response = await fetch(link)
   if (response.status !== 200) throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
   let json: any
