@@ -51,7 +51,7 @@ export default function dataset(): MiddlewareList {
           change: value => {
             return (value as any).map((value:any) => {
               console.info(value);
-              return value.getAny('odisseiVariableVocabularyURI');
+              return value.getAny('odisseiVariableVocabularyURI.value');
             })
           }  
         }),
