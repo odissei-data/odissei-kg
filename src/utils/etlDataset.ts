@@ -1,8 +1,15 @@
-import { addIri, addLiteral, iri, literal, pairs, str, triple } from '@triplyetl/etl/ratt'
-import { type MiddlewareList, when, whenForEach, ifElse } from '@triplyetl/etl/generic'
+import { addIri, addLiteral, addHashedIri, iri, literal, pairs, str, triple } from '@triplyetl/etl/ratt'
+import { type MiddlewareList, when, whenForEach, ifElse, fromJson } from '@triplyetl/etl/generic'
 import { a, sdo, xsd } from '@triplyetl/vocabularies'
 import { logRecord } from '@triplyetl/etl/debug'
 import { prefix } from '../utils/odissei_kg_utils.js'
+import TraceInfoFc from '@triplyetl/etl/_internal/runner/components/TraceInfo'
+
+const dsv = {
+  Dataset: prefix.dsv.concat("Dataset"),
+  DatasetSchema: prefix.dsv.concat("DatasetSchema"),
+  datasetSchema: prefix.dsv.concat("datasetSchema"),
+}
 
 export default function dataset(): MiddlewareList {
   return [
@@ -16,6 +23,21 @@ export default function dataset(): MiddlewareList {
         key: 'datasetIri'
       }),
   
+      // addIri(
+      //   { content: 'datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value',
+      //     key: '_varIri'
+      //   }
+      // ),
+      addHashedIri({
+        prefix: prefix.dataverseGraph,
+        content: ['datasetIri', str('schema')],
+        key: '_datasetSchemaIri'
+      }),
+      logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
+      triple('datasetIri', a, dsv.Dataset),
+      triple('_datasetSchemaIri', a, dsv.DatasetSchema),
+      triple('datasetIri', dsv.datasetSchema, '_datasetSchemaIri'),
+      // triple('_datasetSchemaIri', dsv.datasetSchema, iri('_varIri')),
       // adding a license code when present or text warning when not
       ifElse({
         if: 'datasetVersion.license.uri',
