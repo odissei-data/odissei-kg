@@ -16,7 +16,7 @@ export default function fromApi (): Middleware {
     async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
       const [dataverse, dataverseContents] = await fetchDataverse(dataverseId)
       dataverse.type = 'dataverse'
-      console.info(dataverse.title)
+      console.info(dataverse.alias)
       if (parentDataverseId !== undefined) dataverse.parentDataverseId = parentDataverseId
       await next(dataverse, ctx.app.getNewStore())
       for (const contents of dataverseContents) {
