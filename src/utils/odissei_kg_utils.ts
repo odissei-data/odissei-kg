@@ -9,6 +9,7 @@ const dataverse = Iri('https://portal.staging.odissei.nl/');
 //   const dataverse = Iri('https://portal.odissei.nl/');
 export const prefix = {
   graph: prefix_base.concat("graph/"),
+  dsv: declarePrefix('https://w3id.org/dsv-ontology#'),
   odissei_kg_schema: prefix_base.concat("schema/"),
   cbs_project: prefix_base.concat("cbs/project/"),
   cbs_dataset: prefix_base.concat("cbs/dataset/"),
@@ -16,8 +17,9 @@ export const prefix = {
   codemeta: Iri('https://codemeta.github.io/terms/'),
   sftio: Iri('https://w3id.org/software-iodata#'),
   dataverseUrl: dataverse.concat('dataverse/'),
-  dataverseAPI: dataverse.concat('api')
   //dataverseUrl: Iri('https://portal.odissei.nl/dataverse/'),
+  dataverseAPI: dataverse.concat('api'),
+  dataverseGraph: prefix_base.concat("dataverse/")
 };
 
 export const destination = {
