@@ -6,11 +6,11 @@ import { prefix } from '../utils/odissei_kg_utils.js'
 
 export default function dataset(): MiddlewareList {
   return [
-    // The key 'latestVersion' is not always present in the current data when 'type' is 'dataset'.
+    // The key 'datasetVersion' is not always present in the current data when 'type' is 'dataset'.
     // For example it is not present in record 2.
-    //logRecord({key:"latestVersion.metadataBlocks.variableInformation"}),
-    logRecord({key:"id"}),
-    when('latestVersion', [
+    // logRecord({key:"datasetVersion.metadataBlocks.variableInformation"}),
+    // logRecord({key:"id"}),
+    when('datasetVersion', [
       addIri({
         content: 'persistentUrl',
         key: 'datasetIri'
@@ -18,10 +18,10 @@ export default function dataset(): MiddlewareList {
   
       // adding a license code when present or text warning when not
       ifElse({
-        if: 'latestVersion.license.uri',
+        if: 'datasetVersion.license.uri',
         then: [
             addIri({
-            content: 'latestVersion.license.uri',
+            content: 'datasetVersion.license.uri',
             key: 'licenseURI'
             }),
             triple('datasetIri', sdo.license, 'licenseURI'),
@@ -29,7 +29,7 @@ export default function dataset(): MiddlewareList {
         else: [
           addIri({
             prefix: prefix.dataverseUrl,
-            content: 'latestVersion.datasetPersistentId',
+            content: 'datasetVersion.datasetPersistentId',
             key: 'prefixBespokeLicenseURI'
           }),
           addIri({
@@ -47,23 +47,23 @@ export default function dataset(): MiddlewareList {
       /**
       * Note: Line 32 corresponds with line 22 from etl-dataset.ts(git).
       * But the output created by that does not correspond with the output present in the
-      * KG. It seems that 'latestVersion.id' is the wrong value. The right value is
-      * 'latestVersion.datasetId'.
+      * KG. It seems that 'datasetVersion.id' is the wrong value. The right value is
+      * 'datasetVersion.datasetId'.
       * After investigating the KG, it seems that the right value is present in the key
-      * 'latestVersion.datasetId'.
+      * 'datasetVersion.datasetId'.
       */
       pairs('datasetIri',
         [sdo.url, literal('persistentUrl', xsd.anyURI)],
         //[prefix.iisgv.concat('nativeViewer'), literal('persistentUrl', xsd.anyURI)], //this line generates the same urls as the sdo.url but with a different predicate
-        [sdo.datePublished, literal('latestVersion.releaseTime', xsd.dateTime)],
-        [sdo.dateModified, literal('latestVersion.lastUpdateTime', xsd.dateTime)],
-        [sdo.dateCreated, literal('latestVersion.createTime', xsd.dateTime)],
-        [sdo.identifier, literal('latestVersion.datasetId', xsd.string)], 
-        //[prefix.accessRequestRequired , literal('latestVersion.fileAccessRequest', xsd.string)]
+        [sdo.datePublished, literal('datasetVersion.releaseTime', xsd.dateTime)],
+        [sdo.dateModified, literal('datasetVersion.lastUpdateTime', xsd.dateTime)],
+        [sdo.dateCreated, literal('datasetVersion.createTime', xsd.dateTime)],
+        [sdo.identifier, literal('datasetVersion.datasetId', xsd.string)], 
+        //[prefix.accessRequestRequired , literal('datasetVersion.fileAccessRequest', xsd.string)]
       )
-      //whenForEach('latestVersion.metadataBlocks.citation.fields', etlCitationfield()),
-      //whenForEach('latestVersion.metadataBlocks.geospatial.fields', etlGeospatialfield()),
-      //whenForEach('latestVersion.files', etlfiles())
+      //whenForEach('datasetVersion.metadataBlocks.citation.fields', etlCitationfield()),
+      //whenForEach('datasetVersion.metadataBlocks.geospatial.fields', etlGeospatialfield()),
+      //whenForEach('datasetVersion.files', etlfiles())
     ])
   ]
 }
