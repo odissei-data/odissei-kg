@@ -41,11 +41,11 @@ Once you have your token, open the file `.env` and write the following line:
 `TRIPLYDB_TOKEN=<your-token-here>`
 
 **NOTE** 
-Your .env file should look like this:
+Your .env file should look like this (copy [dot_env_example](./dot_env_example) to .env ):
 ```sh
-CI_JOB_TOKEN="<YOUR_CI_JOB_TOKEN>"
+CI_JOB_TOKEN=<YOUR_CI_JOB_TOKEN>
 TRIPLYDB_TOKEN=<YOUR_TRIPLYDB_TOKEN>
-USER=YOUR_USER
+USER=YOUR_USER_NAME
 ENV=Acceptance
 ```
 
