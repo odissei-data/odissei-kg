@@ -15,15 +15,15 @@ my_destination.defaultGraph = prefix.graph.concat('dataverse-staging');
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination)
   etl.use(
-    //fromDataVerse(),
-    fromJson(Source.file('./static/dataverseTest.json')),
-    etlDataset(),
+    fromDataVerse(),
+    //fromJson(Source.file('./static/dataverseTest.json')),
+    //etlDataset(),
     //logRecord(),
     // always run below:
-    // _switch('type',
-    //   ['dataverse', etlDataverse()],
-    //   ['dataset', etlDataset()]
-    // ),
+     _switch('type',
+       ['dataverse', etlDataverse()],
+       ['dataset', etlDataset()]
+     ),
 
     toTriplyDb(my_destination)
   )

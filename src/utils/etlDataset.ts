@@ -33,27 +33,44 @@ export default function dataset(): MiddlewareList {
         content: ['datasetIri', str('schema')],
         key: '_datasetSchemaIri'
       }),
-      logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
+      //logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
       triple('datasetIri', a, dsv.Dataset),
       triple('_datasetSchemaIri', a, dsv.DatasetSchema),
       triple('datasetIri', dsv.datasetSchema, '_datasetSchemaIri'),
       // triple('_datasetSchemaIri', dsv.datasetSchema, iri('_varIri')),
       // adding a license code when present or text warning when not
       when(
-        context => context.getAny('datasetVersion.metadataBlocks.variableInformation.fields[0].value'),
+        context => {
+          const variableInfo = context.getAny('datasetVersion.metadataBlocks.variableInformation.fields');
+          return (
+            Array.isArray(variableInfo) &&
+            variableInfo.length > 0 &&
+            variableInfo[0]?.value &&
+            Array.isArray(variableInfo[0].value) &&
+            variableInfo[0].value.length > 0 &&
+            variableInfo[0].value[0]?.odisseiVariableVocabularyURI
+          );
+        },
         custom.add({
-         value: context => context.getAny('datasetVersion.metadataBlocks.variableInformation.fields[0].value'),
-         key: '_variables'
+          value: context => {
+            const fields = context.getAny('datasetVersion.metadataBlocks.variableInformation.fields');
+            return fields?.[0]?.value || [];
+          },
+          key: '_variables'
         }),
         custom.change({
           key: '_variables',
           type: 'any',
           change: value => {
-            return (value as any).map((value:any) => {
-              console.info(value);
-              return value.getAny('odisseiVariableVocabularyURI.value');
-            })
-          }  
+            return (value as any).map((item: any) => {
+              const uri = item?.odisseiVariableVocabularyURI;
+              if (uri) {
+                const uriValues = Object.values(uri);
+                return String(uriValues[3] || ''); // Safely access the 4th value or return an empty string
+              }
+              return 'http://www.nourl.com'; // Fallback if `odisseiVariableVocabularyURI` is missing
+            });
+          }
         }),
         triple('datasetIri', dsv.datasetSchema, iris('_variables')),
       ),
