@@ -9,6 +9,7 @@ const dsv = {
   Dataset: prefix.dsv.concat("Dataset"),
   DatasetSchema: prefix.dsv.concat("DatasetSchema"),
   datasetSchema: prefix.dsv.concat("datasetSchema"),
+  hasVariable: prefix.dsv.concat("hasVariable"),
 }
 
 export default function dataset(): MiddlewareList {
@@ -70,11 +71,11 @@ export default function dataset(): MiddlewareList {
                 const uriValues = Object.values(uri);
                 return String(uriValues[3] || ''); // Safely access the 4th value or return an empty string
               }
-              return 'http://www.nourl.com'; // Fallback if `odisseiVariableVocabularyURI` is missing
+              return 'http://portal.odissei.nl/VariableVocabularyURI-missing/'; // Fallback if `odisseiVariableVocabularyURI` is missing
             });
           }
         }),
-        triple('datasetIri', dsv.datasetSchema, iris('_variables')),
+        triple('_datasetSchemaIri', dsv.hasVariable, iris('_variables')),
       ),
       ifElse({
         if: 'datasetVersion.license.uri',
