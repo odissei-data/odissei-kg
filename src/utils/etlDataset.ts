@@ -22,34 +22,36 @@ export default function dataset(): MiddlewareList {
         content: 'persistentUrl',
         key: 'datasetIri'
       }),
-  
-      // addIri(
-      //   { content: 'datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value',
-      //     key: '_varIri'
-      //   }
-      // ),
       addHashedIri({
         prefix: prefix.dataverseGraph,
         content: ['datasetIri', str('schema')],
         key: '_datasetSchemaIri'
       }),
-      //logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
+      // logRecord({key: 'datasetIri'}),
+      // logRecord({key:"datasetVersion.metadataBlocks.variableInformation.fields[0].value[0].odisseiVariableVocabularyURI.value"}),
       triple('datasetIri', a, dsv.Dataset),
       triple('_datasetSchemaIri', a, dsv.DatasetSchema),
       triple('datasetIri', dsv.datasetSchema, '_datasetSchemaIri'),
       // triple('_datasetSchemaIri', dsv.datasetSchema, iri('_varIri')),
       // adding a license code when present or text warning when not
-      when(
+      when(     
         context => {
-          const variableInfo = context.getAny('datasetVersion.metadataBlocks.variableInformation.fields');
-          return (
-            Array.isArray(variableInfo) &&
-            variableInfo.length > 0 &&
-            variableInfo[0]?.value &&
-            Array.isArray(variableInfo[0].value) &&
-            variableInfo[0].value.length > 0 &&
-            variableInfo[0].value[0]?.odisseiVariableVocabularyURI
-          );
+          if (! context.hasKey('datasetVersion.metadataBlocks.variableInformation'))
+          { 
+            console.info('FALSE');
+            return false
+          }
+          else {
+            const variableInfo = context.getAny('datasetVersion.metadataBlocks.variableInformation.fields');
+            return (
+              Array.isArray(variableInfo) &&
+              variableInfo.length > 0 &&
+              variableInfo[0]?.value &&
+              Array.isArray(variableInfo[0].value) &&
+              variableInfo[0].value.length > 0 &&
+              variableInfo[0].value[0]?.odisseiVariableVocabularyURI
+            );
+          }
         },
         custom.add({
           value: context => {
