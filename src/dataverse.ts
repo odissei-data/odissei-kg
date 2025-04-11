@@ -13,7 +13,9 @@ var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat('dataverse-staging');
 
 export default async function (): Promise<Etl> {
-  const etl = new Etl(my_destination)
+  console.info("Ingest dataverse portal from: " + 
+    prefix.dataverseAPI + " into named graph: " + my_destination.defaultGraph);
+  const etl = new Etl(my_destination);
   etl.use(
     fromDataVerse(),
     //fromJson(Source.file('./static/dataverseTest.json')),
