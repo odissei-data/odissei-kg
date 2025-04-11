@@ -59,7 +59,12 @@ const jobs = [
   },
   { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ContentAnalysisType.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/contentAnalysisType/v0.1/'
+  },
+  {
+    source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ResearchQuestionType.ttl'),
+    destination_graph: 'https://w3id.org/odissei/cv/researchQuestionType/v0.1/'
   }
+
   // ODISSEI Portal dump, exported from portal.odissei.nl via fuseki and triply asset ....
   //{ source_location:   Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'portal-dump.ttl.gz'}),
   //  destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
