@@ -38,7 +38,7 @@ export default function dataset(): MiddlewareList {
         context => {
           if (! context.hasKey('datasetVersion.metadataBlocks.variableInformation'))
           { 
-            console.info('FALSE');
+            // console.info('FALSE');
             return false
           }
           else {
