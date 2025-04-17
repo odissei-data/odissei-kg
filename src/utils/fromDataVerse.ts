@@ -68,6 +68,7 @@ async function fetchDataverse (dataverseId: number): Promise<[any, any]> {
 }
 async function fetchDataset (protocol: string, datasetId: number, authority: string): Promise<any> {
   const link = `${DataverseApi}/datasets/export?exporter=dataverse_json&persistentId=${protocol}:${authority}/${datasetId}`
+  //const link = '${DataverseApi}/datasets/export?exporter=OAI_ORE&persistentId=${protocol}:${authority}/${datasetId}'
   const response = await fetch(link)
   if (response.status !== 200) throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
   let json: any
