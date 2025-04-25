@@ -2,7 +2,7 @@
 // on the Triply platform.
 
 import { Etl, Source, Destination } from "@triplyetl/etl/generic";
-import { destination, prefix } from "./utils/odissei_kg_utils.js";
+import { destination } from "./utils/odissei_kg_utils.js";
 
 const jobs = [ 
   // Main schema file, currently a placeholder to be extended: 
