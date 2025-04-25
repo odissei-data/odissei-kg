@@ -21,6 +21,7 @@ const jobs = [
   { source_location:   Source.url('https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'),
     destination_graph: 'https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'
   },
+  // CODATA Research Data Management Terminology V001 
   { source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl'),
     destination_graph: 'https://terms.codata.org/rdmt/'
   },
@@ -47,8 +48,12 @@ const jobs = [
     destination_graph:  'https://tools.clariah.nl/data/'
   },
   // ELSST Thesaurus, v4:
-  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
-    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4'
+  // { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
+  //  destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4'
+  //},
+  // ELSST Thesaurus, v5
+  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-5/data?format=text/turtle'),
+    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:5'
   },
   // CBS Variable thesaurus, home made with https://github.com/odissei-data/cbs-variables-thesaurus
   { // source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
