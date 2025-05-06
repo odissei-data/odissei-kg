@@ -2,7 +2,7 @@
 // on the Triply platform.
 
 import { Etl, Source, Destination } from "@triplyetl/etl/generic";
-import { destination, prefix } from "./utils/odissei_kg_utils.js";
+import { destination } from "./utils/odissei_kg_utils.js";
 
 const jobs = [ 
   // Main schema file, currently a placeholder to be extended: 
@@ -21,6 +21,7 @@ const jobs = [
   { source_location:   Source.url('https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'),
     destination_graph: 'https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'
   },
+  // CODATA Research Data Management Terminology V001 
   { source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl'),
     destination_graph: 'https://terms.codata.org/rdmt/'
   },
@@ -47,21 +48,28 @@ const jobs = [
     destination_graph:  'https://tools.clariah.nl/data/'
   },
   // ELSST Thesaurus, v4:
-  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
-    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4'
+  // { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
+  //  destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4'
+  //},
+  // ELSST Thesaurus, v5 - Dataverse data should use the versionless ELSST uri by now
+  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-5/data?format=text/turtle'),
+    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:5'
   },
   // CBS Variable thesaurus, home made with https://github.com/odissei-data/cbs-variables-thesaurus
-  { source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
+  { // source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
+    source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/cbs/cbs-variables-thesaurus.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/cbs/variableThesaurus/'
   },
+  // MCAL Content feature vocabulary, need this to keep https://w3id.org/odissei/cv/contentFeature/v0.1/ redirects working
   { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ContentFeature.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/contentFeature/v0.1/'
   },
+  // MCAL Content analysis type vocabulary, need this to keep associated https://w3id.org/odissei/ redirects working
   { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ContentAnalysisType.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/contentAnalysisType/v0.1/'
   },
-  {
-    source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ResearchQuestionType.ttl'),
+  // MCAL Research Question type vocabulary, need this to keep associated https://w3id.org/odissei/ redirects working
+  { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ResearchQuestionType.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/researchQuestionType/v0.1/'
   }/*,
   {
