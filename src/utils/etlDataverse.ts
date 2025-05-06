@@ -4,9 +4,11 @@ import literalStringOrHtml, { destination, prefix } from "./odissei_kg_utils.js"
 //import literalStringOrHtml from './literalStringOrHtml.js'
 import { type MiddlewareList, when, forEach } from '@triplyetl/etl/generic'
 import { addIri, triple, literal, iri } from '@triplyetl/etl/ratt'
+import { logRecord } from '@triplyetl/etl/debug';
 
 export default function dataverse(): MiddlewareList {
   return [
+    //logRecord(),
     addIri({
       prefix: prefix.dataverseUrl,
       content: 'alias',
