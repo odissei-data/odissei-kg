@@ -4,7 +4,8 @@ import fromDataVerse from './utils/fromDataVerse.js'
 import etlDataverse  from './utils/etlDataverse.js'
 import etlDataset    from './utils/etlDataset.js';
 
-var my_destination = {...destination, defaultGraph: prefix.graph.concat('dataverse-testrun')};
+//var my_destination = {...destination, defaultGraph: prefix.graph.concat('dataverse-staging')};
+var my_destination = {...destination, defaultGraph: prefix.dataverse};
 
 export default async function (): Promise<Etl> {
   console.info("Ingest dataverse portal from: " + 

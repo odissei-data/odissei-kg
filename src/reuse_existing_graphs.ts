@@ -71,17 +71,7 @@ const jobs = [
   // MCAL Research Question type vocabulary, need this to keep associated https://w3id.org/odissei/ redirects working
   { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ResearchQuestionType.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/researchQuestionType/v0.1/'
-  }/*,
-  {
-    //source_location:   Source.file("./static/dataverseTest.jsonld"), 
-    source_location:   Source.url('https://portal.staging.odissei.nl/api/datasets/export?exporter=OAI_ORE&persistentId=doi%3A10.57934/0b01e410807f9b4c'),
-    destination_graph: 'https://w3id.org/odissei/ns/kg/graph/dataverse-testrun'
-  }*/
-
-  // ODISSEI Portal dump, exported from portal.odissei.nl via fuseki and triply asset ....
-  //{ source_location:   Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'portal-dump.ttl.gz'}),
-  //  destination_graph: 'https://fuseki.devstack.odissei.nl/odissei/'
-  //}
+  }
   ]
 
 
