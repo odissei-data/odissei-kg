@@ -1,6 +1,5 @@
 import { type Middleware, Etl, Source, Destination, loadRdf } from '@triplyetl/etl/generic'
 import { destination, prefix } from './odissei_kg_utils.js'
-import context from '@triplyetl/etl/_internal/ratt/middlewares/transformations/custom/addFrom/context'
 const DataverseApi = prefix.dataverseAPI
 // cons DaverseAPI = ''
 

@@ -1,8 +1,6 @@
-import { Etl, toTriplyDb, _switch, Source, fromJson, Destination } from '@triplyetl/etl/generic'
+import { Etl, toTriplyDb, _switch, Source, fromJson, Destination } from '@triplyetl/etl/generic';
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
-import fromDataVerse from './utils/fromDataVerse.js'
-import etlDataverse  from './utils/etlDataverse.js'
-import etlDataset    from './utils/etlDataset.js';
+import fromDataVerse from './utils/fromDataVerse.js';
 
 //var my_destination = {...destination, defaultGraph: prefix.graph.concat('dataverse-staging')};
 var my_destination = {...destination, defaultGraph: prefix.dataverse};
