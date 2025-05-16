@@ -8,7 +8,7 @@ export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination)
   etl.use(
     // Load RDF from the follwing query: https://kg.odissei.nl/odissei/-/queries/Fixing-http-replacing-by-https/4
-    loadRdf(Source.TriplyDb.query(destination.account, 'delete-insert-dataverse-fix')),
+    loadRdf(Source.TriplyDb.query(destination.account, 'Fixing-replace-literal-String-by-URI')),
     toTriplyDb(my_destination)
     //logQuads(),
   )
