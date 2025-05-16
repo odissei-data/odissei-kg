@@ -139,9 +139,23 @@ schemaFix:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
 
+   ### Example stage 4: informationproduct Search Graph:
+dataverseFix:
+  stage: informationproducts
+  interruptible: true
+ # artifacts:
+ #   !reference [.etl-template, artifacts]
+  rules:
+    # Make sure you remove this next line if you want to use this stage:
+    - if: $TASK == "informationproducts"
+    - if: $TASK == $CI_JOB_NAME
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl] 
 
 
-### Example stage 4: synchronise servcices for Search Graph:
+### Example stage 5: synchronise servcices for Search Graph:
 synchronize-services:
   stage: finalize
   interruptible: true
