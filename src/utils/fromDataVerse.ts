@@ -1,5 +1,10 @@
 import { type Middleware, Etl, Source, Destination, loadRdf } from '@triplyetl/etl/generic'
 import { destination, prefix } from './odissei_kg_utils.js'
+import https from 'https';
+import fs from 'fs';
+import path from 'path';
+
+
 const DataverseApi = prefix.dataverseAPI
 // cons DaverseAPI = ''
 
@@ -23,8 +28,13 @@ export default function fromApi (destination: any): Middleware {
         contents.parentDataverseId = dataverseId
         if (contents.type === 'dataset') {
           try {
-            const datasetUrl = getDatasetUrl(contents.protocol, contents.identifier, contents.authority)            
-            await ctx.app.copySource(Source.url(datasetUrl), destination)
+            let datasetUrl = getDatasetUrl(contents.protocol, contents.identifier, contents.authority)   
+            //loadRdf(Source.url(datasetUrl))
+            //console.log('Load dataset from: ' + datasetUrl)
+            datasetUrl = await fixVariableURIs(datasetUrl)
+            console.info('Datasetfile at: ' + datasetUrl)
+            //await ctx.app.copySource(Source.url(datasetUrl), destination)
+            await ctx.app.copySource(Source.file(datasetUrl), destination)
             await next();
           } catch (e) {
             console.warn(`Ignoring this error: ${(e as Error).message}`)
@@ -84,4 +94,76 @@ function getDatasetUrl (protocol: string, datasetId: number, authority: string) 
   /*loadRdf(
     Source.file("./static/dataverseTest.jsonld")
   )*/
+}
+
+/**
+ * Fetch JSON-LD from a URL, convert http-prefixed string values to @id objects
+ * (excluding reserved keys and anything inside @context), and write the result to a file.
+ */
+export async function fixVariableURIs(url: string, outputPath?: string): Promise<string> {
+  const jsonText = await fetchText(url);
+  const jsonLd = JSON.parse(jsonText);
+
+  const modified = convertHttpStringsToIRIs(jsonLd, false);
+  const fileContent = JSON.stringify(modified, null, 2);
+
+  const outPath = outputPath || path.resolve(process.cwd(), 'modified.jsonld');
+  fs.writeFileSync(outPath, fileContent, 'utf8');
+
+  return outPath;
+}
+
+/**
+ * Recursively walks the JSON-LD and replaces string values starting with http
+ * with { "@id": value }, except for reserved keys and anything inside @context.
+ */
+function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: string | null = null): any {
+  if (Array.isArray(node)) {
+    return node.map((item) => convertHttpStringsToIRIs(item, insideContext, parentKey));
+  }
+
+  if (typeof node === 'object' && node !== null) {
+    // If we're inside @context, preserve everything exactly
+    if (parentKey === '@context') {
+      return node;
+    }
+
+    const result: any = {};
+    for (const [key, value] of Object.entries(node)) {
+      const isContext = insideContext || key === '@context';
+      result[key] = convertHttpStringsToIRIs(value, isContext, key);
+    }
+    return result;
+  }
+
+  const reservedKeys = ['@id', '@type', '@context', '@value', '@language'];
+  if (
+    typeof node === 'string' &&
+    node.startsWith('http') &&
+    !insideContext &&
+    (!parentKey || !reservedKeys.includes(parentKey))
+  ) {
+    return { '@id': node };
+  }
+
+  return node;
+}
+
+/**
+ * Fetch text content from a URL using Node's built-in HTTPS module.
+ */
+function fetchText(url: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if (res.statusCode !== 200) {
+        reject(new Error(`Failed to fetch: ${res.statusCode}`));
+        return;
+      }
+
+      let data = '';
+      res.setEncoding('utf8');
+      res.on('data', (chunk) => (data += chunk));
+      res.on('end', () => resolve(data));
+    }).on('error', reject);
+  });
 }
