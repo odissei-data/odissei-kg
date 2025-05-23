@@ -1,0 +1,32 @@
+@prefix dsvo: <https://ritamargherita.github.io/DataSet-Variable-Ontology/ontology#> .
+@prefix ex: <http://example.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Dataset instance
+<https://doi.org/10.17026/SS/0CIKVI> a dsvo:Dataset ;
+    dsvo:hasVariable <https://kg.odissei.nl/.well-known/genid/000062aefb30b0d19d64af7d311aaa99>, ex:variable2 ;
+    dsvo:title "Social Attitudes Survey 2023"^^xsd:string .
+
+# Variable 1
+<https://kg.odissei.nl/.well-known/genid/000062aefb30b0d19d64af7d311aaa99> a dsvo:Variable ;
+    dsvo:variableName "gender"^^xsd:string ;
+    dsvo:variableType dsvo:Categorical ;
+    dsvo:measuredIn <https://doi.org/10.17026/SS/0CIKVI> ;
+    dsvo:hasConcept <https://w3id.org/odissei/cv/cbs/variableThesaurus/c8acb707ad827d70f005d9d6d30909d5edbfbfc2f477218a0f0ee14bb7bc107f2> .
+
+# Variable 2
+ex:variable2 a dsvo:Variable ;
+    dsvo:variableName "age"^^xsd:string ;
+    dsvo:variableType dsvo:Continuous ;
+    dsvo:measuredIn ex:dataset1 ;
+    dsvo:hasConcept ex:concept2 .
+
+# Concepts
+<https://w3id.org/odissei/cv/cbs/variableThesaurus/c8acb707ad827d70f005d9d6d30909d5edbfbfc2f477218a0f0ee14bb7bc107f2> a dsvo:Concept ;
+    dsvo:conceptLabel "Biological Sex"^^xsd:string .
+
+ex:concept2 a dsvo:Concept ;
+    dsvo:conceptLabel "Age of respondent in years"^^xsd:string .
+
+
+    
