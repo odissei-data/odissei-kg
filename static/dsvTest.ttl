@@ -4,7 +4,7 @@
 
 # Dataset instance
 <https://doi.org/10.17026/SS/0CIKVI> a dsvo:Dataset ;
-    dsvo:hasVariable <https://kg.odissei.nl/.well-known/genid/000062aefb30b0d19d64af7d311aaa99>, ex:variable2 ;
+    dsvo:hasVariable <https://kg.odissei.nl/.well-known/genid/000062aefb30b0d19d64af7d311aaa99> , ex:variable2 ;
     dsvo:title "Social Attitudes Survey 2023"^^xsd:string .
 
 # Variable 1
@@ -18,7 +18,7 @@
 ex:variable2 a dsvo:Variable ;
     dsvo:variableName "age"^^xsd:string ;
     dsvo:variableType dsvo:Continuous ;
-    dsvo:measuredIn ex:dataset1 ;
+    dsvo:measuredIn <https://doi.org/10.17026/SS/0CIKVI> ;
     dsvo:hasConcept ex:concept2 .
 
 # Concepts
@@ -27,6 +27,3 @@ ex:variable2 a dsvo:Variable ;
 
 ex:concept2 a dsvo:Concept ;
     dsvo:conceptLabel "Age of respondent in years"^^xsd:string .
-
-
-    
