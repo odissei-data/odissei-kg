@@ -3,7 +3,7 @@ import { destination, prefix } from './odissei_kg_utils.js'
 import https from 'https';
 import fs from 'fs';
 import path from 'path';
-
+import { pathToFileURL } from 'url';
 
 const DataverseApi = prefix.dataverseAPI
 // cons DaverseAPI = ''
@@ -31,10 +31,10 @@ export default function fromApi (destination: any): Middleware {
             let datasetUrl = getDatasetUrl(contents.protocol, contents.identifier, contents.authority)   
             //loadRdf(Source.url(datasetUrl))
             //console.log('Load dataset from: ' + datasetUrl)
-            datasetUrl = await fixVariableURIs(datasetUrl)
-            console.info('Datasetfile at: ' + datasetUrl)
-            //await ctx.app.copySource(Source.url(datasetUrl), destination)
-            await ctx.app.copySource(Source.file(datasetUrl), destination)
+            //datasetUrl = await fixVariableURIs(datasetUrl)
+            //console.info('Datasetfile at: ' + datasetUrl)
+            await ctx.app.copySource(Source.url(datasetUrl), destination)
+            //await ctx.app.copySource(Source.file(datasetUrl), destination)
             await next();
           } catch (e) {
             console.warn(`Ignoring this error: ${(e as Error).message}`)
@@ -99,23 +99,31 @@ function getDatasetUrl (protocol: string, datasetId: number, authority: string) 
 /**
  * Fetch JSON-LD from a URL, convert http-prefixed string values to @id objects
  * (excluding reserved keys and anything inside @context), and write the result to a file.
+ *
+ * @param url - The source URL to fetch JSON-LD from.
+ * @param outputPath - Optional path to write the modified JSON-LD file.
+ * @returns A file:// URL pointing to the output file.
  */
 export async function fixVariableURIs(url: string, outputPath?: string): Promise<string> {
   const jsonText = await fetchText(url);
   const jsonLd = JSON.parse(jsonText);
 
   const modified = convertHttpStringsToIRIs(jsonLd, false);
-  const fileContent = JSON.stringify(modified, null, 2);
 
-  const outPath = outputPath || path.resolve(process.cwd(), 'modified.jsonld');
-  fs.writeFileSync(outPath, fileContent, 'utf8');
+  // Ensure output path is absolute
+  const absolutePath = path.resolve(outputPath || 'modified.jsonld');
 
-  return outPath;
+  fs.writeFileSync(absolutePath, JSON.stringify(modified, null, 2), 'utf8');
+
+  // Convert absolute file path to file:// URL
+  const fileUrl = pathToFileURL(absolutePath).toString();
+
+  return fileUrl;
 }
 
 /**
- * Recursively walks the JSON-LD and replaces string values starting with http
- * with { "@id": value }, except for reserved keys and anything inside @context.
+ * Recursively walk JSON-LD to replace http-prefixed strings with { "@id": value },
+ * unless inside @context or reserved keys.
  */
 function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: string | null = null): any {
   if (Array.isArray(node)) {
@@ -123,9 +131,8 @@ function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: 
   }
 
   if (typeof node === 'object' && node !== null) {
-    // If we're inside @context, preserve everything exactly
     if (parentKey === '@context') {
-      return node;
+      return node; // Don't touch anything in @context
     }
 
     const result: any = {};
@@ -150,7 +157,7 @@ function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: 
 }
 
 /**
- * Fetch text content from a URL using Node's built-in HTTPS module.
+ * Fetch plain text from a URL using native Node.js HTTPS.
  */
 function fetchText(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
