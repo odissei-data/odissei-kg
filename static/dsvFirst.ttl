@@ -1,0 +1,17 @@
+<datasetIdentifier/> a dsv:Dataset ;
+  :hasDOI doi:123 ; # here to replace property with an appropriate one
+  dsv:datasetSchema <datasetIdentifier/datasetSchema/> .
+<datasetIdentifier/datasetSchema/> a dsv:DatasetSchema ;
+  dsv:column <datasetIdentifier/column/column/1> , # this is an identifier for the column, not the variable
+        <datasetIdentifier/column/2> ,
+        <datasetIdentifier/column/3> .
+<datasetIdentifier/column/1> a dsv:Column ;
+  dsv:columnProperty <datasetIdentifier/columnProperty> . 
+<datasetIdentifier/columnProperty> a dsv:ColumnProperty ;
+  dsv:hasCodeBook ex:URI .
+  #dsv:hasVariable ex:URI . # Is our variableURI the case here?
+
+# Questions
+# Where is the datasetIdentifier in our data (dataverse)? which seems like do not be the DOI
+# Where is the datasetSchema from the dataset?
+# 
