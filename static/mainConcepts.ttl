@@ -1,0 +1,94 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ssh: <https://kg.odissei.nl/odissei/odissei-kg/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix coda: <https://terms.codata.org/rdmt/> .
+@prefix schema: <https://schema.org/> .
+
+ssh:ResearchSoftware rdf:type owl:Class ;
+    rdfs:label "Research Software" .
+
+schema:SoftwareSourceCode rdf:type owl:Class ;
+    rdfs:label "Software Source Code" ;
+    rdfs:subClassOf ssh:ResearchSoftware .
+
+ssh:AcademicArticle rdf:type owl:Class ;
+    rdfs:label "Academic Article" ;
+    rdfs:subClassOf ssh:ResearchPaper .
+
+ssh:ResearchPaper rdf:type owl:Class ;
+    rdfs:label "Research Paper" .
+
+ssh:Author rdf:type owl:Class ;
+    rdfs:label "Author" .
+
+ssh:Project rdf:type owl:Class ;
+    rdfs:label "Project" .
+
+ssh:Researcher rdf:type owl:Class ;
+    rdfs:label "Researcher" .
+
+
+ssh:hasDOI rdf:type owl:ObjectProperty ;
+    rdfs:label "has DOI" ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range bibo:DOI .
+
+ssh:usesDataset rdf:type owl:ObjectProperty ;
+    rdfs:label "uses dataset" ;
+    rdfs:domain schema:SoftwareSourceCode ;
+    rdfs:range coda:Dataset .
+
+ssh:producedByAcademicArticle rdf:type owl:ObjectProperty ;
+    rdfs:label "produced by academic article" ;
+    rdfs:domain schema:SoftwareSourceCode ;
+    rdfs:range ssh:AcademicArticle .
+
+ssh:hasAuthor rdf:type owl:ObjectProperty ;
+    rdfs:label "has author" ;
+    rdfs:domain ssh:AcademicArticle ;
+    rdfs:range ssh:Author .
+
+ssh:representedByORCID rdf:type owl:ObjectProperty ;
+    rdfs:label "represented by ORCID" ;
+    rdfs:domain ssh:Author ;
+    rdfs:range coda:orcid .
+
+ssh:producedByProject rdf:type owl:ObjectProperty ;
+    rdfs:label "produced by project" ;
+    rdfs:domain ssh:AcademicArticle ;
+    rdfs:range ssh:Project .
+
+ssh:writesResearchPaper rdf:type owl:ObjectProperty ;
+    rdfs:label "writes research paper" ;
+    rdfs:domain ssh:Researcher ;
+    rdfs:range ssh:ResearchPaper .
+
+ssh:hasORCID rdf:type owl:ObjectProperty ;
+    rdfs:label "has ORCID" ;
+    rdfs:domain ssh:Researcher ;
+    rdfs:range coda:orcid .
+
+
+ssh:ResearchSoftware rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ssh:hasDOI ;
+    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass bibo:DOI
+] .
+
+coda:Dataset rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ssh:hasDOI ;
+    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass bibo:DOI
+] .
+
+ssh:ResearchPaper rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty ssh:hasDOI ;
+    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass bibo:DOI
+] .
