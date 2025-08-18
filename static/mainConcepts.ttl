@@ -70,25 +70,3 @@ ssh:hasORCID rdf:type owl:ObjectProperty ;
     rdfs:label "has ORCID" ;
     rdfs:domain ssh:Researcher ;
     rdfs:range coda:orcid .
-
-
-coda:research-software rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty ssh:hasDOI ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass bibo:DOI
-] .
-
-coda:Dataset rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty ssh:hasDOI ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass bibo:DOI
-] .
-
-ssh:ResearchPaper rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty ssh:hasDOI ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass bibo:DOI
-] .
