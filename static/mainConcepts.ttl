@@ -12,7 +12,7 @@ coda:research-software rdf:type owl:Class ;
 
 schema:SoftwareSourceCode rdf:type owl:Class ;
     rdfs:label "Software Source Code" ;
-    rdfs:subClassOf ssh:ResearchSoftware .
+    rdfs:subClassOf coda:research-software.
 
 ssh:AcademicArticle rdf:type owl:Class ;
     rdfs:label "Academic Article" ;
@@ -70,25 +70,3 @@ ssh:hasORCID rdf:type owl:ObjectProperty ;
     rdfs:label "has ORCID" ;
     rdfs:domain ssh:Researcher ;
     rdfs:range coda:orcid .
-
-
-ssh:ResearchSoftware rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty ssh:hasDOI ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass bibo:DOI
-] .
-
-coda:Dataset rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty ssh:hasDOI ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass bibo:DOI
-] .
-
-ssh:ResearchPaper rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty ssh:hasDOI ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass bibo:DOI
-] .
