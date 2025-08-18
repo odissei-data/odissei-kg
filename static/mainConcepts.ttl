@@ -7,7 +7,7 @@
 @prefix coda: <https://terms.codata.org/rdmt/> .
 @prefix schema: <https://schema.org/> .
 
-ssh:ResearchSoftware rdf:type owl:Class ;
+coda:ResearchSoftware rdf:type owl:Class ;
     rdfs:label "Research Software" .
 
 schema:SoftwareSourceCode rdf:type owl:Class ;
