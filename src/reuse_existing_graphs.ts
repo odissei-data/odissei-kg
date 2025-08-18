@@ -6,7 +6,7 @@ import { destination } from "./utils/odissei_kg_utils.js";
 
 const jobs = [ 
   // Main schema file, currently a placeholder to be extended: 
-  { source_location:   Source.file("./static/odissei.ttl"), 
+  { source_location:   Source.url('https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/mainConcepts.ttl'), 
     destination_graph: 'https://w3id.org/odissei/ns/kg/schema/'
   },
   // Margherita's DataSet-Variable Ontology
