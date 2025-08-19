@@ -7,29 +7,16 @@
 @prefix coda: <https://terms.codata.org/rdmt/> .
 @prefix schema: <https://schema.org/> .
 
-coda:research-software rdf:type owl:Class ;
-    rdfs:label "Research Software" .
-
 schema:SoftwareSourceCode rdf:type owl:Class ;
     rdfs:label "Software Source Code" ;
-    rdfs:subClassOf coda:research-software .
+    rdfs:subClassOf coda:research-software.
 
-ssh:AcademicArticle rdf:type owl:Class ;
+bibo:AcademicArticle rdf:type owl:Class ;
     rdfs:label "Academic Article" ;
-    rdfs:subClassOf ssh:ResearchPaper .
+    rdfs:subClassOf coda:data-paper .
 
-ssh:ResearchPaper rdf:type owl:Class ;
+coda:data-paper rdf:type owl:Class ;
     rdfs:label "Research Paper" .
-
-ssh:Author rdf:type owl:Class ;
-    rdfs:label "Author" .
-
-ssh:Project rdf:type owl:Class ;
-    rdfs:label "Project" .
-
-ssh:Researcher rdf:type owl:Class ;
-    rdfs:label "Researcher" .
-
 
 ssh:hasDOI rdf:type owl:ObjectProperty ;
     rdfs:label "has DOI" ;
@@ -44,29 +31,29 @@ ssh:usesDataset rdf:type owl:ObjectProperty ;
 ssh:producedByAcademicArticle rdf:type owl:ObjectProperty ;
     rdfs:label "produced by academic article" ;
     rdfs:domain schema:SoftwareSourceCode ;
-    rdfs:range ssh:AcademicArticle .
+    rdfs:range bibo:AcademicArticle .
 
 ssh:hasAuthor rdf:type owl:ObjectProperty ;
     rdfs:label "has author" ;
-    rdfs:domain ssh:AcademicArticle ;
-    rdfs:range ssh:Author .
+    rdfs:domain bibo:AcademicArticle ;
+    rdfs:range schema:Author .
 
 ssh:representedByORCID rdf:type owl:ObjectProperty ;
     rdfs:label "represented by ORCID" ;
-    rdfs:domain ssh:Author ;
+    rdfs:domain schema:Author ;
     rdfs:range coda:orcid .
 
 ssh:producedByProject rdf:type owl:ObjectProperty ;
     rdfs:label "produced by project" ;
-    rdfs:domain ssh:AcademicArticle ;
-    rdfs:range ssh:Project .
+    rdfs:domain bibo:AcademicArticle ;
+    rdfs:range schema:ResearchProject .
 
 ssh:writesResearchPaper rdf:type owl:ObjectProperty ;
     rdfs:label "writes research paper" ;
-    rdfs:domain ssh:Researcher ;
-    rdfs:range ssh:ResearchPaper .
+    rdfs:domain schema:Author ;
+    rdfs:range coda:data-paper .
 
 ssh:hasORCID rdf:type owl:ObjectProperty ;
     rdfs:label "has ORCID" ;
-    rdfs:domain ssh:Researcher ;
+    rdfs:domain schema:Author ;
     rdfs:range coda:orcid .
