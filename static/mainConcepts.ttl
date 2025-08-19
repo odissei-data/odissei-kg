@@ -1,59 +1,113 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ssh: <https://kg.odissei.nl/odissei/odissei-kg/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix coda: <https://terms.codata.org/rdmt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@base <http://www.w3.org/2002/07/owl#> .
 
-schema:SoftwareSourceCode rdf:type owl:Class ;
-    rdfs:label "Software Source Code" ;
-    rdfs:subClassOf coda:research-software.
+[ rdf:type owl:Ontology
+ ] .
 
-bibo:AcademicArticle rdf:type owl:Class ;
-    rdfs:label "Academic Article" ;
-    rdfs:subClassOf coda:data-paper .
+#################################################################
+#    Object Properties
+#################################################################
 
-coda:data-paper rdf:type owl:Class ;
-    rdfs:label "Research Paper" .
-
-ssh:hasDOI rdf:type owl:ObjectProperty ;
-    rdfs:label "has DOI" ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range bibo:DOI .
-
-ssh:usesDataset rdf:type owl:ObjectProperty ;
-    rdfs:label "uses dataset" ;
-    rdfs:domain schema:SoftwareSourceCode ;
-    rdfs:range coda:Dataset .
-
-ssh:producedByAcademicArticle rdf:type owl:ObjectProperty ;
-    rdfs:label "produced by academic article" ;
-    rdfs:domain schema:SoftwareSourceCode ;
-    rdfs:range bibo:AcademicArticle .
-
+###  https://kg.odissei.nl/odissei/odissei-kg/hasAuthor
 ssh:hasAuthor rdf:type owl:ObjectProperty ;
-    rdfs:label "has author" ;
-    rdfs:domain bibo:AcademicArticle ;
-    rdfs:range schema:Author .
+              rdfs:domain bibo:AcademicArticle ;
+              rdfs:range schema:Author ;
+              rdfs:label "has author" .
 
-ssh:representedByORCID rdf:type owl:ObjectProperty ;
-    rdfs:label "represented by ORCID" ;
-    rdfs:domain schema:Author ;
-    rdfs:range coda:orcid .
 
-ssh:producedByProject rdf:type owl:ObjectProperty ;
-    rdfs:label "produced by project" ;
-    rdfs:domain bibo:AcademicArticle ;
-    rdfs:range schema:ResearchProject .
+###  https://kg.odissei.nl/odissei/odissei-kg/hasDOI
+ssh:hasDOI rdf:type owl:ObjectProperty ;
+           rdfs:domain bibo:AcademicArticle ,
+                       rdfs:Resource ,
+                       coda:research-software ;
+           rdfs:range bibo:DOI ;
+           rdfs:label "has DOI" .
 
-ssh:writesResearchPaper rdf:type owl:ObjectProperty ;
-    rdfs:label "writes research paper" ;
-    rdfs:domain schema:Author ;
-    rdfs:range coda:data-paper .
 
+###  https://kg.odissei.nl/odissei/odissei-kg/hasORCID
 ssh:hasORCID rdf:type owl:ObjectProperty ;
-    rdfs:label "has ORCID" ;
-    rdfs:domain schema:Author ;
-    rdfs:range coda:orcid .
+             rdfs:domain schema:Author ;
+             rdfs:range coda:orcid ;
+             rdfs:label "has ORCID" .
+
+
+###  https://kg.odissei.nl/odissei/odissei-kg/producedByAcademicArticle
+ssh:producedByAcademicArticle rdf:type owl:ObjectProperty ;
+                              rdfs:domain coda:research-software ;
+                              rdfs:range bibo:AcademicArticle ;
+                              rdfs:label "produced by academic article" .
+
+
+###  https://kg.odissei.nl/odissei/odissei-kg/producedByProject
+ssh:producedByProject rdf:type owl:ObjectProperty ;
+                      rdfs:domain bibo:AcademicArticle ;
+                      rdfs:range schema:ResearchProject ;
+                      rdfs:label "produced by project" .
+
+
+###  https://kg.odissei.nl/odissei/odissei-kg/representedByORCID
+ssh:representedByORCID rdf:type owl:ObjectProperty ;
+                       rdfs:domain schema:Author ;
+                       rdfs:range coda:orcid ;
+                       rdfs:label "represented by ORCID" .
+
+
+###  https://kg.odissei.nl/odissei/odissei-kg/usesDataset
+ssh:usesDataset rdf:type owl:ObjectProperty ;
+                rdfs:domain coda:research-software ;
+                rdfs:range coda:Dataset ;
+                rdfs:label "uses dataset" .
+
+
+###  https://kg.odissei.nl/odissei/odissei-kg/writesResearchPaper
+ssh:writesResearchPaper rdf:type owl:ObjectProperty ;
+                        rdfs:domain schema:Author ;
+                        rdfs:range bibo:AcademicArticle ;
+                        rdfs:label "writes research paper" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/ontology/bibo/AcademicArticle
+bibo:AcademicArticle rdf:type owl:Class .
+
+
+###  http://purl.org/ontology/bibo/DOI
+bibo:DOI rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
+###  https://schema.org/Author
+schema:Author rdf:type owl:Class .
+
+
+###  https://schema.org/ResearchProject
+schema:ResearchProject rdf:type owl:Class .
+
+
+###  https://terms.codata.org/rdmt/Dataset
+coda:Dataset rdf:type owl:Class .
+
+
+###  https://terms.codata.org/rdmt/orcid
+coda:orcid rdf:type owl:Class .
+
+
+###  https://terms.codata.org/rdmt/research-software
+coda:research-software rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
