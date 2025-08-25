@@ -49,8 +49,8 @@ export default async function (): Promise<Etl> {
           key: "_bestandsnaamHash",
         }),
         triple("_IRI", dct.requires, "_bestandsnaamHash"),
-        //triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
-        triple("_bestandsnaamHash", skosxl.altLabel, "Bestandsnaam"),
+        triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
+        //triple("_bestandsnaamHash", skosxl.altLabel, "Bestandsnaam"),
         /* While dcterms:alternative is a general-purpose property, 
         skos:altLabel is the better choice because it is specifically 
         designed and widely adopted for representing alternative human-readable labels in knowledge organization systems. */
