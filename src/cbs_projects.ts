@@ -3,7 +3,7 @@ import { Etl, Source, when } from "@triplyetl/etl/generic";
 import { toTriplyDb, fromXlsx } from "@triplyetl/etl/generic";
 import { addHashedIri, addIri, iri, str, triple } from "@triplyetl/etl/ratt";
 import { translateSome } from "@triplyetl/etl/ratt";
-import { a, dct, sdo } from "@triplyetl/etl/vocab";
+import { a, dct, sdo, skosxl } from "@triplyetl/etl/vocab";
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 import { ror_table } from './utils/ror_table.js';
 import { logRecord } from "@triplyetl/etl/debug";
@@ -49,7 +49,11 @@ export default async function (): Promise<Etl> {
           key: "_bestandsnaamHash",
         }),
         triple("_IRI", dct.requires, "_bestandsnaamHash"),
-        triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
+        //triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
+        triple("_bestandsnaamHash", skosxl.altLabel, "Bestandsnaam"),
+        /* While dcterms:alternative is a general-purpose property, 
+        skos:altLabel is the better choice because it is specifically 
+        designed and widely adopted for representing alternative human-readable labels in knowledge organization systems. */
       ),
       translateSome({
         content: 'Instelling',
