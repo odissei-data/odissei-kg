@@ -1,0 +1,40 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?type ?label ?comment ?subClassOf ?domain ?range
+WHERE {
+  {
+    ?entity a owl:Class .
+    BIND ("Class" AS ?type)
+    OPTIONAL { ?entity rdfs:label ?label . }
+    OPTIONAL { ?entity rdfs:comment ?comment . }
+    OPTIONAL { ?entity rdfs:subClassOf ?subClassOf . }
+  } UNION {
+    ?entity a rdf:Property .
+    BIND ("Property" AS ?type)
+    OPTIONAL { ?entity rdfs:label ?label . }
+    OPTIONAL { ?entity rdfs:comment ?comment . }
+    OPTIONAL { ?entity rdfs:domain ?domain . }
+    OPTIONAL { ?entity rdfs:range ?range . }
+  } UNION {
+    ?entity a owl:ObjectProperty .
+    BIND ("ObjectProperty" AS ?type)
+    OPTIONAL { ?entity rdfs:label ?label . }
+    OPTIONAL { ?entity rdfs:comment ?comment . }
+    OPTIONAL { ?entity rdfs:domain ?domain . }
+    OPTIONAL { ?entity rdfs:range ?range . }
+  } UNION {
+    ?entity a owl:DatatypeProperty .
+    BIND ("DatatypeProperty" AS ?type)
+    OPTIONAL { ?entity rdfs:label ?label . }
+    OPTIONAL { ?entity rdfs:comment ?comment . }
+    OPTIONAL { ?entity rdfs:domain ?domain . }
+    OPTIONAL { ?entity rdfs:range ?range . }
+  } UNION {
+    ?entity a owl:AnnotationProperty .
+    BIND ("AnnotationProperty" AS ?type)
+    OPTIONAL { ?entity rdfs:label ?label . }
+    OPTIONAL { ?entity rdfs:comment ?comment . }
+  }
+}
