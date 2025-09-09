@@ -1,0 +1,4955 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/NET/c4dm/event.owl", "file:/Users/andrevaldestilhas/Downloads", "http://www.w3.org/ns/csvw", "http://www.w3.org/2002/07/owl", "https://kg.odissei.nl/.well-known/genid", "https://w3id.org/dsv-ontology", "http://www.w3.org/2001/XMLSchema", "http://purl.org/linked-data/cube", "http://purl.org/ontology/bibo", "https://terms.codata.org/rdmt", "https://w3id.org/software-types", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://purl.org/dc/terms", "https://w3id.org/research-technology-readiness-levels", "http://xmlns.com/foaf/0.1", "http://purl.org/dc/dcmitype", "http://www.w3.org/2004/02/skos/core" ],
+    "iri" : "https://kg.odissei.nl/SSHOC-NL-ontology.owl",
+    "author" : [ "Andre Valdestilhas" ],
+    "labels" : {
+      "undefined" : "SSHOC-NL ontology"
+    },
+    "comments" : {
+      "undefined" : "This is the ontology documentation for the SSHOC-NL Knowledge Graph, available at https://kg.odissei.nl/."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Andre Valdestilhas",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "owl:Class"
+  }, {
+    "id" : "74",
+    "type" : "owl:Class"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "88",
+    "type" : "owl:Class"
+  }, {
+    "id" : "95",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  }, {
+    "id" : "104",
+    "type" : "owl:Class"
+  }, {
+    "id" : "106",
+    "type" : "owl:Class"
+  }, {
+    "id" : "107",
+    "type" : "owl:Class"
+  }, {
+    "id" : "109",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
+    "type" : "owl:Class"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "117",
+    "type" : "owl:Class"
+  }, {
+    "id" : "121",
+    "type" : "owl:Class"
+  }, {
+    "id" : "133",
+    "type" : "owl:Class"
+  }, {
+    "id" : "137",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "157",
+    "type" : "owl:Class"
+  }, {
+    "id" : "158",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "180",
+    "type" : "owl:Class"
+  }, {
+    "id" : "184",
+    "type" : "owl:Class"
+  }, {
+    "id" : "167",
+    "type" : "owl:Class"
+  }, {
+    "id" : "187",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "188",
+    "type" : "owl:Class"
+  }, {
+    "id" : "146",
+    "type" : "owl:Class"
+  }, {
+    "id" : "190",
+    "type" : "owl:Class"
+  }, {
+    "id" : "192",
+    "type" : "owl:Class"
+  }, {
+    "id" : "199",
+    "type" : "owl:Class"
+  }, {
+    "id" : "200",
+    "type" : "owl:Class"
+  }, {
+    "id" : "175",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "181",
+    "type" : "owl:Class"
+  }, {
+    "id" : "209",
+    "type" : "owl:Class"
+  }, {
+    "id" : "217",
+    "type" : "owl:Class"
+  }, {
+    "id" : "174",
+    "type" : "owl:Class"
+  }, {
+    "id" : "221",
+    "type" : "owl:Class"
+  }, {
+    "id" : "223",
+    "type" : "owl:Class"
+  }, {
+    "id" : "233",
+    "type" : "owl:Class"
+  }, {
+    "id" : "238",
+    "type" : "owl:Class"
+  }, {
+    "id" : "242",
+    "type" : "owl:Class"
+  }, {
+    "id" : "250",
+    "type" : "owl:Class"
+  }, {
+    "id" : "257",
+    "type" : "owl:Class"
+  }, {
+    "id" : "186",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "177",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  }, {
+    "id" : "268",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "139",
+    "type" : "owl:Class"
+  }, {
+    "id" : "284",
+    "type" : "owl:Class"
+  }, {
+    "id" : "111",
+    "type" : "owl:Class"
+  }, {
+    "id" : "136",
+    "type" : "owl:Class"
+  }, {
+    "id" : "163",
+    "type" : "owl:Class"
+  }, {
+    "id" : "286",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "305",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "84",
+    "type" : "owl:Class"
+  }, {
+    "id" : "202",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "310",
+    "type" : "owl:Class"
+  }, {
+    "id" : "147",
+    "type" : "owl:Class"
+  }, {
+    "id" : "90",
+    "type" : "owl:Class"
+  }, {
+    "id" : "243",
+    "type" : "owl:Class"
+  }, {
+    "id" : "339",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "241",
+    "type" : "owl:Class"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "325",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "350",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "352",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "234",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "97",
+    "type" : "owl:Class"
+  }, {
+    "id" : "270",
+    "type" : "owl:Class"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "363",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "364",
+    "type" : "owl:Class"
+  }, {
+    "id" : "204",
+    "type" : "owl:Class"
+  }, {
+    "id" : "224",
+    "type" : "owl:Class"
+  }, {
+    "id" : "128",
+    "type" : "owl:Class"
+  }, {
+    "id" : "189",
+    "type" : "owl:Class"
+  }, {
+    "id" : "262",
+    "type" : "owl:Class"
+  }, {
+    "id" : "253",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "124",
+    "type" : "owl:Class"
+  }, {
+    "id" : "198",
+    "type" : "owl:Class"
+  }, {
+    "id" : "283",
+    "type" : "owl:Class"
+  }, {
+    "id" : "105",
+    "type" : "owl:Class"
+  }, {
+    "id" : "258",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "122",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "302",
+    "type" : "owl:Class"
+  }, {
+    "id" : "371",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "225",
+    "type" : "owl:Class"
+  }, {
+    "id" : "298",
+    "type" : "owl:Class"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "owl:Class"
+  }, {
+    "id" : "132",
+    "type" : "owl:Class"
+  }, {
+    "id" : "249",
+    "type" : "owl:Class"
+  }, {
+    "id" : "261",
+    "type" : "owl:Class"
+  }, {
+    "id" : "322",
+    "type" : "owl:Class"
+  }, {
+    "id" : "176",
+    "type" : "owl:Class"
+  }, {
+    "id" : "161",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "owl:Class"
+  }, {
+    "id" : "266",
+    "type" : "owl:Class"
+  }, {
+    "id" : "320",
+    "type" : "owl:Class"
+  }, {
+    "id" : "126",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "216",
+    "type" : "owl:Class"
+  }, {
+    "id" : "81",
+    "type" : "owl:Class"
+  }, {
+    "id" : "37",
+    "type" : "owl:Class"
+  }, {
+    "id" : "201",
+    "type" : "owl:Class"
+  }, {
+    "id" : "357",
+    "type" : "owl:Class"
+  }, {
+    "id" : "183",
+    "type" : "owl:Class"
+  }, {
+    "id" : "156",
+    "type" : "owl:Class"
+  }, {
+    "id" : "387",
+    "type" : "owl:Class"
+  }, {
+    "id" : "388",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "329",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "389",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "239",
+    "type" : "owl:Class"
+  }, {
+    "id" : "327",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "288",
+    "type" : "owl:Class"
+  }, {
+    "id" : "397",
+    "type" : "owl:Class"
+  }, {
+    "id" : "113",
+    "type" : "owl:Class"
+  }, {
+    "id" : "179",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "399",
+    "type" : "owl:Class"
+  }, {
+    "id" : "400",
+    "type" : "owl:Class"
+  }, {
+    "id" : "165",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "135",
+    "type" : "owl:Class"
+  }, {
+    "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "296",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "116",
+    "type" : "owl:Class"
+  }, {
+    "id" : "112",
+    "type" : "owl:Class"
+  }, {
+    "id" : "401",
+    "type" : "owl:Class"
+  }, {
+    "id" : "134",
+    "type" : "owl:Class"
+  }, {
+    "id" : "392",
+    "type" : "owl:Class"
+  }, {
+    "id" : "369",
+    "type" : "owl:Class"
+  }, {
+    "id" : "368",
+    "type" : "owl:Class"
+  }, {
+    "id" : "229",
+    "type" : "owl:Class"
+  }, {
+    "id" : "373",
+    "type" : "owl:Class"
+  }, {
+    "id" : "228",
+    "type" : "owl:Class"
+  }, {
+    "id" : "380",
+    "type" : "owl:Class"
+  }, {
+    "id" : "149",
+    "type" : "owl:Class"
+  }, {
+    "id" : "379",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:Class"
+  }, {
+    "id" : "93",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "219",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "79",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "182",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "404",
+    "type" : "owl:Class"
+  }, {
+    "id" : "405",
+    "type" : "owl:Class"
+  }, {
+    "id" : "120",
+    "type" : "owl:Class"
+  }, {
+    "id" : "130",
+    "type" : "owl:Class"
+  }, {
+    "id" : "114",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/1d5f1ec413fdbeb42c9d7e144e538e24",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "1d5f1ec413fdbeb42c9d7e144e538e24"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/2cecdc9ef2d096383628716496ec2bc3",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "2cecdc9ef2d096383628716496ec2bc3"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Code",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Code",
+      "undefined" : "Code"
+    },
+    "comment" : {
+      "undefined" : "A collection of statutes."
+    },
+    "attributes" : [ "external" ],
+    "id" : "23",
+    "superClasses" : [ "24", "25", "26" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/ReferenceSource",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReferenceSource",
+      "undefined" : "Reference Source"
+    },
+    "comment" : {
+      "undefined" : "A document that presents authoritative reference information, such as a dictionary or encylopedia ."
+    },
+    "attributes" : [ "external" ],
+    "id" : "27",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Document",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Document",
+      "undefined" : "Document"
+    },
+    "subClasses" : [ "29", "30", "31", "32", "33", "34", "35", "27", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46" ],
+    "comment" : {
+      "undefined" : "A document (noun) is a bounded physical representation of body of information designed with the capacity (and usually intent) to communicate. A document may manifest symbolic, diagrammatic or sensory-representational information."
+    },
+    "attributes" : [ "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#OrderedCollection",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OrderedCollection",
+      "undefined" : "Ordered Collection"
+    },
+    "attributes" : [ "external" ],
+    "id" : "47",
+    "superClasses" : [ "48" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/AcademicArticle",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AcademicArticle",
+      "undefined" : "Academic Article"
+    },
+    "comment" : {
+      "undefined" : "A scholarly academic article, typically published in a journal."
+    },
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "39", "11" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/3536f41038baba8fb464c3017afcc225",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "3536f41038baba8fb464c3017afcc225"
+    },
+    "subClasses" : [ "72" ],
+    "attributes" : [ "external" ],
+    "id" : "71"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/ff4761dc59a5fb4605b1a9479a5898f4",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ff4761dc59a5fb4605b1a9479a5898f4"
+    },
+    "attributes" : [ "external" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/PhysicalObject",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PhysicalObject",
+      "undefined" : "Physical Object"
+    },
+    "comment" : {
+      "undefined" : "An inanimate, three-dimensional object or substance."
+    },
+    "attributes" : [ "external" ],
+    "id" : "74"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/4f3567bf9831adeff15fbdeaaea9671a",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "4f3567bf9831adeff15fbdeaaea9671a"
+    },
+    "attributes" : [ "external" ],
+    "id" : "75"
+  }, {
+    "iri" : "http://www.w3.org/ns/csvw#Table",
+    "baseIri" : "http://www.w3.org/ns/csvw",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Table"
+    },
+    "subClasses" : [ "81" ],
+    "attributes" : [ "external" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Thesis",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Thesis",
+      "undefined" : "Thesis"
+    },
+    "comment" : {
+      "undefined" : "A document created to summarize research findings associated with the completion of an academic degree."
+    },
+    "attributes" : [ "external" ],
+    "id" : "43",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/43db448cb1380d7209306cc404fab5fe",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "43db448cb1380d7209306cc404fab5fe"
+    },
+    "attributes" : [ "external" ],
+    "id" : "82"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/f7f265d02fed0195f853df0fbc83e185",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "f7f265d02fed0195f853df0fbc83e185"
+    },
+    "subClasses" : [ "84" ],
+    "attributes" : [ "external" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/2d883253a03970487532e862b24a8146",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "2d883253a03970487532e862b24a8146"
+    },
+    "subClasses" : [ "24" ],
+    "attributes" : [ "external" ],
+    "id" : "88"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/MultiVolumeBook",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MultiVolumeBook",
+      "undefined" : "Multivolume Book"
+    },
+    "comment" : {
+      "undefined" : "A loose, thematic, collection of Documents, often Books."
+    },
+    "attributes" : [ "external" ],
+    "id" : "95",
+    "superClasses" : [ "96", "97" ]
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/StillImage",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StillImage",
+      "undefined" : "Still Image"
+    },
+    "comment" : {
+      "undefined" : "A static visual representation."
+    },
+    "attributes" : [ "external" ],
+    "id" : "98",
+    "superClasses" : [ "99" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/537abfc3eefd7fd63d10d248fb8796af",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "537abfc3eefd7fd63d10d248fb8796af"
+    },
+    "subClasses" : [ "105" ],
+    "attributes" : [ "external" ],
+    "id" : "104"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#SummaryStatistics",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SummaryStatistics",
+      "undefined" : "Summary Statistics"
+    },
+    "comment" : {
+      "undefined" : "Set of summary statistics about the dataset or column."
+    },
+    "attributes" : [ "external" ],
+    "id" : "106"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/InteractiveResource",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InteractiveResource",
+      "undefined" : "Interactive Resource"
+    },
+    "comment" : {
+      "undefined" : "A resource requiring interaction from the user to be understood, executed, or experienced."
+    },
+    "attributes" : [ "external" ],
+    "id" : "107"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/053615add4600741a28d402f7f134363",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "053615add4600741a28d402f7f134363"
+    },
+    "attributes" : [ "external" ],
+    "id" : "109"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Text",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Text",
+      "undefined" : "Text"
+    },
+    "comment" : {
+      "undefined" : "A resource consisting primarily of words for reading."
+    },
+    "attributes" : [ "external" ],
+    "id" : "110"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Image",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Image",
+      "undefined" : "Image"
+    },
+    "subClasses" : [ "111", "98" ],
+    "comment" : {
+      "undefined" : "A visual representation other than text."
+    },
+    "attributes" : [ "external" ],
+    "id" : "99"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Periodical",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Periodical",
+      "undefined" : "Periodical"
+    },
+    "subClasses" : [ "113", "84", "114", "23", "105" ],
+    "comment" : {
+      "undefined" : "A group of related documents issued at regular intervals."
+    },
+    "attributes" : [ "external" ],
+    "id" : "24",
+    "superClasses" : [ "96", "88", "112" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/60889d732b98dcab521ba18f344351eb",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "60889d732b98dcab521ba18f344351eb"
+    },
+    "attributes" : [ "external" ],
+    "id" : "117"
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Seq"
+    },
+    "subClasses" : [ "121" ],
+    "attributes" : [ "external" ],
+    "id" : "121",
+    "superClasses" : [ "121", "122", "19" ]
+  }, {
+    "iri" : "https://w3id.org/software-types#ServerApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServerApplication",
+      "undefined" : "Server Application"
+    },
+    "subClasses" : [ "136" ],
+    "comment" : {
+      "undefined" : "A software application running as a daemon providing a service, either locally or over a network, running in the background."
+    },
+    "attributes" : [ "external" ],
+    "id" : "133",
+    "superClasses" : [ "134", "135" ]
+  }, {
+    "iri" : "http://purl.org/dc/terms/Agent",
+    "baseIri" : "http://purl.org/dc/terms",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent"
+    },
+    "attributes" : [ "external" ],
+    "id" : "137"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/136ec0450ade806dbb1beb1aea8eeff4",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "136ec0450ade806dbb1beb1aea8eeff4"
+    },
+    "subClasses" : [ "23" ],
+    "attributes" : [ "external" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/cf0da10ec66d815bbee517d484c3bdce",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "cf0da10ec66d815bbee517d484c3bdce"
+    },
+    "attributes" : [ "external" ],
+    "id" : "157"
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bag"
+    },
+    "subClasses" : [ "158" ],
+    "attributes" : [ "external" ],
+    "id" : "158",
+    "superClasses" : [ "158", "122", "19" ]
+  }, {
+    "iri" : "https://w3id.org/software-types#SoftwareLibrary",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareLibrary",
+      "undefined" : "Software Library"
+    },
+    "comment" : {
+      "undefined" : "A software application offering an Application Programming Interface (API) for developers"
+    },
+    "attributes" : [ "external" ],
+    "id" : "61",
+    "superClasses" : [ "135", "55" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/DocumentPart",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DocumentPart",
+      "undefined" : "document part"
+    },
+    "subClasses" : [ "175", "176", "177" ],
+    "comment" : {
+      "undefined" : "a distinct part of a larger document or collected document."
+    },
+    "attributes" : [ "external" ],
+    "id" : "32",
+    "superClasses" : [ "174", "28" ]
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#NumericalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NumericalDataType",
+      "undefined" : "Numerical Statistical Data Type"
+    },
+    "subClasses" : [ "182", "183" ],
+    "comment" : {
+      "undefined" : "Set of statistical data types can be measured and quantified."
+    },
+    "attributes" : [ "external" ],
+    "id" : "180",
+    "superClasses" : [ "181" ]
+  }, {
+    "iri" : "http://purl.org/linked-data/cube#DataSet",
+    "baseIri" : "http://purl.org/linked-data/cube",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataSet"
+    },
+    "subClasses" : [ "81" ],
+    "attributes" : [ "external" ],
+    "id" : "184"
+  }, {
+    "iri" : "https://w3id.org/software-types#CommandLineApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CommandLineApplication",
+      "undefined" : "Command-Line Application"
+    },
+    "comment" : {
+      "undefined" : "A software application offering a command-line interface."
+    },
+    "attributes" : [ "external" ],
+    "id" : "167",
+    "superClasses" : [ "135", "55" ]
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Image",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Image"
+    },
+    "attributes" : [ "external" ],
+    "id" : "187"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#ColumnProperty",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ColumnProperty",
+      "undefined" : "Column Property"
+    },
+    "comment" : {
+      "undefined" : "RDF Properties represented by the column."
+    },
+    "attributes" : [ "external" ],
+    "id" : "16",
+    "superClasses" : [ "63", "14" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/036e142d77f89e56075a61e63ee629b7",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "036e142d77f89e56075a61e63ee629b7"
+    },
+    "subClasses" : [ "105" ],
+    "attributes" : [ "external" ],
+    "id" : "188"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#Column",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Column",
+      "undefined" : "Dataset Component"
+    },
+    "comment" : {
+      "undefined" : "Set of individual columns of a dataset."
+    },
+    "attributes" : [ "external" ],
+    "id" : "146",
+    "superClasses" : [ "189", "147" ]
+  }, {
+    "iri" : "file:/Users/andrevaldestilhas/Downloads/WebApplication",
+    "baseIri" : "file:/Users/andrevaldestilhas/Downloads",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WebApplication"
+    },
+    "subClasses" : [ "186" ],
+    "attributes" : [ "external" ],
+    "id" : "190"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Film",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Film",
+      "undefined" : "Film"
+    },
+    "comment" : {
+      "undefined" : "aka movie."
+    },
+    "attributes" : [ "external" ],
+    "id" : "192",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Chapter",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Chapter",
+      "undefined" : "Chapter"
+    },
+    "comment" : {
+      "undefined" : "A chapter of a book."
+    },
+    "attributes" : [ "external" ],
+    "id" : "199",
+    "superClasses" : [ "176" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Conference",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Conference",
+      "undefined" : "Conference"
+    },
+    "comment" : {
+      "undefined" : "A meeting for consultation or discussion."
+    },
+    "attributes" : [ "external" ],
+    "id" : "200",
+    "superClasses" : [ "201" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Excerpt",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Excerpt",
+      "undefined" : "Excerpt"
+    },
+    "subClasses" : [ "202" ],
+    "comment" : {
+      "undefined" : "A passage selected from a larger work."
+    },
+    "attributes" : [ "external" ],
+    "id" : "175",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Book",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Book",
+      "undefined" : "Book"
+    },
+    "subClasses" : [ "204" ],
+    "comment" : {
+      "undefined" : "A written or printed work of fiction or nonfiction, usually on sheets of paper fastened or bound together within covers."
+    },
+    "attributes" : [ "external" ],
+    "id" : "42",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#StatisticalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StatisticalDataType",
+      "undefined" : "Statistical Data Type"
+    },
+    "subClasses" : [ "66", "180" ],
+    "comment" : {
+      "undefined" : "Set of statistical data types."
+    },
+    "attributes" : [ "external" ],
+    "id" : "181"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Organization",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "209"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/5906af27ce8ae95c722d50ccb64354ee",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "5906af27ce8ae95c722d50ccb64354ee"
+    },
+    "attributes" : [ "external" ],
+    "id" : "217"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/968675397643d4b42b80e33dcc592390",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "968675397643d4b42b80e33dcc592390"
+    },
+    "subClasses" : [ "32" ],
+    "attributes" : [ "external" ],
+    "id" : "174"
+  }, {
+    "iri" : "https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel",
+    "baseIri" : "https://w3id.org/research-technology-readiness-levels",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TechnologyReadinessLevel"
+    },
+    "attributes" : [ "external" ],
+    "id" : "221"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#DatasetSchema",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DatasetSchema",
+      "undefined" : "Dataset Schema"
+    },
+    "comment" : {
+      "undefined" : "The structural schema of a dataset."
+    },
+    "attributes" : [ "external" ],
+    "id" : "223",
+    "superClasses" : [ "224", "225" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Series",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Series",
+      "undefined" : "Series"
+    },
+    "comment" : {
+      "undefined" : "A loose, thematic, collection of Documents, often Books."
+    },
+    "attributes" : [ "external" ],
+    "id" : "233",
+    "superClasses" : [ "96", "234" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "239", "3" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "238"
+  }, {
+    "instances" : 0,
+    "union" : [ "243", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "242"
+  }, {
+    "iri" : "https://schema.org/Author",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Author"
+    },
+    "attributes" : [ "external" ],
+    "id" : "250"
+  }, {
+    "iri" : "https://schema.org/SoftwareSourceCode",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareSourceCode",
+      "undefined" : "Software Source Code"
+    },
+    "attributes" : [ "external" ],
+    "id" : "257",
+    "superClasses" : [ "258" ]
+  }, {
+    "iri" : "https://w3id.org/software-types#NotebookApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NotebookApplication",
+      "undefined" : "Notebook Application"
+    },
+    "comment" : {
+      "undefined" : "A web application in the form of a notebook (e.g. Jupyter Notebook, R Notebook) or data story."
+    },
+    "attributes" : [ "external" ],
+    "id" : "186",
+    "superClasses" : [ "190", "136" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "XMLLiteral"
+    },
+    "subClasses" : [ "5" ],
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "3", "5", "19" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/CollectedDocument",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CollectedDocument",
+      "undefined" : "Collected Document"
+    },
+    "subClasses" : [ "50", "52" ],
+    "comment" : {
+      "undefined" : "A document that simultaneously contains other documents."
+    },
+    "attributes" : [ "external" ],
+    "id" : "34",
+    "superClasses" : [ "241", "266", "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Slide",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Slide",
+      "undefined" : "Slide"
+    },
+    "comment" : {
+      "undefined" : "A slide in a slideshow"
+    },
+    "attributes" : [ "external" ],
+    "id" : "177",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "https://w3id.org/software-types#TerminalApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TerminalApplication",
+      "undefined" : "Terminal Application"
+    },
+    "comment" : {
+      "undefined" : "A software application offering a terminal text-based user interface (e.g. ncurses)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "57",
+    "superClasses" : [ "135", "55" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Performance",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Performance",
+      "undefined" : "Performance"
+    },
+    "comment" : {
+      "undefined" : "A public performance."
+    },
+    "attributes" : [ "external" ],
+    "id" : "268",
+    "superClasses" : [ "201" ]
+  }, {
+    "iri" : "https://terms.codata.org/rdmt/data-paper",
+    "baseIri" : "https://terms.codata.org/rdmt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "data-paper",
+      "undefined" : "Research Paper"
+    },
+    "subClasses" : [ "10" ],
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Property"
+    },
+    "subClasses" : [ "13", "16" ],
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Resource",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Resource"
+    },
+    "subClasses" : [ "18", "21", "1", "8", "158", "3", "13", "121", "5", "122" ],
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Event",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event"
+    },
+    "attributes" : [ "external" ],
+    "id" : "139"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Service",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Service",
+      "undefined" : "Service"
+    },
+    "comment" : {
+      "undefined" : "A system that provides one or more functions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "284"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/MovingImage",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MovingImage",
+      "undefined" : "Moving Image"
+    },
+    "comment" : {
+      "undefined" : "A series of visual representations imparting an impression of motion when shown in succession."
+    },
+    "attributes" : [ "external" ],
+    "id" : "111",
+    "superClasses" : [ "99" ]
+  }, {
+    "iri" : "https://schema.org/WebApplication",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WebApplication"
+    },
+    "subClasses" : [ "186" ],
+    "attributes" : [ "external" ],
+    "id" : "136",
+    "superClasses" : [ "133" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/8cce779e6db8e4fa61cc379a2d078bcc",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "8cce779e6db8e4fa61cc379a2d078bcc"
+    },
+    "subClasses" : [ "50" ],
+    "attributes" : [ "external" ],
+    "id" : "163"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/7c8d4e73d51b9e32556c09f4559d0618",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "7c8d4e73d51b9e32556c09f4559d0618"
+    },
+    "attributes" : [ "external" ],
+    "id" : "286"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Specification",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Specification",
+      "undefined" : "Specification"
+    },
+    "subClasses" : [ "156" ],
+    "comment" : {
+      "undefined" : "A document describing a specification."
+    },
+    "attributes" : [ "external" ],
+    "id" : "33",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/DocumentStatus",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DocumentStatus",
+      "undefined" : "Document Status"
+    },
+    "comment" : {
+      "undefined" : "The status of the publication of a document."
+    },
+    "attributes" : [ "external" ],
+    "id" : "305"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#OrdinalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OrdinalDataType",
+      "undefined" : "Ordinal Statistical Data Type"
+    },
+    "comment" : {
+      "undefined" : "Statistical data type representing discrete units that can be ordered or measured."
+    },
+    "attributes" : [ "external" ],
+    "id" : "68",
+    "superClasses" : [ "66" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Magazine",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Magazine",
+      "undefined" : "Magazine"
+    },
+    "comment" : {
+      "undefined" : "A periodical of magazine Articles. A magazine is a publication that is issued periodically, usually bound in a paper cover, and typically contains essays, stories, poems, etc., by many writers, and often photographs and drawings, frequently specializing in a particular subject or area, as hobbies, news, or sports."
+    },
+    "attributes" : [ "external" ],
+    "id" : "84",
+    "superClasses" : [ "83", "24", "298" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Quote",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Quote",
+      "undefined" : "Quote"
+    },
+    "comment" : {
+      "undefined" : "An excerpted collection of words."
+    },
+    "attributes" : [ "external" ],
+    "id" : "202",
+    "superClasses" : [ "175" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Report",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Report",
+      "undefined" : "Report"
+    },
+    "comment" : {
+      "undefined" : "A document describing an account or statement describing in detail an event, situation, or the like, usually as the result of observation, inquiry, etc.."
+    },
+    "attributes" : [ "external" ],
+    "id" : "46",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/EditedBook",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EditedBook",
+      "undefined" : "Edited Book"
+    },
+    "comment" : {
+      "undefined" : "An edited book."
+    },
+    "attributes" : [ "external" ],
+    "id" : "52",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Software",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Software",
+      "undefined" : "Software"
+    },
+    "comment" : {
+      "undefined" : "A computer program in source or compiled form."
+    },
+    "attributes" : [ "external" ],
+    "id" : "310"
+  }, {
+    "iri" : "http://www.w3.org/ns/csvw#Column",
+    "baseIri" : "http://www.w3.org/ns/csvw",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Column"
+    },
+    "subClasses" : [ "146" ],
+    "attributes" : [ "external" ],
+    "id" : "147"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/3d4b75bdb7e1672bcdfa7c80f081dce0",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "3d4b75bdb7e1672bcdfa7c80f081dce0"
+    },
+    "attributes" : [ "external" ],
+    "id" : "90"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/35a598345f632bd39cbd7ceae13e02c7",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "35a598345f632bd39cbd7ceae13e02c7"
+    },
+    "attributes" : [ "external" ],
+    "id" : "243"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Document",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Document"
+    },
+    "attributes" : [ "external" ],
+    "id" : "339"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/LegalDocument",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LegalDocument",
+      "undefined" : "Legal Document"
+    },
+    "subClasses" : [ "132", "120" ],
+    "comment" : {
+      "undefined" : "A legal document; for example, a court decision, a brief, and so forth."
+    },
+    "attributes" : [ "external" ],
+    "id" : "41",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/AudioDocument",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AudioDocument",
+      "undefined" : "audio document"
+    },
+    "comment" : {
+      "undefined" : "An audio document; aka record."
+    },
+    "attributes" : [ "external" ],
+    "id" : "40",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/45b8c6a1302aef8cd14d007ef9607a53",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "45b8c6a1302aef8cd14d007ef9607a53"
+    },
+    "subClasses" : [ "34" ],
+    "attributes" : [ "external" ],
+    "id" : "241"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Note",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Note",
+      "undefined" : "Note"
+    },
+    "comment" : {
+      "undefined" : "Notes or annotations about a resource."
+    },
+    "attributes" : [ "external" ],
+    "id" : "35",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Interview",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Interview",
+      "undefined" : "Interview"
+    },
+    "comment" : {
+      "undefined" : "A formalized discussion between two or more people."
+    },
+    "attributes" : [ "external" ],
+    "id" : "325",
+    "superClasses" : [ "201" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Slideshow",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Slideshow",
+      "undefined" : "Slideshow"
+    },
+    "comment" : {
+      "undefined" : "A presentation of a series of slides, usually presented in front of an audience with written text and images."
+    },
+    "attributes" : [ "external" ],
+    "id" : "38",
+    "superClasses" : [ "302", "28" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ContainerMembershipProperty"
+    },
+    "subClasses" : [ "13" ],
+    "attributes" : [ "external" ],
+    "id" : "13",
+    "superClasses" : [ "14", "13", "19" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/494bcf4b0f1fc5c9c61f849db9c2e283",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "494bcf4b0f1fc5c9c61f849db9c2e283"
+    },
+    "attributes" : [ "external" ],
+    "id" : "350"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/AudioVisualDocument",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AudioVisualDocument",
+      "undefined" : "audio-visual document"
+    },
+    "subClasses" : [ "192" ],
+    "comment" : {
+      "undefined" : "An audio-visual document; film, video, and so forth."
+    },
+    "attributes" : [ "external" ],
+    "id" : "31",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#DataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataProperty"
+    },
+    "attributes" : [ "external" ],
+    "id" : "352"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/0eef22844c1cde35afb103fc5432ad27",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "0eef22844c1cde35afb103fc5432ad27"
+    },
+    "subClasses" : [ "23" ],
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/5634ba9592ec93a0abee1f4a09aea17d",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "5634ba9592ec93a0abee1f4a09aea17d"
+    },
+    "subClasses" : [ "233" ],
+    "attributes" : [ "external" ],
+    "id" : "234"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/a9caf30b5383859236112654bc38d682",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "a9caf30b5383859236112654bc38d682"
+    },
+    "attributes" : [ "external" ],
+    "id" : "101"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/d3968f26dc8387ae782cd3bba0f5058b",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "d3968f26dc8387ae782cd3bba0f5058b"
+    },
+    "subClasses" : [ "95" ],
+    "attributes" : [ "external" ],
+    "id" : "97"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/870e706ce12f9f6d26a61d0e2effa81f",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "870e706ce12f9f6d26a61d0e2effa81f"
+    },
+    "subClasses" : [ "50" ],
+    "attributes" : [ "external" ],
+    "id" : "270"
+  }, {
+    "iri" : "https://w3id.org/software-types#SoftwarePackage",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwarePackage",
+      "undefined" : "Software Package"
+    },
+    "comment" : {
+      "undefined" : "A software application in the form of a package for any particular package manager, distributes the application but not its wider dependency context."
+    },
+    "attributes" : [ "external" ],
+    "id" : "77",
+    "superClasses" : [ "135", "55" ]
+  }, {
+    "iri" : "https://terms.codata.org/rdmt/Dataset",
+    "baseIri" : "https://terms.codata.org/rdmt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset"
+    },
+    "attributes" : [ "external" ],
+    "id" : "363"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Collection",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Collection",
+      "undefined" : "Collection"
+    },
+    "subClasses" : [ "47" ],
+    "attributes" : [ "external" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Event",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event",
+      "undefined" : "Event"
+    },
+    "comment" : {
+      "undefined" : "A non-persistent, time-based occurrence."
+    },
+    "attributes" : [ "external" ],
+    "id" : "364"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Proceedings",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Proceedings",
+      "undefined" : "Proceedings"
+    },
+    "comment" : {
+      "undefined" : "A compilation of documents published from an event, such as a conference."
+    },
+    "attributes" : [ "external" ],
+    "id" : "204",
+    "superClasses" : [ "42" ]
+  }, {
+    "iri" : "http://purl.org/linked-data/cube#DataStructureDefinition",
+    "baseIri" : "http://purl.org/linked-data/cube",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataStructureDefinition"
+    },
+    "subClasses" : [ "223" ],
+    "attributes" : [ "external" ],
+    "id" : "224"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Bill",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bill",
+      "undefined" : "Bill"
+    },
+    "comment" : {
+      "undefined" : "Draft legislation presented for discussion to a legal body."
+    },
+    "attributes" : [ "external" ],
+    "id" : "128",
+    "superClasses" : [ "120" ]
+  }, {
+    "iri" : "http://purl.org/linked-data/cube#ComponentSpecification",
+    "baseIri" : "http://purl.org/linked-data/cube",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ComponentSpecification"
+    },
+    "subClasses" : [ "146" ],
+    "attributes" : [ "external" ],
+    "id" : "189"
+  }, {
+    "iri" : "https://schema.org/Service",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Service"
+    },
+    "subClasses" : [ "261" ],
+    "attributes" : [ "external" ],
+    "id" : "262"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/ceff99c4eefc475f78a1b8a64c7b1d27",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ceff99c4eefc475f78a1b8a64c7b1d27"
+    },
+    "subClasses" : [ "114" ],
+    "attributes" : [ "external" ],
+    "id" : "253"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Patent",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Patent",
+      "undefined" : "Patent"
+    },
+    "comment" : {
+      "undefined" : "A document describing the exclusive right granted by a government to an inventor to manufacture, use, or sell an invention for a certain number of years."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Statement"
+    },
+    "subClasses" : [ "21" ],
+    "attributes" : [ "external" ],
+    "id" : "21",
+    "superClasses" : [ "21", "19" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Email",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Email",
+      "undefined" : "EMail"
+    },
+    "comment" : {
+      "undefined" : "A written communication addressed to a person or organization and transmitted electronically."
+    },
+    "attributes" : [ "external" ],
+    "id" : "124",
+    "superClasses" : [ "45" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/d6975da38795dfc97fb918c4f50ed9fd",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "d6975da38795dfc97fb918c4f50ed9fd"
+    },
+    "attributes" : [ "external" ],
+    "id" : "198"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Brief",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Brief",
+      "undefined" : "Brief"
+    },
+    "comment" : {
+      "undefined" : "A written argument submitted to a court."
+    },
+    "attributes" : [ "external" ],
+    "id" : "283",
+    "superClasses" : [ "132" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Journal",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Journal",
+      "undefined" : "Journal"
+    },
+    "comment" : {
+      "undefined" : "A periodical of scholarly journal Articles."
+    },
+    "attributes" : [ "external" ],
+    "id" : "105",
+    "superClasses" : [ "188", "24", "104" ]
+  }, {
+    "iri" : "https://terms.codata.org/rdmt/research-software",
+    "baseIri" : "https://terms.codata.org/rdmt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "research-software"
+    },
+    "subClasses" : [ "257" ],
+    "attributes" : [ "external" ],
+    "id" : "258"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#NominalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NominalDataType",
+      "undefined" : "Nominal Statistical Data Type"
+    },
+    "comment" : {
+      "undefined" : "Statistical data type representing discrete units that cannot be ordered or measured."
+    },
+    "attributes" : [ "external" ],
+    "id" : "65",
+    "superClasses" : [ "66" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Container",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Container"
+    },
+    "subClasses" : [ "1", "158", "121", "122" ],
+    "attributes" : [ "external" ],
+    "id" : "122",
+    "superClasses" : [ "19", "122" ]
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConceptScheme",
+      "undefined" : "Concept Scheme"
+    },
+    "subClasses" : [ "18" ],
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "18", "19" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/a4fec83beeaac7106f9456b1ffeeabde",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "a4fec83beeaac7106f9456b1ffeeabde"
+    },
+    "subClasses" : [ "38" ],
+    "attributes" : [ "external" ],
+    "id" : "302"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/770d214cce2dc6aaa1c9ac63802190c9",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "770d214cce2dc6aaa1c9ac63802190c9"
+    },
+    "attributes" : [ "external" ],
+    "id" : "371"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Webpage",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Webpage",
+      "undefined" : "Webpage"
+    },
+    "comment" : {
+      "undefined" : "A web page is an online document available (at least initially) on the world wide web. A web page is written first and foremost to appear on the web, as distinct from other online resources such as books, manuscripts or audio documents which use the web primarily as a distribution mechanism alongside other more traditional methods such as print."
+    },
+    "attributes" : [ "external" ],
+    "id" : "36",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/csvw#TableSchema",
+    "baseIri" : "http://www.w3.org/ns/csvw",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TableSchema"
+    },
+    "subClasses" : [ "223" ],
+    "attributes" : [ "external" ],
+    "id" : "225"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/37a85f25f01d8da607826834881cd468",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "37a85f25f01d8da607826834881cd468"
+    },
+    "subClasses" : [ "84" ],
+    "attributes" : [ "external" ],
+    "id" : "298"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/f2b75648d2025e8468309296782e4185",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "f2b75648d2025e8468309296782e4185"
+    },
+    "attributes" : [ "external" ],
+    "id" : "103"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Collection",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Collection",
+      "undefined" : "Collection"
+    },
+    "subClasses" : [ "72", "24", "95", "233" ],
+    "comment" : {
+      "undefined" : "A collection of Documents or Collections"
+    },
+    "attributes" : [ "external" ],
+    "id" : "96",
+    "superClasses" : [ "165" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/LegalCaseDocument",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LegalCaseDocument",
+      "undefined" : "Legal Case Document"
+    },
+    "subClasses" : [ "161", "283" ],
+    "comment" : {
+      "undefined" : "A document accompanying a legal case."
+    },
+    "attributes" : [ "external" ],
+    "id" : "132",
+    "superClasses" : [ "41" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/9c34a9d12d29704d81f0971a891915f1",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "9c34a9d12d29704d81f0971a891915f1"
+    },
+    "attributes" : [ "external" ],
+    "id" : "249"
+  }, {
+    "iri" : "https://schema.org/WebAPI",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WebAPI",
+      "undefined" : "WebAPI"
+    },
+    "comment" : {
+      "undefined" : "An application programming interface accessible over Web/Internet technologies."
+    },
+    "attributes" : [ "external" ],
+    "id" : "261",
+    "superClasses" : [ "262" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Workshop",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Workshop",
+      "undefined" : "Workshop"
+    },
+    "comment" : {
+      "undefined" : "A seminar, discussion group, or the like, that emphasizes zxchange of ideas and the demonstration and application of techniques, skills, etc."
+    },
+    "attributes" : [ "external" ],
+    "id" : "322",
+    "superClasses" : [ "201" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/BookSection",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BookSection",
+      "undefined" : "Book Section"
+    },
+    "subClasses" : [ "199" ],
+    "comment" : {
+      "undefined" : "A section of a book."
+    },
+    "attributes" : [ "external" ],
+    "id" : "176",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/LegalDecision",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LegalDecision",
+      "undefined" : "Decision"
+    },
+    "comment" : {
+      "undefined" : "A document containing an authoritative determination (as a decree or judgment) made after consideration of facts or law."
+    },
+    "attributes" : [ "external" ],
+    "id" : "161",
+    "superClasses" : [ "132" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/46a6a02529a2feb5b30434cdb73be710",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "46a6a02529a2feb5b30434cdb73be710"
+    },
+    "attributes" : [ "external" ],
+    "id" : "87"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/62146d0884cd5685accbed5b259eda14",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "62146d0884cd5685accbed5b259eda14"
+    },
+    "subClasses" : [ "34" ],
+    "attributes" : [ "external" ],
+    "id" : "266"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Hearing",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Hearing",
+      "undefined" : "Hearing"
+    },
+    "comment" : {
+      "undefined" : "An instance or a session in which testimony and arguments are presented, esp. before an official, as a judge in a lawsuit."
+    },
+    "attributes" : [ "external" ],
+    "id" : "320",
+    "superClasses" : [ "201" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Letter",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Letter",
+      "undefined" : "Letter"
+    },
+    "comment" : {
+      "undefined" : "A written or printed communication addressed to a person or organization and usually transmitted by mail."
+    },
+    "attributes" : [ "external" ],
+    "id" : "126",
+    "superClasses" : [ "45" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Manual",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Manual",
+      "undefined" : "Manual"
+    },
+    "comment" : {
+      "undefined" : "A small reference book, especially one giving instructions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "29",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept",
+      "undefined" : "Concept"
+    },
+    "subClasses" : [ "8" ],
+    "attributes" : [ "external" ],
+    "id" : "8",
+    "superClasses" : [ "8", "19" ]
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Agent",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent",
+      "undefined" : "has ORCID"
+    },
+    "attributes" : [ "external" ],
+    "id" : "216"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#Dataset",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset",
+      "undefined" : "Dataset"
+    },
+    "comment" : {
+      "undefined" : "Set of data."
+    },
+    "attributes" : [ "external" ],
+    "id" : "81",
+    "superClasses" : [ "184", "80" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Image",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Image",
+      "undefined" : "Image"
+    },
+    "subClasses" : [ "329" ],
+    "comment" : {
+      "undefined" : "A document that presents visual or diagrammatic information."
+    },
+    "attributes" : [ "external" ],
+    "id" : "37",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/NET/c4dm/event.owl#Event",
+    "baseIri" : "http://purl.org/NET/c4dm/event.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event"
+    },
+    "subClasses" : [ "327", "200", "268", "320", "325", "322" ],
+    "attributes" : [ "external" ],
+    "id" : "201"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/af8feb069f9b6fa724186de955be4db5",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "af8feb069f9b6fa724186de955be4db5"
+    },
+    "subClasses" : [ "114" ],
+    "attributes" : [ "external" ],
+    "id" : "357"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#IntervalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "IntervalDataType",
+      "undefined" : "Interval Statistical Data Type"
+    },
+    "comment" : {
+      "undefined" : "Statistical data type representing ordered data measured over a numerical scale with equal distance between units."
+    },
+    "attributes" : [ "external" ],
+    "id" : "183",
+    "superClasses" : [ "180" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Standard",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Standard",
+      "undefined" : "Standard"
+    },
+    "comment" : {
+      "undefined" : "A document describing a standard: a specification organized through a standards body."
+    },
+    "attributes" : [ "external" ],
+    "id" : "156",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "attributes" : [ "external" ],
+    "id" : "387"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Collection",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Collection",
+      "undefined" : "Collection"
+    },
+    "comment" : {
+      "undefined" : "An aggregation of resources."
+    },
+    "attributes" : [ "external" ],
+    "id" : "388"
+  }, {
+    "iri" : "file:/Users/andrevaldestilhas/Downloads/SoftwareApplication",
+    "baseIri" : "file:/Users/andrevaldestilhas/Downloads",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareApplication"
+    },
+    "subClasses" : [ "167", "77", "54", "57", "59", "61" ],
+    "attributes" : [ "external" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Map",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Map",
+      "undefined" : "Map"
+    },
+    "comment" : {
+      "undefined" : "A graphical depiction of geographic features."
+    },
+    "attributes" : [ "external" ],
+    "id" : "329",
+    "superClasses" : [ "37" ]
+  }, {
+    "iri" : "http://purl.org/linked-data/cube#DimensionProperty",
+    "baseIri" : "http://purl.org/linked-data/cube",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DimensionProperty"
+    },
+    "subClasses" : [ "16" ],
+    "attributes" : [ "external" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/9d62582fccd3483d84c2fcfede78c861",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "9d62582fccd3483d84c2fcfede78c861"
+    },
+    "attributes" : [ "external" ],
+    "id" : "389"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#CategoricalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CategoricalDataType",
+      "undefined" : "Categorical Statistical Data Type"
+    },
+    "subClasses" : [ "65", "68" ],
+    "comment" : {
+      "undefined" : "Set of statistical data types can be observed and - or - categorised."
+    },
+    "attributes" : [ "external" ],
+    "id" : "66",
+    "superClasses" : [ "181" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Article",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Article",
+      "undefined" : "Article"
+    },
+    "subClasses" : [ "10" ],
+    "comment" : {
+      "undefined" : "A written composition in prose, usually nonfiction, on a specific topic, forming an independent part of a book or other publication, as a newspaper or magazine."
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/DOI",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DOI"
+    },
+    "attributes" : [ "external" ],
+    "id" : "239"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/PersonalCommunication",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PersonalCommunication",
+      "undefined" : "Personal Communication"
+    },
+    "comment" : {
+      "undefined" : "A communication between an agent and one or more specific recipients."
+    },
+    "attributes" : [ "external" ],
+    "id" : "327",
+    "superClasses" : [ "201" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Alt"
+    },
+    "subClasses" : [ "1" ],
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "1", "19", "122" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Literal"
+    },
+    "subClasses" : [ "3", "5" ],
+    "attributes" : [ "external" ],
+    "id" : "3",
+    "superClasses" : [ "3", "19" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/ThesisDegree",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ThesisDegree",
+      "undefined" : "Thesis degree"
+    },
+    "comment" : {
+      "undefined" : "The academic degree of a Thesis"
+    },
+    "attributes" : [ "external" ],
+    "id" : "288"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/b6ad0a58a1dabd9733a4ceb1b8c49159",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "b6ad0a58a1dabd9733a4ceb1b8c49159"
+    },
+    "attributes" : [ "external" ],
+    "id" : "397"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/CourtReporter",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CourtReporter",
+      "undefined" : "Court Reporter"
+    },
+    "comment" : {
+      "undefined" : "A collection of legal cases."
+    },
+    "attributes" : [ "external" ],
+    "id" : "113",
+    "superClasses" : [ "179", "24", "149" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/902c7850542b0da4792c6b8d7063269e",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "902c7850542b0da4792c6b8d7063269e"
+    },
+    "subClasses" : [ "113" ],
+    "attributes" : [ "external" ],
+    "id" : "179"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Issue",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Issue",
+      "undefined" : "Issue"
+    },
+    "comment" : {
+      "undefined" : "something that is printed or published and distributed, esp. a given number of a periodical"
+    },
+    "attributes" : [ "external" ],
+    "id" : "50",
+    "superClasses" : [ "34", "163", "270" ]
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Dataset",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset",
+      "undefined" : "Dataset"
+    },
+    "comment" : {
+      "undefined" : "Data encoded in a defined structure."
+    },
+    "attributes" : [ "external" ],
+    "id" : "399"
+  }, {
+    "iri" : "https://terms.codata.org/rdmt/orcid",
+    "baseIri" : "https://terms.codata.org/rdmt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "orcid"
+    },
+    "attributes" : [ "external" ],
+    "id" : "400"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/676c4024d289d75f77276d2466437b85",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "676c4024d289d75f77276d2466437b85"
+    },
+    "subClasses" : [ "96" ],
+    "attributes" : [ "external" ],
+    "id" : "165"
+  }, {
+    "iri" : "https://w3id.org/software-types#DesktopApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DesktopApplication",
+      "undefined" : "Desktop Application"
+    },
+    "comment" : {
+      "undefined" : "A software application offering a graphical user interface on the deskop."
+    },
+    "attributes" : [ "external" ],
+    "id" : "59",
+    "superClasses" : [ "135", "55" ]
+  }, {
+    "iri" : "https://schema.org/SoftwareApplication",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareApplication"
+    },
+    "subClasses" : [ "167", "77", "133", "54", "57", "59", "61" ],
+    "attributes" : [ "external" ],
+    "id" : "135"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/5e802100a8ff91ab84e96589e9b49f1d",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "5e802100a8ff91ab84e96589e9b49f1d"
+    },
+    "subClasses" : [ "72" ],
+    "attributes" : [ "external" ],
+    "id" : "142"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/49d13eb4a5f8c934ba66553801346ab9",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "49d13eb4a5f8c934ba66553801346ab9"
+    },
+    "attributes" : [ "external" ],
+    "id" : "296"
+  }, {
+    "iri" : "https://w3id.org/software-types#SoftwareImage",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareImage",
+      "undefined" : "Software Image"
+    },
+    "comment" : {
+      "undefined" : "A software application in the form of an image (such as a container image or virtual machine image), distributes the application along with its wider dependency context."
+    },
+    "attributes" : [ "external" ],
+    "id" : "54",
+    "superClasses" : [ "135", "55" ]
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/5f4641a252eaf5557ecfc423c94aae79",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "5f4641a252eaf5557ecfc423c94aae79"
+    },
+    "attributes" : [ "external" ],
+    "id" : "116"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/f99e7afff964a74071bf07217949dcab",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "f99e7afff964a74071bf07217949dcab"
+    },
+    "subClasses" : [ "24" ],
+    "attributes" : [ "external" ],
+    "id" : "112"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Sound",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Sound",
+      "undefined" : "Sound"
+    },
+    "comment" : {
+      "undefined" : "A resource primarily intended to be heard."
+    },
+    "attributes" : [ "external" ],
+    "id" : "401"
+  }, {
+    "iri" : "file:/Users/andrevaldestilhas/Downloads/ServerApplication",
+    "baseIri" : "file:/Users/andrevaldestilhas/Downloads",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServerApplication"
+    },
+    "subClasses" : [ "133" ],
+    "attributes" : [ "external" ],
+    "id" : "134"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/52bee1b333d02114e7e72ac7771e7b98",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "52bee1b333d02114e7e72ac7771e7b98"
+    },
+    "attributes" : [ "external" ],
+    "id" : "392"
+  }, {
+    "instances" : 0,
+    "union" : [ "10", "11", "28" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "369"
+  }, {
+    "instances" : 0,
+    "union" : [ "257", "250", "28" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "368"
+  }, {
+    "instances" : 0,
+    "union" : [ "363", "223" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "229"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/3f5f76f76d772e1250b91da8fba47f43",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "3f5f76f76d772e1250b91da8fba47f43"
+    },
+    "attributes" : [ "external" ],
+    "id" : "373"
+  }, {
+    "instances" : 0,
+    "union" : [ "81", "257" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "228"
+  }, {
+    "instances" : 0,
+    "union" : [ "216", "404" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "380"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/247fe0d50829dcd860324e86f9efd0b6",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "247fe0d50829dcd860324e86f9efd0b6"
+    },
+    "subClasses" : [ "113" ],
+    "attributes" : [ "external" ],
+    "id" : "149"
+  }, {
+    "instances" : 0,
+    "union" : [ "10", "371" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "379"
+  }, {
+    "instances" : 0,
+    "union" : [ "405", "250" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "94"
+  }, {
+    "instances" : 0,
+    "union" : [ "10", "28" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Website",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Website",
+      "undefined" : "Website"
+    },
+    "comment" : {
+      "undefined" : "A group of Webpages accessible on the Web."
+    },
+    "attributes" : [ "external" ],
+    "id" : "72",
+    "superClasses" : [ "96", "142", "71" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Manuscript",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Manuscript",
+      "undefined" : "Manuscript"
+    },
+    "comment" : {
+      "undefined" : "An unpublished Document, which may also be submitted to a publisher for publication."
+    },
+    "attributes" : [ "external" ],
+    "id" : "44",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "219",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "79",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#RatioDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RatioDataType",
+      "undefined" : "Ratio Statistical Data Type"
+    },
+    "comment" : {
+      "undefined" : "Statistical data type representing ordered data with equal distance between units, where negative values are not allowed."
+    },
+    "attributes" : [ "external" ],
+    "id" : "182",
+    "superClasses" : [ "180" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/PersonalCommunicationDocument",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PersonalCommunicationDocument",
+      "undefined" : "Personal Communication Document"
+    },
+    "subClasses" : [ "124", "126" ],
+    "comment" : {
+      "undefined" : "A personal communication manifested in some document."
+    },
+    "attributes" : [ "external" ],
+    "id" : "45",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://schema.org/ResearchProject",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ResearchProject"
+    },
+    "attributes" : [ "external" ],
+    "id" : "404"
+  }, {
+    "iri" : "https://kg.odissei.nl/.well-known/genid/758a42f65f5a11da4a8a44c705e73557",
+    "baseIri" : "https://kg.odissei.nl/.well-known/genid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "758a42f65f5a11da4a8a44c705e73557"
+    },
+    "attributes" : [ "external" ],
+    "id" : "405"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Legislation",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Legislation",
+      "undefined" : "Legislation"
+    },
+    "subClasses" : [ "128", "130" ],
+    "comment" : {
+      "undefined" : "A legal document proposing or enacting a law or a group of laws."
+    },
+    "attributes" : [ "external" ],
+    "id" : "120",
+    "superClasses" : [ "41" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Statute",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Statute",
+      "undefined" : "Statute"
+    },
+    "comment" : {
+      "undefined" : "A bill enacted into law."
+    },
+    "attributes" : [ "external" ],
+    "id" : "130",
+    "superClasses" : [ "120" ]
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Newspaper",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Newspaper",
+      "undefined" : "Newspaper"
+    },
+    "comment" : {
+      "undefined" : "A periodical of documents, usually issued daily or weekly, containing current news, editorials, feature articles, and usually advertising."
+    },
+    "attributes" : [ "external" ],
+    "id" : "114",
+    "superClasses" : [ "253", "24", "357" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "4",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "85",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "86",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "118",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "123",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "125",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "127",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "129",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "138",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "140",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "141",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "143",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "145",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "148",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "150",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "151",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "152",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "153",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "154",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "155",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "159",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "160",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "162",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "164",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "166",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "168",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "169",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "170",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "171",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "172",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "173",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "178",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "185",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "191",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "193",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "194",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "195",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "196",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "197",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "203",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "205",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "206",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "208",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "210",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "211",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "212",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "213",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "214",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "215",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "218",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "220",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "222",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "226",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "227",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "230",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "231",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "232",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "235",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "236",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "237",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "240",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "244",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "245",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "246",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "247",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "248",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "251",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "252",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "254",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "255",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "256",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "259",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "260",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "263",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "264",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "265",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "267",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "269",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "271",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "272",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "273",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "274",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "275",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "276",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "277",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "278",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "279",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "280",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "281",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "282",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "285",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "287",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "289",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "290",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "291",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "292",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "293",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "294",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "295",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "297",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "299",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "300",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "301",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "303",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "304",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "306",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "307",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "308",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "309",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "311",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "312",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "313",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "314",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "315",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "316",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "317",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "318",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "319",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "321",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "323",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "324",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "326",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "328",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "330",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "331",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "332",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "333",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "334",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "335",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "336",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "337",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "338",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "340",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "341",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "342",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "343",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "344",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "345",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "346",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "347",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "348",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "349",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "351",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "353",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "354",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "355",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "356",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "358",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "359",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "360",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "361",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "362",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "365",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "366",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "367",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "370",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "372",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "374",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "375",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "376",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "377",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "378",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "381",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "382",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "383",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "384",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "385",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "386",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "390",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "391",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "393",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "394",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "395",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "396",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "398",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "402",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "403",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "406",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "407",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "408",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "409",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "1",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "range" : "3",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "2"
+  }, {
+    "range" : "3",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#semanticRelation",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "semanticRelation"
+    },
+    "domain" : "8",
+    "attributes" : [ "external", "object" ],
+    "id" : "7"
+  }, {
+    "range" : "11",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "9"
+  }, {
+    "range" : "14",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "12"
+  }, {
+    "range" : "14",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "15"
+  }, {
+    "range" : "19",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "17"
+  }, {
+    "range" : "19",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "range" : "34",
+    "domain" : "50",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "49"
+  }, {
+    "range" : "34",
+    "domain" : "52",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "51"
+  }, {
+    "range" : "55",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "53"
+  }, {
+    "range" : "55",
+    "domain" : "57",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "56"
+  }, {
+    "range" : "55",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "58"
+  }, {
+    "range" : "55",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "60"
+  }, {
+    "range" : "63",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "62"
+  }, {
+    "range" : "66",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "64"
+  }, {
+    "range" : "66",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
+  }, {
+    "range" : "39",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "69"
+  }, {
+    "range" : "5",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "70"
+  }, {
+    "range" : "55",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#inScheme",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "inScheme"
+    },
+    "domain" : "79",
+    "attributes" : [ "external", "object" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/shortDescription",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "shortDescription"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "85"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/isbn10",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "isbn10"
+    },
+    "domain" : "87",
+    "attributes" : [ "external", "object" ],
+    "id" : "86"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/isbn13",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "isbn13"
+    },
+    "domain" : "90",
+    "attributes" : [ "external", "object" ],
+    "id" : "89"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/edition",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "edition"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "91"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/authorList",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "94",
+    "label" : {
+      "IRI-based" : "authorList"
+    },
+    "domain" : "93",
+    "attributes" : [ "external", "object" ],
+    "id" : "92"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/oclcnum",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "oclcnum"
+    },
+    "domain" : "101",
+    "attributes" : [ "external", "object" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/coden",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "coden"
+    },
+    "domain" : "103",
+    "attributes" : [ "external", "object" ],
+    "id" : "102"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/shortTitle",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "shortTitle"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/uri",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "uri"
+    },
+    "domain" : "116",
+    "attributes" : [ "external", "object" ],
+    "id" : "115"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/pages",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "pages"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "118"
+  }, {
+    "range" : "41",
+    "domain" : "120",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "119"
+  }, {
+    "range" : "45",
+    "domain" : "124",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "123"
+  }, {
+    "range" : "45",
+    "domain" : "126",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "125"
+  }, {
+    "range" : "120",
+    "domain" : "128",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "127"
+  }, {
+    "range" : "120",
+    "domain" : "130",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "129"
+  }, {
+    "range" : "41",
+    "domain" : "132",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "131"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/presentedAt",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "139",
+    "label" : {
+      "IRI-based" : "presentedAt"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "138"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/reproducedIn",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "reproducedIn"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "140"
+  }, {
+    "range" : "142",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "141"
+  }, {
+    "range" : "112",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "143"
+  }, {
+    "range" : "134",
+    "domain" : "133",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "144"
+  }, {
+    "range" : "147",
+    "domain" : "146",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "145"
+  }, {
+    "range" : "149",
+    "domain" : "113",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "148"
+  }, {
+    "range" : "135",
+    "domain" : "133",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "150"
+  }, {
+    "range" : "135",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "151"
+  }, {
+    "range" : "135",
+    "domain" : "57",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "152"
+  }, {
+    "range" : "135",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "153"
+  }, {
+    "range" : "135",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "154"
+  }, {
+    "range" : "33",
+    "domain" : "156",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "155"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#hasVariable",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasVariable"
+    },
+    "domain" : "16",
+    "attributes" : [ "external", "object" ],
+    "id" : "159"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/affirmedBy",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "161",
+    "label" : {
+      "IRI-based" : "affirmedBy"
+    },
+    "domain" : "161",
+    "attributes" : [ "external", "object" ],
+    "id" : "160"
+  }, {
+    "range" : "163",
+    "domain" : "50",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "162"
+  }, {
+    "range" : "165",
+    "domain" : "96",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "164"
+  }, {
+    "range" : "135",
+    "domain" : "167",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "166"
+  }, {
+    "range" : "135",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "168"
+  }, {
+    "range" : "19",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "169"
+  }, {
+    "range" : "19",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "170"
+  }, {
+    "range" : "19",
+    "domain" : "121",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "171"
+  }, {
+    "range" : "19",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "172"
+  }, {
+    "range" : "19",
+    "domain" : "122",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "173"
+  }, {
+    "range" : "179",
+    "domain" : "113",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "178"
+  }, {
+    "range" : "136",
+    "domain" : "186",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "185"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/argued",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "argued"
+    },
+    "domain" : "41",
+    "attributes" : [ "external", "object" ],
+    "id" : "191"
+  }, {
+    "range" : "19",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "193"
+  }, {
+    "range" : "19",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "194"
+  }, {
+    "range" : "19",
+    "domain" : "158",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "195"
+  }, {
+    "range" : "28",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "196"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/eanucc13",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "eanucc13"
+    },
+    "domain" : "198",
+    "attributes" : [ "external", "object" ],
+    "id" : "197"
+  }, {
+    "range" : "28",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "203"
+  }, {
+    "range" : "28",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "205"
+  }, {
+    "range" : "28",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "206"
+  }, {
+    "range" : "28",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "207"
+  }, {
+    "range" : "28",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "208"
+  }, {
+    "range" : "28",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "210"
+  }, {
+    "range" : "28",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "211"
+  }, {
+    "range" : "28",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "212"
+  }, {
+    "range" : "28",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "213"
+  }, {
+    "range" : "28",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "214"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/organizer",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "organizer"
+    },
+    "domain" : "201",
+    "attributes" : [ "external", "object" ],
+    "id" : "215"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/abstract",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "abstract"
+    },
+    "domain" : "219",
+    "attributes" : [ "external", "object" ],
+    "id" : "218"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/pageStart",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "pageStart"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "220"
+  }, {
+    "range" : "28",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "222"
+  }, {
+    "range" : "28",
+    "domain" : "33",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "226"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#datasetSchema",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "range" : "229",
+    "label" : {
+      "IRI-based" : "datasetSchema"
+    },
+    "domain" : "228",
+    "attributes" : [ "external", "object" ],
+    "id" : "227"
+  }, {
+    "range" : "28",
+    "domain" : "35",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "230"
+  }, {
+    "range" : "28",
+    "domain" : "30",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "231"
+  }, {
+    "range" : "28",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "232"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/presents",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "presents"
+    },
+    "domain" : "139",
+    "attributes" : [ "external", "object" ],
+    "id" : "235"
+  }, {
+    "range" : "28",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "236"
+  }, {
+    "range" : "28",
+    "domain" : "31",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "237"
+  }, {
+    "range" : "241",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "240"
+  }, {
+    "range" : "99",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "244"
+  }, {
+    "range" : "24",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "245"
+  }, {
+    "range" : "24",
+    "domain" : "113",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "246"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#columnProperty",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "columnProperty"
+    },
+    "domain" : "146",
+    "attributes" : [ "external", "object" ],
+    "id" : "247"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/translator",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "translator"
+    },
+    "domain" : "249",
+    "attributes" : [ "external", "object" ],
+    "id" : "248"
+  }, {
+    "range" : "21",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "251"
+  }, {
+    "range" : "253",
+    "domain" : "114",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "252"
+  }, {
+    "range" : "99",
+    "domain" : "111",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "254"
+  }, {
+    "range" : "104",
+    "domain" : "105",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "255"
+  }, {
+    "range" : "88",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "256"
+  }, {
+    "range" : "224",
+    "domain" : "223",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "259"
+  }, {
+    "range" : "262",
+    "domain" : "261",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "260"
+  }, {
+    "range" : "189",
+    "domain" : "146",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "263"
+  }, {
+    "range" : "48",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "264"
+  }, {
+    "range" : "83",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "265"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/director",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "director"
+    },
+    "domain" : "31",
+    "attributes" : [ "external", "object" ],
+    "id" : "267"
+  }, {
+    "range" : "270",
+    "domain" : "50",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "269"
+  }, {
+    "range" : "234",
+    "domain" : "233",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "271"
+  }, {
+    "range" : "71",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "272"
+  }, {
+    "range" : "80",
+    "domain" : "81",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "273"
+  }, {
+    "range" : "97",
+    "domain" : "95",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "274"
+  }, {
+    "range" : "13",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "275"
+  }, {
+    "range" : "28",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "276"
+  }, {
+    "range" : "25",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "277"
+  }, {
+    "range" : "31",
+    "domain" : "192",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "278"
+  }, {
+    "range" : "132",
+    "domain" : "161",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "279"
+  }, {
+    "range" : "96",
+    "domain" : "233",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "280"
+  }, {
+    "range" : "158",
+    "domain" : "158",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "281"
+  }, {
+    "range" : "132",
+    "domain" : "283",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "282"
+  }, {
+    "range" : "96",
+    "domain" : "95",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "285"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/degree",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "288",
+    "label" : {
+      "IRI-based" : "degree"
+    },
+    "domain" : "43",
+    "attributes" : [ "external", "object" ],
+    "id" : "287"
+  }, {
+    "range" : "96",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "289"
+  }, {
+    "range" : "96",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "290"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#hasCodeBook",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "hasCodeBook"
+    },
+    "domain" : "16",
+    "attributes" : [ "external", "object" ],
+    "id" : "291"
+  }, {
+    "range" : "225",
+    "domain" : "223",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "292"
+  }, {
+    "range" : "133",
+    "domain" : "136",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "293"
+  }, {
+    "range" : "26",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "294"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/editorList",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "296",
+    "label" : {
+      "IRI-based" : "editorList"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "295"
+  }, {
+    "range" : "298",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "297"
+  }, {
+    "range" : "122",
+    "domain" : "122",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "299"
+  }, {
+    "range" : "122",
+    "domain" : "121",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "300"
+  }, {
+    "range" : "302",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "301"
+  }, {
+    "range" : "18",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "303"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/reversedBy",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "161",
+    "label" : {
+      "IRI-based" : "reversedBy"
+    },
+    "domain" : "161",
+    "attributes" : [ "external", "object" ],
+    "id" : "304"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/numPages",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "numPages"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "306"
+  }, {
+    "range" : "122",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "307"
+  }, {
+    "range" : "121",
+    "domain" : "121",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "308"
+  }, {
+    "range" : "122",
+    "domain" : "158",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "309"
+  }, {
+    "range" : "24",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "311"
+  }, {
+    "range" : "24",
+    "domain" : "114",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "312"
+  }, {
+    "range" : "258",
+    "domain" : "257",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "313"
+  }, {
+    "range" : "24",
+    "domain" : "105",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "314"
+  }, {
+    "range" : "42",
+    "domain" : "204",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "315"
+  }, {
+    "range" : "175",
+    "domain" : "202",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "316"
+  }, {
+    "range" : "181",
+    "domain" : "180",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "317"
+  }, {
+    "range" : "181",
+    "domain" : "66",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "318"
+  }, {
+    "range" : "201",
+    "domain" : "320",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "319"
+  }, {
+    "range" : "201",
+    "domain" : "322",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "321"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/recipient",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "recipient"
+    },
+    "domain" : "45",
+    "attributes" : [ "external", "object" ],
+    "id" : "323"
+  }, {
+    "range" : "201",
+    "domain" : "325",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "324"
+  }, {
+    "range" : "201",
+    "domain" : "327",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "326"
+  }, {
+    "range" : "37",
+    "domain" : "329",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "328"
+  }, {
+    "range" : "201",
+    "domain" : "268",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "330"
+  }, {
+    "range" : "201",
+    "domain" : "200",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "331"
+  }, {
+    "range" : "266",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "332"
+  }, {
+    "range" : "188",
+    "domain" : "105",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "333"
+  }, {
+    "range" : "8",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "334"
+  }, {
+    "range" : "190",
+    "domain" : "186",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "335"
+  }, {
+    "range" : "184",
+    "domain" : "81",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "336"
+  }, {
+    "range" : "180",
+    "domain" : "183",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "337"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/gtin14",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "gtin14"
+    },
+    "domain" : "117",
+    "attributes" : [ "external", "object" ],
+    "id" : "338"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/issue",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "issue"
+    },
+    "domain" : "50",
+    "attributes" : [ "external", "object" ],
+    "id" : "340"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/status",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "305",
+    "label" : {
+      "IRI-based" : "status"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "341"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/volume",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "volume"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "342"
+  }, {
+    "range" : "180",
+    "domain" : "182",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "343"
+  }, {
+    "range" : "32",
+    "domain" : "176",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "344"
+  }, {
+    "range" : "32",
+    "domain" : "175",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "345"
+  }, {
+    "range" : "176",
+    "domain" : "199",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "346"
+  }, {
+    "range" : "32",
+    "domain" : "177",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "347"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/lccn",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "lccn"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "object" ],
+    "id" : "348"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/contributorList",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "350",
+    "label" : {
+      "IRI-based" : "contributorList"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "349"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/suffixName",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "suffixName"
+    },
+    "domain" : "216",
+    "attributes" : [ "external", "object" ],
+    "id" : "351"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/interviewee",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "interviewee"
+    },
+    "domain" : "216",
+    "attributes" : [ "external", "object" ],
+    "id" : "353"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/interviewer",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "interviewer"
+    },
+    "domain" : "216",
+    "attributes" : [ "external", "object" ],
+    "id" : "354"
+  }, {
+    "range" : "174",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "355"
+  }, {
+    "range" : "357",
+    "domain" : "114",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "356"
+  }, {
+    "range" : "55",
+    "domain" : "167",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "358"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasTopConcept"
+    },
+    "domain" : "18",
+    "attributes" : [ "external", "object" ],
+    "id" : "359"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/content",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "content"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "360"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/prefixName",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "prefixName"
+    },
+    "domain" : "216",
+    "attributes" : [ "external", "object" ],
+    "id" : "361"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/chapter",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "chapter"
+    },
+    "domain" : "176",
+    "attributes" : [ "external", "object" ],
+    "id" : "362"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/court",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "209",
+    "label" : {
+      "IRI-based" : "court"
+    },
+    "domain" : "41",
+    "attributes" : [ "external", "object" ],
+    "id" : "365"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#column",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "range" : "146",
+    "label" : {
+      "IRI-based" : "column"
+    },
+    "domain" : "223",
+    "attributes" : [ "external", "object" ],
+    "id" : "366"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/cites",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "369",
+    "label" : {
+      "IRI-based" : "cites"
+    },
+    "domain" : "368",
+    "attributes" : [ "external", "object" ],
+    "id" : "367"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/citedBy",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "citedBy"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "370"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/distributor",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "distributor"
+    },
+    "domain" : "373",
+    "attributes" : [ "external", "object" ],
+    "id" : "372"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/pmid",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "pmid"
+    },
+    "domain" : "22",
+    "attributes" : [ "external", "object" ],
+    "id" : "374"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/editor",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "editor"
+    },
+    "domain" : "217",
+    "attributes" : [ "external", "object" ],
+    "id" : "375"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "topConceptOf"
+    },
+    "domain" : "8",
+    "attributes" : [ "external", "object" ],
+    "id" : "376"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/pageEnd",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "pageEnd"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "377"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/producer",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "380",
+    "label" : {
+      "IRI-based" : "producer"
+    },
+    "domain" : "379",
+    "attributes" : [ "external", "object" ],
+    "id" : "378"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#member",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "109",
+    "label" : {
+      "IRI-based" : "member"
+    },
+    "domain" : "48",
+    "attributes" : [ "external", "object" ],
+    "id" : "381"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/issuer",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "issuer"
+    },
+    "domain" : "82",
+    "attributes" : [ "external", "object" ],
+    "id" : "382"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/sici",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "sici"
+    },
+    "domain" : "157",
+    "attributes" : [ "external", "object" ],
+    "id" : "383"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/number",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "number"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "384"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/performer",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "performer"
+    },
+    "domain" : "268",
+    "attributes" : [ "external", "object" ],
+    "id" : "385"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/translationOf",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "translationOf"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "386"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/upc",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "upc"
+    },
+    "domain" : "73",
+    "attributes" : [ "external", "object" ],
+    "id" : "390"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/handle",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "handle"
+    },
+    "domain" : "392",
+    "attributes" : [ "external", "object" ],
+    "id" : "391"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/issn",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "issn"
+    },
+    "domain" : "96",
+    "attributes" : [ "external", "object" ],
+    "id" : "393"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/identifier",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "identifier"
+    },
+    "domain" : "286",
+    "attributes" : [ "external", "object" ],
+    "id" : "394"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/subsequentLegalDecision",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "161",
+    "label" : {
+      "IRI-based" : "subsequentLegalDecision"
+    },
+    "domain" : "161",
+    "attributes" : [ "external", "object" ],
+    "id" : "395"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/doi",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "238",
+    "label" : {
+      "IRI-based" : "doi"
+    },
+    "domain" : "242",
+    "attributes" : [ "external", "object" ],
+    "id" : "396"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/section",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "section"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "398"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/owner",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "owner"
+    },
+    "domain" : "397",
+    "attributes" : [ "external", "object" ],
+    "id" : "402"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/asin",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "asin"
+    },
+    "domain" : "389",
+    "attributes" : [ "external", "object" ],
+    "id" : "403"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/eissn",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "eissn"
+    },
+    "domain" : "96",
+    "attributes" : [ "external", "object" ],
+    "id" : "406"
+  }, {
+    "iri" : "https://w3id.org/dsv-ontology#statisticalDataType",
+    "baseIri" : "https://w3id.org/dsv-ontology",
+    "range" : "181",
+    "label" : {
+      "IRI-based" : "statisticalDataType"
+    },
+    "domain" : "106",
+    "attributes" : [ "external", "object" ],
+    "id" : "407"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/numVolumes",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "numVolumes"
+    },
+    "domain" : "96",
+    "attributes" : [ "external", "object" ],
+    "id" : "408"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/locator",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "locator"
+    },
+    "domain" : "28",
+    "attributes" : [ "external", "object" ],
+    "id" : "409"
+  } ]
+}
