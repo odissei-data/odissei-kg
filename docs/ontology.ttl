@@ -3402,49 +3402,49 @@ owl:Thing rdf:type owl:Class ;
                                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
 
 
-[ <http://xmlns.com/foaf/0.1/mbox> "richard@cyganiak.de"
+[ <http://xmlns.com/foaf/0.1/mbox> "jeni@jenitennison.com"
 ] .
 
+[ <http://xmlns.com/foaf/0.1/mbox> "richard@cyganiak.de"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "dave@epimorphics.com"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "arofan.gregory@earthlink.net"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "arofan.gregory@earthlink.net"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "dave@epimorphics.com"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "ian@epimorphics.com"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "dave@epimorphics.com"
+ ] .
+
 [ <http://xmlns.com/foaf/0.1/mbox> "jeni@jenitennison.com"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "arofan.gregory@earthlink.net"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "ian@epimorphics.com"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "dave@epimorphics.com"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "ian@epimorphics.com"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "dave@epimorphics.com"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "arofan.gregory@earthlink.net"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "ian@epimorphics.com"
  ] .
 
 [ <http://xmlns.com/foaf/0.1/mbox> "richard@cyganiak.de"
  ] .
 
-[ <http://xmlns.com/foaf/0.1/mbox> "jeni@jenitennison.com"
+[ <http://xmlns.com/foaf/0.1/mbox> "ian@epimorphics.com"
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/mbox> "ian@epimorphics.com"
  ] .
 
 [ <http://xmlns.com/foaf/0.1/mbox> "arofan.gregory@earthlink.net"
  ] .
 
-[ <http://xmlns.com/foaf/0.1/mbox> "dave@epimorphics.com"
+[ <http://xmlns.com/foaf/0.1/mbox> "jeni@jenitennison.com"
  ] .
 
 [ <http://xmlns.com/foaf/0.1/mbox> "richard@cyganiak.de"
- ] .
-
-[ <http://xmlns.com/foaf/0.1/mbox> "jeni@jenitennison.com"
  ] .
 
 #################################################################

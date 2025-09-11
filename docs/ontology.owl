@@ -5089,22 +5089,10 @@ Even if this link is not done in neither the FOAF nor the DCTERMS ontologies thi
         <ns:term_status>stable</ns:term_status>
     </owl:Thing>
     <rdf:Description>
-        <foaf:mbox>richard@cyganiak.de</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
         <foaf:mbox>jeni@jenitennison.com</foaf:mbox>
     </rdf:Description>
     <rdf:Description>
-        <foaf:mbox>arofan.gregory@earthlink.net</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:mbox>ian@epimorphics.com</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:mbox>dave@epimorphics.com</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:mbox>ian@epimorphics.com</foaf:mbox>
+        <foaf:mbox>richard@cyganiak.de</foaf:mbox>
     </rdf:Description>
     <rdf:Description>
         <foaf:mbox>dave@epimorphics.com</foaf:mbox>
@@ -5113,25 +5101,37 @@ Even if this link is not done in neither the FOAF nor the DCTERMS ontologies thi
         <foaf:mbox>arofan.gregory@earthlink.net</foaf:mbox>
     </rdf:Description>
     <rdf:Description>
-        <foaf:mbox>ian@epimorphics.com</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:mbox>richard@cyganiak.de</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:mbox>jeni@jenitennison.com</foaf:mbox>
-    </rdf:Description>
-    <rdf:Description>
         <foaf:mbox>arofan.gregory@earthlink.net</foaf:mbox>
     </rdf:Description>
     <rdf:Description>
         <foaf:mbox>dave@epimorphics.com</foaf:mbox>
     </rdf:Description>
     <rdf:Description>
-        <foaf:mbox>richard@cyganiak.de</foaf:mbox>
+        <foaf:mbox>ian@epimorphics.com</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>dave@epimorphics.com</foaf:mbox>
     </rdf:Description>
     <rdf:Description>
         <foaf:mbox>jeni@jenitennison.com</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>richard@cyganiak.de</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>ian@epimorphics.com</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>ian@epimorphics.com</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>arofan.gregory@earthlink.net</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>jeni@jenitennison.com</foaf:mbox>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:mbox>richard@cyganiak.de</foaf:mbox>
     </rdf:Description>
     
 

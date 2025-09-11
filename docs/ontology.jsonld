@@ -74,22 +74,22 @@
 }, {
   "@id" : "_:genid106",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "richard@cyganiak.de"
+    "@value" : "jeni@jenitennison.com"
   } ]
 }, {
   "@id" : "_:genid107",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "jeni@jenitennison.com"
+    "@value" : "richard@cyganiak.de"
   } ]
 }, {
   "@id" : "_:genid108",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "arofan.gregory@earthlink.net"
+    "@value" : "dave@epimorphics.com"
   } ]
 }, {
   "@id" : "_:genid109",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "ian@epimorphics.com"
+    "@value" : "arofan.gregory@earthlink.net"
   } ]
 }, {
   "@id" : "_:genid11",
@@ -100,27 +100,27 @@
 }, {
   "@id" : "_:genid110",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "dave@epimorphics.com"
+    "@value" : "arofan.gregory@earthlink.net"
   } ]
 }, {
   "@id" : "_:genid111",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "ian@epimorphics.com"
+    "@value" : "dave@epimorphics.com"
   } ]
 }, {
   "@id" : "_:genid112",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "dave@epimorphics.com"
+    "@value" : "ian@epimorphics.com"
   } ]
 }, {
   "@id" : "_:genid113",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "arofan.gregory@earthlink.net"
+    "@value" : "dave@epimorphics.com"
   } ]
 }, {
   "@id" : "_:genid114",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "ian@epimorphics.com"
+    "@value" : "jeni@jenitennison.com"
   } ]
 }, {
   "@id" : "_:genid115",
@@ -130,22 +130,22 @@
 }, {
   "@id" : "_:genid116",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "jeni@jenitennison.com"
+    "@value" : "ian@epimorphics.com"
   } ]
 }, {
   "@id" : "_:genid117",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "arofan.gregory@earthlink.net"
+    "@value" : "ian@epimorphics.com"
   } ]
 }, {
   "@id" : "_:genid118",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "dave@epimorphics.com"
+    "@value" : "arofan.gregory@earthlink.net"
   } ]
 }, {
   "@id" : "_:genid119",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "richard@cyganiak.de"
+    "@value" : "jeni@jenitennison.com"
   } ]
 }, {
   "@id" : "_:genid12",
@@ -161,7 +161,7 @@
 }, {
   "@id" : "_:genid120",
   "http://xmlns.com/foaf/0.1/mbox" : [ {
-    "@value" : "jeni@jenitennison.com"
+    "@value" : "richard@cyganiak.de"
   } ]
 }, {
   "@id" : "_:genid13",
