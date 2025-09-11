@@ -2,9 +2,9 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<https://kg.odissei.nl/odissei/odissei-kg> a prov:Entity;
-	 dc:title "SSHOC-NL Ontology";
+<..\index-en.html> a prov:Entity;
+	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:specializationOf <https://kg.odissei.nl/odissei/odissei-kg>;
-	 prov:wasGeneratedAt "August 28, 2025";
+	 prov:specializationOf <https://kg.odissei.nl/SSHOC-NL-ontology.owl>;
 .
+:agent0 a prov:Agent; foaf:name "Andre Valdestilhas".

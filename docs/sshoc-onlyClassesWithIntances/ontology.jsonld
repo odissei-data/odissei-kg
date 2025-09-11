@@ -1,0 +1,275 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://purl.org/dc/dcmitype/Dataset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dataset"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/dcmitype/Software",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Software"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/AcademicArticle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Academic Article"
+  }, {
+    "@value" : "Academic Article"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/Article",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Article"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/DocumentStatus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Document Status"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/ThesisDegree",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Thesis degree"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/bdarcus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/degrees/ma",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/ontology/bibo/ThesisDegree"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "M.A."
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/status/accepted",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/ontology/bibo/DocumentStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "accepted"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#DataProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#Thing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Concept"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Concept Scheme"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#OrderedCollection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ordered Collection"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://doi.org/10.1002/acr.22812",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/ontology/bibo/AcademicArticle"
+  } ]
+}, {
+  "@id" : "https://doi.org/10.1007/s10645-022-09401-z",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/ontology/bibo/Article"
+  } ]
+}, {
+  "@id" : "https://doi.org/10.34894/63XWJB",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/dc/dcmitype/Dataset"
+  } ]
+}, {
+  "@id" : "https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/dc/dcmitype/Software"
+  } ]
+}, {
+  "@id" : "https://schema.org/ResearchProject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/SoftwareSourceCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Software Source Code"
+  } ]
+}, {
+  "@id" : "https://tools.clariah.nl/alpino-service/2.4.1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/SoftwareSourceCode"
+  } ]
+}, {
+  "@id" : "https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/software-types#CommandLineApplication"
+  } ]
+}, {
+  "@id" : "https://tools.clariah.nl/commandlineapplication/codemeta-server",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/software-types#ServerApplication"
+  } ]
+}, {
+  "@id" : "https://tools.clariah.nl/dependency/codemetapy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/software-types#SoftwareLibrary"
+  } ]
+}, {
+  "@id" : "https://tools.clariah.nl/stub/H-03d54aeb937b34c",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/software-types#SoftwareImage"
+  } ]
+}, {
+  "@id" : "https://tools.clariah.nl/stub/H562c288a3232f81c",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/software-types#DesktopApplication"
+  } ]
+}, {
+  "@id" : "https://w3id.org/dsv-ontology#columnCompleteness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#DataProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "column completeness"
+  } ]
+}, {
+  "@id" : "https://w3id.org/odissei/cv/contentFeature/v0.1/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+  } ]
+}, {
+  "@id" : "https://w3id.org/odissei/ns/kg/cbs/project/1033",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/ResearchProject"
+  } ]
+}, {
+  "@id" : "https://w3id.org/research-technology-readiness-levels#Level0Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel"
+  } ]
+}, {
+  "@id" : "https://w3id.org/research-technology-readiness-levels#Levels",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#OrderedCollection"
+  } ]
+}, {
+  "@id" : "https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/software-types#CommandLineApplication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Command-Line Application"
+  }, {
+    "@value" : "Command-line Application"
+  } ]
+}, {
+  "@id" : "https://w3id.org/software-types#DesktopApplication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Desktop Application"
+  } ]
+}, {
+  "@id" : "https://w3id.org/software-types#ServerApplication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Server Application"
+  } ]
+}, {
+  "@id" : "https://w3id.org/software-types#SoftwareImage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Software Image"
+  } ]
+}, {
+  "@id" : "https://w3id.org/software-types#SoftwareLibrary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Software Library"
+  } ]
+} ]

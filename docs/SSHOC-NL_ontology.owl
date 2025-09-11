@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/StillImage">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Still Image</rdfs:label>
+    <rdfs:comment>A static visual representation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/dcmitype/Image"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#IntervalDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Interval Statistical Data Type</rdfs:label>
+    <rdfs:comment>Statistical data type representing ordered data measured over a numerical scale with equal distance between units.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dsv-ontology#NumericalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Code">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Code</rdfs:label>
+    <rdfs:comment>A collection of statutes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Periodical"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/0eef22844c1cde35afb103fc5432ad27"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/136ec0450ade806dbb1beb1aea8eeff4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/reviewOf">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/pageStart">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/LegalDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Decision</rdfs:label>
+    <rdfs:comment>A document containing an authoritative determination (as a decree or judgment) made after consideration of facts or law.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/LegalCaseDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/PersonalCommunicationDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Personal Communication Document</rdfs:label>
+    <rdfs:comment>A personal communication manifested in some document.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Standard">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Standard</rdfs:label>
+    <rdfs:comment>A document describing a standard: a specification organized through a standards body.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Specification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/5f4641a252eaf5557ecfc423c94aae79">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/SSHOC-NL-ontology.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>SSHOC-NL ontology</rdfs:label>
+    <rdfs:comment>This is the ontology documentation for the SSHOC-NL Knowledge Graph, available at https://kg.odissei.nl/.</rdfs:comment>
+    <dcterms:creator>Andre Valdestilhas</dcterms:creator>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Journal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Journal</rdfs:label>
+    <rdfs:comment>A periodical of scholarly journal Articles.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Periodical"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/036e142d77f89e56075a61e63ee629b7"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/537abfc3eefd7fd63d10d248fb8796af"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/handle">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/52bee1b333d02114e7e72ac7771e7b98"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Collection</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#numberOfRows">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#SummaryStatistics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/authorList">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="https://schema.org/Author"/>
+    <rdfs:range rdf:resource="https://kg.odissei.nl/.well-known/genid/758a42f65f5a11da4a8a44c705e73557"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Workshop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Workshop</rdfs:label>
+    <rdfs:comment>A seminar, discussion group, or the like, that emphasizes zxchange of ideas and the demonstration and application of techniques, skills, etc.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Concept</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Image">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Image</rdfs:label>
+    <rdfs:comment>A document that presents visual or diagrammatic information.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#CommandLineApplication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Command-Line Application</rdfs:label>
+    <rdfs:label>Command-line Application</rdfs:label>
+    <rdfs:comment>A software application offering a command-line interface.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="SoftwareApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/7c8d4e73d51b9e32556c09f4559d0618">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Film">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Film</rdfs:label>
+    <rdfs:comment>aka movie.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/AudioVisualDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/pmid">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/2cecdc9ef2d096383628716496ec2bc3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/MultiVolumeBook">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Multivolume Book</rdfs:label>
+    <rdfs:comment>A loose, thematic, collection of Documents, often Books.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/d3968f26dc8387ae782cd3bba0f5058b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/owner">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/b6ad0a58a1dabd9733a4ceb1b8c49159"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Quote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Quote</rdfs:label>
+    <rdfs:comment>An excerpted collection of words.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Excerpt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#StatisticalDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Statistical Data Type</rdfs:label>
+    <rdfs:comment>Set of statistical data types.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/presents">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/presentedAt">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/subsequentLegalDecision">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/LegalDecision"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/LegalDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://terms.codata.org/rdmt/Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/CollectedDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Collected Document</rdfs:label>
+    <rdfs:comment>A document that simultaneously contains other documents.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/45b8c6a1302aef8cd14d007ef9607a53"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/62146d0884cd5685accbed5b259eda14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Book">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Book</rdfs:label>
+    <rdfs:comment>A written or printed work of fiction or nonfiction, usually on sheets of paper fastened or bound together within covers.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#RatioDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ratio Statistical Data Type</rdfs:label>
+    <rdfs:comment>Statistical data type representing ordered data with equal distance between units, where negative values are not allowed.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dsv-ontology#NumericalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/court">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/LegalDocument"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Bill">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Bill</rdfs:label>
+    <rdfs:comment>Draft legislation presented for discussion to a legal body.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Legislation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Letter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Letter</rdfs:label>
+    <rdfs:comment>A written or printed communication addressed to a person or organization and usually transmitted by mail.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/PersonalCommunicationDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Interview">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Interview</rdfs:label>
+    <rdfs:comment>A formalized discussion between two or more people.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Magazine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Magazine</rdfs:label>
+    <rdfs:comment>A periodical of magazine Articles. A magazine is a publication that is issued periodically, usually bound in a paper cover, and typically contains essays, stories, poems, etc., by many writers, and often photographs and drawings, frequently specializing in a particular subject or area, as hobbies, news, or sports.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Periodical"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/37a85f25f01d8da607826834881cd468"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/f7f265d02fed0195f853df0fbc83e185"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Document">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Document</rdfs:label>
+    <rdfs:comment>A document (noun) is a bounded physical representation of body of information designed with the capacity (and usually intent) to communicate. A document may manifest symbolic, diagrammatic or sensory-representational information.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/9c34a9d12d29704d81f0971a891915f1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/ThesisDegree">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Thesis degree</rdfs:label>
+    <rdfs:comment>The academic degree of a Thesis</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/AcademicArticle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Academic Article</rdfs:label>
+    <rdfs:comment>A scholarly academic article, typically published in a journal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Article"/>
+    <rdfs:subClassOf rdf:resource="https://terms.codata.org/rdmt/data-paper"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#SoftwareLibrary">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Software Library</rdfs:label>
+    <rdfs:comment>A software application offering an Application Programming Interface (API) for developers</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="SoftwareApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Statute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Statute</rdfs:label>
+    <rdfs:comment>A bill enacted into law.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Legislation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#ServerApplication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Server Application</rdfs:label>
+    <rdfs:comment>A software application running as a daemon providing a service, either locally or over a network, running in the background.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="ServerApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/EditedBook">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Edited Book</rdfs:label>
+    <rdfs:comment>An edited book.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/CollectedDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Map">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Map</rdfs:label>
+    <rdfs:comment>A graphical depiction of geographic features.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Image"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#OrdinalDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ordinal Statistical Data Type</rdfs:label>
+    <rdfs:comment>Statistical data type representing discrete units that can be ordered or measured.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dsv-ontology#CategoricalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#datasetSchema">
+    <rdfs:range rdf:resource="https://w3id.org/dsv-ontology#DatasetSchema"/>
+    <rdfs:range rdf:resource="https://terms.codata.org/rdmt/Dataset"/>
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#Dataset"/>
+    <rdfs:domain rdf:resource="https://schema.org/SoftwareSourceCode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/performer">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Performance"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Manual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Manual</rdfs:label>
+    <rdfs:comment>A small reference book, especially one giving instructions.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/csvw#TableSchema">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Hearing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Hearing</rdfs:label>
+    <rdfs:comment>An instance or a session in which testimony and arguments are presented, esp. before an official, as a judge in a lawsuit.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Performance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Performance</rdfs:label>
+    <rdfs:comment>A public performance.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/LegalDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Legal Document</rdfs:label>
+    <rdfs:comment>A legal document; for example, a court decision, a brief, and so forth.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#DesktopApplication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Desktop Application</rdfs:label>
+    <rdfs:comment>A software application offering a graphical user interface on the deskop.</rdfs:comment>
+    <rdfs:comment>A software application offering a graphical user interface on the desktop.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="SoftwareApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Email">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>EMail</rdfs:label>
+    <rdfs:comment>A written communication addressed to a person or organization and transmitted electronically.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/PersonalCommunicationDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#OrderedCollection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ordered Collection</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/numPages">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://terms.codata.org/rdmt/data-paper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Research Paper</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/volume">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/eanucc13">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/d6975da38795dfc97fb918c4f50ed9fd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Website">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Website</rdfs:label>
+    <rdfs:comment>A group of Webpages accessible on the Web.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/3536f41038baba8fb464c3017afcc225"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/5e802100a8ff91ab84e96589e9b49f1d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#DataProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Brief">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Brief</rdfs:label>
+    <rdfs:comment>A written argument submitted to a court.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/LegalCaseDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/ff4761dc59a5fb4605b1a9479a5898f4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#hasCodeBook">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#ColumnProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#SoftwareImage">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Software Image</rdfs:label>
+    <rdfs:comment>A software application in the form of an image (such as a container image or virtual machine image), distributes the application along with its wider dependency context.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="SoftwareApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/producer">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/770d214cce2dc6aaa1c9ac63802190c9"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:range rdf:resource="https://schema.org/ResearchProject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/doi">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/DOI"/>
+    <rdfs:domain rdf:resource="https://terms.codata.org/rdmt/data-paper"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/35a598345f632bd39cbd7ceae13e02c7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/35a598345f632bd39cbd7ceae13e02c7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Manuscript">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Manuscript</rdfs:label>
+    <rdfs:comment>An unpublished Document, which may also be submitted to a publisher for publication.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/issue">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Issue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Sound">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Sound</rdfs:label>
+    <rdfs:comment>A resource primarily intended to be heard.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/758a42f65f5a11da4a8a44c705e73557">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Legislation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Legislation</rdfs:label>
+    <rdfs:comment>A legal document proposing or enacting a law or a group of laws.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/LegalDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/PersonalCommunication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Personal Communication</rdfs:label>
+    <rdfs:comment>A communication between an agent and one or more specific recipients.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Newspaper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Newspaper</rdfs:label>
+    <rdfs:comment>A periodical of documents, usually issued daily or weekly, containing current news, editorials, feature articles, and usually advertising.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Periodical"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/af8feb069f9b6fa724186de955be4db5"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/ceff99c4eefc475f78a1b8a64c7b1d27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/reproducedIn">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Series">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Series</rdfs:label>
+    <rdfs:comment>A loose, thematic, collection of Documents, often Books.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/5634ba9592ec93a0abee1f4a09aea17d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/annotates">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Note"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/DocumentStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Document Status</rdfs:label>
+    <rdfs:comment>The status of the publication of a document.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#CategoricalDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Categorical Statistical Data Type</rdfs:label>
+    <rdfs:comment>Set of statistical data types can be observed and - or - categorised.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dsv-ontology#StatisticalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/content">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#SoftwarePackage">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Software Package</rdfs:label>
+    <rdfs:comment>A software application in the form of a package for any particular package manager, distributes the application but not its wider dependency context.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="SoftwareApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/cites">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="https://terms.codata.org/rdmt/data-paper"/>
+    <rdfs:domain rdf:resource="https://schema.org/SoftwareSourceCode"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:domain rdf:resource="https://schema.org/Author"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Dataset</rdfs:label>
+    <rdfs:comment>Data encoded in a defined structure.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/affirmedBy">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/LegalDecision"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/LegalDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Slideshow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Slideshow</rdfs:label>
+    <rdfs:comment>A presentation of a series of slides, usually presented in front of an audience with written text and images.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/a4fec83beeaac7106f9456b1ffeeabde"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/pages">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Text">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Text</rdfs:label>
+    <rdfs:comment>A resource consisting primarily of words for reading.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#statisticalDataType">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#SummaryStatistics"/>
+    <rdfs:range rdf:resource="https://w3id.org/dsv-ontology#StatisticalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/AudioDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>audio document</rdfs:label>
+    <rdfs:comment>An audio document; aka record.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/contributorList">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="https://kg.odissei.nl/.well-known/genid/494bcf4b0f1fc5c9c61f849db9c2e283"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/reversedBy">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/LegalDecision"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/LegalDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/upc">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/ff4761dc59a5fb4605b1a9479a5898f4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Service</rdfs:label>
+    <rdfs:comment>A system that provides one or more functions.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/SoftwareSourceCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Software Source Code</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://terms.codata.org/rdmt/research-software"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/shortTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/locator">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Article">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Article</rdfs:label>
+    <rdfs:comment>A written composition in prose, usually nonfiction, on a specific topic, forming an independent part of a book or other publication, as a newspaper or magazine.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Dataset</rdfs:label>
+    <rdfs:comment>Set of data.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/csvw#Table"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#DataSet"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/AudioVisualDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>audio-visual document</rdfs:label>
+    <rdfs:comment>An audio-visual document; film, video, and so forth.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Webpage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Webpage</rdfs:label>
+    <rdfs:comment>A web page is an online document available (at least initially) on the world wide web. A web page is written first and foremost to appear on the web, as distinct from other online resources such as books, manuscripts or audio documents which use the web primarily as a distribution mechanism alongside other more traditional methods such as print.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/argued">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/LegalDocument"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Issue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Issue</rdfs:label>
+    <rdfs:comment>something that is printed or published and distributed, esp. a given number of a periodical</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/CollectedDocument"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/8cce779e6db8e4fa61cc379a2d078bcc"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/870e706ce12f9f6d26a61d0e2effa81f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#DatasetSchema">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Dataset Schema</rdfs:label>
+    <rdfs:comment>The structural schema of a dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/csvw#TableSchema"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#DataStructureDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/interviewer">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/identifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/7c8d4e73d51b9e32556c09f4559d0618"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Concept Scheme</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/d6975da38795dfc97fb918c4f50ed9fd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Container">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/lccn">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/1d5f1ec413fdbeb42c9d7e144e538e24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Event">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Event</rdfs:label>
+    <rdfs:comment>A non-persistent, time-based occurrence.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/number">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/numVolumes">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/recipient">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/PersonalCommunicationDocument"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/suffixName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/uri">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/5f4641a252eaf5557ecfc423c94aae79"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Software">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Software</rdfs:label>
+    <rdfs:comment>A computer program in source or compiled form.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#ColumnProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Column Property</rdfs:label>
+    <rdfs:comment>RDF Properties represented by the column.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/linked-data/cube#DataStructureDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Report">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Report</rdfs:label>
+    <rdfs:comment>A document describing an account or statement describing in detail an event, situation, or the like, usually as the result of observation, inquiry, etc..</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/3f5f76f76d772e1250b91da8fba47f43">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#SummaryStatistics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Summary Statistics</rdfs:label>
+    <rdfs:comment>Set of summary statistics about the dataset or column.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#semanticRelation">
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/eissn">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Periodical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Periodical</rdfs:label>
+    <rdfs:comment>A group of related documents issued at regular intervals.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/2d883253a03970487532e862b24a8146"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/f99e7afff964a74071bf07217949dcab"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/2cecdc9ef2d096383628716496ec2bc3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/PhysicalObject">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Physical Object</rdfs:label>
+    <rdfs:comment>An inanimate, three-dimensional object or substance.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/csvw#Column">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/linked-data/cube#ComponentSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/46a6a02529a2feb5b30434cdb73be710">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#numberOfColumns">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#SummaryStatistics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/ResearchProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/BookSection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Book Section</rdfs:label>
+    <rdfs:comment>A section of a book.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/DocumentPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Specification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Specification</rdfs:label>
+    <rdfs:comment>A document describing a specification.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/ReferenceSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Reference Source</rdfs:label>
+    <rdfs:comment>A document that presents authoritative reference information, such as a dictionary or encylopedia .</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#TerminalApplication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Terminal Application</rdfs:label>
+    <rdfs:comment>A software application offering a terminal text-based user interface (e.g. ncurses).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="SoftwareApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#Column">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Dataset Component</rdfs:label>
+    <rdfs:comment>Set of individual columns of a dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/csvw#Column"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#ComponentSpecification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/abstract">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/Author">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/LegalCaseDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Legal Case Document</rdfs:label>
+    <rdfs:comment>A document accompanying a legal case.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/LegalDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Chapter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Chapter</rdfs:label>
+    <rdfs:comment>A chapter of a book.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/BookSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Proceedings">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Proceedings</rdfs:label>
+    <rdfs:comment>A compilation of documents published from an event, such as a conference.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Book"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/43db448cb1380d7209306cc404fab5fe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/CourtReporter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Court Reporter</rdfs:label>
+    <rdfs:comment>A collection of legal cases.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Periodical"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/247fe0d50829dcd860324e86f9efd0b6"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/902c7850542b0da4792c6b8d7063269e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/prefixName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/52bee1b333d02114e7e72ac7771e7b98">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#hasVariable">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#ColumnProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/4f3567bf9831adeff15fbdeaaea9671a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/edition">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/InteractiveResource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Interactive Resource</rdfs:label>
+    <rdfs:comment>A resource requiring interaction from the user to be understood, executed, or experienced.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#NominalDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Nominal Statistical Data Type</rdfs:label>
+    <rdfs:comment>Statistical data type representing discrete units that cannot be ordered or measured.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dsv-ontology#CategoricalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/distributor">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/3f5f76f76d772e1250b91da8fba47f43"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/translator">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/9c34a9d12d29704d81f0971a891915f1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/software-types#NotebookApplication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Notebook Application</rdfs:label>
+    <rdfs:comment>A web application in the form of a notebook (e.g. Jupyter Notebook, R Notebook) or data story.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/WebApplication"/>
+    <rdfs:subClassOf rdf:resource="WebApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/section">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/DocumentPart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>document part</rdfs:label>
+    <rdfs:comment>a distinct part of a larger document or collected document.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/968675397643d4b42b80e33dcc592390"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#columnProperty">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#Column"/>
+    <rdfs:range rdf:resource="https://w3id.org/dsv-ontology#ColumnProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/shortDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/pageEnd">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/asin">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/9d62582fccd3483d84c2fcfede78c861"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>has ORCID</rdfs:label>
+    <rdfs:label>represented by ORCID</rdfs:label>
+    <rdfs:domain rdf:resource="https://schema.org/Author"/>
+    <rdfs:range rdf:resource="https://terms.codata.org/rdmt/orcid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Thesis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Thesis</rdfs:label>
+    <rdfs:comment>A document created to summarize research findings associated with the completion of an academic degree.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#hasCategories">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#CategoricalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Collection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Collection</rdfs:label>
+    <rdfs:comment>A collection of Documents or Collections</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://kg.odissei.nl/.well-known/genid/676c4024d289d75f77276d2466437b85"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/WebApplication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/software-types#ServerApplication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/transcriptOf">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Image">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Image</rdfs:label>
+    <rdfs:comment>A visual representation other than text.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/interviewee">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#member">
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:range rdf:resource="https://kg.odissei.nl/.well-known/genid/053615add4600741a28d402f7f134363"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/MovingImage">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Moving Image</rdfs:label>
+    <rdfs:comment>A series of visual representations imparting an impression of motion when shown in succession.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/dcmitype/Image"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/editor">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/5906af27ce8ae95c722d50ccb64354ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/isbn10">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/46a6a02529a2feb5b30434cdb73be710"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/dcmitype/Collection">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Collection</rdfs:label>
+    <rdfs:comment>An aggregation of resources.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/organizer">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#NumericalDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Numerical Statistical Data Type</rdfs:label>
+    <rdfs:comment>Set of statistical data types can be measured and quantified.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dsv-ontology#StatisticalDataType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Slide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Slide</rdfs:label>
+    <rdfs:comment>A slide in a slideshow</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/DocumentPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/citedBy">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/f2b75648d2025e8468309296782e4185">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#column">
+    <rdfs:range rdf:resource="https://w3id.org/dsv-ontology#Column"/>
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#DatasetSchema"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://terms.codata.org/rdmt/orcid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/gtin14">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/60889d732b98dcab521ba18f344351eb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/coden">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/f2b75648d2025e8468309296782e4185"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Patent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Patent</rdfs:label>
+    <rdfs:comment>A document describing the exclusive right granted by a government to an inventor to manufacture, use, or sell an invention for a certain number of years.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Conference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Conference</rdfs:label>
+    <rdfs:comment>A meeting for consultation or discussion.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://terms.codata.org/rdmt/research-software">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/WebAPI">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>WebAPI</rdfs:label>
+    <rdfs:comment>An application programming interface accessible over Web/Internet technologies.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/translationOf">
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/60889d732b98dcab521ba18f344351eb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/editorList">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="https://kg.odissei.nl/.well-known/genid/49d13eb4a5f8c934ba66553801346ab9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#datasetCompleteness">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#SummaryStatistics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/degree">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Thesis"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/ThesisDegree"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Excerpt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Excerpt</rdfs:label>
+    <rdfs:comment>A passage selected from a larger work.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/DocumentPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/linked-data/cube#DimensionProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/isbn13">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/3d4b75bdb7e1672bcdfa7c80f081dce0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/chapter">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/BookSection"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#missingValueFormat">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#SummaryStatistics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/1d5f1ec413fdbeb42c9d7e144e538e24">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Note</rdfs:label>
+    <rdfs:comment>Notes or annotations about a resource.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/bibo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/cf0da10ec66d815bbee517d484c3bdce">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/49d13eb4a5f8c934ba66553801346ab9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#memberList">
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/sici">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/cf0da10ec66d815bbee517d484c3bdce"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/053615add4600741a28d402f7f134363">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/b6ad0a58a1dabd9733a4ceb1b8c49159">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/5906af27ce8ae95c722d50ccb64354ee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/issuer">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/43db448cb1380d7209306cc404fab5fe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Image">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dsv-ontology#columnCompleteness">
+    <rdfs:domain rdf:resource="https://w3id.org/dsv-ontology#SummaryStatistics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/DOI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/DocumentStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/a9caf30b5383859236112654bc38d682">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/csvw#Table">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/issn">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Collection"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/3d4b75bdb7e1672bcdfa7c80f081dce0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/494bcf4b0f1fc5c9c61f849db9c2e283">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/director">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/AudioVisualDocument"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/9d62582fccd3483d84c2fcfede78c861">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/linked-data/cube#DataSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/oclcnum">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="https://kg.odissei.nl/.well-known/genid/a9caf30b5383859236112654bc38d682"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://kg.odissei.nl/.well-known/genid/770d214cce2dc6aaa1c9ac63802190c9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>
