@@ -6,10 +6,14 @@ import { bibo, a, dct, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 var my_destination: any = destination;
-my_destination.defaultGraph = prefix.graph.concat("papers_with_doi");
 
+// Input for this ETL is a google docs/excel spreadsheet, this sheet has been exported from a manually
+// maintained collections of papers in Zotero by the ODISSEI CT:
 const cbs_zotero_bib =
   "https://docs.google.com/spreadsheets/d/1JDjvKf3sf60e9_8v-ef0IkyCNxA9y0jlLuCBkcbM-fs/export?gid=1386315381";
+
+// For now, we simplify things by only using the papers with a known DOI:
+my_destination.defaultGraph = prefix.graph.concat("papers_with_doi");
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
