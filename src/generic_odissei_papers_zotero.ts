@@ -9,7 +9,7 @@ var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("generic_papers_zotero");
 
 const cbs_zotero_bib =
-  "https://github.com/firmao/sshoc-nl-ontology/raw/refs/heads/main/2025-08-21_ODISSEI_Scientific%20outputs.csv";
+  "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/zotero/2025-08-21_ODISSEI_Scientific%20outputs.csv";
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
@@ -30,21 +30,21 @@ export default async function (): Promise<Etl> {
       when(
         "Key",
         addIri({
-          prefix: prefix.cbs_project,
+          prefix: prefix.zotero,
           content: "Key",
           key: "_zotero_key",
         }),
         pairs(
           "_IRI",
           [
-            iri(prefix.odissei_kg_schema, str("key")),
+            iri(prefix.odissei_kg_schema, str("zotero_key")),
             "_zotero_key",
           ],
           [sdo.producer, "_zotero_key"],
         ),
       ),
       when("Title", triple("_IRI", dct.title, "Title")),
-      //when("ShortTitle", triple("_IRI", bibo.shortTitle, "ShortTitle")),
+      when("ShortTitle", triple("_IRI", bibo.shortTitle, "ShortTitle")),
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
