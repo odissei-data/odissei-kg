@@ -1,0 +1,456 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/software-types", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/research-technology-readiness-levels", "http://xmlns.com/foaf/0.1", "http://purl.org/dc/dcmitype", "http://purl.org/ontology/bibo", "http://www.w3.org/2004/02/skos/core" ],
+    "iri" : "No IRI set"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept",
+      "en" : "Concept"
+    },
+    "individuals" : [ {
+      "iri" : "https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0",
+      "baseIri" : "https://elsst.cessda.eu/id/5",
+      "labels" : {
+        "IRI-based" : "52a76b51-8f97-4cbc-a98e-7891f5391bf0"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Dataset",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset",
+      "en" : "Dataset"
+    },
+    "individuals" : [ {
+      "iri" : "https://doi.org/10.34894/63XWJB",
+      "baseIri" : "https://doi.org/10.34894",
+      "labels" : {
+        "IRI-based" : "63XWJB"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#OrderedCollection",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OrderedCollection",
+      "en" : "Ordered Collection"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/research-technology-readiness-levels#Levels",
+      "baseIri" : "https://w3id.org/research-technology-readiness-levels",
+      "labels" : {
+        "IRI-based" : "Levels"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/Article",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Article",
+      "en" : "Article"
+    },
+    "individuals" : [ {
+      "iri" : "https://doi.org/10.1007/s10645-022-09401-z",
+      "baseIri" : "https://doi.org/10.1007",
+      "labels" : {
+        "IRI-based" : "s10645-022-09401-z"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://schema.org/SoftwareSourceCode",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareSourceCode",
+      "undefined" : "Software Source Code"
+    },
+    "individuals" : [ {
+      "iri" : "https://tools.clariah.nl/alpino-service/2.4.1",
+      "baseIri" : "https://tools.clariah.nl/alpino-service",
+      "labels" : {
+        "IRI-based" : "2.4.1"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://schema.org/ResearchProject",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ResearchProject"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/odissei/ns/kg/cbs/project/1033",
+      "baseIri" : "https://w3id.org/odissei/ns/kg/cbs/project",
+      "labels" : {
+        "IRI-based" : "1033"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/software-types#DesktopApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DesktopApplication",
+      "undefined" : "Desktop Application"
+    },
+    "individuals" : [ {
+      "iri" : "https://tools.clariah.nl/stub/H562c288a3232f81c",
+      "baseIri" : "https://tools.clariah.nl/stub",
+      "labels" : {
+        "IRI-based" : "H562c288a3232f81c"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/software-types#SoftwareLibrary",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareLibrary",
+      "undefined" : "Software Library"
+    },
+    "individuals" : [ {
+      "iri" : "https://tools.clariah.nl/dependency/codemetapy",
+      "baseIri" : "https://tools.clariah.nl/dependency",
+      "labels" : {
+        "IRI-based" : "codemetapy"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Datatype"
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/AcademicArticle",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AcademicArticle",
+      "en" : "Academic Article",
+      "undefined" : "Academic Article"
+    },
+    "individuals" : [ {
+      "iri" : "https://doi.org/10.1002/acr.22812",
+      "baseIri" : "https://doi.org/10.1002",
+      "labels" : {
+        "IRI-based" : "acr.22812"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Class",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Class"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#DataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataProperty"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/dsv-ontology#columnCompleteness",
+      "baseIri" : "https://w3id.org/dsv-ontology",
+      "labels" : {
+        "IRI-based" : "columnCompleteness",
+        "undefined" : "column completeness"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConceptScheme",
+      "en" : "Concept Scheme"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/odissei/cv/contentFeature/v0.1/",
+      "baseIri" : "https://w3id.org/odissei/cv/contentFeature",
+      "labels" : { }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/software-types#CommandLineApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CommandLineApplication",
+      "undefined" : "Command-Line Application"
+    },
+    "individuals" : [ {
+      "iri" : "https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9",
+      "baseIri" : "https://tools.clariah.nl/commandlineapplication/alpino2folia",
+      "labels" : {
+        "IRI-based" : "2.5.9"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/DocumentStatus",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DocumentStatus",
+      "en" : "Document Status"
+    },
+    "individuals" : [ {
+      "iri" : "http://purl.org/ontology/bibo/status/accepted",
+      "baseIri" : "http://purl.org/ontology/bibo/status",
+      "labels" : {
+        "IRI-based" : "accepted",
+        "en" : "accepted"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/software-types#ServerApplication",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServerApplication",
+      "undefined" : "Server Application"
+    },
+    "individuals" : [ {
+      "iri" : "https://tools.clariah.nl/commandlineapplication/codemeta-server",
+      "baseIri" : "https://tools.clariah.nl/commandlineapplication",
+      "labels" : {
+        "IRI-based" : "codemeta-server"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/software-types#SoftwareImage",
+    "baseIri" : "https://w3id.org/software-types",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareImage",
+      "undefined" : "Software Image"
+    },
+    "individuals" : [ {
+      "iri" : "https://tools.clariah.nl/stub/H-03d54aeb937b34c",
+      "baseIri" : "https://tools.clariah.nl/stub",
+      "labels" : {
+        "IRI-based" : "H-03d54aeb937b34c"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel",
+    "baseIri" : "https://w3id.org/research-technology-readiness-levels",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TechnologyReadinessLevel"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/research-technology-readiness-levels#Level0Idea",
+      "baseIri" : "https://w3id.org/research-technology-readiness-levels",
+      "labels" : {
+        "IRI-based" : "Level0Idea"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://purl.org/ontology/bibo/ThesisDegree",
+    "baseIri" : "http://purl.org/ontology/bibo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ThesisDegree",
+      "en" : "Thesis degree"
+    },
+    "individuals" : [ {
+      "iri" : "http://purl.org/ontology/bibo/degrees/ma",
+      "baseIri" : "http://purl.org/ontology/bibo/degrees",
+      "labels" : {
+        "IRI-based" : "ma",
+        "en" : "M.A."
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "List"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://purl.org/dc/dcmitype/Software",
+    "baseIri" : "http://purl.org/dc/dcmitype",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Software",
+      "en" : "Software"
+    },
+    "individuals" : [ {
+      "iri" : "https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665",
+      "baseIri" : "https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work",
+      "labels" : {
+        "IRI-based" : "22101665"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Property"
+    },
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "individuals" : [ {
+      "iri" : "http://purl.org/ontology/bibo/bdarcus",
+      "baseIri" : "http://purl.org/ontology/bibo",
+      "labels" : {
+        "IRI-based" : "bdarcus"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Resource",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Resource"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+      "labels" : {
+        "IRI-based" : "type"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "23"
+  } ]
+}

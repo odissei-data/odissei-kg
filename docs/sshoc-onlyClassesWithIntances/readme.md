@@ -32,6 +32,3 @@ b) Execute Chrome with the following commands :
 (UNX) /usr/bin/google-chrome --allow-file-access-from-files
 
 Do you have a problem? open an issue at https://github.com/dgarijo/Widoco
-
-## Command line:
-java -jar ~/Downloads/widoco-1.4.25-jar-with-dependencies_JDK-11.jar -ontFile ontology.owl -confFile onto.properties -webVowl -outFolder . -includeAnnotationProperties -ignoreIndividuals -rewriteAll -uniteSections

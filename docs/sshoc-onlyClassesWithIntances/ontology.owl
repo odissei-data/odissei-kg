@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/dcmitype/Dataset -->
+
+
+    <Class rdf:about="http://purl.org/dc/dcmitype/Dataset">
+        <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.org/dc/dcmitype/Software -->
+
+
+    <Class rdf:about="http://purl.org/dc/dcmitype/Software">
+        <rdfs:label xml:lang="en">Software</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/AcademicArticle -->
+
+
+    <Class rdf:about="http://purl.org/ontology/bibo/AcademicArticle">
+        <rdfs:label xml:lang="en">Academic Article</rdfs:label>
+        <rdfs:label>Academic Article</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Article -->
+
+
+    <Class rdf:about="http://purl.org/ontology/bibo/Article">
+        <rdfs:label xml:lang="en">Article</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/DocumentStatus -->
+
+
+    <Class rdf:about="http://purl.org/ontology/bibo/DocumentStatus">
+        <rdfs:label xml:lang="en">Document Status</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/ThesisDegree -->
+
+
+    <Class rdf:about="http://purl.org/ontology/bibo/ThesisDegree">
+        <rdfs:label xml:lang="en">Thesis degree</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#List -->
+
+
+    <Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Property -->
+
+
+    <Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+
+
+    <Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Datatype -->
+
+
+    <Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+
+
+    <Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#DataProperty -->
+
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#DataProperty"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+
+    <Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <rdfs:label xml:lang="en">Concept Scheme</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#OrderedCollection -->
+
+
+    <Class rdf:about="http://www.w3.org/2004/02/skos/core#OrderedCollection">
+        <rdfs:label xml:lang="en">Ordered Collection</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- https://schema.org/ResearchProject -->
+
+
+    <Class rdf:about="https://schema.org/ResearchProject"/>
+    
+
+
+    <!-- https://schema.org/SoftwareSourceCode -->
+
+
+    <Class rdf:about="https://schema.org/SoftwareSourceCode">
+        <rdfs:label>Software Source Code</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel -->
+
+
+    <Class rdf:about="https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel"/>
+    
+
+
+    <!-- https://w3id.org/software-types#CommandLineApplication -->
+
+
+    <Class rdf:about="https://w3id.org/software-types#CommandLineApplication">
+        <rdfs:label>Command-Line Application</rdfs:label>
+        <rdfs:label>Command-line Application</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://w3id.org/software-types#DesktopApplication -->
+
+
+    <Class rdf:about="https://w3id.org/software-types#DesktopApplication">
+        <rdfs:label>Desktop Application</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://w3id.org/software-types#ServerApplication -->
+
+
+    <Class rdf:about="https://w3id.org/software-types#ServerApplication">
+        <rdfs:label>Server Application</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://w3id.org/software-types#SoftwareImage -->
+
+
+    <Class rdf:about="https://w3id.org/software-types#SoftwareImage">
+        <rdfs:label>Software Image</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://w3id.org/software-types#SoftwareLibrary -->
+
+
+    <Class rdf:about="https://w3id.org/software-types#SoftwareLibrary">
+        <rdfs:label>Software Library</rdfs:label>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/ontology/bibo/bdarcus -->
+
+
+    <Thing rdf:about="http://purl.org/ontology/bibo/bdarcus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </Thing>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/degrees/ma -->
+
+
+    <NamedIndividual rdf:about="http://purl.org/ontology/bibo/degrees/ma">
+        <rdf:type rdf:resource="http://purl.org/ontology/bibo/ThesisDegree"/>
+        <rdfs:label xml:lang="en">M.A.</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status/accepted -->
+
+
+    <NamedIndividual rdf:about="http://purl.org/ontology/bibo/status/accepted">
+        <rdf:type rdf:resource="http://purl.org/ontology/bibo/DocumentStatus"/>
+        <rdfs:label xml:lang="en">accepted</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+
+    <NamedIndividual rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://doi.org/10.1002/acr.22812 -->
+
+
+    <NamedIndividual rdf:about="https://doi.org/10.1002/acr.22812">
+        <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://doi.org/10.1007/s10645-022-09401-z -->
+
+
+    <NamedIndividual rdf:about="https://doi.org/10.1007/s10645-022-09401-z">
+        <rdf:type rdf:resource="http://purl.org/ontology/bibo/Article"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://doi.org/10.34894/63XWJB -->
+
+
+    <NamedIndividual rdf:about="https://doi.org/10.34894/63XWJB">
+        <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0 -->
+
+
+    <NamedIndividual rdf:about="https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665 -->
+
+
+    <NamedIndividual rdf:about="https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665">
+        <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Software"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://tools.clariah.nl/alpino-service/2.4.1 -->
+
+
+    <NamedIndividual rdf:about="https://tools.clariah.nl/alpino-service/2.4.1">
+        <rdf:type rdf:resource="https://schema.org/SoftwareSourceCode"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://tools.clariah.nl/commandlineapplication/codemeta-server -->
+
+
+    <NamedIndividual rdf:about="https://tools.clariah.nl/commandlineapplication/codemeta-server">
+        <rdf:type rdf:resource="https://w3id.org/software-types#ServerApplication"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9 -->
+
+
+    <NamedIndividual rdf:about="https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9">
+        <rdf:type rdf:resource="https://w3id.org/software-types#CommandLineApplication"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://tools.clariah.nl/dependency/codemetapy -->
+
+
+    <NamedIndividual rdf:about="https://tools.clariah.nl/dependency/codemetapy">
+        <rdf:type rdf:resource="https://w3id.org/software-types#SoftwareLibrary"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://tools.clariah.nl/stub/H-03d54aeb937b34c -->
+
+
+    <NamedIndividual rdf:about="https://tools.clariah.nl/stub/H-03d54aeb937b34c">
+        <rdf:type rdf:resource="https://w3id.org/software-types#SoftwareImage"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://tools.clariah.nl/stub/H562c288a3232f81c -->
+
+
+    <NamedIndividual rdf:about="https://tools.clariah.nl/stub/H562c288a3232f81c">
+        <rdf:type rdf:resource="https://w3id.org/software-types#DesktopApplication"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/dsv-ontology#columnCompleteness -->
+
+
+    <NamedIndividual rdf:about="https://w3id.org/dsv-ontology#columnCompleteness">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+        <rdfs:label>column completeness</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/odissei/cv/contentFeature/v0.1/ -->
+
+
+    <NamedIndividual rdf:about="https://w3id.org/odissei/cv/contentFeature/v0.1/">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/odissei/ns/kg/cbs/project/1033 -->
+
+
+    <NamedIndividual rdf:about="https://w3id.org/odissei/ns/kg/cbs/project/1033">
+        <rdf:type rdf:resource="https://schema.org/ResearchProject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/research-technology-readiness-levels#Level0Idea -->
+
+
+    <NamedIndividual rdf:about="https://w3id.org/research-technology-readiness-levels#Level0Idea">
+        <rdf:type rdf:resource="https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/research-technology-readiness-levels#Levels -->
+
+
+    <NamedIndividual rdf:about="https://w3id.org/research-technology-readiness-levels#Levels">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.semanticweb.org/user/ontologies/2025/8/university#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xml:base="http://www.semanticweb.org/user/ontologies/2025/8/university#">
+
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2025/8/university#">
+        <dc:title xml:lang="en">Vocabulary of a Friend</dc:title>
+        <rdfs:comment>This ontology describes a simple university domain, including professors, students, and courses.</rdfs:comment>
+    </owl:Ontology>
+    
+    <owl:Class rdf:about="#Professor">
+        <rdfs:label>Professor</rdfs:label>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#Student">
+        <rdfs:label>Student</rdfs:label>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#Course">
+        <rdfs:label>Course</rdfs:label>
+    </owl:Class>
+    
+    <owl:ObjectProperty rdf:about="#teaches">
+        <rdfs:label>teaches</rdfs:label>
+        <rdfs:domain rdf:resource="#Professor"/>
+        <rdfs:range rdf:resource="#Course"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#enrolledIn">
+        <rdfs:label>enrolled in</rdfs:label>
+        <rdfs:domain rdf:resource="#Student"/>
+        <rdfs:range rdf:resource="#Course"/>
+    </owl:ObjectProperty>
+    
+    <owl:NamedIndividual rdf:about="#Dr_Smith">
+        <rdf:type rdf:resource="#Professor"/>
+        <teaches rdf:resource="#Physics_101"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Jane_Doe">
+        <rdf:type rdf:resource="#Student"/>
+        <enrolledIn rdf:resource="#Physics_101"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Physics_101">
+        <rdf:type rdf:resource="#Course"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

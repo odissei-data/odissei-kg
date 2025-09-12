@@ -90,7 +90,7 @@ export default async function (): Promise<Etl> {
           key: "_output_datasets",
         }),
         triple(iris("_output_datasets"), a, dcm.Dataset),
-        triple(iris("_output_datasets"), dct.publisher, "_IRI"),
+        triple(iris("_output_datasets"), dct.publisher, "_IRI"), // for compatibility reasons we use dct:publisher and sdo:publisher.
         triple(iris("_output_datasets"), sdo.publisher, "_IRI"),
         triple("_IRI", sdo.produces, iris("_output_datasets")),
         triple("_IRI", sftio.producesData, iris("_output_datasets")),
