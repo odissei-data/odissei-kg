@@ -73,6 +73,18 @@ cbs_publications:
   rules:
     - !reference [.etl-template, rules]
 
+generic_odissei_papers_zotero:
+  stage: run-etls
+  interruptible: true
+  allow_failure: false
+  artifacts:
+    !reference [.etl-template, artifacts]
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl]
+  rules:
+    - !reference [.etl-template, rules]     
+
 ### Stage 1: add another ETL with name "cbs_projects"
 cbs_projects:
   stage: run-etls
