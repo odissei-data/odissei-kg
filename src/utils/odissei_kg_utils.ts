@@ -20,7 +20,8 @@ export const prefix = {
   dataverse: dataverse_base,
   //dataverseUrl: Iri('https://portal.odissei.nl/dataverse/'),
   dataverseAPI: dataverse_base.concat('api'),
-  dataverseGraph: prefix_base.concat("dataverse/")
+  dataverseGraph: prefix_base.concat("dataverse/"),
+  zotero: declarePrefix('http://www.zotero.org/namespaces/export#')
 };
 
 export const destination = {
