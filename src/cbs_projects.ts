@@ -10,8 +10,10 @@ import { logRecord } from "@triplyetl/etl/debug";
 
 // ETL input data: spreadsheets with CBS project information taken from HTML overview page at:
 // https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen/instellingen-en-projecten
+const cbs_projects_after =
+  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_na_2024_.xlsx";
 const cbs_projects_before =
-  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_voor_2025_.xlsx";
+  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_voor_2025_.xlsx";  
 //const cbs_projects_before =
 //  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_voor_2024.xlsx";
 //const cbs_projects_after =
@@ -27,9 +29,10 @@ export default async function (): Promise<Etl> {
     fromXlsx(
       [
         Source.url(cbs_projects_before),
-        Source.TriplyDb.asset(destination.account, destination.dataset, {
-          name: "projecten_met_bestanden_einddatum_na_2023.xlsx",
-        }),
+        Source.url(cbs_projects_after),
+        //Source.TriplyDb.asset(destination.account, destination.dataset, {
+        //  name: "projecten_met_bestanden_einddatum_na_2023.xlsx",
+        //}),
       ],
       { groupColumnsByName: false },
     ),
