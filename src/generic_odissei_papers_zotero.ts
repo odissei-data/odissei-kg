@@ -6,7 +6,7 @@ import { bibo, a, dct, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 var my_destination: any = destination;
-my_destination.defaultGraph = prefix.graph.concat("generic_papers_zotero");
+my_destination.defaultGraph = prefix.graph.concat("papers_funded_by_odissei_sshoc_nl");
 
 const cbs_zotero_bib =
   "https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/zotero/2025-08-21_ODISSEI_Scientific%20outputs.csv";

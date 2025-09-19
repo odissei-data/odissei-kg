@@ -71,7 +71,16 @@ const jobs = [
   // MCAL Research Question type vocabulary, need this to keep associated https://w3id.org/odissei/ redirects working
   { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/mcal/ResearchQuestionType.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/researchQuestionType/v0.1/'
+  },
+  // ODISSEI Zotero RDF data, see https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/zotero/ODISSEI_scientific_outputs.rdf
+  { source_location: Source.url('https://github.com/odissei-data/ODISSEI-code-library/raw/refs/heads/main/zotero/ODISSEI_scientific_outputs.rdf'),
+    destination_graph: 'https://w3id.org/odissei/ns/kg/graph/papers_funded_by_odissei_sshoc_nl_RDF'
+  },
+  // Peri-Do RDF data, see https://perio.do/
+  { source_location: Source.url('https://n2t.net/ark:/99152/p0dataset.ttl'),
+    destination_graph: 'https://perio.do/'
   }
+//
   ]
 
 
