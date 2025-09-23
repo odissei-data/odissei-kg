@@ -55,7 +55,7 @@ const jobs = [
   { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-5/data?format=text/turtle'),
     destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:5'
   },
-  // CBS Variable thesaurus, home made with https://github.com/odissei-data/cbs-variables-thesaurus
+  // CBS Variable thesaurus, home made with https://github.com/odissei-data/vocabularies/tree/main/cbs
   { // source_location: Source.TriplyDb.asset(destination.account, destination.dataset, {name: 'cbs-variables-thesaurus.ttl'}),
     source_location: Source.url('https://raw.githubusercontent.com/odissei-data/vocabularies/refs/heads/main/cbs/cbs-variables-thesaurus.ttl'),
     destination_graph: 'https://w3id.org/odissei/cv/cbs/variableThesaurus/'
