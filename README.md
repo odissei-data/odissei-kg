@@ -40,6 +40,15 @@ npx tools create-token
 Once you have your token, open the file `.env` and write the following line:
 `TRIPLYDB_TOKEN=<your-token-here>`
 
+**NOTE** 
+Your .env file should look like this (copy [dot_env_example](./dot_env_example) to .env ):
+```sh
+CI_JOB_TOKEN=<YOUR_CI_JOB_TOKEN>
+TRIPLYDB_TOKEN=<YOUR_TRIPLYDB_TOKEN>
+USER=YOUR_USER_NAME
+ENV=Acceptance
+```
+
 ## 2. Developing your ETL
 
 Once you have a token, you can start writing your ETL based on the example file `src/main.ts`.

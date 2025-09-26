@@ -1,0 +1,82 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix : <https://elsst.cessda.eu/id/5/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix TRL: <https://w3id.org/research-technology-readiness-levels#>.
+@prefix schema: <https://schema.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix bibo: <http://purl.org/ontology/bibo/>.
+@prefix cbs_project: <https://w3id.org/odissei/ns/kg/cbs/project/>.
+@prefix doi: <https://doi.org/>.
+@prefix dsv: <https://w3id.org/dsv-ontology#>.
+@prefix dcmitype: <http://purl.org/dc/dcmitype/Software>.
+@prefix dctype: <http://purl.org/dc/dcmitype/>.
+@prefix stype: <https://w3id.org/software-types#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+rdf:type a rdf:Property, rdfs:Resource.
+rdf:Property a rdfs:Class.
+owl:Thing a rdfs:Class.
+rdf:nil a rdf:List.
+rdfs:Class a rdfs:Class.
+rdf:List a rdfs:Class.
+:52a76b51-8f97-4cbc-a98e-7891f5391bf0 a skos:Concept.
+<https://w3id.org/odissei/cv/contentFeature/v0.1/> a skos:ConceptScheme.
+skos:Concept a rdfs:Class;
+    rdfs:label "Concept"@en.
+skos:ConceptScheme a rdfs:Class;
+    rdfs:label "Concept Scheme"@en.
+skos:OrderedCollection a rdfs:Class;
+    rdfs:label "Ordered Collection"@en.
+TRL:Level0Idea a TRL:TechnologyReadinessLevel.
+TRL:Levels a skos:OrderedCollection.
+TRL:TechnologyReadinessLevel a rdfs:Class.
+schema:SoftwareSourceCode a rdfs:Class;
+    rdfs:label "Software Source Code".
+<https://tools.clariah.nl/alpino-service/2.4.1> a schema:SoftwareSourceCode.
+bibo:AcademicArticle a rdfs:Class;
+    rdfs:label "Academic Article"@en, "Academic Article".
+cbs_project:1033 a schema:ResearchProject.
+doi:10.1002\/acr.22812 a bibo:AcademicArticle.
+doi:10.1007\/s10645-022-09401-z a bibo:Article.
+bibo:Article a rdfs:Class;
+    rdfs:label "Article"@en.
+owl:DataProperty a rdfs:Class.
+dsv:columnCompleteness a owl:DataProperty;
+    rdfs:label "column completeness".
+<https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665> a dcmitype:.
+dcmitype: a rdfs:Class;
+    rdfs:label "Software"@en.
+schema:ResearchProject a rdfs:Class.
+dctype:Dataset a rdfs:Class;
+    rdfs:label "Dataset"@en.
+doi:10.34894\/63XWJB a dctype:Dataset.
+stype:CommandLineApplication a rdfs:Class;
+    rdfs:label "Command-line Application", "Command-Line Application".
+stype:DesktopApplication a rdfs:Class;
+    rdfs:label "Desktop Application".
+stype:ServerApplication a rdfs:Class;
+    rdfs:label "Server Application".
+stype:SoftwareImage a rdfs:Class;
+    rdfs:label "Software Image".
+stype:SoftwareLibrary a rdfs:Class;
+    rdfs:label "Software Library".
+rdfs:Resource a rdfs:Class.
+bibo:DocumentStatus a rdfs:Class;
+    rdfs:label "Document Status"@en.
+bibo:ThesisDegree a rdfs:Class;
+    rdfs:label "Thesis degree"@en.
+bibo:bdarcus a owl:Thing, foaf:Person.
+bibo:degrees\/ma a bibo:ThesisDegree;
+    rdfs:label "M.A."@en.
+bibo:status\/accepted a bibo:DocumentStatus;
+    rdfs:label "accepted"@en.
+foaf:Person a rdfs:Class.
+rdf:XMLLiteral a rdfs:Datatype.
+rdfs:Datatype a rdfs:Class.
+<https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9> a stype:CommandLineApplication.
+<https://tools.clariah.nl/commandlineapplication/codemeta-server> a stype:ServerApplication.
+<https://tools.clariah.nl/dependency/codemetapy> a stype:SoftwareLibrary.
+<https://tools.clariah.nl/stub/H-03d54aeb937b34c> a stype:SoftwareImage.
+<https://tools.clariah.nl/stub/H562c288a3232f81c> a stype:DesktopApplication.

@@ -2,18 +2,18 @@
   "author": "Triply <info@triply.cc>",
   "type": "module",
   "dependencies": {
-    "@triplyetl/etl": "^4.9.6"
+    "@triplyetl/etl": "^4.10.1"
   },
-  "description": "Triply ETL for odissei",
+  "description": "Triply ETL for ODISSEI Knowledge Graph prototype",
   "lint-staged": {
     "*.ts?(x)": [
       "npm run util:lint:fix",
       "prettier --write --ignore-unknown"
     ]
   },
-  "main": "lib/cbs_projects.js",
+  "main": "lib/dataverse.js",
   "private": true,
-  "license": "CC-BY-SA",
+  "license": "Apache 2.0",
   "contributors": [
     {
       "name": "jacco.van.ossenbruggen",
@@ -30,8 +30,7 @@
     "util:lint": "cross-env ESLINT_STRICT=true eslint --ext .tsx --ext .ts ./src",
     "util:lint:fix": "cross-env ESLINT_STRICT=true eslint --fix --ext .tsx --ext .ts ./src",
     "util:validateTs": "tsc --noEmit",
-    "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput",
-    "prepare": "husky install"
+    "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "version": "1.0.0",
   "name": "odissei-kg"

@@ -1,0 +1,208 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/dcmitype/Dataset
+<http://purl.org/dc/dcmitype/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/dcmitype/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset"@en .
+# 
+# http://purl.org/dc/dcmitype/Software
+<http://purl.org/dc/dcmitype/Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/dcmitype/Software> <http://www.w3.org/2000/01/rdf-schema#label> "Software"@en .
+# 
+# http://purl.org/ontology/bibo/AcademicArticle
+<http://purl.org/ontology/bibo/AcademicArticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/AcademicArticle> <http://www.w3.org/2000/01/rdf-schema#label> "Academic Article"@en .
+<http://purl.org/ontology/bibo/AcademicArticle> <http://www.w3.org/2000/01/rdf-schema#label> "Academic Article" .
+# 
+# http://purl.org/ontology/bibo/Article
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#label> "Article"@en .
+# 
+# http://purl.org/ontology/bibo/DocumentStatus
+<http://purl.org/ontology/bibo/DocumentStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/DocumentStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Document Status"@en .
+# 
+# http://purl.org/ontology/bibo/ThesisDegree
+<http://purl.org/ontology/bibo/ThesisDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/ThesisDegree> <http://www.w3.org/2000/01/rdf-schema#label> "Thesis degree"@en .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#List
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#List> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#Class
+<http://www.w3.org/2000/01/rdf-schema#Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#Datatype
+<http://www.w3.org/2000/01/rdf-schema#Datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#Resource
+<http://www.w3.org/2000/01/rdf-schema#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2002/07/owl#DataProperty
+<http://www.w3.org/2002/07/owl#DataProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2002/07/owl#Thing
+<http://www.w3.org/2002/07/owl#Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Concept Scheme"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#OrderedCollection
+<http://www.w3.org/2004/02/skos/core#OrderedCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#OrderedCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Ordered Collection"@en .
+# 
+# http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://schema.org/ResearchProject
+<https://schema.org/ResearchProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://schema.org/SoftwareSourceCode
+<https://schema.org/SoftwareSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#label> "Software Source Code" .
+# 
+# https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel
+<https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/software-types#CommandLineApplication
+<https://w3id.org/software-types#CommandLineApplication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/software-types#CommandLineApplication> <http://www.w3.org/2000/01/rdf-schema#label> "Command-Line Application" .
+<https://w3id.org/software-types#CommandLineApplication> <http://www.w3.org/2000/01/rdf-schema#label> "Command-line Application" .
+# 
+# https://w3id.org/software-types#DesktopApplication
+<https://w3id.org/software-types#DesktopApplication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/software-types#DesktopApplication> <http://www.w3.org/2000/01/rdf-schema#label> "Desktop Application" .
+# 
+# https://w3id.org/software-types#ServerApplication
+<https://w3id.org/software-types#ServerApplication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/software-types#ServerApplication> <http://www.w3.org/2000/01/rdf-schema#label> "Server Application" .
+# 
+# https://w3id.org/software-types#SoftwareImage
+<https://w3id.org/software-types#SoftwareImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/software-types#SoftwareImage> <http://www.w3.org/2000/01/rdf-schema#label> "Software Image" .
+# 
+# https://w3id.org/software-types#SoftwareLibrary
+<https://w3id.org/software-types#SoftwareLibrary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/software-types#SoftwareLibrary> <http://www.w3.org/2000/01/rdf-schema#label> "Software Library" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/ontology/bibo/bdarcus
+<http://purl.org/ontology/bibo/bdarcus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/ontology/bibo/bdarcus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://purl.org/ontology/bibo/bdarcus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+# 
+# http://purl.org/ontology/bibo/degrees/ma
+<http://purl.org/ontology/bibo/degrees/ma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/ontology/bibo/degrees/ma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/bibo/ThesisDegree> .
+<http://purl.org/ontology/bibo/degrees/ma> <http://www.w3.org/2000/01/rdf-schema#label> "M.A."@en .
+# 
+# http://purl.org/ontology/bibo/status/accepted
+<http://purl.org/ontology/bibo/status/accepted> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/ontology/bibo/status/accepted> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/bibo/DocumentStatus> .
+<http://purl.org/ontology/bibo/status/accepted> <http://www.w3.org/2000/01/rdf-schema#label> "accepted"@en .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+# 
+# https://doi.org/10.1002/acr.22812
+<https://doi.org/10.1002/acr.22812> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://doi.org/10.1002/acr.22812> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/bibo/AcademicArticle> .
+# 
+# https://doi.org/10.1007/s10645-022-09401-z
+<https://doi.org/10.1007/s10645-022-09401-z> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://doi.org/10.1007/s10645-022-09401-z> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/bibo/Article> .
+# 
+# https://doi.org/10.34894/63XWJB
+<https://doi.org/10.34894/63XWJB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://doi.org/10.34894/63XWJB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Dataset> .
+# 
+# https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0
+<https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+# 
+# https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665
+<https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Software> .
+# 
+# https://tools.clariah.nl/alpino-service/2.4.1
+<https://tools.clariah.nl/alpino-service/2.4.1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://tools.clariah.nl/alpino-service/2.4.1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/SoftwareSourceCode> .
+# 
+# https://tools.clariah.nl/commandlineapplication/codemeta-server
+<https://tools.clariah.nl/commandlineapplication/codemeta-server> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://tools.clariah.nl/commandlineapplication/codemeta-server> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/software-types#ServerApplication> .
+# 
+# https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9
+<https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/software-types#CommandLineApplication> .
+# 
+# https://tools.clariah.nl/dependency/codemetapy
+<https://tools.clariah.nl/dependency/codemetapy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://tools.clariah.nl/dependency/codemetapy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/software-types#SoftwareLibrary> .
+# 
+# https://tools.clariah.nl/stub/H-03d54aeb937b34c
+<https://tools.clariah.nl/stub/H-03d54aeb937b34c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://tools.clariah.nl/stub/H-03d54aeb937b34c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/software-types#SoftwareImage> .
+# 
+# https://tools.clariah.nl/stub/H562c288a3232f81c
+<https://tools.clariah.nl/stub/H562c288a3232f81c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://tools.clariah.nl/stub/H562c288a3232f81c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/software-types#DesktopApplication> .
+# 
+# https://w3id.org/dsv-ontology#columnCompleteness
+<https://w3id.org/dsv-ontology#columnCompleteness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/dsv-ontology#columnCompleteness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<https://w3id.org/dsv-ontology#columnCompleteness> <http://www.w3.org/2000/01/rdf-schema#label> "column completeness" .
+# 
+# https://w3id.org/odissei/cv/contentFeature/v0.1/
+<https://w3id.org/odissei/cv/contentFeature/v0.1/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/odissei/cv/contentFeature/v0.1/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+# 
+# https://w3id.org/odissei/ns/kg/cbs/project/1033
+<https://w3id.org/odissei/ns/kg/cbs/project/1033> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/odissei/ns/kg/cbs/project/1033> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/ResearchProject> .
+# 
+# https://w3id.org/research-technology-readiness-levels#Level0Idea
+<https://w3id.org/research-technology-readiness-levels#Level0Idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/research-technology-readiness-levels#Level0Idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel> .
+# 
+# https://w3id.org/research-technology-readiness-levels#Levels
+<https://w3id.org/research-technology-readiness-levels#Levels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/research-technology-readiness-levels#Levels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#OrderedCollection> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

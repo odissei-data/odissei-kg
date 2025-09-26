@@ -1,0 +1,55 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX dctype: <http://purl.org/dc/dcmitype/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <https://schema.org/>
+PREFIX swtypes: <https://w3id.org/software-types#>
+PREFIX trls: <https://w3id.org/research-technology-readiness-levels#>
+
+CONSTRUCT {
+  # Triples for the classes themselves
+  ?entity rdfs:label ?label .
+  ?entity a rdfs:Class .
+
+  # Triples for the sample instances
+  ?sampleInstance a ?entity .
+  ?sampleInstance rdfs:label ?instanceLabel .
+  
+  # Triples for connections to and from the entities/instances
+  ?s ?p ?o .
+}
+WHERE {
+  # Subquery to define our core set of 21 entities and one sample instance for each
+  {
+    SELECT ?entity (SAMPLE(?instance) AS ?sampleInstance)
+    WHERE {
+      ?instance a ?entity .
+      
+      # This filter ensures the entity is a class (either rdfs:Class or owl:Class).
+  FILTER(?entity = rdfs:Class || EXISTS { ?entity a rdfs:Class } || EXISTS { ?entity a owl:Class })
+
+      OPTIONAL { ?instance a ?entity . } # Make finding instances optional
+    }
+    GROUP BY ?entity
+  }
+
+  # OPTIONAL patterns to find all relevant triples for our nodes
+  OPTIONAL { ?entity rdfs:label ?label . }
+  OPTIONAL { ?entity a rdfs:Class . } # Ensure a type triple for the class itself
+  OPTIONAL { ?sampleInstance rdfs:label ?instanceLabel . }
+
+  # NEW: Find any triple where the subject is one of our entities or sample instances
+  OPTIONAL {
+    {
+      BIND(?entity AS ?s)
+    } UNION {
+      BIND(?sampleInstance AS ?s)
+    }
+    ?s ?p ?o .
+    # OPTIONAL pattern to find object properties, which will then be added to the CONSTRUCT
+    #OPTIONAL { ?p a owl:ObjectProperty . }
+  }
+}

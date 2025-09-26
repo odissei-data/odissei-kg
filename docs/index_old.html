@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>SSHOC-NL-ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl","name":"SSHOC-NL-ontology", "headline":"This is the ONtology documentation for the SSHOC-NL Knowledge Graph, available at https://kg.odissei.nl/.", "dateReleased":"Aug 22, 2025", "license":"http://cc.com", "author":[{"@type":"Person","name":"Andre Valdestilhas"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>SSHOC-NL-ontology</h1>
+<img src="https://sshoc.nl/wp-content/uploads/2024/02/cropped-SSHOC_LOGO-removebg-preview-1.png" width="50/">
+<h2>Release: Aug 22, 2025</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl">https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl">https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl</a></dd>
+<dt>Issued on:</dt>
+<dd>Date issued</dd>
+<dt>Authors:</dt>
+<dd>Andre Valdestilhas, <a href="https://vu.nl">VU Amsterdam</a></dd>
+
+<dt>Publisher:</dt>
+<dd><a href="vu.nl">VU</a>, <a href="vu.nl">VU Amsterdam</a><a href="mailto:a.valdestilhas@vu.nl">&#9993;</a></dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/linked-data/cube">cube</a></dd><dd><a href="http://purl.org/ontology/bibo/">&lt</a></dd><dd><a href="http://www.w3.org/2004/02/skos/core">http://purl.org/ontology/bibo/&gt</a></dd><dd>core</dd><dd>&lt</dd><dd>http://xmlns.com/foaf/0.1/&gt</dd>
+
+<dt>Source:</dt>
+<dd><a href="https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl">https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/sshoc-nl-ontology.owl</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://cc.com" target="_blank"><img src="https://img.shields.io/badge/License-CC-blue.svg" alt="http://cc.com" /></a>
+<a href="http://cc.com" rel="license" target="_blank">
+<img src="null" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Incompatible with:</dt>
+<dd><a href="""">""</a></dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is the ONtology documentation for the SSHOC-NL Knowledge Graph, available at https://kg.odissei.nl/.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">sshoc-nl-ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/ontology/bibo/AcademicArticle" title="http://purl.org/ontology/bibo/AcademicArticle">Academic Article</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Article" title="http://purl.org/ontology/bibo/Article">Article</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/AudioDocument" title="http://purl.org/ontology/bibo/AudioDocument">audio document</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/AudioVisualDocument"
+         title="http://purl.org/ontology/bibo/AudioVisualDocument">audio-visual document</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Bill" title="http://purl.org/ontology/bibo/Bill">Bill</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Book" title="http://purl.org/ontology/bibo/Book">Book</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/BookSection" title="http://purl.org/ontology/bibo/BookSection">Book Section</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Brief" title="http://purl.org/ontology/bibo/Brief">Brief</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#CategoricalDataType"
+         title="https://w3id.org/dsv-ontology#CategoricalDataType">Categorical Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Chapter" title="http://purl.org/ontology/bibo/Chapter">Chapter</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Code" title="http://purl.org/ontology/bibo/Code">Code</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/CollectedDocument" title="http://purl.org/ontology/bibo/CollectedDocument">Collected Document</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Collection" title="http://purl.org/ontology/bibo/Collection">Collection</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#ColumnProperty" title="https://w3id.org/dsv-ontology#ColumnProperty">Column Property</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Conference" title="http://purl.org/ontology/bibo/Conference">Conference</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/CourtReporter" title="http://purl.org/ontology/bibo/CourtReporter">Court Reporter</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#Dataset" title="https://w3id.org/dsv-ontology#Dataset">Dataset</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#Column" title="https://w3id.org/dsv-ontology#Column">Dataset Component</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#DatasetSchema" title="https://w3id.org/dsv-ontology#DatasetSchema">Dataset Schema</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/DocumentPart" title="http://purl.org/ontology/bibo/DocumentPart">document part</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Excerpt" title="http://purl.org/ontology/bibo/Excerpt">Excerpt</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Image" title="http://purl.org/ontology/bibo/Image">Image</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#IntervalDataType" title="https://w3id.org/dsv-ontology#IntervalDataType">Interval Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Issue" title="http://purl.org/ontology/bibo/Issue">Issue</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/LegalCaseDocument" title="http://purl.org/ontology/bibo/LegalCaseDocument">Legal Case Document</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/LegalDocument" title="http://purl.org/ontology/bibo/LegalDocument">Legal Document</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Legislation" title="http://purl.org/ontology/bibo/Legislation">Legislation</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#NominalDataType" title="https://w3id.org/dsv-ontology#NominalDataType">Nominal Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Note" title="http://purl.org/ontology/bibo/Note">Note</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#NumericalDataType" title="https://w3id.org/dsv-ontology#NumericalDataType">Numerical Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#OrdinalDataType" title="https://w3id.org/dsv-ontology#OrdinalDataType">Ordinal Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Performance" title="http://purl.org/ontology/bibo/Performance">Performance</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Periodical" title="http://purl.org/ontology/bibo/Periodical">Periodical</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/PersonalCommunicationDocument"
+         title="http://purl.org/ontology/bibo/PersonalCommunicationDocument">Personal Communication Document</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#RatioDataType" title="https://w3id.org/dsv-ontology#RatioDataType">Ratio Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Slide" title="http://purl.org/ontology/bibo/Slide">Slide</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Specification" title="http://purl.org/ontology/bibo/Specification">Specification</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#StatisticalDataType"
+         title="https://w3id.org/dsv-ontology#StatisticalDataType">Statistical Data Type</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#SummaryStatistics" title="https://w3id.org/dsv-ontology#SummaryStatistics">Summary Statistics</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Thesis" title="http://purl.org/ontology/bibo/Thesis">Thesis</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/Webpage" title="http://purl.org/ontology/bibo/Webpage">Webpage</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/ontology/bibo/affirmedBy" title="http://purl.org/ontology/bibo/affirmedBy">
+         <span>affirmed By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/cites" title="http://purl.org/ontology/bibo/cites">cites</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/contributorList" title="http://purl.org/ontology/bibo/contributorList">list of contributors</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/producer" title="http://purl.org/ontology/bibo/producer">producer</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/reversedBy" title="http://purl.org/ontology/bibo/reversedBy">
+         <span>reversed By</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/ontology/bibo/uri" title="http://purl.org/ontology/bibo/uri">uri</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#https://w3id.org/dsv-ontology#hasCategories" title="https://w3id.org/dsv-ontology#hasCategories">has categories</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred Namespace Uri</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">sshoc-nl-ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">SSHOC-NL ontology</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for sshoc-nl-ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by sshoc-nl-ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/ontology/bibo/AcademicArticle" title="http://purl.org/ontology/bibo/AcademicArticle">Academic Article</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Article" title="http://purl.org/ontology/bibo/Article">Article</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/AudioDocument" title="http://purl.org/ontology/bibo/AudioDocument">audio document</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/AudioVisualDocument" title="http://purl.org/ontology/bibo/AudioVisualDocument">audio-visual document</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Bill" title="http://purl.org/ontology/bibo/Bill">Bill</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Book" title="http://purl.org/ontology/bibo/Book">Book</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/BookSection" title="http://purl.org/ontology/bibo/BookSection">Book Section</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Brief" title="http://purl.org/ontology/bibo/Brief">Brief</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#CategoricalDataType" title="https://w3id.org/dsv-ontology#CategoricalDataType">Categorical Statistical Data Type</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Chapter" title="http://purl.org/ontology/bibo/Chapter">Chapter</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Code" title="http://purl.org/ontology/bibo/Code">Code</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/CollectedDocument" title="http://purl.org/ontology/bibo/CollectedDocument">Collected Document</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Collection" title="http://purl.org/ontology/bibo/Collection">Collection</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#ColumnProperty" title="https://w3id.org/dsv-ontology#ColumnProperty">Column Property</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Conference" title="http://purl.org/ontology/bibo/Conference">Conference</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/CourtReporter" title="http://purl.org/ontology/bibo/CourtReporter">Court Reporter</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#Dataset" title="https://w3id.org/dsv-ontology#Dataset">Dataset</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#Column" title="https://w3id.org/dsv-ontology#Column">Dataset Component</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#DatasetSchema" title="https://w3id.org/dsv-ontology#DatasetSchema">Dataset Schema</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/DocumentPart" title="http://purl.org/ontology/bibo/DocumentPart">document part</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Excerpt" title="http://purl.org/ontology/bibo/Excerpt">Excerpt</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Image" title="http://purl.org/ontology/bibo/Image">Image</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#IntervalDataType" title="https://w3id.org/dsv-ontology#IntervalDataType">Interval Statistical Data Type</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Issue" title="http://purl.org/ontology/bibo/Issue">Issue</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/LegalCaseDocument" title="http://purl.org/ontology/bibo/LegalCaseDocument">Legal Case Document</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/LegalDocument" title="http://purl.org/ontology/bibo/LegalDocument">Legal Document</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Legislation" title="http://purl.org/ontology/bibo/Legislation">Legislation</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#NominalDataType" title="https://w3id.org/dsv-ontology#NominalDataType">Nominal Statistical Data Type</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Note" title="http://purl.org/ontology/bibo/Note">Note</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#NumericalDataType" title="https://w3id.org/dsv-ontology#NumericalDataType">Numerical Statistical Data Type</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#OrdinalDataType" title="https://w3id.org/dsv-ontology#OrdinalDataType">Ordinal Statistical Data Type</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Performance" title="http://purl.org/ontology/bibo/Performance">Performance</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Periodical" title="http://purl.org/ontology/bibo/Periodical">Periodical</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/PersonalCommunicationDocument" title="http://purl.org/ontology/bibo/PersonalCommunicationDocument">Personal Communication Document</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#RatioDataType" title="https://w3id.org/dsv-ontology#RatioDataType">Ratio Statistical Data Type</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Slide" title="http://purl.org/ontology/bibo/Slide">Slide</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Specification" title="http://purl.org/ontology/bibo/Specification">Specification</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#StatisticalDataType" title="https://w3id.org/dsv-ontology#StatisticalDataType">Statistical Data Type</a></li>
+  <li><a href="#https://w3id.org/dsv-ontology#SummaryStatistics" title="https://w3id.org/dsv-ontology#SummaryStatistics">Summary Statistics</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Thesis" title="http://purl.org/ontology/bibo/Thesis">Thesis</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/Webpage" title="http://purl.org/ontology/bibo/Webpage">Webpage</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/ontology/bibo/AcademicArticle">
+  <h3>Academic Article<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/AcademicArticle</p>
+  <div class="comment">
+   <span class="markdown">A scholarly academic article, typically published in a journal.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Article" title="http://purl.org/ontology/bibo/Article">Article</a> <sup class="type-c" title="class">c</sup>, <a href="https://terms.codata.org/rdmt/data-paper" target="_blank" title="https://terms.codata.org/rdmt/data-paper">data paper</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/producer" title="http://purl.org/ontology/bibo/producer">producer</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Article">
+  <h3>Article<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Article</p>
+  <div class="comment">
+   <span class="markdown">A written composition in prose, usually nonfiction, on a specific topic, forming an independent part of a book or other publication, as a newspaper or magazine.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/AcademicArticle" title="http://purl.org/ontology/bibo/AcademicArticle">Academic Article</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/AudioDocument">
+  <h3>audio document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/AudioDocument</p>
+  <div class="comment">
+   <span class="markdown">An audio document; aka record.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/AudioVisualDocument">
+  <h3>audio-visual document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/AudioVisualDocument</p>
+  <div class="comment">
+   <span class="markdown">An audio-visual document; film, video, and so forth.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Bill">
+  <h3>Bill<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Bill</p>
+  <div class="comment">
+   <span class="markdown">Draft legislation presented for discussion to a legal body.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Legislation" title="http://purl.org/ontology/bibo/Legislation">Legislation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Book">
+  <h3>Book<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Book</p>
+  <div class="comment">
+   <span class="markdown">A written or printed work of fiction or nonfiction, usually on sheets of paper fastened or bound together within covers.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/BookSection">
+  <h3>Book Section<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/BookSection</p>
+  <div class="comment">
+   <span class="markdown">A section of a book.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/DocumentPart" title="http://purl.org/ontology/bibo/DocumentPart">document part</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Chapter" title="http://purl.org/ontology/bibo/Chapter">Chapter</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Brief">
+  <h3>Brief<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Brief</p>
+  <div class="comment">
+   <span class="markdown">A written argument submitted to a court.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/LegalCaseDocument" title="http://purl.org/ontology/bibo/LegalCaseDocument">Legal Case Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#CategoricalDataType">
+  <h3>Categorical Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#CategoricalDataType</p>
+  <div class="comment">
+   <span class="markdown">Set of statistical data types can be observed and - or - categorised.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#StatisticalDataType" title="https://w3id.org/dsv-ontology#StatisticalDataType">Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#NominalDataType" title="https://w3id.org/dsv-ontology#NominalDataType">Nominal Statistical Data Type</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/dsv-ontology#OrdinalDataType" title="https://w3id.org/dsv-ontology#OrdinalDataType">Ordinal Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Chapter">
+  <h3>Chapter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Chapter</p>
+  <div class="comment">
+   <span class="markdown">A chapter of a book.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/BookSection" title="http://purl.org/ontology/bibo/BookSection">Book Section</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Code">
+  <h3>Code<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Code</p>
+  <div class="comment">
+   <span class="markdown">A collection of statutes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Periodical" title="http://purl.org/ontology/bibo/Periodical">Periodical</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/CollectedDocument">
+  <h3>Collected Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/CollectedDocument</p>
+  <div class="comment">
+   <span class="markdown">A document that simultaneously contains other documents.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://kg.odissei.nl/.well-known/genid/5f487fed82cd9039c3905ee2142c0b7b" target="_blank" title="https://kg.odissei.nl/.well-known/genid/5f487fed82cd9039c3905ee2142c0b7b">5f487fed82cd9039c3905ee2142c0b7b</a> <sup class="type-c" title="class">c</sup>, <a href="https://kg.odissei.nl/.well-known/genid/79e99055d875c8d7f1971eb856094886" target="_blank" title="https://kg.odissei.nl/.well-known/genid/79e99055d875c8d7f1971eb856094886">79e99055d875c8d7f1971eb856094886</a> <sup class="type-c" title="class">c</sup>, <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Issue" title="http://purl.org/ontology/bibo/Issue">Issue</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Collection">
+  <h3>Collection<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Collection</p>
+  <div class="comment">
+   <span class="markdown">A collection of Documents or Collections</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://kg.odissei.nl/.well-known/genid/68de51b157f3af78b55e085ca7ab906d" target="_blank" title="https://kg.odissei.nl/.well-known/genid/68de51b157f3af78b55e085ca7ab906d">68de51b157f3af78b55e085ca7ab906d</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Periodical" title="http://purl.org/ontology/bibo/Periodical">Periodical</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#ColumnProperty">
+  <h3>Column Property<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#ColumnProperty</p>
+  <div class="comment">
+   <span class="markdown">RDF Properties represented by the column.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/linked-data/cube#DimensionProperty" target="_blank" title="http://purl.org/linked-data/cube#DimensionProperty">Dimension Property</a> <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">Property</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Conference">
+  <h3>Conference<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Conference</p>
+  <div class="comment">
+   <span class="markdown">A meeting for consultation or discussion.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/NET/c4dm/event.owl#Event" target="_blank" title="http://purl.org/NET/c4dm/event.owl#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/CourtReporter">
+  <h3>Court Reporter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/CourtReporter</p>
+  <div class="comment">
+   <span class="markdown">A collection of legal cases.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Periodical" title="http://purl.org/ontology/bibo/Periodical">Periodical</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#Dataset">
+  <h3>Dataset<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#Dataset</p>
+  <div class="comment">
+   <span class="markdown">Set of data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/linked-data/cube#DataSet" target="_blank" title="http://purl.org/linked-data/cube#DataSet">Data Set</a> <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/ns/csvw#Table" target="_blank" title="http://www.w3.org/ns/csvw#Table">Table</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="https://w3id.org/dsv-ontology#hasCategories" target="_blank" title="https://w3id.org/dsv-ontology#hasCategories">has categories</a> <sup class="type-ap" title="annotation property">ap</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#Column">
+  <h3>Dataset Component<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#Column</p>
+  <div class="comment">
+   <span class="markdown">Set of individual columns of a dataset.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/csvw#Column" target="_blank" title="http://www.w3.org/ns/csvw#Column">Column</a> <sup class="type-c" title="class">c</sup>, <a href="http://purl.org/linked-data/cube#ComponentSpecification" target="_blank" title="http://purl.org/linked-data/cube#ComponentSpecification">Component Specification</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="https://w3id.org/dsv-ontology#hasCategories" target="_blank" title="https://w3id.org/dsv-ontology#hasCategories">has categories</a> <sup class="type-ap" title="annotation property">ap</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#DatasetSchema">
+  <h3>Dataset Schema<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#DatasetSchema</p>
+  <div class="comment">
+   <span class="markdown">The structural schema of a dataset.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/linked-data/cube#DataStructureDefinition" target="_blank" title="http://purl.org/linked-data/cube#DataStructureDefinition">Data Structure Definition</a> <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/ns/csvw#TableSchema" target="_blank" title="http://www.w3.org/ns/csvw#TableSchema">Table Schema</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/LegalDecision">
+  <h3>Decision<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/LegalDecision</p>
+  <div class="comment">
+   <span class="markdown">A document containing an authoritative determination (as a decree or judgment) made after consideration of facts or law.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/LegalCaseDocument" title="http://purl.org/ontology/bibo/LegalCaseDocument">Legal Case Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/affirmedBy" title="http://purl.org/ontology/bibo/affirmedBy">affirmed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/ontology/bibo/reversedBy" title="http://purl.org/ontology/bibo/reversedBy">reversed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/affirmedBy" title="http://purl.org/ontology/bibo/affirmedBy">affirmed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/ontology/bibo/reversedBy" title="http://purl.org/ontology/bibo/reversedBy">reversed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/DocumentPart">
+  <h3>document part<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/DocumentPart</p>
+  <div class="comment">
+   <span class="markdown">a distinct part of a larger document or collected document.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="https://kg.odissei.nl/.well-known/genid/f4e35d90090f6cd06b239bbf60f3fbd4" target="_blank" title="https://kg.odissei.nl/.well-known/genid/f4e35d90090f6cd06b239bbf60f3fbd4">f4e35d90090f6cd06b239bbf60f3fbd4</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/BookSection" title="http://purl.org/ontology/bibo/BookSection">Book Section</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/ontology/bibo/Excerpt" title="http://purl.org/ontology/bibo/Excerpt">Excerpt</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/ontology/bibo/Slide" title="http://purl.org/ontology/bibo/Slide">Slide</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Excerpt">
+  <h3>Excerpt<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Excerpt</p>
+  <div class="comment">
+   <span class="markdown">A passage selected from a larger work.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/DocumentPart" title="http://purl.org/ontology/bibo/DocumentPart">document part</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Image">
+  <h3>Image<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Image</p>
+  <div class="comment">
+   <span class="markdown">A document that presents visual or diagrammatic information.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#IntervalDataType">
+  <h3>Interval Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#IntervalDataType</p>
+  <div class="comment">
+   <span class="markdown">Statistical data type representing ordered data measured over a numerical scale with equal distance between units.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#NumericalDataType" title="https://w3id.org/dsv-ontology#NumericalDataType">Numerical Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Issue">
+  <h3>Issue<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Issue</p>
+  <div class="comment">
+   <span class="markdown">something that is printed or published and distributed, esp. a given number of a periodical</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/CollectedDocument" title="http://purl.org/ontology/bibo/CollectedDocument">Collected Document</a> <sup class="type-c" title="class">c</sup>, <a href="https://kg.odissei.nl/.well-known/genid/e513e5068ecb92f8d6d1386e3cd25181" target="_blank" title="https://kg.odissei.nl/.well-known/genid/e513e5068ecb92f8d6d1386e3cd25181">e513e5068ecb92f8d6d1386e3cd25181</a> <sup class="type-c" title="class">c</sup>, <a href="https://kg.odissei.nl/.well-known/genid/f79477d37db71e256beb2d5c250077bd" target="_blank" title="https://kg.odissei.nl/.well-known/genid/f79477d37db71e256beb2d5c250077bd">f79477d37db71e256beb2d5c250077bd</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/LegalCaseDocument">
+  <h3>Legal Case Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/LegalCaseDocument</p>
+  <div class="comment">
+   <span class="markdown">A document accompanying a legal case.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/LegalDocument" title="http://purl.org/ontology/bibo/LegalDocument">Legal Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Brief" title="http://purl.org/ontology/bibo/Brief">Brief</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/LegalDocument">
+  <h3>Legal Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/LegalDocument</p>
+  <div class="comment">
+   <span class="markdown">A legal document; for example, a court decision, a brief, and so forth.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/LegalCaseDocument" title="http://purl.org/ontology/bibo/LegalCaseDocument">Legal Case Document</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/ontology/bibo/Legislation" title="http://purl.org/ontology/bibo/Legislation">Legislation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Legislation">
+  <h3>Legislation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Legislation</p>
+  <div class="comment">
+   <span class="markdown">A legal document proposing or enacting a law or a group of laws.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/LegalDocument" title="http://purl.org/ontology/bibo/LegalDocument">Legal Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Bill" title="http://purl.org/ontology/bibo/Bill">Bill</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#NominalDataType">
+  <h3>Nominal Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#NominalDataType</p>
+  <div class="comment">
+   <span class="markdown">Statistical data type representing discrete units that cannot be ordered or measured.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#CategoricalDataType" title="https://w3id.org/dsv-ontology#CategoricalDataType">Categorical Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Note">
+  <h3>Note<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Note</p>
+  <div class="comment">
+   <span class="markdown">Notes or annotations about a resource.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#NumericalDataType">
+  <h3>Numerical Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#NumericalDataType</p>
+  <div class="comment">
+   <span class="markdown">Set of statistical data types can be measured and quantified.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#StatisticalDataType" title="https://w3id.org/dsv-ontology#StatisticalDataType">Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#IntervalDataType" title="https://w3id.org/dsv-ontology#IntervalDataType">Interval Statistical Data Type</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/dsv-ontology#RatioDataType" title="https://w3id.org/dsv-ontology#RatioDataType">Ratio Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#OrdinalDataType">
+  <h3>Ordinal Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#OrdinalDataType</p>
+  <div class="comment">
+   <span class="markdown">Statistical data type representing discrete units that can be ordered or measured.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#CategoricalDataType" title="https://w3id.org/dsv-ontology#CategoricalDataType">Categorical Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Performance">
+  <h3>Performance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Performance</p>
+  <div class="comment">
+   <span class="markdown">A public performance.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/NET/c4dm/event.owl#Event" target="_blank" title="http://purl.org/NET/c4dm/event.owl#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Periodical">
+  <h3>Periodical<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Periodical</p>
+  <div class="comment">
+   <span class="markdown">A group of related documents issued at regular intervals.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://kg.odissei.nl/.well-known/genid/1115573aad1e9e5045f117b76bb63b67" target="_blank" title="https://kg.odissei.nl/.well-known/genid/1115573aad1e9e5045f117b76bb63b67">1115573aad1e9e5045f117b76bb63b67</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/ontology/bibo/Collection" title="http://purl.org/ontology/bibo/Collection">Collection</a> <sup class="type-c" title="class">c</sup>, <a href="https://kg.odissei.nl/.well-known/genid/fcc0f7551e4ea9e43bb974b8eca261a6" target="_blank" title="https://kg.odissei.nl/.well-known/genid/fcc0f7551e4ea9e43bb974b8eca261a6">fcc0f7551e4ea9e43bb974b8eca261a6</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/Code" title="http://purl.org/ontology/bibo/Code">Code</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/ontology/bibo/CourtReporter" title="http://purl.org/ontology/bibo/CourtReporter">Court Reporter</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/PersonalCommunicationDocument">
+  <h3>Personal Communication Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/PersonalCommunicationDocument</p>
+  <div class="comment">
+   <span class="markdown">A personal communication manifested in some document.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#RatioDataType">
+  <h3>Ratio Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#RatioDataType</p>
+  <div class="comment">
+   <span class="markdown">Statistical data type representing ordered data with equal distance between units, where negative values are not allowed.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#NumericalDataType" title="https://w3id.org/dsv-ontology#NumericalDataType">Numerical Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Slide">
+  <h3>Slide<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Slide</p>
+  <div class="comment">
+   <span class="markdown">A slide in a slideshow</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/ontology/bibo/DocumentPart" title="http://purl.org/ontology/bibo/DocumentPart">document part</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Specification">
+  <h3>Specification<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Specification</p>
+  <div class="comment">
+   <span class="markdown">A document describing a specification.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#StatisticalDataType">
+  <h3>Statistical Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#StatisticalDataType</p>
+  <div class="comment">
+   <span class="markdown">Set of statistical data types.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/dsv-ontology#CategoricalDataType" title="https://w3id.org/dsv-ontology#CategoricalDataType">Categorical Statistical Data Type</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/dsv-ontology#NumericalDataType" title="https://w3id.org/dsv-ontology#NumericalDataType">Numerical Statistical Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/dsv-ontology#SummaryStatistics">
+  <h3>Summary Statistics<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#SummaryStatistics</p>
+  <div class="comment">
+   <span class="markdown">Set of summary statistics about the dataset or column.</span>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Thesis">
+  <h3>Thesis<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Thesis</p>
+  <div class="comment">
+   <span class="markdown">A document created to summarize research findings associated with the completion of an academic degree.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/Webpage">
+  <h3>Webpage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/Webpage</p>
+  <div class="comment">
+   <span class="markdown">A web page is an online document available (at least initially) on the world wide web. A web page is written first and foremost to appear on the web, as distinct from other online resources such as books, manuscripts or audio documents which use the web primarily as a distribution mechanism alongside other more traditional methods such as print.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/ontology/bibo/affirmedBy" title="http://purl.org/ontology/bibo/affirmedBy"> <span>affirmed By</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/cites" title="http://purl.org/ontology/bibo/cites">cites</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/contributorList" title="http://purl.org/ontology/bibo/contributorList">list of contributors</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/producer" title="http://purl.org/ontology/bibo/producer">producer</a></li>
+  <li><a href="#http://purl.org/ontology/bibo/reversedBy" title="http://purl.org/ontology/bibo/reversedBy"> <span>reversed By</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/ontology/bibo/affirmedBy">
+  <h3>affirmed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/affirmedBy</p>
+  <div class="comment">
+   <span class="markdown">A legal decision that affirms a ruling.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/cites">
+  <h3>cites<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/cites</p>
+  <div class="comment">
+   <span class="markdown">Relates a document to another document that is cited by the first document as reference, comment, review, quotation or for another purpose.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://schema.org/SoftwareSourceCode" target="_blank" title="https://schema.org/SoftwareSourceCode">Software Source Code</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/contributorList">
+  <h3>list of contributors<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/contributorList</p>
+  <div class="comment">
+   <span class="markdown">An ordered list of contributors. Normally, this list is seen as a priority list that order contributors by importance.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://purl.org/ontology/bibo/Document" target="_blank" title="http://purl.org/ontology/bibo/Document">Document</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/producer">
+  <h3>producer<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/producer</p>
+  <div class="comment">
+   <span class="markdown">Producer of a document or a collection of documents.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.org/ontology/bibo/AcademicArticle" title="http://purl.org/ontology/bibo/AcademicArticle">Academic Article</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="https://kg.odissei.nl/.well-known/genid/10e3426315eb8581f11c60b44e8c983d" target="_blank" title="https://kg.odissei.nl/.well-known/genid/10e3426315eb8581f11c60b44e8c983d">10e3426315eb8581f11c60b44e8c983d</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://xmlns.com/foaf/0.1/Agent" target="_blank" title="http://xmlns.com/foaf/0.1/Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/reversedBy">
+  <h3>reversed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/reversedBy</p>
+  <div class="comment">
+   <span class="markdown">A legal decision that reverses a ruling.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://purl.org/ontology/bibo/LegalDecision" title="http://purl.org/ontology/bibo/LegalDecision">Decision</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/ontology/bibo/uri" title="http://purl.org/ontology/bibo/uri">uri</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/ontology/bibo/uri">
+  <h3>uri<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/uri</p>
+  <div class="comment">
+   <span class="markdown">Universal Resource Identifier of a document</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://kg.odissei.nl/.well-known/genid/f2f3e480a6852f58a44a3f662fd220f8" target="_blank" title="https://kg.odissei.nl/.well-known/genid/f2f3e480a6852f58a44a3f662fd220f8">f2f3e480a6852f58a44a3f662fd220f8</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#https://w3id.org/dsv-ontology#hasCategories" title="https://w3id.org/dsv-ontology#hasCategories">has categories</a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
+ </ul>
+ <div class="entity" id="https://w3id.org/dsv-ontology#hasCategories">
+  <h3>has categories<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/dsv-ontology#hasCategories</p>
+  <div class="comment">
+   <span class="markdown">Links the dataset or column to a list of categories.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://w3id.org/dsv-ontology#Column" title="https://w3id.org/dsv-ontology#Column">Dataset Component</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#https://w3id.org/dsv-ontology#Dataset" title="https://w3id.org/dsv-ontology#Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <h3>preferred Namespace Uri<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

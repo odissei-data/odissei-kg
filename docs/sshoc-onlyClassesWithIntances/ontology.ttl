@@ -1,0 +1,248 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral
+rdf:XMLLiteral rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/dcmitype/Dataset
+<http://purl.org/dc/dcmitype/Dataset> rdf:type owl:Class ;
+                                      rdfs:label "Dataset"@en .
+
+
+###  http://purl.org/dc/dcmitype/Software
+<http://purl.org/dc/dcmitype/Software> rdf:type owl:Class ;
+                                       rdfs:label "Software"@en .
+
+
+###  http://purl.org/ontology/bibo/AcademicArticle
+<http://purl.org/ontology/bibo/AcademicArticle> rdf:type owl:Class ;
+                                                rdfs:label "Academic Article"@en ,
+                                                           "Academic Article" .
+
+
+###  http://purl.org/ontology/bibo/Article
+<http://purl.org/ontology/bibo/Article> rdf:type owl:Class ;
+                                        rdfs:label "Article"@en .
+
+
+###  http://purl.org/ontology/bibo/DocumentStatus
+<http://purl.org/ontology/bibo/DocumentStatus> rdf:type owl:Class ;
+                                               rdfs:label "Document Status"@en .
+
+
+###  http://purl.org/ontology/bibo/ThesisDegree
+<http://purl.org/ontology/bibo/ThesisDegree> rdf:type owl:Class ;
+                                             rdfs:label "Thesis degree"@en .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#List
+rdf:List rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+rdf:Property rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Class
+rdfs:Class rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Datatype
+rdfs:Datatype rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
+###  http://www.w3.org/2002/07/owl#DataProperty
+owl:DataProperty rdf:type owl:Class .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class ;
+                                              rdfs:label "Concept"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class ;
+                                                    rdfs:label "Concept Scheme"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#OrderedCollection
+<http://www.w3.org/2004/02/skos/core#OrderedCollection> rdf:type owl:Class ;
+                                                        rdfs:label "Ordered Collection"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+###  https://schema.org/ResearchProject
+<https://schema.org/ResearchProject> rdf:type owl:Class .
+
+
+###  https://schema.org/SoftwareSourceCode
+<https://schema.org/SoftwareSourceCode> rdf:type owl:Class ;
+                                        rdfs:label "Software Source Code" .
+
+
+###  https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel
+<https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel> rdf:type owl:Class .
+
+
+###  https://w3id.org/software-types#CommandLineApplication
+<https://w3id.org/software-types#CommandLineApplication> rdf:type owl:Class ;
+                                                         rdfs:label "Command-Line Application" ,
+                                                                    "Command-line Application" .
+
+
+###  https://w3id.org/software-types#DesktopApplication
+<https://w3id.org/software-types#DesktopApplication> rdf:type owl:Class ;
+                                                     rdfs:label "Desktop Application" .
+
+
+###  https://w3id.org/software-types#ServerApplication
+<https://w3id.org/software-types#ServerApplication> rdf:type owl:Class ;
+                                                    rdfs:label "Server Application" .
+
+
+###  https://w3id.org/software-types#SoftwareImage
+<https://w3id.org/software-types#SoftwareImage> rdf:type owl:Class ;
+                                                rdfs:label "Software Image" .
+
+
+###  https://w3id.org/software-types#SoftwareLibrary
+<https://w3id.org/software-types#SoftwareLibrary> rdf:type owl:Class ;
+                                                  rdfs:label "Software Library" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/ontology/bibo/bdarcus
+<http://purl.org/ontology/bibo/bdarcus> rdf:type owl:NamedIndividual ,
+                                                 owl:Thing ,
+                                                 <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://purl.org/ontology/bibo/degrees/ma
+<http://purl.org/ontology/bibo/degrees/ma> rdf:type owl:NamedIndividual ,
+                                                    <http://purl.org/ontology/bibo/ThesisDegree> ;
+                                           rdfs:label "M.A."@en .
+
+
+###  http://purl.org/ontology/bibo/status/accepted
+<http://purl.org/ontology/bibo/status/accepted> rdf:type owl:NamedIndividual ,
+                                                         <http://purl.org/ontology/bibo/DocumentStatus> ;
+                                                rdfs:label "accepted"@en .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type owl:NamedIndividual ,
+                  rdfs:Resource .
+
+
+###  https://doi.org/10.1002/acr.22812
+<https://doi.org/10.1002/acr.22812> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/ontology/bibo/AcademicArticle> .
+
+
+###  https://doi.org/10.1007/s10645-022-09401-z
+<https://doi.org/10.1007/s10645-022-09401-z> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/ontology/bibo/Article> .
+
+
+###  https://doi.org/10.34894/63XWJB
+<https://doi.org/10.34894/63XWJB> rdf:type owl:NamedIndividual ,
+                                           <http://purl.org/dc/dcmitype/Dataset> .
+
+
+###  https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0
+<https://elsst.cessda.eu/id/5/52a76b51-8f97-4cbc-a98e-7891f5391bf0> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665
+<https://figshare.com/articles/software/Replication_syntax_article_Strategies_of_Informal_Caregivers_to_Adapt_Paid_Work/22101665> rdf:type owl:NamedIndividual ,
+                                                                                                                                           <http://purl.org/dc/dcmitype/Software> .
+
+
+###  https://tools.clariah.nl/alpino-service/2.4.1
+<https://tools.clariah.nl/alpino-service/2.4.1> rdf:type owl:NamedIndividual ,
+                                                         <https://schema.org/SoftwareSourceCode> .
+
+
+###  https://tools.clariah.nl/commandlineapplication/codemeta-server
+<https://tools.clariah.nl/commandlineapplication/codemeta-server> rdf:type owl:NamedIndividual ,
+                                                                           <https://w3id.org/software-types#ServerApplication> .
+
+
+###  https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9
+<https://tools.clariah.nl/commandlineapplication/alpino2folia/2.5.9> rdf:type owl:NamedIndividual ,
+                                                                              <https://w3id.org/software-types#CommandLineApplication> .
+
+
+###  https://tools.clariah.nl/dependency/codemetapy
+<https://tools.clariah.nl/dependency/codemetapy> rdf:type owl:NamedIndividual ,
+                                                          <https://w3id.org/software-types#SoftwareLibrary> .
+
+
+###  https://tools.clariah.nl/stub/H-03d54aeb937b34c
+<https://tools.clariah.nl/stub/H-03d54aeb937b34c> rdf:type owl:NamedIndividual ,
+                                                           <https://w3id.org/software-types#SoftwareImage> .
+
+
+###  https://tools.clariah.nl/stub/H562c288a3232f81c
+<https://tools.clariah.nl/stub/H562c288a3232f81c> rdf:type owl:NamedIndividual ,
+                                                           <https://w3id.org/software-types#DesktopApplication> .
+
+
+###  https://w3id.org/dsv-ontology#columnCompleteness
+<https://w3id.org/dsv-ontology#columnCompleteness> rdf:type owl:NamedIndividual ,
+                                                            owl:DataProperty ;
+                                                   rdfs:label "column completeness" .
+
+
+###  https://w3id.org/odissei/cv/contentFeature/v0.1/
+<https://w3id.org/odissei/cv/contentFeature/v0.1/> rdf:type owl:NamedIndividual ,
+                                                            <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+
+###  https://w3id.org/odissei/ns/kg/cbs/project/1033
+<https://w3id.org/odissei/ns/kg/cbs/project/1033> rdf:type owl:NamedIndividual ,
+                                                           <https://schema.org/ResearchProject> .
+
+
+###  https://w3id.org/research-technology-readiness-levels#Level0Idea
+<https://w3id.org/research-technology-readiness-levels#Level0Idea> rdf:type owl:NamedIndividual ,
+                                                                            <https://w3id.org/research-technology-readiness-levels#TechnologyReadinessLevel> .
+
+
+###  https://w3id.org/research-technology-readiness-levels#Levels
+<https://w3id.org/research-technology-readiness-levels#Levels> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.w3.org/2004/02/skos/core#OrderedCollection> .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
