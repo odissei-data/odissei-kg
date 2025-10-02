@@ -177,5 +177,5 @@ TRIPLYDB_ACCOUNT=<account>
 set -a ; source .env
 npm update @triplyetl/etl
 ```
-The commands: ```set -a ; source .env``` will export all variables in the .env file to the operating system environment variables.
+The commands: ```set -a ; source .env``` will export all variables in the .env file to the shell environment variables.
 The command ```npm update @triplyetl/etl``` needs the content of the variable CI_JOB_TOKEN to authenticate the upgrade to the new version of the Triply ETL.
