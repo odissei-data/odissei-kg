@@ -175,5 +175,5 @@ TRIPLYDB_ACCOUNT=<account>
 
 ```sh
 set -a ; source .env
-npm update @triplyetl/etl CI_JOB_TOKEN
+npm update @triplyetl/etl 
 ```
