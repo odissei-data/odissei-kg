@@ -170,3 +170,10 @@ Sometimes it is useful to be able to specify the TriplyDB account without changi
 ```sh
 TRIPLYDB_ACCOUNT=<account>
 ```
+
+## Updating version of triply ETL npm packages
+
+```sh
+set -a ; source .env
+npm update @triplyetl/etl CI_JOB_TOKEN
+```
