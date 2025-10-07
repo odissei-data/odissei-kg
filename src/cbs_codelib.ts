@@ -50,6 +50,7 @@ export default async function (): Promise<Etl> {
         pairs(
           "_IRI",
           [sdo.producer, "_CBSproject"],
+          [dct.identifier, "_CBSproject"], // for compatibility reasons we use dct:identifier and sdo:producer
         ),
       ),
       when(

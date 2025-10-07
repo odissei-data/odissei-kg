@@ -46,6 +46,7 @@ export default async function (): Promise<Etl> {
         key: "_IRI",
       }),
       triple("_IRI", a, sdo.ResearchProject),
+      triple("_IRI", a, dct.identifier), // for compatibility reasons we use dct:identifier to represent the project number as an identifier.
       when(
         "Bestandsnaam",
         addHashedIri({

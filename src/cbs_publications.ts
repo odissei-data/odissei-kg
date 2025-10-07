@@ -32,8 +32,8 @@ export default async function (): Promise<Etl> {
           content: 'Projectnummer',
           key: '_CBS_project_uri',
         }),
-        triple('URL', sdo.producer, '_CBS_project_uri',
-        ),
+        triple('URL', sdo.producer, '_CBS_project_uri',),
+        triple('URL', dct.identifier, '_CBS_project_uri',), // for compatibility reasons we use dct:identifier and sdo:producer
       ),
       when('Pub_titel',  triple('URL', dct.title, 'Pub_titel')),
       when('Pub_auteur', triple('URL', dct.creator, 'Pub_auteur')),
