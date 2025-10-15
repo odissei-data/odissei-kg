@@ -44,7 +44,7 @@ export default async function (): Promise<Etl> {
             "_CBS_project_number",
           ],
           [sdo.producer, "_CBS_project_number"],
-          [dct.identifier, "_CBS_project_number"], // for compatibility reasons we use dct:identifier and sdo:producer. 
+          //[dct.identifier, "_CBS_project_number"], // for compatibility reasons we use dct:identifier and sdo:producer. 
           // dct.identifier is used to represent the project number also at cbs_projects.ts and cbs_codelib.ts
         ),
       ),
