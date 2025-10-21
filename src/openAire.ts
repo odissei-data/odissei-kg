@@ -21,26 +21,25 @@ export default async function (): Promise<Etl> {
     fromCsv(Source.url(open_aire)),
     logRecord(),
 
-    when(
-      ( context => context.isNotEmpty("Download From") && context.getString('Download From').startsWith('http')),
+     when(
+      ( context => context.isNotEmpty("DOI") && context.getString('DOI').indexOf('%') < 1),
+      //triple("DOI", a, bibo.Article),
       when(
-        "Download From",
+        "DOI",
         addIri({
-          content: "Download From",
-          key: "_sourcepublication",
-        }),
-        pairs(
-          "_sourcepublication",
-          [sdo.producer, "_sourcepublication"],
-          //[dct.identifier, "_CBSproject"], // for compatibility reasons we use dct:identifier and sdo:producer. 
-          // dct.identifier is used to represent the project number also at cbs_projects.ts and cbs_papers_zotero_odissei.ts
-        ),
+        // Generate IRI for article, use DOI for now
+        prefix: prefix.doi,
+        content: "DOI",
+        key: "_IRI",
+      }),
+      triple("_IRI", a, bibo.AcademicArticle),
       ),
-
-      
-      when('Title',  triple('_sourcepublication', dct.title, 'Title')),
+      when("Download From", triple("_IRI", sdo.producer, iri("Download From"))),
+      when("Title", triple("_IRI", dct.title, "Title")),
+      when("Title", triple("_IRI", sdo.name, "Title")),
+      when("Authors", triple("_IRI", sdo.author, "Authors")),
     ),
-    //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
+    validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
   );
   return etl;
