@@ -11,15 +11,6 @@ import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 const open_aire = "https://services.openaire.eu/search/v2/api/reports?format=csv&fq=foslabel%20exact%20%2205%20social%20sciences%7C%7Csocial%20sciences%22&fq=communityId%20exact%20%22netherlands%22&type=publications";
 
-const codemeta = {
-  referencePublication: prefix.codemeta.concat("referencePublication")
-}
-
-//https://w3id.org/software-iodata#producesData
-const sftio = {
-  producesData: prefix.sftio.concat("producesData")
-}
-
 var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("openaire");
 
@@ -30,38 +21,26 @@ export default async function (): Promise<Etl> {
     fromCsv(Source.url(open_aire)),
     logRecord(),
 
-     when(
-      ( context => context.isNotEmpty("DOI") && context.getString('DOI').indexOf('p%p') == 0),
-      //triple("DOI", a, bibo.Article),
-      when(
-        "DOI",
-        addIri({
-        // Generate IRI for article, use DOI for now
-        prefix: prefix.doi,
-        content: "DOI",
-        key: "_IRI",
-      }),
-      triple("_IRI", a, bibo.AcademicArticle),
-      ),
+    when(
+      ( context => context.isNotEmpty("Download From") && context.getString('Download From').startsWith('http')),
       when(
         "Download From",
         addIri({
-          prefix: prefix.cbs_project,
           content: "Download From",
           key: "_sourcepublication",
         }),
         pairs(
-          "_IRI",
+          "_sourcepublication",
           [sdo.producer, "_sourcepublication"],
           //[dct.identifier, "_CBSproject"], // for compatibility reasons we use dct:identifier and sdo:producer. 
           // dct.identifier is used to represent the project number also at cbs_projects.ts and cbs_papers_zotero_odissei.ts
         ),
       ),
-      when("Title", triple("_IRI", dct.title, "Title")),
-      when("Title", triple("_IRI", sdo.name, "Title")),
-      when("Authors", triple("_IRI", sdo.author, "Authors")),
+
+      
+      when('Title',  triple('_sourcepublication', dct.title, 'Title')),
     ),
-    validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
+    //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
   );
   return etl;
