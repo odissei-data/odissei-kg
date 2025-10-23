@@ -85,7 +85,7 @@ generic_odissei_papers_zotero:
   rules:
     - !reference [.etl-template, rules]   
 
-  openAire:
+openAire:
   stage: run-etls
   interruptible: true
   allow_failure: false
