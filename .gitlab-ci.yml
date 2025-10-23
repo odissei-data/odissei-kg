@@ -83,7 +83,19 @@ generic_odissei_papers_zotero:
     - !reference [.etl-template, install]
     - !reference [.etl-template, run-etl]
   rules:
-    - !reference [.etl-template, rules]     
+    - !reference [.etl-template, rules]   
+
+  openAire:
+  stage: run-etls
+  interruptible: true
+  allow_failure: false
+  artifacts:
+    !reference [.etl-template, artifacts]
+  script:
+    - !reference [.etl-template, install]
+    - !reference [.etl-template, run-etl]
+  rules:
+    - !reference [.etl-template, rules]    
 
 ### Stage 1: add another ETL with name "cbs_projects"
 cbs_projects:
