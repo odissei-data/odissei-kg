@@ -22,7 +22,8 @@ const jobs = [
     destination_graph: 'https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'
   },
   // CODATA Research Data Management Terminology V001 
-  { source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl'),
+  { //source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl'),
+    source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/5405/codate_rdmt_025-09-30_1.ttl'),
     destination_graph: 'https://terms.codata.org/rdmt/'
   },
   // W3C SKOS Schema:

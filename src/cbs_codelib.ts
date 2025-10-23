@@ -50,6 +50,8 @@ export default async function (): Promise<Etl> {
         pairs(
           "_IRI",
           [sdo.producer, "_CBSproject"],
+          //[dct.identifier, "_CBSproject"], // for compatibility reasons we use dct:identifier and sdo:producer. 
+          // dct.identifier is used to represent the project number also at cbs_projects.ts and cbs_papers_zotero_odissei.ts
         ),
       ),
       when(
@@ -90,8 +92,9 @@ export default async function (): Promise<Etl> {
           key: "_output_datasets",
         }),
         triple(iris("_output_datasets"), a, dcm.Dataset),
-        triple(iris("_output_datasets"), dct.publisher, "_IRI"), // for compatibility reasons we use dct:publisher and sdo:publisher.
-        triple(iris("_output_datasets"), sdo.publisher, "_IRI"),
+        triple(iris("_output_datasets"), dct.publisher, "_IRI"), // for compatibility reasons we use dct:publisher and sdo:publisher. 
+        // To be compatible with data from the following graphs: 
+        // https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl, https://terms.codata.org/rdmt/, and urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:5
         triple("_IRI", sdo.produces, iris("_output_datasets")),
         triple("_IRI", sftio.producesData, iris("_output_datasets")),
       ),

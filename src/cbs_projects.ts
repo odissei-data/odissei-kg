@@ -46,6 +46,8 @@ export default async function (): Promise<Etl> {
         key: "_IRI",
       }),
       triple("_IRI", a, sdo.ResearchProject),
+      //triple("_IRI", a, dct.identifier), // for compatibility reasons we use dct:identifier to represent the project number as an identifier. 
+      // dct.identifier is used to represent the project number also at cbs_codelib.ts and cbs_papers_zotero_odissei.ts
       when(
         "Bestandsnaam",
         addHashedIri({

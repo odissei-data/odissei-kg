@@ -73,7 +73,7 @@ cbs_publications:
   rules:
     - !reference [.etl-template, rules]
 
-#generic_odissei_papers_zotero:
+generic_odissei_papers_zotero:
   stage: run-etls
   interruptible: true
   allow_failure: false
