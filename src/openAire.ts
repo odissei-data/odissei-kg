@@ -9,21 +9,26 @@ import { validate } from '@triplyetl/etl/shacl'
 import { bibo, a, dct, dcm, sdo } from "@triplyetl/etl/vocab"; // dct
 import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
-//const open_aire = "https://services.openaire.eu/search/v2/api/reports?format=csv&fq=foslabel%20exact%20%2205%20social%20sciences%7C%7Csocial%20sciences%22&fq=communityId%20exact%20%22netherlands%22&type=publications";
-//const open_aire = "https://services.openaire.eu/search/v2/api/reports?format=csv&fq=resultacceptanceyear%20within%20%222025%202025%22&fq=foslabel%20exact%20%2205%20social%20sciences%7C%7Csocial%20sciences%22&fq=communityId%20exact%20%22netherlands%22&type=publications";
-const open_aire = "https://tinyurl.com/nada123x";
+const open_aire = "https://services.openaire.eu/search/v2/api/reports?format=csv&fq=resultacceptanceyear%20within%20%222025%202025%22&fq=foslabel%20exact%20%2205%20social%20sciences%7C%7Csocial%20sciences%22&fq=communityId%20exact%20%22netherlands%22&type=publications";
+//const open_aire = "https://tinyurl.com/nada123x";
 
 var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("openaire");
 
 export default async function (): Promise<Etl> {
-  const etl = new Etl(my_destination);
+    // Download to avoid "name too long" error with long URL
+    const response = await fetch(open_aire);
+    const fs = await import("fs/promises");
+    await fs.writeFile("openaire.csv", await response.text());
+  
+    const etl = new Etl(my_destination);
 
   etl.use(
-    fromCsv(Source.url(open_aire)),
+    fromCsv(Source.file("openaire.csv")),
+    //fromCsv(Source.url(open_aire)),
     logRecord(),
 
-     when(
+    when(
       ( context => context.isNotEmpty("DOI") && context.getString('DOI').indexOf('%') < 1),
       //triple("DOI", a, bibo.Article),
       when(
