@@ -16,7 +16,7 @@ var my_destination: any = destination;
 my_destination.defaultGraph = prefix.graph.concat("papers_funded_by_odissei_sshoc_nl");
 
 const cbs_zotero_bib =
-  "https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/2025-08-21_ODISSEI_Scientific%20outputs.csv";
+  "https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/2026-01-07_ODISSEI_Scientific%20outputs.csv";
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
