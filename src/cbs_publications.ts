@@ -13,8 +13,9 @@ my_destination.defaultGraph = prefix.graph.concat("cbs_publications");
 
 const year_pattern = new RegExp('^[0-9][0-9][0-9][0-9]$'); 
 
-const cbs_publications =
-  "https://www.cbs.nl/-/media/cbs-op-maat/microdatabestanden/documents/2023/33/publicatie_overzicht_internet_augustus_2023.xlsx";
+//const cbs_publications =
+//  "https://www.cbs.nl/-/media/cbs-op-maat/microdatabestanden/documents/2023/33/publicatie_overzicht_internet_augustus_2023.xlsx";
+const cbs_publications = "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/publication_overview_internet_january_26.xlsx";
   
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
@@ -23,28 +24,28 @@ export default async function (): Promise<Etl> {
     fromXlsx(Source.url(cbs_publications)),
     logRecord(),
     when(
-      ( context => context.isNotEmpty("URL") && context.getString('URL').startsWith('http')),
-      triple("URL", a, bibo.Article),
+      ( context => context.isNotEmpty("URL publication") && context.getString('URL publication').startsWith('http')),
+      triple("URL publication", a, bibo.Article),
       when(
-        "Projectnummer",
+        "Projectnumber",
         addIri({
           prefix: prefix.cbs_project,
-          content: 'Projectnummer',
+          content: 'Projectnumber',
           key: '_CBS_project_uri',
         }),
-        triple('URL', sdo.producer, '_CBS_project_uri',),
+        triple('URL publication', sdo.producer, '_CBS_project_uri',),
         //triple('URL', dct.identifier, '_CBS_project_uri',), // for compatibility reasons we use dct:identifier and sdo:producer
       ),
-      when('Pub_titel',  triple('URL', dct.title, 'Pub_titel')),
-      when('Pub_auteur', triple('URL', dct.creator, 'Pub_auteur')),
-      when(context => context.isNotEmpty('Pub_jaar') && year_pattern.test(context.getString('Pub_jaar')),   
-        triple('URL', dct.date, literal('Pub_jaar', xsd.gYear))), // FIXME convert to xsd.date
+      when('Publication title',  triple('URL publication', dct.title, 'Publication title')),
+      when('Author(s)', triple('URL publication', dct.creator, 'Author(s)')),
+      when(context => context.isNotEmpty('Datum publicatie') && year_pattern.test(context.getString('Datum publicatie')),   
+        triple('URL publication', dct.date, literal('Datum publicatie', xsd.gYear))), // FIXME convert to xsd.date
       translateSome({
-        content: 'Instelling',
+        content: 'Institute',
         table: ror_table,
         key: '_institute'
       }),
-      triple('URL', sdo.parentOrganization, '_institute'),
+      triple('URL publication', sdo.parentOrganization, '_institute'),
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
