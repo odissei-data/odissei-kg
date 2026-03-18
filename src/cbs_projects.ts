@@ -11,13 +11,14 @@ import { logRecord } from "@triplyetl/etl/debug";
 // ETL input data: spreadsheets with CBS project information taken from HTML overview page at:
 // https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen/instellingen-en-projecten
 const cbs_projects_after =
-  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_na_2024_.xlsx";
+  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projects_with_datasets_after_2025_.xlsx";
 const cbs_projects_before =
-  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_voor_2025_.xlsx";  
-//const cbs_projects_before =
-//  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_voor_2024.xlsx";
+  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projects_with_datasets_before_2026_.xlsx";  
+
 //const cbs_projects_after =
-//  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_na_2023.xlsx";
+//  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_na_2024_.xlsx";
+//const cbs_projects_before =
+//  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projecten_met_bestanden_einddatum_voor_2025_.xlsx";   
 
   var my_destination: any = destination;
   my_destination.defaultGraph = prefix.graph.concat("projects");
@@ -38,10 +39,10 @@ export default async function (): Promise<Etl> {
     ),
     logRecord(),
     when(
-      "Projectnummer",
+      "Project",
       addIri({
         // Generate IRI for CBS project, use ODISSEI namespace for now
-        content: "Projectnummer",
+        content: "Project",
         prefix: prefix.cbs_project,
         key: "_IRI",
       }),
@@ -49,33 +50,33 @@ export default async function (): Promise<Etl> {
       //triple("_IRI", a, dct.identifier), // for compatibility reasons we use dct:identifier to represent the project number as an identifier. 
       // dct.identifier is used to represent the project number also at cbs_codelib.ts and cbs_papers_zotero_odissei.ts
       when(
-        "Bestandsnaam",
+        "Dataset",
         addHashedIri({
           prefix: prefix.cbs_dataset,
-          content: ["Bestandsnaam"],
+          content: ["Dataset"],
           key: "_bestandsnaamHash",
         }),
         triple("_IRI", dct.requires, "_bestandsnaamHash"),
-        triple("_bestandsnaamHash", dct.alternative, "Bestandsnaam"),
+        triple("_bestandsnaamHash", dct.alternative, "Dataset"),
         //triple("_bestandsnaamHash", skosxl.altLabel, "Bestandsnaam"),
         /* While dcterms:alternative is a general-purpose property, 
         skos:altLabel is the better choice because it is specifically 
         designed and widely adopted for representing alternative human-readable labels in knowledge organization systems. */
       ),
       translateSome({
-        content: 'Instelling',
+        content: 'Institution',
         table: ror_table,
         key: '_institute'
       }),
       triple('_IRI', sdo.parentOrganization, '_institute'),
       triple(
         "_IRI",
-        iri(prefix.odissei_kg_schema, str("instelling")),
-        "Instelling",
+        iri(prefix.odissei_kg_schema, str("Institution")),
+        "Institution",
       ),
-      when("Onderzoek", triple("_IRI", dct.title, "Onderzoek")),
-      when("Startdatum", triple("_IRI", sdo.startDate, "Startdatum")),
-      when("Einddatum", triple("_IRI", sdo.endDate, "Einddatum")),
+      when("Project title", triple("_IRI", dct.title, "Project title")),
+      when("Start date", triple("_IRI", sdo.startDate, "Start date")),
+      when("End date", triple("_IRI", sdo.endDate, "End date")),
     ),
     toTriplyDb(my_destination),
   );
