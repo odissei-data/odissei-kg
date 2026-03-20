@@ -11,7 +11,7 @@ import { logRecord } from "@triplyetl/etl/debug";
 // ETL input data: spreadsheets with CBS project information taken from HTML overview page at:
 // https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen/instellingen-en-projecten
 const cbs_projects_after =
-  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projects_with_datasets_after_2025_.xlsx";
+  "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projects_with_datasets_after_2025.xlsx";
 const cbs_projects_before =
   "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/projects_with_datasets_before_2026_.xlsx";  
 
