@@ -82,7 +82,15 @@ const jobs = [
   // Peri-Do RDF data, see https://perio.do/
   { source_location: Source.url('https://n2t.net/ark:/99152/p0dataset.ttl'),
     destination_graph: 'https://perio.do/'
-  }
+  },
+  // incorporating the FBB (https://firmbackbone.nl/) - ODRL (RDF) into the knowledge graph.
+  { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/ODISSEI-Five-Safes-license/refs/heads/main/license/five_safes_license.ttl'),
+    destination_graph: 'https://w3id.org/odissei/odrl/'
+  }//,
+  // FIP(Fair Implementation Profile) RDF daata from Globalize
+  //{ source_location: Source.url('https://registry.knowledgepixels.com/np/RAvL7Kh9uQh8huPXW75FeHiC_VCYdbMwsNLuyh90Zuzgw.jsonld'),
+  //  destination_graph: 'https://fips.nl/'
+  //}
 //
   ]
 
