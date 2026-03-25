@@ -2,8 +2,7 @@
   "author": "Triply <info@triply.cc>",
   "type": "module",
   "dependencies": {
-    "@triplyetl/etl": "^4.10.1",
-    "axios": "^1.13.6"
+    "@triplyetl/etl": "^4.11.3"
   },
   "description": "Triply ETL for ODISSEI Knowledge Graph prototype",
   "lint-staged": {
