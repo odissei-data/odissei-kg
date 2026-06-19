@@ -88,7 +88,7 @@ generic_odissei_papers_zotero:
 openAire:
   stage: run-etls
   interruptible: true
-  allow_failure: false
+  allow_failure: true  # If this script fails, the pipeline stays green/orange and continues
   artifacts:
     !reference [.etl-template, artifacts]
   script:
