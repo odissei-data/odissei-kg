@@ -36,7 +36,7 @@ preflight:
 dataverse:
   stage: run-etls
   interruptible: true
-  allow_failure: false
+  allow_failure: true
   artifacts:
     !reference [.etl-template, artifacts]
   rules:
