@@ -84,7 +84,8 @@ const jobs = [
     destination_graph: 'https://perio.do/'
   },
   // incorporating the FBB (https://firmbackbone.nl/) - ODRL (RDF) into the knowledge graph.
-  { source_location: Source.url('https://raw.githubusercontent.com/odissei-data/ODISSEI-Five-Safes-license/refs/heads/main/license/five_safes_license.ttl'),
+  //{ source_location: Source.url('https://raw.githubusercontent.com/odissei-data/ODISSEI-Five-Safes-license/refs/heads/main/license/five_safes_license.ttl'),
+  { source_location: Source.url('https://dataverse.nl/api/access/datafile/633486?format=original&gbrecs=true'),
     destination_graph: 'https://w3id.org/odissei/odrl/'
   }//,
   // FIP(Fair Implementation Profile) RDF daata from Globalize
