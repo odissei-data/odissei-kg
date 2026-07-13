@@ -85,17 +85,18 @@ generic_odissei_papers_zotero:
   rules:
     - !reference [.etl-template, rules]   
 
-openAire:
-  stage: run-etls
-  interruptible: true
-  allow_failure: true  # If this script fails, the pipeline stays green/orange and continues
-  artifacts:
-    !reference [.etl-template, artifacts]
-  script:
-    - !reference [.etl-template, install]
-    - !reference [.etl-template, run-etl]
-  rules:
-    - !reference [.etl-template, rules]    
+#Removed the openAire ETL for now, as it is not working properly and is not needed for the current pipeline.
+#openAire:
+#  stage: run-etls
+#  interruptible: true
+#  allow_failure: true  # If this script fails, the pipeline stays green/orange and continues
+#  artifacts:
+#    !reference [.etl-template, artifacts]
+#  script:
+#    - !reference [.etl-template, install]
+#    - !reference [.etl-template, run-etl]
+#  rules:
+#    - !reference [.etl-template, rules]    
 
 ### Stage 1: add another ETL with name "cbs_projects"
 cbs_projects:
