@@ -33,5 +33,8 @@
     "util:validateTs:watch": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "version": "1.0.0",
-  "name": "odissei-kg"
+  "name": "odissei-kg",
+  "allowScripts": {
+    "es5-ext@0.10.64": true
+  }
 }
