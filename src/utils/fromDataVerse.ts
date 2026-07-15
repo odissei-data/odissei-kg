@@ -6,38 +6,75 @@ import path from 'path';
 import { pathToFileURL } from 'url';
 
 const DataverseApi = prefix.dataverseAPI
-// cons DaverseAPI = ''
+
+// 1. Optimize ID-to-subtree mapping
+const SUBTREE_MAP: Record<number, string> = {
+  1: 'odissei-portal',
+  2: 'cbs',
+  3: 'cid',
+  4: 'dans',
+  5: 'DataverseNL',
+  6: 'HSN',
+  7: 'LISS'
+};
 
 /**
- * We start with dataverse ID 1
+ * Helper to fetch a URL using dynamic native fetch with exponential backoff retries.
+ * This directly mitigates ECONNRESET and network fluctuation crashes.
+ */
+async function fetchWithRetry(url: string, retries = 3, delay = 1000): Promise<Response> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) return response;
+      
+      // If server returned a client/server error, log it before retrying
+      console.warn(`[Attempt ${i + 1}/${retries}] Fetch failed for ${url} with status ${response.status}`);
+    } catch (err) {
+      console.warn(`[Attempt ${i + 1}/${retries}] Network error fetching ${url}: ${(err as Error).message}`);
+    }
+    if (i < retries - 1) {
+      await new Promise((res) => setTimeout(res, delay * Math.pow(2, i)));
+    }
+  }
+  throw new Error(`Failed to fetch ${url} after ${retries} attempts.`);
+}
+
+/**
+ * We start with dataverse ID 1 - Odissei Portal, which is the root of the subtree. 
  * We fetch the dataverse metadata object (https://datasets.iisg.amsterdam/api/dataverses/1),
- *    and the corresponding contents (https://datasets.iisg.amsterdam/api/dataverses/1/contents)
+ * and the corresponding contents (https://datasets.iisg.amsterdam/api/dataverses/1/contents)
  * The content array may reference a dataset or other dataverses.
- *   - Datasets are fetched from eg https://datasets.iisg.amsterdam/api/datasets/9820
- *   - If it's a dataverse reference, we recurse and fetch it's metadata, contents, and all the things it references
+ * - Datasets are fetched from eg https://datasets.iisg.amsterdam/api/datasets/9820
+ * - If it's a dataverse reference, we recurse and fetch it's metadata, contents, and all the things it references
  */
 export default function fromApi (destination: any): Middleware {
   return async function _fromApi (ctx, next) {
     async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
-      const [dataverse, dataverseContents] = await fetchDataverse(dataverseId)
+      // Clean, dynamic fallback using the mapping
+      const dataverseSubtree = SUBTREE_MAP[dataverseId] || 'odissei-portal';
+
+      const [dataverse, dataverseContents] = await fetchOdisseiDatasets(dataverseSubtree)
       dataverse.type = 'dataverse'
-      console.info(dataverse.alias)
+      console.info(`Processing subtree mapping: ${dataverse.alias}`)
+      
       if (parentDataverseId !== undefined) dataverse.parentDataverseId = parentDataverseId
       await next(dataverse, ctx.app.getNewStore())
+      
       for (const contents of dataverseContents) {
         contents.parentDataverseId = dataverseId
         if (contents.type === 'dataset') {
           try {
-            let datasetUrl = getDatasetUrl(contents.protocol, contents.identifier, contents.authority)   
-            //loadRdf(Source.url(datasetUrl))
-            //console.log('Load dataset from: ' + datasetUrl)
-            //datasetUrl = await fixVariableURIs(datasetUrl)
-            //console.info('Datasetfile at: ' + datasetUrl)
-            await ctx.app.copySource(Source.url(datasetUrl), destination)
-            //await ctx.app.copySource(Source.file(datasetUrl), destination)
+            let datasetUrl = getDatasetUrl(contents.global_id) 
+            
+            // Register source utilizing our custom fetch with retry mechanism internally
+            const sourceUrlObj = Source.url(datasetUrl);
+            
+            // Fetch source and copy to destination
+            await ctx.app.copySource(sourceUrlObj, destination)
             await next();
           } catch (e) {
-            console.warn(`Ignoring this error: ${(e as Error).message}`)
+            console.warn(`Ignoring this dataset error: ${(e as Error).message}`)
             if (!(e as Error).message.startsWith('[500]')) {
               throw e
             }
@@ -51,49 +88,71 @@ export default function fromApi (destination: any): Middleware {
   }
 }
 
-async function fetchDataverse (dataverseId: number): Promise<[any, any]> {
-  let dataverse: any
-  let dataverseContents: any
-  [dataverse, dataverseContents] = await Promise.all(
-    [`${DataverseApi}/dataverses/${dataverseId}`, `${DataverseApi}/dataverses/${dataverseId}/contents`].map(
-      async (link) => {
-        const response = await fetch(link)
-        if (response.status !== 200) {
-          throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
-        }
-        //return await response.json()
-        return response.json()
-      }
-    )
-  )
-  /**
-   * Remove annoying `data: {}` envelope
-   */
-  dataverse = { ...dataverse, ...dataverse.data }
-  delete dataverse.data
-  dataverseContents = dataverseContents.data
+/**
+ * Fetches all dataset records from the Odissei Portal API by paginating 
+ * through the results until the end is reached.
+ * * @param {string} subtree - The target subtree/collection to query (e.g., 'dans').
+ * @returns {Promise<[any, any]>} A tuple containing:
+ * - [0]: The dataverse collection metadata.
+ * - [1]: The dataset contents array.
+ */
+async function fetchOdisseiDatasets(subtree: string): Promise<[any, any]> {
+  const baseUrl = 'https://portal.odissei.nl/api/search';
+  const queryParams = new URLSearchParams({
+    q: '*',
+    subtree: subtree,
+    type: 'dataset',
+    per_page: '50'
+  });
 
-  return [dataverse, dataverseContents] as [any, any]
+  let start = 0;
+  let allRecords: any[] = [];
+  let hasMore = true;
+
+  while (hasMore) {
+    queryParams.set('start', start.toString());
+    const url = `${baseUrl}?${queryParams.toString()}`;
+    
+    console.info(`Fetching from: ${url}`);
+    
+    // Wrapped in fetchWithRetry to tolerate search endpoint timeouts
+    const response = await fetchWithRetry(url);
+    const payload = await response.json();
+    const records = payload.data?.items || payload.results || [];
+
+    if (!Array.isArray(records) || records.length === 0) {
+      hasMore = false;
+    } else {
+      allRecords.push(...records);
+      
+      if (records.length < 50) {
+        hasMore = false;
+      } else {
+        start += 50;
+      }
+    }
+  }
+
+  console.info(`Successfully fetched a total of ${allRecords.length} records.`);
+
+  const dataverseMetadata = {
+    id: subtree,
+    name: `${subtree.toUpperCase()} Subtree`,
+    alias: subtree,
+    description: `Auto-generated container for Odissei subtree: ${subtree}`
+  };
+
+  return [dataverseMetadata, allRecords] as [any, any];
 }
-function getDatasetUrl (protocol: string, datasetId: number, authority: string) {
-  //const link = `${DataverseApi}/datasets/export?exporter=dataverse_json&persistentId=${protocol}:${authority}/${datasetId}`
-  const link = '${DataverseApi}/datasets/export?exporter=OAI_ORE&persistentId=${protocol}:${authority}/${datasetId}'
-  const link2 = DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + protocol + ':' + authority + '/' + datasetId
+
+/**
+ * * @param pId Dataset persistent ID (e.g., "doi:10.34894/3XQJ8K") 
+ * @returns The URL to fetch the dataset in OAI-ORE format from the Dataverse API.
+ */ 
+function getDatasetUrl (pId: string) {
+  const link2 =  DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + pId
   console.info('Fetching dataset from: ' + link2)
   return link2
-  // const response = await fetch(link2)
-  // if (response.status !== 200) throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
-  // let json: any
-  // json = await response.json()
-  // console.info(json)
-  // json = { ...json, ...json.data }
-  // delete json.data
-  // return json
-
-
-  /*loadRdf(
-    Source.file("./static/dataverseTest.jsonld")
-  )*/
 }
 
 /**
@@ -109,16 +168,10 @@ export async function fixVariableURIs(url: string, outputPath?: string): Promise
   const jsonLd = JSON.parse(jsonText);
 
   const modified = convertHttpStringsToIRIs(jsonLd, false);
-
-  // Ensure output path is absolute
   const absolutePath = path.resolve(outputPath || 'modified.jsonld');
 
   fs.writeFileSync(absolutePath, JSON.stringify(modified, null, 2), 'utf8');
-
-  // Convert absolute file path to file:// URL
-  const fileUrl = pathToFileURL(absolutePath).toString();
-
-  return fileUrl;
+  return pathToFileURL(absolutePath).toString();
 }
 
 /**
@@ -132,7 +185,7 @@ function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: 
 
   if (typeof node === 'object' && node !== null) {
     if (parentKey === '@context') {
-      return node; // Don't touch anything in @context
+      return node;
     }
 
     const result: any = {};
@@ -157,20 +210,35 @@ function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: 
 }
 
 /**
- * Fetch plain text from a URL using native Node.js HTTPS.
+ * Fetch plain text from a URL using native Node.js HTTPS with retry logic.
  */
-function fetchText(url: string): Promise<string> {
+function fetchText(url: string, retries = 3, delay = 1000): Promise<string> {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`Failed to fetch: ${res.statusCode}`));
-        return;
-      }
+    function attempt(remaining: number) {
+      https.get(url, (res) => {
+        if (res.statusCode !== 200) {
+          if (remaining > 0) {
+            console.warn(`[HTTP Error ${res.statusCode}] Retrying fetchText for: ${url}`);
+            setTimeout(() => attempt(remaining - 1), delay);
+          } else {
+            reject(new Error(`Failed to fetch: ${res.statusCode}`));
+          }
+          return;
+        }
 
-      let data = '';
-      res.setEncoding('utf8');
-      res.on('data', (chunk) => (data += chunk));
-      res.on('end', () => resolve(data));
-    }).on('error', reject);
+        let data = '';
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => resolve(data));
+      }).on('error', (err) => {
+        if (remaining > 0) {
+          console.warn(`[Network Error] ${err.message}. Retrying fetchText for: ${url}`);
+          setTimeout(() => attempt(remaining - 1), delay);
+        } else {
+          reject(err);
+        }
+      });
+    }
+    attempt(retries);
   });
 }
