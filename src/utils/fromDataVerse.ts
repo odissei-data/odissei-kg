@@ -52,7 +52,8 @@ export default function fromApi (destination: any): Middleware {
   return async function _fromApi (ctx, next) {
     async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
       // Clean, dynamic fallback using the mapping
-      const dataverseSubtree = SUBTREE_MAP[dataverseId] || 'odissei-portal';
+     // const dataverseSubtree = SUBTREE_MAP[dataverseId] || 'odissei-portal';
+      const dataverseSubtree = 'dans';
 
       const [dataverse, dataverseContents] = await fetchOdisseiDatasets(dataverseSubtree)
       dataverse.type = 'dataverse'
