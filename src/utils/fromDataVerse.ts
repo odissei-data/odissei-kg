@@ -12,10 +12,7 @@ const SUBTREE_MAP: Record<number, string> = {
   1: 'odissei-portal',
   2: 'cbs',
   3: 'cid',
-  4: 'dans',
-  5: 'DataverseNL',
-  6: 'HSN',
-  7: 'LISS'
+  4: 'dans'
 };
 
 /**
@@ -52,8 +49,8 @@ export default function fromApi (destination: any): Middleware {
   return async function _fromApi (ctx, next) {
     async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
       // Clean, dynamic fallback using the mapping
-     // const dataverseSubtree = SUBTREE_MAP[dataverseId] || 'odissei-portal';
-      const dataverseSubtree = 'dans';
+      const dataverseSubtree = SUBTREE_MAP[dataverseId] || 'odissei-portal';
+      //const dataverseSubtree = 'dans';
 
       const [dataverse, dataverseContents] = await fetchOdisseiDatasets(dataverseSubtree)
       dataverse.type = 'dataverse'
