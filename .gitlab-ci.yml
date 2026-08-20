@@ -22,7 +22,8 @@ stages:
   # 4: optional final stage (e.g. to synchronize services for SG)
   - finalize
 
-image: node:20.9-bullseye-slim
+# image: node:20.9-bullseye-slim
+image: node:22-bookworm
 
 ### Stage 0: Only install, lint and build, gets triggered on push and merge-requests:
 preflight:
