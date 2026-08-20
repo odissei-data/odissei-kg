@@ -1,19 +1,11 @@
-import { type Middleware, Etl, Source, Destination, loadRdf } from '@triplyetl/etl/generic'
-import { destination, prefix } from './odissei_kg_utils.js'
+import { type Middleware, Source } from '@triplyetl/etl/generic'
+import { prefix } from './odissei_kg_utils.js'
 import https from 'https';
 import fs from 'fs';
 import path from 'path';
 import { pathToFileURL } from 'url';
 
 const DataverseApi = prefix.dataverseAPI
-
-// 1. Optimize ID-to-subtree mapping
-const SUBTREE_MAP: Record<number, string> = {
-  1: 'odissei-portal',
-  2: 'cbs',
-  3: 'cid',
-  4: 'dans'
-};
 
 /**
  * Helper to fetch a URL using dynamic native fetch with exponential backoff retries.
@@ -49,10 +41,8 @@ export default function fromApi (destination: any): Middleware {
   return async function _fromApi (ctx, next) {
     async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
       // Clean, dynamic fallback using the mapping
-      const dataverseSubtree = SUBTREE_MAP[dataverseId] || 'odissei-portal';
-      //const dataverseSubtree = 'dans';
 
-      const [dataverse, dataverseContents] = await fetchOdisseiDatasets(dataverseSubtree)
+      const [dataverse, dataverseContents] = await fetchOdisseiDatasets()
       dataverse.type = 'dataverse'
       console.info(`Processing subtree mapping: ${dataverse.alias}`)
       
@@ -89,18 +79,17 @@ export default function fromApi (destination: any): Middleware {
 /**
  * Fetches all dataset records from the Odissei Portal API by paginating 
  * through the results until the end is reached.
- * * @param {string} subtree - The target subtree/collection to query (e.g., 'dans').
  * @returns {Promise<[any, any]>} A tuple containing:
  * - [0]: The dataverse collection metadata.
  * - [1]: The dataset contents array.
  */
-async function fetchOdisseiDatasets(subtree: string): Promise<[any, any]> {
+async function fetchOdisseiDatasets(): Promise<[any, any]> {
   const baseUrl = 'https://portal.odissei.nl/api/search';
+  const records_per_page = 1000; // search results records per page
   const queryParams = new URLSearchParams({
     q: '*',
-    subtree: subtree,
     type: 'dataset',
-    per_page: '50'
+    per_page: records_per_page.toString()
   });
 
   let start = 0;
@@ -110,8 +99,7 @@ async function fetchOdisseiDatasets(subtree: string): Promise<[any, any]> {
   while (hasMore) {
     queryParams.set('start', start.toString());
     const url = `${baseUrl}?${queryParams.toString()}`;
-    
-    console.info(`Fetching from: ${url}`);
+    console.info(`Querying dataset identifiers from: ${url}`);
     
     // Wrapped in fetchWithRetry to tolerate search endpoint timeouts
     const response = await fetchWithRetry(url);
@@ -121,12 +109,11 @@ async function fetchOdisseiDatasets(subtree: string): Promise<[any, any]> {
     if (!Array.isArray(records) || records.length === 0) {
       hasMore = false;
     } else {
-      allRecords.push(...records);
-      
-      if (records.length < 50) {
+      allRecords.push(...records);  
+      if (records.length < records_per_page) {
         hasMore = false;
       } else {
-        start += 50;
+        start += records_per_page;
       }
     }
   }
@@ -134,10 +121,7 @@ async function fetchOdisseiDatasets(subtree: string): Promise<[any, any]> {
   console.info(`Successfully fetched a total of ${allRecords.length} records.`);
 
   const dataverseMetadata = {
-    id: subtree,
-    name: `${subtree.toUpperCase()} Subtree`,
-    alias: subtree,
-    description: `Auto-generated container for Odissei subtree: ${subtree}`
+    description: `Auto-generated container for Odissei dataverse: ${DataverseApi}`
   };
 
   return [dataverseMetadata, allRecords] as [any, any];
