@@ -1,4 +1,4 @@
-import { type Middleware, Source } from '@triplyetl/etl/generic'
+import { Etl, environments, type Middleware, Source } from '@triplyetl/etl/generic'
 import { prefix } from './odissei_kg_utils.js'
 import https from 'https';
 import fs from 'fs';
@@ -44,7 +44,7 @@ export default function fromApi (destination: any): Middleware {
 
       const [dataverse, dataverseContents] = await fetchOdisseiDatasets()
       dataverse.type = 'dataverse'
-      console.info(`Processing subtree mapping: ${dataverse.alias}`)
+      console.info(`Processing subtree mapping: ${dataverse.description}`)
       
       if (parentDataverseId !== undefined) dataverse.parentDataverseId = parentDataverseId
       await next(dataverse, ctx.app.getNewStore())
@@ -85,7 +85,7 @@ export default function fromApi (destination: any): Middleware {
  */
 async function fetchOdisseiDatasets(): Promise<[any, any]> {
   const baseUrl = 'https://portal.odissei.nl/api/search';
-  const records_per_page = 1000; // search results records per page
+  const records_per_page = 250; // search results records per page
   const queryParams = new URLSearchParams({
     q: '*',
     type: 'dataset',
@@ -114,6 +114,10 @@ async function fetchOdisseiDatasets(): Promise<[any, any]> {
         hasMore = false;
       } else {
         start += records_per_page;
+        if (Etl.environment == environments.Testing) {
+          hasMore = false;
+          console.warn("Just testing first page results");
+        }
       }
     }
   }
@@ -121,7 +125,7 @@ async function fetchOdisseiDatasets(): Promise<[any, any]> {
   console.info(`Successfully fetched a total of ${allRecords.length} records.`);
 
   const dataverseMetadata = {
-    description: `Auto-generated container for Odissei dataverse: ${DataverseApi}`
+    description: `Auto-generated container for: ${DataverseApi}`
   };
 
   return [dataverseMetadata, allRecords] as [any, any];
