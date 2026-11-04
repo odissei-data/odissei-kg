@@ -57,7 +57,6 @@ export default function fromApi (destination: any): Middleware {
             
             // Register source utilizing our custom fetch with retry mechanism internally
             const sourceUrlObj = Source.url(datasetUrl);
-            
             // Fetch source and copy to destination
             await ctx.app.copySource(sourceUrlObj, destination)
             await next();
@@ -139,92 +138,4 @@ function getDatasetUrl (pId: string) {
   const link2 =  DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + pId
   console.info('Fetching dataset from: ' + link2)
   return link2
-}
-
-/**
- * Fetch JSON-LD from a URL, convert http-prefixed string values to @id objects
- * (excluding reserved keys and anything inside @context), and write the result to a file.
- *
- * @param url - The source URL to fetch JSON-LD from.
- * @param outputPath - Optional path to write the modified JSON-LD file.
- * @returns A file:// URL pointing to the output file.
- */
-export async function fixVariableURIs(url: string, outputPath?: string): Promise<string> {
-  const jsonText = await fetchText(url);
-  const jsonLd = JSON.parse(jsonText);
-
-  const modified = convertHttpStringsToIRIs(jsonLd, false);
-  const absolutePath = path.resolve(outputPath || 'modified.jsonld');
-
-  fs.writeFileSync(absolutePath, JSON.stringify(modified, null, 2), 'utf8');
-  return pathToFileURL(absolutePath).toString();
-}
-
-/**
- * Recursively walk JSON-LD to replace http-prefixed strings with { "@id": value },
- * unless inside @context or reserved keys.
- */
-function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: string | null = null): any {
-  if (Array.isArray(node)) {
-    return node.map((item) => convertHttpStringsToIRIs(item, insideContext, parentKey));
-  }
-
-  if (typeof node === 'object' && node !== null) {
-    if (parentKey === '@context') {
-      return node;
-    }
-
-    const result: any = {};
-    for (const [key, value] of Object.entries(node)) {
-      const isContext = insideContext || key === '@context';
-      result[key] = convertHttpStringsToIRIs(value, isContext, key);
-    }
-    return result;
-  }
-
-  const reservedKeys = ['@id', '@type', '@context', '@value', '@language'];
-  if (
-    typeof node === 'string' &&
-    node.startsWith('http') &&
-    !insideContext &&
-    (!parentKey || !reservedKeys.includes(parentKey))
-  ) {
-    return { '@id': node };
-  }
-
-  return node;
-}
-
-/**
- * Fetch plain text from a URL using native Node.js HTTPS with retry logic.
- */
-function fetchText(url: string, retries = 3, delay = 1000): Promise<string> {
-  return new Promise((resolve, reject) => {
-    function attempt(remaining: number) {
-      https.get(url, (res) => {
-        if (res.statusCode !== 200) {
-          if (remaining > 0) {
-            console.warn(`[HTTP Error ${res.statusCode}] Retrying fetchText for: ${url}`);
-            setTimeout(() => attempt(remaining - 1), delay);
-          } else {
-            reject(new Error(`Failed to fetch: ${res.statusCode}`));
-          }
-          return;
-        }
-
-        let data = '';
-        res.setEncoding('utf8');
-        res.on('data', (chunk) => (data += chunk));
-        res.on('end', () => resolve(data));
-      }).on('error', (err) => {
-        if (remaining > 0) {
-          console.warn(`[Network Error] ${err.message}. Retrying fetchText for: ${url}`);
-          setTimeout(() => attempt(remaining - 1), delay);
-        } else {
-          reject(err);
-        }
-      });
-    }
-    attempt(retries);
-  });
 }
