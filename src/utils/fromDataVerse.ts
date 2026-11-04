@@ -84,7 +84,12 @@ export default function fromApi (destination: any): Middleware {
  */
 async function fetchOdisseiDatasets(): Promise<[any, any]> {
   const baseUrl = 'https://portal.odissei.nl/api/search';
-  const records_per_page = 250; // search results records per page
+  var records_per_page;
+  if (Etl.environment == environments.Testing) {
+     records_per_page = 5; // search results records per page
+  } else {
+     records_per_page = 250; // search results records per page
+  }
   const queryParams = new URLSearchParams({
     q: '*',
     type: 'dataset',
