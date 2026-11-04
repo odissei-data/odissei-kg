@@ -1,9 +1,5 @@
 import { Etl, environments, type Middleware, Source } from '@triplyetl/etl/generic'
 import { prefix } from './odissei_kg_utils.js'
-import https from 'https';
-import fs from 'fs';
-import path from 'path';
-import { pathToFileURL } from 'url';
 
 const DataverseApi = prefix.dataverseAPI
 
@@ -30,30 +26,22 @@ async function fetchWithRetry(url: string, retries = 3, delay = 1000): Promise<R
 }
 
 /**
- * We start with dataverse ID 1 - Odissei Portal, which is the root of the subtree. 
- * We fetch the dataverse metadata object (https://datasets.iisg.amsterdam/api/dataverses/1),
- * and the corresponding contents (https://datasets.iisg.amsterdam/api/dataverses/1/contents)
- * The content array may reference a dataset or other dataverses.
- * - Datasets are fetched from eg https://datasets.iisg.amsterdam/api/datasets/9820
- * - If it's a dataverse reference, we recurse and fetch it's metadata, contents, and all the things it references
+ We fetch all dataset records from the Dataverse search API, but really only use the PIDs in these records.
+ We then use the PID to fetch the ORE record for each dataset individually, because only the ORE 
+ record contains all the variable and other custom metadata fields...
  */
 export default function fromApi (destination: any): Middleware {
   return async function _fromApi (ctx, next) {
-    async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
-      // Clean, dynamic fallback using the mapping
+    async function handleDataverse (): Promise <void> {
 
       const [dataverse, dataverseContents] = await fetchOdisseiDatasets()
       dataverse.type = 'dataverse'
-      console.info(`Processing subtree mapping: ${dataverse.description}`)
-      
-      if (parentDataverseId !== undefined) dataverse.parentDataverseId = parentDataverseId
-      await next(dataverse, ctx.app.getNewStore())
       
       for (const contents of dataverseContents) {
-        contents.parentDataverseId = dataverseId
         if (contents.type === 'dataset') {
           try {
-            let datasetUrl = getDatasetUrl(contents.global_id) 
+            let datasetUrl = getDatasetUrl(contents.global_id)
+            console.info('Fetching dataset from: ' + datasetUrl)
             
             // Register source utilizing our custom fetch with retry mechanism internally
             const sourceUrlObj = Source.url(datasetUrl);
@@ -67,16 +55,16 @@ export default function fromApi (destination: any): Middleware {
             }
           }
         } else {
-          await handleDataverse(contents.id, dataverseId)
+          await handleDataverse()
         }
       }
     }
-    await handleDataverse(1)
+    await handleDataverse()
   }
 }
 
 /**
- * Fetches all dataset records from the Odissei Portal API by paginating 
+ * Fetches all dataset records from the Odissei Portal search API by paginating 
  * through the results until the end is reached.
  * @returns {Promise<[any, any]>} A tuple containing:
  * - [0]: The dataverse collection metadata.
@@ -140,7 +128,6 @@ async function fetchOdisseiDatasets(): Promise<[any, any]> {
  * @returns The URL to fetch the dataset in OAI-ORE format from the Dataverse API.
  */ 
 function getDatasetUrl (pId: string) {
-  const link2 =  DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + pId
-  console.info('Fetching dataset from: ' + link2)
-  return link2
+  const url =  DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + pId
+  return url
 }
