@@ -1,5 +1,6 @@
 import { Etl, environments, type Middleware, Source } from '@triplyetl/etl/generic'
 import { prefix } from './odissei_kg_utils.js'
+import { exclusionNames, filterLissVariables } from './filterLissVariables.js'
 
 const DataverseApi = prefix.dataverseAPI
 
@@ -61,7 +62,12 @@ export default function fromApi (destination: any): Middleware {
 
             const filePath = path.join(tempDir,`dataverse-${encodeURIComponent(contents.global_id)}.jsonld`)
 
-            await fs.writeFile(filePath, await response.text(),'utf8')            
+            let contentsJson = await response.text()
+            if (contents.global_id === 'doi:10.17026/DANS-XRZ-KESR') {
+              const csv = await fs.readFile(new URL('../../static/all_missing_variables.csv', import.meta.url), 'utf8')
+              contentsJson = filterLissVariables(contentsJson, exclusionNames(csv))
+            }
+            await fs.writeFile(filePath, contentsJson,'utf8')
 
             // Fetch source and copy to destination
             //await ctx.app.copySource(sourceUrlObj, destination)
