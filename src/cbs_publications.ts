@@ -15,7 +15,8 @@ const year_pattern = new RegExp('^[0-9][0-9][0-9][0-9]$');
 
 //const cbs_publications =
 //  "https://www.cbs.nl/-/media/cbs-op-maat/microdatabestanden/documents/2023/33/publicatie_overzicht_internet_augustus_2023.xlsx";
-const cbs_publications = "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/publication_overview_internet_january_26.xlsx";
+// const cbs_publications = "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/publication_overview_internet_january_26.xlsx";
+const cbs_publications = "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-doen/publicatie_overzicht_internet.xlsx"
   
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
