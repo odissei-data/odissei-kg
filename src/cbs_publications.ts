@@ -20,7 +20,11 @@ const cbs_publications = "https://www.cbs.nl/-/media/cbs-op-maat/zelf-onderzoek-
 
 function isValidUrl(value: string): boolean {
   try {
-    new URL(value); // Requires an absolute URL, including its scheme
+    const url =new URL(value); // Requires an absolute URL, including its scheme
+    return (
+      ["http:", "https:"].includes(url.protocol) &&
+      url.hostname.length > 0
+    );
     return true;
   } catch {
     return false;
