@@ -3,6 +3,10 @@ import { prefix } from './odissei_kg_utils.js'
 
 const DataverseApi = prefix.dataverseAPI
 
+import * as fs from 'node:fs/promises'
+import * as os from 'node:os'
+import * as path from 'node:path'
+
 /**
  * Helper to fetch a URL using dynamic native fetch with exponential backoff retries.
  * This directly mitigates ECONNRESET and network fluctuation crashes.
@@ -44,9 +48,25 @@ export default function fromApi (destination: any): Middleware {
             console.info('Fetching dataset from: ' + datasetUrl)
             
             // Register source utilizing our custom fetch with retry mechanism internally
-            const sourceUrlObj = Source.url(datasetUrl);
+            //const sourceUrlObj = Source.url(datasetUrl);
+
+            // Temporary Dataverse JSON-LD source patch
+            const response = await fetchWithRetry(datasetUrl)
+
+            const tempDir = await fs.mkdtemp(path.join(os.tmpdir(),'dataverse-'))
+            // cleanup hook
+            ctx.app.after(async () => {
+              await fs.rm(tempDir, { recursive: true })
+            }, { always: true })
+
+            const filePath = path.join(tempDir,`dataverse-${encodeURIComponent(contents.global_id)}.jsonld`)
+
+            await fs.writeFile(filePath, await response.text(),'utf8')            
+
             // Fetch source and copy to destination
-            await ctx.app.copySource(sourceUrlObj, destination)
+            //await ctx.app.copySource(sourceUrlObj, destination)
+            await ctx.app.copySource(Source.file(filePath), destination)
+
             await next();
           } catch (e) {
             console.warn(`Ignoring this dataset error: ${(e as Error).message}`)
