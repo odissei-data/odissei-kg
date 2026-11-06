@@ -25,28 +25,28 @@ export default async function (): Promise<Etl> {
     fromXlsx(Source.url(cbs_publications)),
     logRecord(),
     when(
-      ( context => context.isNotEmpty("URL publication") && context.getString('URL publication').startsWith('http')),
-      triple("URL publication", a, bibo.Article),
+      ( context => context.isNotEmpty("URL publicatie") && context.getString('URL publicatie').startsWith('http')),
+      triple("URL publicatie", a, bibo.Article),
       when(
-        "Projectnumber",
+        "Project",
         addIri({
           prefix: prefix.cbs_project,
-          content: 'Projectnumber',
+          content: 'Project',
           key: '_CBS_project_uri',
         }),
-        triple('URL publication', sdo.producer, '_CBS_project_uri',),
+        triple('URL publicatie', sdo.producer, '_CBS_project_uri',),
         //triple('URL', dct.identifier, '_CBS_project_uri',), // for compatibility reasons we use dct:identifier and sdo:producer
       ),
-      when('Publication title',  triple('URL publication', dct.title, 'Publication title')),
-      when('Author(s)', triple('URL publication', dct.creator, 'Author(s)')),
+      when('Titel publicatie',  triple('URL publicatie', dct.title, 'Titel publicatie')),
+      when('Auteur(s)', triple('URL publicatie', dct.creator, 'Auteur(s)')),
       when(context => context.isNotEmpty('Datum publicatie') && year_pattern.test(context.getString('Datum publicatie')),   
-        triple('URL publication', dct.date, literal('Datum publicatie', xsd.gYear))), // FIXME convert to xsd.date
+        triple('URL publicatie', dct.date, literal('Datum publicatie', xsd.gYear))), // FIXME convert to xsd.date
       translateSome({
-        content: 'Institute',
+        content: 'Instelling',
         table: ror_table,
         key: '_institute'
       }),
-      triple('URL publication', sdo.parentOrganization, '_institute'),
+      triple('URL publicatie', sdo.parentOrganization, '_institute'),
     ),
     //validate(Source.file('static/model.trig'), {terminateOn:"Violation"}),
     toTriplyDb(my_destination),
