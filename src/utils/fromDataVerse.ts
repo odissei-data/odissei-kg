@@ -1,176 +1,159 @@
-import { type Middleware, Etl, Source, Destination, loadRdf } from '@triplyetl/etl/generic'
-import { destination, prefix } from './odissei_kg_utils.js'
-import https from 'https';
-import fs from 'fs';
-import path from 'path';
-import { pathToFileURL } from 'url';
+import { Etl, environments, type Middleware, Source } from '@triplyetl/etl/generic'
+import { prefix } from './odissei_kg_utils.js'
+import { exclusionNames, filterLissVariables } from './filterLissVariables.js'
 
 const DataverseApi = prefix.dataverseAPI
-// cons DaverseAPI = ''
+
+import * as fs from 'node:fs/promises'
+import * as os from 'node:os'
+import * as path from 'node:path'
 
 /**
- * We start with dataverse ID 1
- * We fetch the dataverse metadata object (https://datasets.iisg.amsterdam/api/dataverses/1),
- *    and the corresponding contents (https://datasets.iisg.amsterdam/api/dataverses/1/contents)
- * The content array may reference a dataset or other dataverses.
- *   - Datasets are fetched from eg https://datasets.iisg.amsterdam/api/datasets/9820
- *   - If it's a dataverse reference, we recurse and fetch it's metadata, contents, and all the things it references
+ * Helper to fetch a URL using dynamic native fetch with exponential backoff retries.
+ * This directly mitigates ECONNRESET and network fluctuation crashes.
+ */
+async function fetchWithRetry(url: string, retries = 3, delay = 1000): Promise<Response> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) return response;
+      
+      // If server returned a client/server error, log it before retrying
+      console.warn(`[Attempt ${i + 1}/${retries}] Fetch failed for ${url} with status ${response.status}`);
+    } catch (err) {
+      console.warn(`[Attempt ${i + 1}/${retries}] Network error fetching ${url}: ${(err as Error).message}`);
+    }
+    if (i < retries - 1) {
+      await new Promise((res) => setTimeout(res, delay * Math.pow(2, i)));
+    }
+  }
+  throw new Error(`Failed to fetch ${url} after ${retries} attempts.`);
+}
+
+/**
+ We fetch all dataset records from the Dataverse search API, but really only use the PIDs in these records.
+ We then use the PID to fetch the ORE record for each dataset individually, because only the ORE 
+ record contains all the variable and other custom metadata fields...
  */
 export default function fromApi (destination: any): Middleware {
   return async function _fromApi (ctx, next) {
-    async function handleDataverse (dataverseId: number, parentDataverseId?: number): Promise <void> {
-      const [dataverse, dataverseContents] = await fetchDataverse(dataverseId)
+    async function handleDataverse (): Promise <void> {
+
+      const [dataverse, dataverseContents] = await fetchOdisseiDatasets()
       dataverse.type = 'dataverse'
-      console.info(dataverse.alias)
-      if (parentDataverseId !== undefined) dataverse.parentDataverseId = parentDataverseId
-      await next(dataverse, ctx.app.getNewStore())
+      
       for (const contents of dataverseContents) {
-        contents.parentDataverseId = dataverseId
         if (contents.type === 'dataset') {
           try {
-            let datasetUrl = getDatasetUrl(contents.protocol, contents.identifier, contents.authority)   
-            //loadRdf(Source.url(datasetUrl))
-            //console.log('Load dataset from: ' + datasetUrl)
-            //datasetUrl = await fixVariableURIs(datasetUrl)
-            //console.info('Datasetfile at: ' + datasetUrl)
-            await ctx.app.copySource(Source.url(datasetUrl), destination)
-            //await ctx.app.copySource(Source.file(datasetUrl), destination)
+            let datasetUrl = getDatasetUrl(contents.global_id)
+            console.info('Fetching dataset from: ' + datasetUrl)
+            
+            // Register source utilizing our custom fetch with retry mechanism internally
+            //const sourceUrlObj = Source.url(datasetUrl);
+
+            // Temporary Dataverse JSON-LD source patch
+            const response = await fetchWithRetry(datasetUrl)
+
+            const tempDir = await fs.mkdtemp(path.join(os.tmpdir(),'dataverse-'))
+            // cleanup hook
+            ctx.app.after(async () => {
+              await fs.rm(tempDir, { recursive: true })
+            }, { always: true })
+
+            const filePath = path.join(tempDir,`dataverse-${encodeURIComponent(contents.global_id)}.jsonld`)
+
+            let contentsJson = await response.text()
+            if (contents.global_id === 'doi:10.17026/DANS-XRZ-KESR') {
+              const csv = await fs.readFile(new URL('../../static/all_missing_variables.csv', import.meta.url), 'utf8')
+              contentsJson = filterLissVariables(contentsJson, exclusionNames(csv))
+            }
+            await fs.writeFile(filePath, contentsJson,'utf8')
+
+            // Fetch source and copy to destination
+            //await ctx.app.copySource(sourceUrlObj, destination)
+            await ctx.app.copySource(Source.file(filePath), destination)
+
             await next();
           } catch (e) {
-            console.warn(`Ignoring this error: ${(e as Error).message}`)
+            console.warn(`Ignoring this dataset error: ${(e as Error).message}`)
             if (!(e as Error).message.startsWith('[500]')) {
               throw e
             }
           }
         } else {
-          await handleDataverse(contents.id, dataverseId)
+          await handleDataverse()
         }
       }
     }
-    await handleDataverse(1)
+    await handleDataverse()
   }
-}
-
-async function fetchDataverse (dataverseId: number): Promise<[any, any]> {
-  let dataverse: any
-  let dataverseContents: any
-  [dataverse, dataverseContents] = await Promise.all(
-    [`${DataverseApi}/dataverses/${dataverseId}`, `${DataverseApi}/dataverses/${dataverseId}/contents`].map(
-      async (link) => {
-        const response = await fetch(link)
-        if (response.status !== 200) {
-          throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
-        }
-        //return await response.json()
-        return response.json()
-      }
-    )
-  )
-  /**
-   * Remove annoying `data: {}` envelope
-   */
-  dataverse = { ...dataverse, ...dataverse.data }
-  delete dataverse.data
-  dataverseContents = dataverseContents.data
-
-  return [dataverse, dataverseContents] as [any, any]
-}
-function getDatasetUrl (protocol: string, datasetId: number, authority: string) {
-  //const link = `${DataverseApi}/datasets/export?exporter=dataverse_json&persistentId=${protocol}:${authority}/${datasetId}`
-  const link = '${DataverseApi}/datasets/export?exporter=OAI_ORE&persistentId=${protocol}:${authority}/${datasetId}'
-  const link2 = DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + protocol + ':' + authority + '/' + datasetId
-  console.info('Fetching dataset from: ' + link2)
-  return link2
-  // const response = await fetch(link2)
-  // if (response.status !== 200) throw new Error(`[${response.status}] Failed fetching ${link}: ${response.statusText}`)
-  // let json: any
-  // json = await response.json()
-  // console.info(json)
-  // json = { ...json, ...json.data }
-  // delete json.data
-  // return json
-
-
-  /*loadRdf(
-    Source.file("./static/dataverseTest.jsonld")
-  )*/
 }
 
 /**
- * Fetch JSON-LD from a URL, convert http-prefixed string values to @id objects
- * (excluding reserved keys and anything inside @context), and write the result to a file.
- *
- * @param url - The source URL to fetch JSON-LD from.
- * @param outputPath - Optional path to write the modified JSON-LD file.
- * @returns A file:// URL pointing to the output file.
+ * Fetches all dataset records from the Odissei Portal search API by paginating 
+ * through the results until the end is reached.
+ * @returns {Promise<[any, any]>} A tuple containing:
+ * - [0]: The dataverse collection metadata.
+ * - [1]: The dataset contents array.
  */
-export async function fixVariableURIs(url: string, outputPath?: string): Promise<string> {
-  const jsonText = await fetchText(url);
-  const jsonLd = JSON.parse(jsonText);
-
-  const modified = convertHttpStringsToIRIs(jsonLd, false);
-
-  // Ensure output path is absolute
-  const absolutePath = path.resolve(outputPath || 'modified.jsonld');
-
-  fs.writeFileSync(absolutePath, JSON.stringify(modified, null, 2), 'utf8');
-
-  // Convert absolute file path to file:// URL
-  const fileUrl = pathToFileURL(absolutePath).toString();
-
-  return fileUrl;
-}
-
-/**
- * Recursively walk JSON-LD to replace http-prefixed strings with { "@id": value },
- * unless inside @context or reserved keys.
- */
-function convertHttpStringsToIRIs(node: any, insideContext: boolean, parentKey: string | null = null): any {
-  if (Array.isArray(node)) {
-    return node.map((item) => convertHttpStringsToIRIs(item, insideContext, parentKey));
+async function fetchOdisseiDatasets(): Promise<[any, any]> {
+  const baseUrl = 'https://portal.odissei.nl/api/search';
+  var records_per_page;
+  if (Etl.environment == environments.Testing) {
+     records_per_page = 5; // search results records per page
+  } else {
+     records_per_page = 250; // search results records per page
   }
-
-  if (typeof node === 'object' && node !== null) {
-    if (parentKey === '@context') {
-      return node; // Don't touch anything in @context
-    }
-
-    const result: any = {};
-    for (const [key, value] of Object.entries(node)) {
-      const isContext = insideContext || key === '@context';
-      result[key] = convertHttpStringsToIRIs(value, isContext, key);
-    }
-    return result;
-  }
-
-  const reservedKeys = ['@id', '@type', '@context', '@value', '@language'];
-  if (
-    typeof node === 'string' &&
-    node.startsWith('http') &&
-    !insideContext &&
-    (!parentKey || !reservedKeys.includes(parentKey))
-  ) {
-    return { '@id': node };
-  }
-
-  return node;
-}
-
-/**
- * Fetch plain text from a URL using native Node.js HTTPS.
- */
-function fetchText(url: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`Failed to fetch: ${res.statusCode}`));
-        return;
-      }
-
-      let data = '';
-      res.setEncoding('utf8');
-      res.on('data', (chunk) => (data += chunk));
-      res.on('end', () => resolve(data));
-    }).on('error', reject);
+  const queryParams = new URLSearchParams({
+    q: '*',
+    type: 'dataset',
+    per_page: records_per_page.toString()
   });
+
+  let start = 0;
+  let allRecords: any[] = [];
+  let hasMore = true;
+
+  while (hasMore) {
+    queryParams.set('start', start.toString());
+    const url = `${baseUrl}?${queryParams.toString()}`;
+    console.info(`Querying dataset identifiers from: ${url}`);
+    
+    // Wrapped in fetchWithRetry to tolerate search endpoint timeouts
+    const response = await fetchWithRetry(url);
+    const payload = await response.json();
+    const records = payload.data?.items || payload.results || [];
+
+    if (!Array.isArray(records) || records.length === 0) {
+      hasMore = false;
+    } else {
+      allRecords.push(...records);  
+      if (records.length < records_per_page) {
+        hasMore = false;
+      } else {
+        start += records_per_page;
+        if (Etl.environment == environments.Testing) {
+          hasMore = false;
+          console.warn("Just testing first page results");
+        }
+      }
+    }
+  }
+
+  console.info(`Successfully fetched a total of ${allRecords.length} records.`);
+
+  const dataverseMetadata = {
+    description: `Auto-generated container for: ${DataverseApi}`
+  };
+
+  return [dataverseMetadata, allRecords] as [any, any];
+}
+
+/**
+ * * @param pId Dataset persistent ID (e.g., "doi:10.34894/3XQJ8K") 
+ * @returns The URL to fetch the dataset in OAI-ORE format from the Dataverse API.
+ */ 
+function getDatasetUrl (pId: string) {
+  const url =  DataverseApi + '/datasets/export?exporter=OAI_ORE&persistentId=' + pId
+  return url
 }
