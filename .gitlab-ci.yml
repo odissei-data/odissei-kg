@@ -22,7 +22,8 @@ stages:
   # 4: optional final stage (e.g. to synchronize services for SG)
   - finalize
 
-image: node:20.9-bullseye-slim
+# image: node:20.9-bullseye-slim
+image: node:22-bookworm
 
 ### Stage 0: Only install, lint and build, gets triggered on push and merge-requests:
 preflight:
@@ -36,7 +37,7 @@ preflight:
 dataverse:
   stage: run-etls
   interruptible: true
-  allow_failure: false
+  allow_failure: true
   artifacts:
     !reference [.etl-template, artifacts]
   rules:
@@ -85,17 +86,18 @@ generic_odissei_papers_zotero:
   rules:
     - !reference [.etl-template, rules]   
 
-openAire:
-  stage: run-etls
-  interruptible: true
-  allow_failure: false
-  artifacts:
-    !reference [.etl-template, artifacts]
-  script:
-    - !reference [.etl-template, install]
-    - !reference [.etl-template, run-etl]
-  rules:
-    - !reference [.etl-template, rules]    
+#Removed the openAire ETL for now, as it is not working properly and is not needed for the current pipeline.
+#openAire:
+#  stage: run-etls
+#  interruptible: true
+#  allow_failure: true  # If this script fails, the pipeline stays green/orange and continues
+#  artifacts:
+#    !reference [.etl-template, artifacts]
+#  script:
+#    - !reference [.etl-template, install]
+#    - !reference [.etl-template, run-etl]
+#  rules:
+#    - !reference [.etl-template, rules]    
 
 ### Stage 1: add another ETL with name "cbs_projects"
 cbs_projects:

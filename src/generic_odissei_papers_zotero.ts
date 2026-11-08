@@ -7,16 +7,19 @@ import { destination, prefix } from "./utils/odissei_kg_utils.js";
 
 var my_destination: any = destination;
 
-/* Input for this ETL is a CSV file exported from a manually maintained collections of papers in Zotero by the ODISSEI CT:
+/* Input for this ETL is a CSV file exported from a manually maintained collections of papers 
+ in Zotero by the ODISSEI CT:
  For now, we simplify things by only using the papers with a known DOI:
  This version filters on papers funded by ODISSEI (SSHOC.NL) only:
- Why (explanation): To include data about papers that acknowledge the use of ODISSEI. Also to keep this list for reporting purposes to NWO. This is a complement to the list of publications using CBS microdata, e.g., cbs_projects.ts.
+ Why (explanation): To include data about papers that acknowledge the use of ODISSEI. 
+ Also to keep this list for reporting purposes to NWO. 
+ This is a complement to the list of publications using CBS microdata, e.g., cbs_projects.ts.
  The data is a static export from Zotero. */
  
 my_destination.defaultGraph = prefix.graph.concat("papers_funded_by_odissei_sshoc_nl");
 
 const cbs_zotero_bib =
-  "https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/2026-01-07_ODISSEI_Scientific%20outputs.csv";
+  "https://github.com/odissei-data/odissei-kg/raw/refs/heads/acceptance/static/ODISSEI_scientific_outputs.csv";
 
 export default async function (): Promise<Etl> {
   const etl = new Etl(my_destination);
