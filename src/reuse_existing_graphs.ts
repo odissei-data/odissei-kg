@@ -47,13 +47,9 @@ const jobs = [
   { source_location:   Source.url('https://tools.clariah.nl/data.ttl'),
     destination_graph:  'https://tools.clariah.nl/data/'
   },
-  // ELSST Thesaurus, v4:
-  // { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
-  //  destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4'
-  //},
-  // ELSST Thesaurus, v5 - Dataverse data should use the versionless ELSST uri by now
-  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-5/data?format=text/turtle'),
-    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:5'
+  // ELSST Thesaurus, v6 - Dataverse data should use the versionless ELSST uri by now
+  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-6/data?format=text/turtle'),
+    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:6'
   },
   // CBS Variable thesaurus: 
   // - Source code to generate the triples: https://github.com/odissei-data/cbs-variables-thesaurus
