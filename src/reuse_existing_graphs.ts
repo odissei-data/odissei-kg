@@ -31,8 +31,7 @@ const jobs = [
     destination_graph: 'https://www.w3.org/TR/skos-reference/skos.rdf'
   },
   // Software types by Maarten & Daniel:
-  { // source_location: Source.url('https://softwareunderstanding.github.io/software_types/release/1.0.0/software-types.ttl'),
-    source_location: Source.url('https://raw.githubusercontent.com/odissei-data/software_types/refs/heads/main/release/1.0.0/software-types.ttl'),
+  { source_location: Source.url('https://softwareunderstanding.github.io/software_types/release/1.0.0/software-types.ttl'),
     destination_graph: 'https://w3id.org/software-types#'
   },
   // NWO Research fields, based on https://www.nwo.nl/en/nwo-research-fields
