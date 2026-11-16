@@ -79,6 +79,17 @@
                     "name": "NWO",
                     "@id": "https://www.nwo.nl"
                     }
+            },
+            {
+                "@id": "https://doi.org/10.61686/QNBFQ52894",
+                "@type": "Grant",
+                "name": "The Macroscope (NWO Grant 184.037.001)",
+                "funder": {
+                    "@type": "Organization",
+                    "name": "NWO",
+                    "@id": "https://www.nwo.nl"
+                    }
+
             }
         ],
     "identifier": "https://github.com/odissei-data/odissei-kg/",
@@ -90,7 +101,7 @@
     "codeRepository": "https://github.com/odissei-data/odissei-kg/",
     "readme": "https://github.com/odissei-data/odissei-kg/blob/main/README.md",
     "buildInstructions": "https://github.com/odissei-data/odissei-kg/blob/main/README.md",
-    "license": "http://www.apache.org/licenses/LICENSE-2.0",
+    "license": "https://github.com/odissei-data/odissei-kg?tab=CC-BY-SA-4.0-1-ov-file",
     "thumbnailUrl": "https://raw.githubusercontent.com/odissei-data/odissei-kg/refs/heads/acceptance/odissei.png",
     "programmingLanguage": "TypeScript",
     "softwareHelp": [
@@ -101,7 +112,6 @@
           "url": "https://kg.odissei.nl/odissei/odissei-kg"
         }
     ],
-    "version": "1.0.1",
     "contIntegration": "https://github.com/odissei-data/odissei-kg",
     "codemeta:continuousIntegration": {
         "id": "https://github.com/odissei-data/odissei-kg"

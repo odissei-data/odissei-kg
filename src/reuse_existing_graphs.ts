@@ -10,7 +10,7 @@ const jobs = [
     destination_graph: 'https://w3id.org/odissei/ns/kg/schema/'
   },
   // Margherita's DataSet-Variable Ontology
-  { source_location:    Source.url('https://ritamargherita.github.io/DataSet-Variable-Ontology/ontology.ttl'),
+  { source_location:    Source.url('https://odissei-data.github.io/DataSet-Variable-Ontology/ontology.ttl'),
     destination_graph:  'https://w3id.org/dsv-ontology#'
   },
   // Bibliographic Ontology
@@ -21,7 +21,7 @@ const jobs = [
   { source_location:   Source.url('https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'),
     destination_graph: 'https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl'
   },
-  // CODATA Research Data Management Terminology V001 
+  // CODATA Research Data Management Terminology V002
   { //source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/4948/codata_codata-research-data-management-terminology_v001.ttl'),
     source_location:   Source.url('https://vocabs.ardc.edu.au/registry/api/resource/downloads/5405/codate_rdmt_025-09-30_1.ttl'),
     destination_graph: 'https://terms.codata.org/rdmt/'
@@ -31,8 +31,7 @@ const jobs = [
     destination_graph: 'https://www.w3.org/TR/skos-reference/skos.rdf'
   },
   // Software types by Maarten & Daniel:
-  { // source_location: Source.url('https://softwareunderstanding.github.io/software_types/release/1.0.0/software-types.ttl'),
-    source_location: Source.url('https://raw.githubusercontent.com/odissei-data/software_types/refs/heads/main/release/1.0.0/software-types.ttl'),
+  { source_location: Source.url('https://softwareunderstanding.github.io/software_types/release/1.0.0/software-types.ttl'),
     destination_graph: 'https://w3id.org/software-types#'
   },
   // NWO Research fields, based on https://www.nwo.nl/en/nwo-research-fields
@@ -48,13 +47,9 @@ const jobs = [
   { source_location:   Source.url('https://tools.clariah.nl/data.ttl'),
     destination_graph:  'https://tools.clariah.nl/data/'
   },
-  // ELSST Thesaurus, v4:
-  // { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-4/data?format=text/turtle'),
-  //  destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:4'
-  //},
-  // ELSST Thesaurus, v5 - Dataverse data should use the versionless ELSST uri by now
-  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-5/data?format=text/turtle'),
-    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:5'
+  // ELSST Thesaurus, v6 - Dataverse data should use the versionless ELSST uri by now
+  { source_location: Source.url('https://thesauri.cessda.eu/rest/v1/elsst-6/data?format=text/turtle'),
+    destination_graph: 'urn:ddi:int.cessda.elsst:00000000-0000-0000-0000-000000000001:6'
   },
   // CBS Variable thesaurus: 
   // - Source code to generate the triples: https://github.com/odissei-data/cbs-variables-thesaurus
