@@ -71,7 +71,7 @@ export default async function (): Promise<Etl> {
       triple('_IRI', sdo.parentOrganization, '_institute'),
       triple(
         "_IRI",
-        iri(prefix.odissei_kg_schema, str("Institution")),
+        iri(prefix.odissei_kg_schema, str("instelling")),
         "Institution",
       ),
       when("Project title", triple("_IRI", dct.title, "Project title")),
